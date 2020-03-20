@@ -1,6 +1,6 @@
 {
   "name": "cs-company-website",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "EQ Works company website.",
   "author": "EQ Works Creative Studio",
   "license": "ISC",
@@ -23,7 +23,8 @@
   "dependencies": {
     "next": "^9.3.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.3"
   },
   "devDependencies": {
     "standard": "^14.3.3"
