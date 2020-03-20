@@ -61,17 +61,15 @@
 // ELEMENTS ===========================================================
 body {
   font-family: copyRegular, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  color: red;
   font-family: titleBold, sans-serif;
-  @media (min-width: $viewport) {
-    color: green;
-  }
 }
 
 p {
   font-family: copyRegular, sans-serif;
-  font-size: 16px;
 }
