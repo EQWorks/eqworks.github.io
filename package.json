@@ -1,0 +1,29 @@
+{
+  "name": "cs-company-website",
+  "version": "0.1.0",
+  "description": "EQ Works company website.",
+  "author": "EQ Works Creative Studio",
+  "license": "ISC",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EQWorks/cs-company-website.git"
+  },
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start"
+  },
+  "bugs": {
+    "email": "creativestudio@eqworks.com",
+    "url": "https://github.com/EQWorks/cs-company-website/issues"
+  },
+  "homepage": "https://github.com/EQWorks/cs-company-website#readme",
+  "dependencies": {
+    "next": "^9.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {}
+}
