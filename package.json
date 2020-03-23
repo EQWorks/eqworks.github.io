@@ -13,7 +13,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next",
-    "start": "next start"
+    "start": "next start",
+    "test": "standard"
   },
   "bugs": {
     "email": "creativestudio@eqworks.com",
