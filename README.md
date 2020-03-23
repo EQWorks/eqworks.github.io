@@ -40,7 +40,7 @@ We are committed to comply with [WCAG 2.1 level AA](https://www.w3.org/TR/WCAG21
 
 ### HTML
 
-Order element attributes alphabetically. For example:
+Order element attributes alphabetically. For example: 
 
 ```html
 <p aria-label='My label.' className='my-class' id='my-id'>Hello there.</p>
