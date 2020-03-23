@@ -24,9 +24,11 @@
     "next": "^9.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
     "standard": "^14.3.3"
   }
 }
