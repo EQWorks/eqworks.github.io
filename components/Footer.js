@@ -1,7 +1,7 @@
 export default function Footer () {
   return (
-    <div>
+    <footer>
       <p>© 2020 EQ Works</p>
-    </div>
+    </footer>
   )
 }
