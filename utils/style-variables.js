@@ -11,3 +11,7 @@ export const colors = {
   greyLight: '#E5E5E5',
   white: '#FFFFFF'
 }
+
+export const sizes = {
+  navBar: '50px'
+}

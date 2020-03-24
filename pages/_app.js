@@ -1,15 +1,10 @@
-import { ThemeProvider } from 'styled-components'
-import '../public/styles/global.scss'
+import GlobalStyle from '../utils/style-global'
 
 export default function MyApp ({ Component, pageProps }) {
-  const theme = {
-    red: 'red',
-    blue: 'blue'
-  }
-
   return (
-    <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyle />
       <Component {...pageProps} />
-    </ThemeProvider>
+    </>
   )
 }

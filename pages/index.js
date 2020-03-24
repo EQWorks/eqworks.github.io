@@ -1,8 +1,19 @@
 import styled from 'styled-components'
 import Layout from '../components/PageLayout.js'
+import * as GlobalStyles from '../utils/style-variables'
 
 const Title = styled.h1`
-color: red
+background-color: grey
+`
+
+const StyleSampleContent = styled.div`
+  background-color: ${GlobalStyles.colors.white};
+  height: 800px;
+  width: 100%;
+
+  p {
+    color: red;
+  }
 `
 
 export default function Index () {
@@ -14,6 +25,9 @@ export default function Index () {
         <div>
           <p>\/</p>
         </div>
+        <StyleSampleContent>
+          <p>Hello there</p>
+        </StyleSampleContent>
       </div>
     </Layout>
   )

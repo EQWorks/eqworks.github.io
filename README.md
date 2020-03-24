@@ -87,7 +87,6 @@ All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com
 - [next](https://www.npmjs.com/package/next) - An opinionated React framework.
 - [react](https://www.npmjs.com/package/react) - A JavaScript library for building user interfaces.
 - [react-dom](https://www.npmjs.com/package/react-dom) - React package for working with the DOM.
-- [sass](https://www.npmjs.com/package/sass) - A pure JavaScript implementation of Sass.
 - [styled-components](https://www.npmjs.com/package/styled-components) - Visual primitives for the component age.
 
 ### Development

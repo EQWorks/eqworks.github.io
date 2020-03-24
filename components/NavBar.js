@@ -1,51 +1,35 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as GlobalStyles from '../public/styles/_variables'
-import { respondTo } from '../public/styles/_respondTo'
+// import * as GlobalStyles from '../public/styles/_variables'
+import { breakpoint } from '../utils/style-breakpoints'
+
+const StyleNav = styled.nav`
+  background-color: red;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+`
 
 const StyleLink = styled.a`
   background-color: blue;
   color: red;
   cursor: pointer;
 
-  @media (min-width: ${GlobalStyles.breakpoints.xs}) {
-    background-color: green;
-  }
-  ${respondTo.xs`
+  ${breakpoint.xs`
     color: orange
-  `}
-
-  @media (min-width: ${GlobalStyles.breakpoints.sm}) {
-    background-color: yellow;
-  }
-  ${respondTo.sm`
-    color: yellow
-  `}
-
-  @media (min-width: ${GlobalStyles.breakpoints.md}) {
-    background-color: orange;
-  }
-  ${respondTo.md`
-    color: green
-  `}
-
-  @media (min-width: ${GlobalStyles.breakpoints.lg}) {
-    background-color: red;
-  }
-  ${respondTo.lg`
-    color: blue
   `}
 `
 
 export default function NavBar () {
   return (
-    <nav>
+    <StyleNav>
       <Link href='/'>
         <StyleLink>Home</StyleLink>
       </Link>
       <Link href='/atom'>
         <StyleLink>Atom</StyleLink>
       </Link>
-    </nav>
+    </StyleNav>
   )
 }
