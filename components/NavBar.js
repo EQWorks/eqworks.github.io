@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-// import * as GlobalStyles from '../public/styles/_variables'
+import * as GlobalStyles from '../utils/style-variables'
 import { breakpoint } from '../utils/style-breakpoints'
 
 const StyleNav = styled.nav`
   background-color: red;
+  height: ${GlobalStyles.heights.navBar};
   left: 0;
   position: fixed;
   top: 0;

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import * as GlobalStyles from './style-variables'
 
 const GlobalStyle = createGlobalStyle`
   // FONTS ==============================================================
@@ -62,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: copyRegular, sans-serif;
     font-size: 16px;
-    margin: 0;
+    margin: ${GlobalStyles.heights.navBar} 0 0 0;
     padding: 0;
   }
 

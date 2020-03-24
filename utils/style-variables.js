@@ -12,6 +12,6 @@ export const colors = {
   white: '#FFFFFF'
 }
 
-export const sizes = {
+export const heights = {
   navBar: '50px'
 }
