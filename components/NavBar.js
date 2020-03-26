@@ -52,51 +52,6 @@ const StyleNav = styled.nav`
         display: none;
       `}
     }
-    .navbar__links {
-      align-items: flex-start;
-      background-color: ${GlobalStyles.colors.white};
-      display: flex;
-      height: 100vh;
-      justify-content: center;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      .navbar__links__inner {
-        width: 66%;
-        .navbar__links__inner__list {
-          ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            a, p {
-              color: ${GlobalStyles.colors.greyMedium};
-              cursor: pointer;
-              display: inline-block;
-              font-family: titleMedium, sans-serif;
-              font-size: 1.75em;
-              padding: 20px 0;
-              text-decoration: none;
-              transition: color 0.2s ease-out;
-              &:hover {
-                color: ${GlobalStyles.colors.NavBarLinksListHover};
-              }
-            }
-            li {
-              border-bottom: 1px solid ${GlobalStyles.colors.greyBorder};
-            }
-          }
-        }
-        .navbar__links__inner__close {
-          img {
-            cursor: pointer;
-            height: 18px;
-            margin: 50px 0;
-            width: auto;
-          }
-        }
-      }
-    }
   }
   .navbar--md {
     display: none;
@@ -144,12 +99,67 @@ const StyleNav = styled.nav`
 `
 
 const StyleNavLinks = styled.div`
-
+  align-items: flex-start;
+  background-color: ${GlobalStyles.colors.white};
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  .navbar__links__inner {
+    width: 66%;
+    .navbar__links__inner__list {
+      ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      a, p {
+        color: ${GlobalStyles.colors.greyMedium};
+        cursor: pointer;
+        display: inline-block;
+        font-family: titleMedium, sans-serif;
+        font-size: 1.75em;
+        padding: 20px 0;
+        text-decoration: none;
+        transition: color 0.2s ease-out;
+        &:hover {
+          color: ${GlobalStyles.colors.NavBarLinksListHover};
+        }
+      }
+      li {
+        border-bottom: 1px solid ${GlobalStyles.colors.greyBorder};
+        }
+      }
+      .navbar__links__inner__list--sub {
+        li {
+          a, p:not(:first-child) {
+            font-family: titleRegular, sans-serif;
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+    .navbar__links__inner__close {
+    img {
+      cursor: pointer;
+      height: 18px;
+      margin: 50px 0;
+      width: auto;
+    }
+  }
+}
 `
 
 export default function NavBar () {
-  const [showNavBarLinks, toggleNavBarLinks] = useState(true)
+  const [showNavBarLinks, toggleNavBarLinks] = useState(false)
   const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(false)
+
+  function handleSubLinkClick () {
+    toggleNavBarLinks(!showNavBarLinks)
+    toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)
+  }
 
   return (
     <StyleNav>
@@ -165,7 +175,7 @@ export default function NavBar () {
           <div></div>
         </div>
         {showNavBarLinks && (
-          <div className='navbar__links'>
+          <StyleNavLinks>
             <div className='navbar__links__inner'>
               <div className='navbar__links__inner__close'>
                 <img onClick={() => toggleNavBarLinks(!showNavBarLinks)} src='/images/icon-x-grey.png' />
@@ -174,36 +184,67 @@ export default function NavBar () {
                 <ul>
                   <li>
                     <Link href='/'>
-                      <a>Home</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Home</a>
                     </Link>
                   </li>
                   <li>
-                    <p>Products →</p>
+                    <p onClick={() => toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)}>Products →</p>
+                    {showNavBarProductsSubLinks && (
+                      <StyleNavLinks>
+                        <div className='navbar__links__inner'>
+                          <div className='navbar__links__inner__close'>
+                            <img onClick={() => toggleNavBarLinks(!showNavBarLinks)} src='/images/icon-x-grey.png' />
+                          </div>
+                          <div className='navbar__links__inner__list'>
+                            <ul className='navbar__links__inner__list--sub'>
+                              <li>
+                                <p onClick={() => toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)}>← Products</p>
+                              </li>
+                              <li>
+                                <Link href='/atom'>
+                                  <a onClick={handleSubLinkClick}>Atom</a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href='/locus'>
+                                  <a onClick={handleSubLinkClick}>Locus</a>
+                                </Link>
+                              </li>
+                              <li>
+                                <Link href='/visilink'>
+                                  <a onClick={handleSubLinkClick}>Visilink</a>
+                                </Link>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </StyleNavLinks>
+                    )}
                   </li>
                   <li>
                     <Link href='/marketers'>
-                      <a>Marketers</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Marketers</a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/investors'>
-                      <a>Investors</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Investors</a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/careers'>
-                      <a>Careers</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Careers</a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/contact'>
-                      <a>Contact</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Contact</a>
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
-          </div>
+          </StyleNavLinks>
         )}
       </div>
       <div className='navbar--md'>
