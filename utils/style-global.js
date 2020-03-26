@@ -61,9 +61,10 @@ const GlobalStyle = createGlobalStyle`
 
   // ELEMENTS ===========================================================
   body {
+    background-color: ${ GlobalStyles.colors.black };
     font-family: copyRegular, sans-serif;
     font-size: 16px;
-    margin: ${GlobalStyles.heights.navBar} 0 0 0;
+    margin: 0;
     padding: 0;
   }
 

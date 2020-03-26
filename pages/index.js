@@ -3,7 +3,6 @@ import Layout from '../components/PageLayout.js'
 import * as GlobalStyles from '../utils/style-variables'
 
 const Title = styled.h1`
-background-color: grey
 `
 
 const StyleSampleContent = styled.div`

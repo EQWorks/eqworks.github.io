@@ -8,8 +8,8 @@ export default function Header () {
 
     if (router.pathname === '/') {
       currentPage = 'Home'
-    } else if (router.pathname === '/atom') {
-      currentPage = 'Atom'
+    } else {
+      currentPage = router.pathname.substr(1).charAt(0).toUpperCase() + router.pathname.substr(1).slice(1)
     }
 
     currentPage += ' | EQ Works'
