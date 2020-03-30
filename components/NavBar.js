@@ -54,7 +54,10 @@ const StyleNav = styled.nav`
     }
   }
   .navbar--md {
+    box-sizing: border-box;
     display: none;
+    position: absolute;
+    width: 100%;
     .navbar--md__left {
       align-items: center;
       display: flex;
@@ -77,16 +80,61 @@ const StyleNav = styled.nav`
       flex-direction: row;
       justify-content: flex-end;
       width: 75%;
-      a {
-        color: ${GlobalStyles.colors.white};
-        cursor: pointer;
-        font-family: titleRegular, sans-serif;
-        font-size: 0.85em;
-        margin: 0 20px;
-        text-decoration: none;
-        text-transform: uppercase;
-        &:last-child {
-          margin: 0 0 0 20px;
+      ul {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        list-style-type: none;
+        li {
+          a, p {
+            color: ${GlobalStyles.colors.white};
+            cursor: pointer;
+            display: inline-block;
+            font-family: titleMedium, sans-serif;
+            font-size: 0.75em;
+            padding: 0 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+          }
+          &:last-child {
+            a {
+              padding: 0 0 0 15px;
+            }
+          }
+        }
+      }
+    }
+    .navbar--md__right__sub-links {
+      color: ${GlobalStyles.colors.white};
+      padding: 20px 0 0 0;
+      position: absolute;
+      width: 225px;
+      ul {
+        align-items: flex-start;
+        background-color: ${GlobalStyles.colors.black};
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        li {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          a {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 20px;
+            width: 100%;
+          }
+          &:last-child {
+            a {
+              padding: 20px;
+            }
+          }
         }
       }
     }
@@ -155,6 +203,7 @@ const StyleNavLinks = styled.div`
 export default function NavBar () {
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
   const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(false)
+  const [showNavBarMdProductsSubLinks, toggleNavBarMdProductsSubLinks] = useState(false)
 
   function handleSubLinkClick () {
     toggleNavBarLinks(!showNavBarLinks)
@@ -170,9 +219,9 @@ export default function NavBar () {
           </Link>
         </div>
         <div className='navbar__right' onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div />
+          <div />
+          <div />
         </div>
         {showNavBarLinks && (
           <StyleNavLinks>
@@ -254,21 +303,57 @@ export default function NavBar () {
           </Link>
         </div>
         <div className='navbar--md__right'>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
-          <Link href='/atom'>
-            <a>Atom</a>
-          </Link>
-          <Link href='/locus'>
-            <a>Locus</a>
-          </Link>
-          <Link href='/visilink'>
-            <a>Visilink</a>
-          </Link>
-          <Link href='/marketers'>
-            <a>Marketers</a>
-          </Link>
+          <ul>
+            <li>
+              <Link href='/'>
+                <a>Home</a>
+              </Link>
+            </li>
+            <li onMouseEnter={() => toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)} onMouseLeave={() => toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)} tabIndex='0'>
+              <p>Products</p>
+              {showNavBarMdProductsSubLinks && (
+                <div className='navbar--md__right__sub-links'>
+                  <ul>
+                    <li>
+                      <Link href='/atom'>
+                        <a>Atom</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/locus'>
+                        <a>Locus</a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href='/visilink'>
+                        <a>Visilink</a>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </li>
+            <li>
+              <Link href='/marketers'>
+                <a>Marketers</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/investors'>
+                <a>Investors</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/careers'>
+                <a>Careers</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/contact'>
+                <a>Contact</a>
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </StyleNav>
