@@ -60,8 +60,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   // ELEMENTS ===========================================================
-  body {
-    background-color: ${ GlobalStyles.colors.black };
+    body {
+    background-color: ${GlobalStyles.colors.black};
     font-family: copyRegular, sans-serif;
     font-size: 16px;
     margin: 0;
@@ -78,6 +78,12 @@ const GlobalStyle = createGlobalStyle`
     font-family: copyRegular, sans-serif;
     margin: 0;
     padding: 0;
+  }
+
+  #__next {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
   }
 `
 
