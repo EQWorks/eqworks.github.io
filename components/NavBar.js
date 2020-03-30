@@ -190,14 +190,14 @@ const StyleNavLinks = styled.div`
       }
     }
     .navbar__links__inner__close {
-    img {
-      cursor: pointer;
-      height: 18px;
-      margin: 50px 0;
-      width: auto;
+      img {
+        cursor: pointer;
+        height: 18px;
+        margin: 50px 0;
+        width: auto;
+      }
     }
   }
-}
 `
 
 export default function NavBar () {
