@@ -7,7 +7,14 @@ export const breakpoints = {
 
 export const colors = {
   black: '#1D1D1D',
+  greyBorder: '#EEF1F6',
   greyDark: '#595959',
-  greyLight: '#E5E5E5',
+  greyMedium: '#777777',
+  greyLight: '#BFBFBF',
+  NavBarLinksListHover: '#F95F51',
   white: '#FFFFFF'
+}
+
+export const heights = {
+  navBar: '50px'
 }

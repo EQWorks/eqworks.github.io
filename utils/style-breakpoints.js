@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
-import { breakpoints } from './_variables'
+import { breakpoints } from './style-variables'
 
-export const respondTo = Object.keys(breakpoints).reduce((accumulator, label) => {
+export const breakpoint = Object.keys(breakpoints).reduce((accumulator, label) => {
   accumulator[label] = (...args) => css`
     @media (min-width: ${breakpoints[label]}) {
       ${css(...args)};
