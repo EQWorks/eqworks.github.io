@@ -18,3 +18,10 @@ export const colors = {
 export const heights = {
   navBar: '50px'
 }
+
+export const zIndexes = {
+  navBar: 10,
+  footer: 10,
+  pageContent: 5,
+  indexHeroVideo: 1
+}

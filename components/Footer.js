@@ -7,6 +7,8 @@ const StyleFooter = styled.footer`
   background-color: #1E1E1E;
   color: #808080;
   font-size: 0.9em;
+  position: relative;
+  z-index: ${GlobalStyles.zIndexes.footer};
   .footer__inner {
     align-items: center;
     display: flex;

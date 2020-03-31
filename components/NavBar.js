@@ -12,6 +12,7 @@ const StyleNav = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: ${GlobalStyles.zIndexes.navBar};
   .navbar {
     background-color: ${GlobalStyles.colors.white};
     display: flex;
