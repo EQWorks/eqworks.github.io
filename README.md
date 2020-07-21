@@ -57,19 +57,28 @@ Order element attributes alphabetically. For example:
 - For example:
 
 ```scss
-.main-document__button {
+.main-content {
   /* declaration-property: declaration-value */
   -webkit-box-shadow: none;
   display: inline-block;
   font-family: 'FontRobotoBold', sans-serif;
   text-align: center;
-  &:focus {
-    background-color: #790100;
-    color: $color-black;
+  a {
+    text-decoration: none;
+  }
+  p {
+    color: $color-white;
+    &:focus {
+      background-color: #790100;
+      color: $color-black;
+    }
   }
   @media (max-width: $viewport-md) {
     font-size: 12px;
     padding: 14px 20px;
+  }
+  .main-content__sub-item {
+    border: 1px solid $color-grey;
   }
 }
 ```
@@ -87,10 +96,11 @@ All JavaScript must adhere to [JavaScript Standard Style](https://standardjs.com
 - [next](https://www.npmjs.com/package/next) - An opinionated React framework.
 - [react](https://www.npmjs.com/package/react) - A JavaScript library for building user interfaces.
 - [react-dom](https://www.npmjs.com/package/react-dom) - React package for working with the DOM.
-- [sass](https://www.npmjs.com/package/sass) - A pure JavaScript implementation of Sass.
+- [styled-components](https://www.npmjs.com/package/styled-components) - Visual primitives for the component age.
 
 ### Development
 
+- [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components) - A highly recommended supplement to the base styled-components library.
 - [standard](https://www.npmjs.com/package/standard) - JavaScript style guide, linter, and formatter.
 
 ---
