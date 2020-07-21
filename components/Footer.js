@@ -102,18 +102,29 @@ const StyleFooter = styled.footer`
   }
 `
 
-export default function Footer () {
+export default function Footer() {
   return (
     <StyleFooter>
       <div className='footer__inner'>
         <div className='footer__inner__about'>
           <p>About</p>
-          <p>EQ Works [www.eqworks.com] provides a smarter way to target customers using Location Behavior. Using first-party, location-based behavior signals, advanced data analytics, and proprietary software, EQ Works creates and targets customized, performance-boosting audience segments. Proprietary algorithms and data, combined with Artificial Intelligence, generate attribution models that connect consumer behavior in the physical world to behavior in the digital world, helping solve complex challenges for brands and&nbsp;agencies.</p>
+          <p>
+            EQ Works [www.eqworks.com] provides a smarter way to target
+            customers using Location Behavior. Using first-party, location-based
+            behavior signals, advanced data analytics, and proprietary software,
+            EQ Works creates and targets customized, performance-boosting
+            audience segments. Proprietary algorithms and data, combined with
+            Artificial Intelligence, generate attribution models that connect
+            consumer behavior in the physical world to behavior in the digital
+            world, helping solve complex challenges for brands
+            and&nbsp;agencies.
+          </p>
         </div>
         <div className='footer__inner__contact'>
           <p>EQ Works Toronto</p>
           <p>
-            1235 Bay Street, Suite 401<br />
+            1235 Bay Street, Suite 401
+            <br />
             Toronto, ON M5R 3K4
           </p>
           <p>Tel. +1 888-597-8889</p>
@@ -127,7 +138,16 @@ export default function Footer () {
           </div>
         </div>
         <div className='footer__inner__legal'>
-          <p>© 2020 EQ Works | <Link href='/privacy-policy'><a>Privacy Policy</a></Link> | <Link href='/browser-opt-out'><a>Browser Opt-Out</a></Link></p>
+          <p>
+            © 2020 EQ Works |{' '}
+            <Link href='/privacy-policy'>
+              <a>Privacy Policy</a>
+            </Link>{' '}
+            |{' '}
+            <Link href='/browser-opt-out'>
+              <a>Browser Opt-Out</a>
+            </Link>
+          </p>
         </div>
       </div>
     </StyleFooter>

@@ -57,7 +57,7 @@ const StyleHero = styled.div`
   }
 `
 
-export default function Index () {
+export default function Index() {
   return (
     <Layout>
       <StyleHero>
