@@ -1,29 +1,31 @@
 {
   "name": "cs-company-website",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "EQ Works company website.",
   "author": "EQ Works",
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EQWorks/cs-company-website.git"
   },
-  "scripts": {
-    "build": "next build",
-    "dev": "next",
-    "start": "next start",
-    "test": "standard"
-  },
   "bugs": {
     "email": "creativestudio@eqworks.com",
     "url": "https://github.com/EQWorks/cs-company-website/issues"
   },
   "homepage": "https://github.com/EQWorks/cs-company-website#readme",
+  "scripts": {
+    "build": "next build",
+    "dev": "next",
+    "start": "next start",
+    "syntax-format": "prettier --write .",
+    "syntax-check": "prettier --check ."
+  },
   "dependencies": {
     "gray-matter": "^4.0.2",
     "next": "^9.4.4",
+    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "remark": "^12.0.1",
@@ -31,7 +33,6 @@
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7",
-    "standard": "^14.3.3"
+    "babel-plugin-styled-components": "^1.10.7"
   }
 }

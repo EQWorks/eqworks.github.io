@@ -3,5 +3,5 @@ export default function Post({ content }) {
     <div>
       <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
-  );
+  )
 }

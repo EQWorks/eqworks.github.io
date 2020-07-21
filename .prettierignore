@@ -1,0 +1,6 @@
+# directories
+.next
+node_modules
+
+# files
+*.DS_Store

@@ -10,7 +10,7 @@ const StyleContent = styled.div`
   flex: 1;
 `
 
-export default function Layout (props) {
+export default function Layout(props) {
   return (
     <>
       <Header />

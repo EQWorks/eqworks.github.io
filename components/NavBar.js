@@ -88,7 +88,8 @@ const StyleNav = styled.nav`
         justify-content: flex-end;
         list-style-type: none;
         li {
-          a, p {
+          a,
+          p {
             color: ${GlobalStyles.colors.white};
             cursor: pointer;
             display: inline-block;
@@ -161,29 +162,31 @@ const StyleNavLinks = styled.div`
     width: 66%;
     .navbar__links__inner__list {
       ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      a, p {
-        color: ${GlobalStyles.colors.greyMedium};
-        cursor: pointer;
-        display: inline-block;
-        font-family: titleMedium, sans-serif;
-        font-size: 1.75em;
-        padding: 20px 0;
-        text-decoration: none;
-        transition: color 0.2s ease-out;
-        &:hover {
-          color: ${GlobalStyles.colors.NavBarLinksListHover};
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        a,
+        p {
+          color: ${GlobalStyles.colors.greyMedium};
+          cursor: pointer;
+          display: inline-block;
+          font-family: titleMedium, sans-serif;
+          font-size: 1.75em;
+          padding: 20px 0;
+          text-decoration: none;
+          transition: color 0.2s ease-out;
+          &:hover {
+            color: ${GlobalStyles.colors.NavBarLinksListHover};
+          }
         }
-      }
-      li {
-        border-bottom: 1px solid ${GlobalStyles.colors.greyBorder};
+        li {
+          border-bottom: 1px solid ${GlobalStyles.colors.greyBorder};
         }
       }
       .navbar__links__inner__list--sub {
         li {
-          a, p:not(:first-child) {
+          a,
+          p:not(:first-child) {
             font-family: titleRegular, sans-serif;
             font-size: 1.5em;
           }
@@ -201,12 +204,17 @@ const StyleNavLinks = styled.div`
   }
 `
 
-export default function NavBar () {
+export default function NavBar() {
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
-  const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(false)
-  const [showNavBarMdProductsSubLinks, toggleNavBarMdProductsSubLinks] = useState(false)
+  const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
+    false
+  )
+  const [
+    showNavBarMdProductsSubLinks,
+    toggleNavBarMdProductsSubLinks
+  ] = useState(false)
 
-  function handleSubLinkClick () {
+  function handleSubLinkClick() {
     toggleNavBarLinks(!showNavBarLinks)
     toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)
   }
@@ -216,10 +224,15 @@ export default function NavBar () {
       <div className='navbar'>
         <div className='navbar__left'>
           <Link href='/'>
-            <a><img src='/images/logo-eq-works-square-blue.png' /></a>
+            <a>
+              <img src='/images/logo-eq-works-square-blue.png' />
+            </a>
           </Link>
         </div>
-        <div className='navbar__right' onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
+        <div
+          className='navbar__right'
+          onClick={() => toggleNavBarLinks(!showNavBarLinks)}
+        >
           <div />
           <div />
           <div />
@@ -228,27 +241,53 @@ export default function NavBar () {
           <StyleNavLinks>
             <div className='navbar__links__inner'>
               <div className='navbar__links__inner__close'>
-                <img onClick={() => toggleNavBarLinks(!showNavBarLinks)} src='/images/icon-x-grey.png' />
+                <img
+                  onClick={() => toggleNavBarLinks(!showNavBarLinks)}
+                  src='/images/icon-x-grey.png'
+                />
               </div>
               <div className='navbar__links__inner__list'>
                 <ul>
                   <li>
                     <Link href='/'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Home</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
+                        Home
+                      </a>
                     </Link>
                   </li>
                   <li>
-                    <p onClick={() => toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)}>Products →</p>
+                    <p
+                      onClick={() =>
+                        toggleNavBarProductsSubLinks(
+                          !showNavBarProductsSubLinks
+                        )
+                      }
+                    >
+                      Products →
+                    </p>
                     {showNavBarProductsSubLinks && (
                       <StyleNavLinks>
                         <div className='navbar__links__inner'>
                           <div className='navbar__links__inner__close'>
-                            <img onClick={() => toggleNavBarLinks(!showNavBarLinks)} src='/images/icon-x-grey.png' />
+                            <img
+                              onClick={() =>
+                                toggleNavBarLinks(!showNavBarLinks)
+                              }
+                              src='/images/icon-x-grey.png'
+                            />
                           </div>
                           <div className='navbar__links__inner__list'>
                             <ul className='navbar__links__inner__list--sub'>
                               <li>
-                                <p onClick={() => toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)}>← Products</p>
+                                <p
+                                  onClick={() =>
+                                    toggleNavBarProductsSubLinks(
+                                      !showNavBarProductsSubLinks
+                                    )
+                                  }
+                                >
+                                  ← Products
+                                </p>
                               </li>
                               <li>
                                 <Link href='/atom'>
@@ -273,22 +312,30 @@ export default function NavBar () {
                   </li>
                   <li>
                     <Link href='/marketers'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Marketers</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
+                        Marketers
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/investors'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Investors</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
+                        Investors
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/careers'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Careers</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
+                        Careers
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/contact'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>Contact</a>
+                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
+                        Contact
+                      </a>
                     </Link>
                   </li>
                 </ul>
@@ -300,7 +347,9 @@ export default function NavBar () {
       <div className='navbar--md'>
         <div className='navbar--md__left'>
           <Link href='/'>
-            <a><img src='/images/logo-eq-works-white.png' /></a>
+            <a>
+              <img src='/images/logo-eq-works-white.png' />
+            </a>
           </Link>
         </div>
         <div className='navbar--md__right'>
@@ -310,7 +359,15 @@ export default function NavBar () {
                 <a>Home</a>
               </Link>
             </li>
-            <li onMouseEnter={() => toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)} onMouseLeave={() => toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)} tabIndex='0'>
+            <li
+              onMouseEnter={() =>
+                toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)
+              }
+              onMouseLeave={() =>
+                toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)
+              }
+              tabIndex='0'
+            >
               <p>Products</p>
               {showNavBarMdProductsSubLinks && (
                 <div className='navbar--md__right__sub-links'>
