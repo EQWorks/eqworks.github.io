@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import * as GlobalStyles from '../utils/style-variables'
 
-import Header from './Header'
-import NavBar from './NavBar'
-import Footer from './Footer'
+import Header from './header'
+import NavBar from './nav-bar'
+import Footer from './footer'
 
 const StyleContent = styled.div`
   background-color: ${GlobalStyles.colors.white};

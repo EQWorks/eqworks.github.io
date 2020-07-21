@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import * as GlobalStyles from '../utils/style-variables'
 import { breakpoint } from '../utils/style-breakpoints'
-import Layout from '../components/PageLayout.js'
 
 const StyleHero = styled.div`
   background-color: ${GlobalStyles.colors.black};
@@ -59,17 +58,15 @@ const StyleHero = styled.div`
 
 export default function Index() {
   return (
-    <Layout>
-      <StyleHero>
-        <div className='hero__content'>
-          <h1>Powerful Results from Where People&nbsp;Go</h1>
-          <p>Connect with and understand your&nbsp;audience.</p>
-          <div>↓</div>
-        </div>
-        <video autoPlay className='hero__video' muted loop>
-          <source src='/video/background-people-walking.mp4' type='video/mp4' />
-        </video>
-      </StyleHero>
-    </Layout>
+    <StyleHero>
+      <div className='hero__content'>
+        <h1>Powerful Results from Where People&nbsp;Go</h1>
+        <p>Connect with and understand your&nbsp;audience.</p>
+        <div>↓</div>
+      </div>
+      <video autoPlay className='hero__video' muted loop>
+        <source src='/video/background-people-walking.mp4' type='video/mp4' />
+      </video>
+    </StyleHero>
   )
 }
