@@ -5,7 +5,7 @@ import { ShoppingBag } from '@styled-icons/feather/ShoppingBag'
 import { Target } from '@styled-icons/feather/Target'
 import { BarChart2 } from '@styled-icons/feather/BarChart2'
 
-import * as GlobalStyles from '../../utils/style-variables'
+import * as GlobalStyles from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`

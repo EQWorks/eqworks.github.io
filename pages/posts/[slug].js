@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import markdownToHtml from '../../lib/markdownToHtml'
-import * as GlobalStyles from '../../utils/style-variables'
+import { getPostBySlug, getAllPosts } from '../../utils/posts-api'
+import markdownToHtml from '../../utils/markdown-to-html'
+import * as GlobalStyles from '../../utils/style-constants'
 
 const ArticleStyled = styled.article`
   padding: 20px;

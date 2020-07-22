@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import { breakpoints } from './style-variables'
+import { breakpoints } from './style-constants'
 
 export const breakpoint = Object.keys(breakpoints).reduce(
   (accumulator, label) => {

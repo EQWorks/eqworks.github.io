@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as GlobalStyles from '../utils/style-variables'
+import * as GlobalStyles from '../utils/style-constants'
 import { breakpoint } from '../utils/style-breakpoints'
 
 const StyleNav = styled.nav`

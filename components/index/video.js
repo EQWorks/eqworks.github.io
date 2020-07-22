@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import * as GlobalStyles from '../../utils/style-variables'
+import * as GlobalStyles from '../../utils/style-constants'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
