@@ -54,7 +54,7 @@ const SectionStyled = styled.section`
   .title {
     margin: 0 0 20px 0;
     padding: 0 20px;
-    p {
+    h2 {
       font-family: titleBold, sans-serif;
       font-size: 1.5em;
     }
@@ -65,7 +65,7 @@ export default function WhyClientsUseUs() {
   return (
     <SectionStyled>
       <div className='title'>
-        <p>Why clients use us</p>
+        <h2>Why clients use us</h2>
       </div>
       <div className='icons'>
         <div>

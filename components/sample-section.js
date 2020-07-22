@@ -1,7 +1,11 @@
+import styled from 'styled-components'
+
+const SectionStyled = styled.section``
+
 export default function Section() {
   return (
-    <section>
+    <SectionStyled>
       <p>Hello there</p>
-    </section>
+    </SectionStyled>
   )
 }
