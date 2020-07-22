@@ -20,7 +20,7 @@ export const heights = {
 }
 
 export const zIndexes = {
-  navBar: 10,
+  navBar: 11,
   footer: 10,
   pageContent: 5,
   indexHeroVideo: 1

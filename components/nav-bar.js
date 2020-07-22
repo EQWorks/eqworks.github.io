@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import * as GlobalStyles from '../utils/style-variables'
@@ -55,14 +55,18 @@ const StyleNav = styled.nav`
     }
   }
   .navbar--md {
+    background-color: ${(props) =>
+      props.isTop ? 'none' : `${GlobalStyles.colors.white}`};
     box-sizing: border-box;
     display: none;
+    padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
     position: absolute;
+    transition: background-color 0.5s ease-out;
     width: 100%;
     .navbar--md__left {
       align-items: center;
       display: flex;
-      height: 100%;
+      flex-direction: row;
       justify-content: flex-start;
       width: 25%;
       a {
@@ -70,7 +74,7 @@ const StyleNav = styled.nav`
         display: flex;
         justify-content: center;
         img {
-          height: 50px;
+          height: ${(props) => (props.isTop ? '50px' : '35px')};
           width: auto;
         }
       }
@@ -90,7 +94,10 @@ const StyleNav = styled.nav`
         li {
           a,
           p {
-            color: ${GlobalStyles.colors.white};
+            color: ${(props) =>
+              props.isTop
+                ? `${GlobalStyles.colors.white}`
+                : `${GlobalStyles.colors.black}`};
             cursor: pointer;
             display: inline-block;
             font-family: titleMedium, sans-serif;
@@ -98,6 +105,7 @@ const StyleNav = styled.nav`
             padding: 0 15px;
             text-decoration: none;
             text-transform: uppercase;
+            transition: color 0.5s ease-out;
           }
           &:last-child {
             a {
@@ -143,7 +151,6 @@ const StyleNav = styled.nav`
     ${breakpoint.sm`
       display: flex;
       justify-content: space-between;
-      padding: 18px;
     `}
   }
 `
@@ -155,6 +162,8 @@ const StyleNavLinks = styled.div`
   height: 100vh;
   justify-content: center;
   left: 0;
+  min-height: 1000px;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100vw;
@@ -205,6 +214,7 @@ const StyleNavLinks = styled.div`
 `
 
 export default function NavBar() {
+  const [isTop, setIsTop] = useState(true)
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
   const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
     false
@@ -214,13 +224,23 @@ export default function NavBar() {
     toggleNavBarMdProductsSubLinks
   ] = useState(false)
 
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        setIsTop(false)
+      } else {
+        setIsTop(true)
+      }
+    })
+  })
+
   function handleSubLinkClick() {
     toggleNavBarLinks(!showNavBarLinks)
     toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)
   }
 
   return (
-    <StyleNav>
+    <StyleNav isTop={isTop}>
       <div className='navbar'>
         <div className='navbar__left'>
           <Link href='/'>
@@ -348,7 +368,13 @@ export default function NavBar() {
         <div className='navbar--md__left'>
           <Link href='/'>
             <a>
-              <img src='/images/logo-eq-works-white.png' />
+              <img
+                src={
+                  isTop
+                    ? '/images/logo-eq-works-white.png'
+                    : '/images/logo-eq-works-blue.png'
+                }
+              />
             </a>
           </Link>
         </div>
