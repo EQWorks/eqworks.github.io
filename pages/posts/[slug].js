@@ -2,8 +2,45 @@ import styled from 'styled-components'
 
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
+import * as GlobalStyles from '../../utils/style-variables'
 
 const ArticleStyled = styled.article`
+  padding: 20px;
+`
+
+const HeroStyled = styled.div`
+  text-align: center;
+  h1 {
+    font-size: 36px;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+  }
+  h2 {
+    color: ${GlobalStyles.colors.greyLight};
+    font-family: titleLight, sans-serif;
+    font-size: 20px;
+    margin: 0 auto 30px auto;
+    max-width: 600px;
+  }
+  p {
+    font-family: titleLight, sans-serif;
+    margin: 0 0 30px 0;
+  }
+`
+
+const ContentStyled = styled.div`
+  img {
+    height: auto;
+    max-width: 850px;
+  }
+  p,
+  ul {
+    margin: 0 auto 20px auto;
+    max-width: 850px;
+  }
+  strong {
+    font-family: copyMedium, sans-serif;
+  }
 `
 
 export default function PostPage({ post }) {
@@ -12,27 +49,28 @@ export default function PostPage({ post }) {
   }
   return (
     <ArticleStyled>
-      <h1>{post.title}</h1>
-      <h2>{post.excerpt}</h2>
-      <h3>
-        {post.author.name} | {post.date}
-      </h3>
-      <img src={post.ogImage.url} />
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <HeroStyled>
+        <p>{post.category}</p>
+        <h1>{post.title}</h1>
+        <h2>{post.excerpt}</h2>
+        <p>
+          {post.author} / {post.date}
+        </p>
+      </HeroStyled>
+      <ContentStyled dangerouslySetInnerHTML={{ __html: post.content }} />
     </ArticleStyled>
   )
 }
 
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
+    'slug',
     'title',
     'excerpt',
     'date',
-    'slug',
     'author',
-    'content',
-    'ogImage',
-    'coverImage'
+    'category',
+    'content'
   ])
   const content = await markdownToHtml(post.content || '')
 
