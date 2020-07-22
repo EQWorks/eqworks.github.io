@@ -19,6 +19,7 @@ const SectionStyled = styled.section`
     margin: 0 auto;
     max-width: ${GlobalStyles.width.page};
     padding: 0 20px;
+    text-transform: uppercase;
     div {
       margin: 0 0 30px 0;
       text-align: center;
@@ -35,6 +36,7 @@ const SectionStyled = styled.section`
     }
     svg {
       height: auto;
+      padding: 0 0 20px 0;
       width: 50px;
     }
   }
