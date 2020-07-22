@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import * as GlobalStyles from '../utils/style-variables'
+import { breakpoint } from '../utils/style-breakpoints'
 
 import Header from './header'
 import NavBar from './nav-bar'
@@ -12,7 +13,10 @@ const StyleContent = styled.div`
 `
 
 const NoHeroPaddingStyle = styled.div`
-  padding: ${GlobalStyles.heights.navBarMD} 0 0 0;
+  padding: 0;
+  ${breakpoint.sm`
+    padding: ${GlobalStyles.heights.navBarMD} 0 0 0;
+  `}
 `
 
 const noHeroRoutes = ['/posts/[slug]']
