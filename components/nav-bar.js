@@ -16,7 +16,7 @@ const StyleNav = styled.nav`
   .navbar {
     background-color: ${GlobalStyles.colors.white};
     display: flex;
-    height: 55px;
+    height: ${GlobalStyles.heights.navBar};
     justify-content: space-between;
     padding: 0 18px;
     ${breakpoint.sm`
@@ -56,7 +56,7 @@ const StyleNav = styled.nav`
   }
   .navbar--md {
     background-color: ${(props) =>
-      props.isTop ? 'none' : `${GlobalStyles.colors.white}`};
+      props.isTop && !props.noHero ? 'none' : `${GlobalStyles.colors.white}`};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -95,9 +95,9 @@ const StyleNav = styled.nav`
           a,
           p {
             color: ${(props) =>
-              props.isTop
-                ? `${GlobalStyles.colors.white}`
-                : `${GlobalStyles.colors.black}`};
+              props.noHero || !props.isTop
+                ? `${GlobalStyles.colors.black}`
+                : `${GlobalStyles.colors.white}`};
             cursor: pointer;
             display: inline-block;
             font-family: titleMedium, sans-serif;
@@ -213,7 +213,7 @@ const StyleNavLinks = styled.div`
   }
 `
 
-export default function NavBar() {
+export default function NavBar({ noHero }) {
   const [isTop, setIsTop] = useState(true)
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
   const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
@@ -240,7 +240,7 @@ export default function NavBar() {
   }
 
   return (
-    <StyleNav isTop={isTop}>
+    <StyleNav noHero={noHero} isTop={isTop}>
       <div className='navbar'>
         <div className='navbar__left'>
           <Link href='/'>
@@ -370,7 +370,7 @@ export default function NavBar() {
             <a>
               <img
                 src={
-                  isTop
+                  isTop && !noHero
                     ? '/images/logo-eq-works-white.png'
                     : '/images/logo-eq-works-blue.png'
                 }

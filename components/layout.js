@@ -4,12 +4,15 @@ import * as GlobalStyles from '../utils/style-variables'
 
 import Header from './header'
 import NavBar from './nav-bar'
-import NoHeroPadding from './no-hero-padding'
 import Footer from './footer'
 
 const StyleContent = styled.div`
   background-color: ${GlobalStyles.colors.white};
   flex: 1;
+`
+
+const NoHeroPaddingStyle = styled.div`
+  padding: ${GlobalStyles.heights.navBarMD} 0 0 0;
 `
 
 const noHeroRoutes = ['/posts/[slug]']
@@ -22,9 +25,7 @@ export default function Layout(props) {
       <Header />
       <StyleContent>
         <NavBar noHero={noHeroRoutes.includes(router.pathname)} />
-        {noHeroRoutes.includes(router.pathname) && (
-          <NoHeroPadding />
-        )}
+        {noHeroRoutes.includes(router.pathname) && <NoHeroPaddingStyle />}
         {props.children}
       </StyleContent>
       <Footer />

@@ -4,7 +4,6 @@ import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 
 const ArticleStyled = styled.article`
-  /* margin: 94px 0 0 0; */
 `
 
 export default function PostPage({ post }) {

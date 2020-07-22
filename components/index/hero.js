@@ -12,7 +12,7 @@ const StyleHero = styled.div`
     color: ${GlobalStyles.colors.white};
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 55px);
+    height: calc(100vh - ${GlobalStyles.heights.navBar});
     justify-content: center;
     padding: 0 20px;
     position: relative;

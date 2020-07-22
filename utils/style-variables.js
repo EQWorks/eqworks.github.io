@@ -16,7 +16,8 @@ export const colors = {
 }
 
 export const heights = {
-  navBar: '50px'
+  navBar: '55px',
+  navBarMD: '94px'
 }
 
 export const zIndexes = {
