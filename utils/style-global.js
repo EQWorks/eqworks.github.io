@@ -79,6 +79,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   p {
     font-family: copyRegular, sans-serif;
     margin: 0;

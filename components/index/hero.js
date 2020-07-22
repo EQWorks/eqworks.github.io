@@ -29,6 +29,7 @@ const SectionStyled = styled.section`
         align-items: center;
         border: 1px solid ${GlobalStyles.color.white};
         border-radius: 100%;
+        cursor: pointer;
         display: flex;
         height: 60px;
         justify-content: center;
@@ -57,19 +58,28 @@ const SectionStyled = styled.section`
     right: 0%;
     z-index: ${GlobalStyles.zIndex.indexHeroVideo};
   }
+  #scrollToLocation {
+    bottom: calc(${GlobalStyles.height.navBarScrolled} / 2);
+    opacity: 0;
+    position: absolute;
+  }
 `
 
 export default function Hero() {
+  const scrollToElement = () => {
+    document.getElementById('scrollToLocation').scrollIntoView()
+  }
   return (
     <SectionStyled>
       <div className='hero__content'>
         <h1>Powerful Results from Where People&nbsp;Go</h1>
         <p>Connect with and understand your&nbsp;audience.</p>
-        <div>↓</div>
+        <div onClick={scrollToElement}>↓</div>
       </div>
       <video autoPlay className='hero__video' muted loop>
         <source src='/video/background-people-walking.mp4' type='video/mp4' />
       </video>
+      <div id='scrollToLocation' />
     </SectionStyled>
   )
 }

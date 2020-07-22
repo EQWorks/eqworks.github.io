@@ -17,7 +17,8 @@ export const color = {
 
 export const height = {
   navBar: '55px',
-  navBarMD: '94px'
+  navBarMD: '94px',
+  navBarScrolled: '58px'
 }
 
 export const width = {
