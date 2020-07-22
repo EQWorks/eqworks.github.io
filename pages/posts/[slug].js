@@ -1,23 +1,26 @@
-import { useRouter } from 'next/router'
-import Post from '../../components/post'
+import styled from 'styled-components'
+
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 
-export default function PostPage({ post, morePosts, preview }) {
-  console.log(post)
+const ArticleStyled = styled.article`
+  /* margin: 94px 0 0 0; */
+`
+
+export default function PostPage({ post }) {
   if (!post) {
     return <h1>Loading...</h1>
   }
   return (
-    <article>
+    <ArticleStyled>
       <h1>{post.title}</h1>
       <h2>{post.excerpt}</h2>
       <h3>
         {post.author.name} | {post.date}
       </h3>
       <img src={post.ogImage.url} />
-      <Post content={post.content} />
-    </article>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    </ArticleStyled>
   )
 }
 
