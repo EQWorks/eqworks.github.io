@@ -5,7 +5,7 @@ export const breakpoints = {
   lg: '1200px'
 }
 
-export const colors = {
+export const color = {
   black: '#1D1D1D',
   greyBorder: '#EEF1F6',
   greyDark: '#333333',
@@ -15,12 +15,16 @@ export const colors = {
   white: '#FFFFFF'
 }
 
-export const heights = {
+export const height = {
   navBar: '55px',
   navBarMD: '94px'
 }
 
-export const zIndexes = {
+export const width = {
+  page: '1200px;'
+}
+
+export const zIndex = {
   navBar: 11,
   footer: 10,
   pageContent: 5,

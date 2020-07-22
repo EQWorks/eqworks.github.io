@@ -16,7 +16,7 @@ const HeroStyled = styled.div`
     max-width: 600px;
   }
   h2 {
-    color: ${GlobalStyles.colors.greyLight};
+    color: ${GlobalStyles.color.greyLight};
     font-family: titleLight, sans-serif;
     font-size: 20px;
     margin: 0 auto 30px auto;

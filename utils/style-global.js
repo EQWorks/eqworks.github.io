@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
 
   // ELEMENTS ===========================================================
     body {
-    background-color: ${GlobalStyles.colors.black};
+    background-color: ${GlobalStyles.color.black};
     font-family: copyRegular, sans-serif;
     font-size: 16px;
     margin: 0;
@@ -72,6 +72,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: titleBold, sans-serif;
     margin: 0;
     padding: 0;
+  }
+
+  h2 {
+    font-family: titleBold, sans-serif;
+    font-size: 2rem;
   }
 
   p {

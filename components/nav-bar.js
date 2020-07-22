@@ -12,11 +12,11 @@ const StyleNav = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: ${GlobalStyles.zIndexes.navBar};
+  z-index: ${GlobalStyles.zIndex.navBar};
   .navbar {
-    background-color: ${GlobalStyles.colors.white};
+    background-color: ${GlobalStyles.color.white};
     display: flex;
-    height: ${GlobalStyles.heights.navBar};
+    height: ${GlobalStyles.height.navBar};
     justify-content: space-between;
     padding: 0 18px;
     ${breakpoint.sm`
@@ -44,7 +44,7 @@ const StyleNav = styled.nav`
       flex-direction: column;
       justify-content: center;
       div {
-        background-color: ${GlobalStyles.colors.greyLight};
+        background-color: ${GlobalStyles.color.greyLight};
         height: 2px;
         margin: 3px 0;
         width: 25px;
@@ -56,7 +56,7 @@ const StyleNav = styled.nav`
   }
   .navbar--md {
     background-color: ${(props) =>
-      props.isTop && !props.noHero ? 'none' : `${GlobalStyles.colors.white}`};
+      props.isTop && !props.noHero ? 'none' : `${GlobalStyles.color.white}`};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -96,8 +96,8 @@ const StyleNav = styled.nav`
           p {
             color: ${(props) =>
               props.noHero || !props.isTop
-                ? `${GlobalStyles.colors.black}`
-                : `${GlobalStyles.colors.white}`};
+                ? `${GlobalStyles.color.black}`
+                : `${GlobalStyles.color.white}`};
             cursor: pointer;
             display: inline-block;
             font-family: titleMedium, sans-serif;
@@ -116,13 +116,13 @@ const StyleNav = styled.nav`
       }
     }
     .navbar--md__right__sub-links {
-      color: ${GlobalStyles.colors.white};
+      color: ${GlobalStyles.color.white};
       padding: 20px 0 0 0;
       position: absolute;
       width: 225px;
       ul {
         align-items: flex-start;
-        background-color: ${GlobalStyles.colors.black};
+        background-color: ${GlobalStyles.color.black};
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -157,7 +157,7 @@ const StyleNav = styled.nav`
 
 const StyleNavLinks = styled.div`
   align-items: flex-start;
-  background-color: ${GlobalStyles.colors.white};
+  background-color: ${GlobalStyles.color.white};
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -176,7 +176,7 @@ const StyleNavLinks = styled.div`
         padding: 0;
         a,
         p {
-          color: ${GlobalStyles.colors.greyMedium};
+          color: ${GlobalStyles.color.greyMedium};
           cursor: pointer;
           display: inline-block;
           font-family: titleMedium, sans-serif;
@@ -185,11 +185,11 @@ const StyleNavLinks = styled.div`
           text-decoration: none;
           transition: color 0.2s ease-out;
           &:hover {
-            color: ${GlobalStyles.colors.NavBarLinksListHover};
+            color: ${GlobalStyles.color.NavBarLinksListHover};
           }
         }
         li {
-          border-bottom: 1px solid ${GlobalStyles.colors.greyBorder};
+          border-bottom: 1px solid ${GlobalStyles.color.greyBorder};
         }
       }
       .navbar__links__inner__list--sub {

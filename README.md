@@ -142,6 +142,7 @@ All JavaScript must formatted to the [Prettier](https://prettier.io/) configurat
 - [remark](https://www.npmjs.com/package/remark) - Markdown processor powered by plugins part of the unified collective.
 - [remark-html](https://www.npmjs.com/package/remark-html) - Remark plugin to compile Markdown to HTML.
 - [styled-components](https://www.npmjs.com/package/styled-components) - Visual primitives for the component age.
+- [styled-icons](https://www.npmjs.com/package/styled-icons) - Icons from packs like Font Awesome, Material, Octicons, Feather, Icomoon, and Boxicons available as Styled Components.
 
 ### Development
 

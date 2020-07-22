@@ -8,14 +8,14 @@ import NavBar from './nav-bar'
 import Footer from './footer'
 
 const StyleContent = styled.div`
-  background-color: ${GlobalStyles.colors.white};
+  background-color: ${GlobalStyles.color.white};
   flex: 1;
 `
 
 const NoHeroPaddingStyle = styled.div`
   padding: 0;
   ${breakpoint.sm`
-    padding: ${GlobalStyles.heights.navBarMD} 0 0 0;
+    padding: ${GlobalStyles.height.navBarMD} 0 0 0;
   `}
 `
 

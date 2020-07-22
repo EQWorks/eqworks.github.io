@@ -8,7 +8,7 @@ const StyleFooter = styled.footer`
   color: #808080;
   font-size: 0.9em;
   position: relative;
-  z-index: ${GlobalStyles.zIndexes.footer};
+  z-index: ${GlobalStyles.zIndex.footer};
   .footer__inner {
     align-items: center;
     display: flex;
@@ -34,7 +34,7 @@ const StyleFooter = styled.footer`
       p {
         padding: 0 20px;
         &:first-child {
-          color: ${GlobalStyles.colors.white};
+          color: ${GlobalStyles.color.white};
           font-family: copyMedium, sans-serif;
           padding: 0 0 40px 0;
         }
@@ -50,7 +50,7 @@ const StyleFooter = styled.footer`
       width: 100%;
       p {
         &:first-child {
-          color: ${GlobalStyles.colors.white};
+          color: ${GlobalStyles.color.white};
           font-family: copyMedium, sans-serif;
           padding: 0 0 40px 0;
         }
@@ -77,7 +77,7 @@ const StyleFooter = styled.footer`
         }
       }
       p {
-        color: ${GlobalStyles.colors.white};
+        color: ${GlobalStyles.color.white};
         font-family: copyMedium, sans-serif;
         padding: 0 0 40px 0;
       }

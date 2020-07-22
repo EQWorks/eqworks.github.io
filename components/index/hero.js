@@ -1,24 +1,25 @@
 import styled from 'styled-components'
+
 import * as GlobalStyles from '../../utils/style-variables'
 import { breakpoint } from '../../utils/style-breakpoints'
 
-const StyleHero = styled.div`
-  background-color: ${GlobalStyles.colors.black};
+const SectionStyled = styled.section`
+  background-color: ${GlobalStyles.color.black};
   padding: 0;
   .hero__content {
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    color: ${GlobalStyles.colors.white};
+    color: ${GlobalStyles.color.white};
     display: flex;
     flex-direction: column;
-    height: calc(100vh - ${GlobalStyles.heights.navBar});
+    height: calc(100vh - ${GlobalStyles.height.navBar});
     justify-content: center;
     padding: 0 20px;
     position: relative;
     width: 100%;
     text-align: center;
-    z-index: ${GlobalStyles.zIndexes.pageContent};
+    z-index: ${GlobalStyles.zIndex.pageContent};
     ${breakpoint.sm`
       height: 100vh;
     `}
@@ -26,7 +27,7 @@ const StyleHero = styled.div`
       display: none;
       ${breakpoint.md`
         align-items: center;
-        border: 1px solid ${GlobalStyles.colors.white};
+        border: 1px solid ${GlobalStyles.color.white};
         border-radius: 100%;
         display: flex;
         height: 60px;
@@ -54,13 +55,13 @@ const StyleHero = styled.div`
     min-width: 100%;
     position: absolute;
     right: 0%;
-    z-index: ${GlobalStyles.zIndexes.indexHeroVideo};
+    z-index: ${GlobalStyles.zIndex.indexHeroVideo};
   }
 `
 
 export default function Hero() {
   return (
-    <StyleHero>
+    <SectionStyled>
       <div className='hero__content'>
         <h1>Powerful Results from Where People&nbsp;Go</h1>
         <p>Connect with and understand your&nbsp;audience.</p>
@@ -69,6 +70,6 @@ export default function Hero() {
       <video autoPlay className='hero__video' muted loop>
         <source src='/video/background-people-walking.mp4' type='video/mp4' />
       </video>
-    </StyleHero>
+    </SectionStyled>
   )
 }
