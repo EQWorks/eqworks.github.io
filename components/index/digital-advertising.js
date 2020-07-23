@@ -5,6 +5,8 @@ import * as GlobalStyles from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
+  margin: 0 auto;
+  max-width: ${GlobalStyles.width.page};
   padding: 40px 20px;
   .top {
     align-items: center;
@@ -15,9 +17,15 @@ const SectionStyled = styled.section`
     .left {
       text-align: center;
       width: 100%;
+      ${breakpoint.sm`
+        width: 33%;
+      `}
     }
     .right {
       width: 100%;
+      ${breakpoint.sm`
+        width: 66%;
+      `}
       p {
         margin: 0 0 20px 0;
       }
@@ -30,6 +38,11 @@ const SectionStyled = styled.section`
     }
   }
   .bottom {
+    ${breakpoint.sm`
+      align-items: flex-start;
+      display: flex;
+      justify-content: center;
+    `}
     a {
       background-color: ${GlobalStyles.color.NavBarLinksListHover};
       border: none;
@@ -46,8 +59,23 @@ const SectionStyled = styled.section`
         background-color: ${GlobalStyles.color.black};
       }
     }
+    div {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      ${breakpoint.sm`
+        padding: 0 20px;
+        text-align: center;
+      `}
+    }
     img {
       max-width: 200px;
+      ${breakpoint.sm`
+        height: 50px;
+        max-width: 100%;
+        width: auto;
+      `}
     }
     .grey {
       color: ${GlobalStyles.color.greyLight};

@@ -69,6 +69,7 @@ export default function Hero() {
   const scrollToElement = () => {
     document.getElementById('scrollToLocation').scrollIntoView()
   }
+
   return (
     <SectionStyled>
       <div aria-label='stock video of foot traffic' className='hero__content'>
