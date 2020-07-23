@@ -87,7 +87,10 @@ export default function ConnectedDevices() {
   return (
     <SectionStyled>
       <div className='left'>
-        <img src='images/index/connected-devices.png' />
+        <img
+          alt='abstract map of north america with a smartphone overlayed'
+          src='images/index/connected-devices.png'
+        />
       </div>
       <div className='right'>
         <div className='top'>
@@ -104,7 +107,7 @@ export default function ConnectedDevices() {
         </div>
         <div className='bottom'>
           <div>
-            <MapPin />
+            <MapPin aria-label='map pin' role='img' />
             <p>
               <span className='bold'>40,000,000</span>
               <br />
@@ -112,7 +115,7 @@ export default function ConnectedDevices() {
             </p>
           </div>
           <div>
-            <Smile />
+            <Smile aria-label='smiley face' role='img' />
             <p>
               <span className='bold'>300,000 +</span>
               <br />
@@ -120,7 +123,7 @@ export default function ConnectedDevices() {
             </p>
           </div>
           <div>
-            <HardDrive />
+            <HardDrive aria-label='hard drive disk' role='img' />
             <p>
               <span className='bold'>7 TB</span>
               <br />

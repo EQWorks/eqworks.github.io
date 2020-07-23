@@ -245,7 +245,10 @@ export default function NavBar({ noHero }) {
         <div className='navbar__left'>
           <Link href='/'>
             <a>
-              <img src='/images/logo-eq-works-square-blue.png' />
+              <img
+                alt='eq works logo'
+                src='/images/logo-eq-works-square-blue.png'
+              />
             </a>
           </Link>
         </div>
@@ -262,6 +265,7 @@ export default function NavBar({ noHero }) {
             <div className='navbar__links__inner'>
               <div className='navbar__links__inner__close'>
                 <img
+                  alt='close button'
                   onClick={() => toggleNavBarLinks(!showNavBarLinks)}
                   src='/images/icon-x-grey.png'
                 />
@@ -290,6 +294,7 @@ export default function NavBar({ noHero }) {
                         <div className='navbar__links__inner'>
                           <div className='navbar__links__inner__close'>
                             <img
+                              alt='close button'
                               onClick={() =>
                                 toggleNavBarLinks(!showNavBarLinks)
                               }
@@ -369,6 +374,7 @@ export default function NavBar({ noHero }) {
           <Link href='/'>
             <a>
               <img
+                alt='eq works logo'
                 src={
                   isTop && !noHero
                     ? '/images/logo-eq-works-white.png'

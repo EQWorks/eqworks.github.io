@@ -14,13 +14,13 @@
     "email": "creativestudio@eqworks.com",
     "url": "https://github.com/EQWorks/cs-company-website/issues"
   },
-  "homepage": "https://github.com/EQWorks/cs-company-website#readme",
+  "homepage": "https://www.eqworks.com",
   "scripts": {
     "build": "next build",
     "dev": "next",
     "start": "next start",
-    "syntax-format": "prettier --write .",
-    "syntax-check": "prettier --check ."
+    "syntax-check": "prettier --check .",
+    "syntax-format": "prettier --write ."
   },
   "dependencies": {
     "gray-matter": "^4.0.2",

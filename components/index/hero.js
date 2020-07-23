@@ -71,10 +71,16 @@ export default function Hero() {
   }
   return (
     <SectionStyled>
-      <div className='hero__content'>
+      <div aria-label='stock video of foot traffic' className='hero__content'>
         <h1>Powerful Results from Where People&nbsp;Go</h1>
         <p>Connect with and understand your&nbsp;audience.</p>
-        <div onClick={scrollToElement}>↓</div>
+        <div
+          aria-label='select this button to navigate to next section'
+          onClick={scrollToElement}
+          role='button'
+        >
+          ↓
+        </div>
       </div>
       <video autoPlay className='hero__video' muted loop>
         <source src='/video/background-people-walking.mp4' type='video/mp4' />

@@ -71,28 +71,28 @@ export default function WhyClientsUseUs() {
       </div>
       <div className='icons'>
         <div>
-          <Map />
+          <Map aria-label='generic map' role='img' />
           <p>Location behaviour</p>
         </div>
         <div>
-          <User />
+          <User aria-label='user icon' />
           <p>Audience creation</p>
         </div>
         <div>
-          <ShoppingBag />
+          <ShoppingBag aria-label='shopping bag' role='img' />
           <p>Media buying</p>
         </div>
         <div>
-          <Target />
+          <Target aria-label='target' role='img' />
           <p>Verified walk-ins</p>
         </div>
         <div>
-          <BarChart2 />
+          <BarChart2 aria-label='bar graph' role='img' />
           <p>Verified walk-ins</p>
         </div>
       </div>
       <div className='image'>
-        <div />
+        <div aria-label='person looking through a camera' role='img' />
       </div>
     </SectionStyled>
   )
