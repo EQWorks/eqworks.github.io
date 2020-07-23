@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as GlobalStyles from '../utils/style-constants'
+import * as StyleConstant from '../utils/style-constants'
 import { breakpoint } from '../utils/style-breakpoints'
 
 const StyleNav = styled.nav`
@@ -12,11 +12,11 @@ const StyleNav = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: ${GlobalStyles.zIndex.navBar};
+  z-index: ${StyleConstant.zIndex.navBar};
   .navbar {
-    background-color: ${GlobalStyles.color.white};
+    background-color: ${StyleConstant.color.white};
     display: flex;
-    height: ${GlobalStyles.height.navBar};
+    height: ${StyleConstant.height.navBar};
     justify-content: space-between;
     padding: 0 18px;
     ${breakpoint.sm`
@@ -44,7 +44,7 @@ const StyleNav = styled.nav`
       flex-direction: column;
       justify-content: center;
       div {
-        background-color: ${GlobalStyles.color.greyLight};
+        background-color: ${StyleConstant.color.greyLight};
         height: 2px;
         margin: 3px 0;
         width: 25px;
@@ -56,7 +56,7 @@ const StyleNav = styled.nav`
   }
   .navbar--md {
     background-color: ${(props) =>
-      props.isTop && !props.noHero ? 'none' : `${GlobalStyles.color.white}`};
+      props.isTop && !props.noHero ? 'none' : `${StyleConstant.color.white}`};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -96,8 +96,8 @@ const StyleNav = styled.nav`
           p {
             color: ${(props) =>
               props.noHero || !props.isTop
-                ? `${GlobalStyles.color.black}`
-                : `${GlobalStyles.color.white}`};
+                ? `${StyleConstant.color.black}`
+                : `${StyleConstant.color.white}`};
             cursor: pointer;
             display: inline-block;
             font-family: titleMedium, sans-serif;
@@ -116,13 +116,13 @@ const StyleNav = styled.nav`
       }
     }
     .navbar--md__right__sub-links {
-      color: ${GlobalStyles.color.white};
+      color: ${StyleConstant.color.white};
       padding: 20px 0 0 0;
       position: absolute;
       width: 225px;
       ul {
         align-items: flex-start;
-        background-color: ${GlobalStyles.color.black};
+        background-color: ${StyleConstant.color.black};
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -157,7 +157,7 @@ const StyleNav = styled.nav`
 
 const StyleNavLinks = styled.div`
   align-items: flex-start;
-  background-color: ${GlobalStyles.color.white};
+  background-color: ${StyleConstant.color.white};
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -176,7 +176,7 @@ const StyleNavLinks = styled.div`
         padding: 0;
         a,
         p {
-          color: ${GlobalStyles.color.greyMedium};
+          color: ${StyleConstant.color.greyMedium};
           cursor: pointer;
           display: inline-block;
           font-family: titleMedium, sans-serif;
@@ -185,11 +185,11 @@ const StyleNavLinks = styled.div`
           text-decoration: none;
           transition: color 0.2s ease-out;
           &:hover {
-            color: ${GlobalStyles.color.NavBarLinksListHover};
+            color: ${StyleConstant.color.NavBarLinksListHover};
           }
         }
         li {
-          border-bottom: 1px solid ${GlobalStyles.color.greyBorder};
+          border-bottom: 1px solid ${StyleConstant.color.greyBorder};
         }
       }
       .navbar__links__inner__list--sub {

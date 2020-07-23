@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import * as GlobalStyles from '../../utils/style-constants'
+import * as StyleConstant from '../../utils/style-constants'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
@@ -13,7 +13,7 @@ const SectionStyled = styled.section`
     max-width: 400px;
   }
   .content {
-    color: ${GlobalStyles.color.greyLight};
+    color: ${StyleConstant.color.greyLight};
     margin: 0 0 20px 0;
     max-width: 600px;
   }

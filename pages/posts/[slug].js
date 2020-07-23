@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { getPostBySlug, getAllPosts } from '../../utils/posts-api'
 import markdownToHtml from '../../utils/markdown-to-html'
-import * as GlobalStyles from '../../utils/style-constants'
+import * as StyleConstant from '../../utils/style-constants'
 
 const ArticleStyled = styled.article`
   padding: 20px;
@@ -16,7 +16,7 @@ const HeroStyled = styled.div`
     max-width: 600px;
   }
   h2 {
-    color: ${GlobalStyles.color.greyLight};
+    color: ${StyleConstant.color.greyLight};
     font-family: titleLight, sans-serif;
     font-size: 20px;
     margin: 0 auto 30px auto;

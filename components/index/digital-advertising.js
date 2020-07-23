@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import * as GlobalStyles from '../../utils/style-constants'
+import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${GlobalStyles.width.page};
+  max-width: ${StyleConstant.width.page};
   padding: 40px 20px;
   .top {
     align-items: center;
@@ -30,7 +30,7 @@ const SectionStyled = styled.section`
         margin: 0 0 20px 0;
       }
       .grey {
-        color: ${GlobalStyles.color.greyLight};
+        color: ${StyleConstant.color.greyLight};
       }
       .subtitle {
         font-family: copyBold, sans-serif;
@@ -44,9 +44,9 @@ const SectionStyled = styled.section`
       justify-content: center;
     `}
     a {
-      background-color: ${GlobalStyles.color.NavBarLinksListHover};
+      background-color: ${StyleConstant.color.NavBarLinksListHover};
       border: none;
-      color: ${GlobalStyles.color.white};
+      color: ${StyleConstant.color.white};
       cursor: pointer;
       display: inline-block;
       font-size: 0.75em;
@@ -56,7 +56,7 @@ const SectionStyled = styled.section`
       text-transform: uppercase;
       transition: all 0.25s ease-out;
       &:hover {
-        background-color: ${GlobalStyles.color.black};
+        background-color: ${StyleConstant.color.black};
       }
     }
     div {
@@ -78,7 +78,7 @@ const SectionStyled = styled.section`
       `}
     }
     .grey {
-      color: ${GlobalStyles.color.greyLight};
+      color: ${StyleConstant.color.greyLight};
       margin: 0 0 20px 0;
     }
     .title {

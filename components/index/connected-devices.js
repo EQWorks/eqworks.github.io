@@ -3,7 +3,7 @@ import { HardDrive } from '@styled-icons/feather/HardDrive'
 import { MapPin } from '@styled-icons/feather/MapPin'
 import { Smile } from '@styled-icons/feather/Smile'
 
-import * as GlobalStyles from '../../utils/style-constants'
+import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
@@ -13,7 +13,7 @@ const SectionStyled = styled.section`
     rgba(3, 78, 144, 0.9) 0%,
     rgba(25, 180, 215, 0.9) 100%
   );
-  color: ${GlobalStyles.color.white};
+  color: ${StyleConstant.color.white};
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import * as GlobalStyles from '../utils/style-constants'
+import * as StyleConstant from '../utils/style-constants'
 import { breakpoint } from '../utils/style-breakpoints'
 
 import Header from './header'
@@ -8,14 +8,14 @@ import NavBar from './nav-bar'
 import Footer from './footer'
 
 const StyleContent = styled.div`
-  background-color: ${GlobalStyles.color.white};
+  background-color: ${StyleConstant.color.white};
   flex: 1;
 `
 
 const NoHeroPaddingStyle = styled.div`
   padding: 0;
   ${breakpoint.sm`
-    padding: ${GlobalStyles.height.navBarMD} 0 0 0;
+    padding: ${StyleConstant.height.navBarMD} 0 0 0;
   `}
 `
 

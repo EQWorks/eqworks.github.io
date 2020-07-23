@@ -1,25 +1,25 @@
 import styled from 'styled-components'
 
-import * as GlobalStyles from '../../utils/style-constants'
+import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
-  background-color: ${GlobalStyles.color.black};
+  background-color: ${StyleConstant.color.black};
   padding: 0;
   .hero__content {
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    color: ${GlobalStyles.color.white};
+    color: ${StyleConstant.color.white};
     display: flex;
     flex-direction: column;
-    height: calc(100vh - ${GlobalStyles.height.navBar});
+    height: calc(100vh - ${StyleConstant.height.navBar});
     justify-content: center;
     padding: 0 20px;
     position: relative;
     width: 100%;
     text-align: center;
-    z-index: ${GlobalStyles.zIndex.pageContent};
+    z-index: ${StyleConstant.zIndex.pageContent};
     ${breakpoint.sm`
       height: 100vh;
     `}
@@ -27,7 +27,7 @@ const SectionStyled = styled.section`
       display: none;
       ${breakpoint.md`
         align-items: center;
-        border: 1px solid ${GlobalStyles.color.white};
+        border: 1px solid ${StyleConstant.color.white};
         border-radius: 100%;
         cursor: pointer;
         display: flex;
@@ -56,10 +56,10 @@ const SectionStyled = styled.section`
     min-width: 100%;
     position: absolute;
     right: 0%;
-    z-index: ${GlobalStyles.zIndex.indexHeroVideo};
+    z-index: ${StyleConstant.zIndex.indexHeroVideo};
   }
   #scrollToLocation {
-    bottom: calc(${GlobalStyles.height.navBarScrolled} / 2);
+    bottom: calc(${StyleConstant.height.navBarScrolled} / 2);
     opacity: 0;
     position: absolute;
   }

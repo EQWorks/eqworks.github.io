@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as GlobalStyles from '../utils/style-constants'
+import * as StyleConstant from '../utils/style-constants'
 import { breakpoint } from '../utils/style-breakpoints'
 
 const StyleFooter = styled.footer`
@@ -8,7 +8,7 @@ const StyleFooter = styled.footer`
   color: #808080;
   font-size: 0.9em;
   position: relative;
-  z-index: ${GlobalStyles.zIndex.footer};
+  z-index: ${StyleConstant.zIndex.footer};
   .footer__inner {
     align-items: center;
     display: flex;
@@ -34,7 +34,7 @@ const StyleFooter = styled.footer`
       p {
         padding: 0 20px;
         &:first-child {
-          color: ${GlobalStyles.color.white};
+          color: ${StyleConstant.color.white};
           font-family: copyMedium, sans-serif;
           padding: 0 0 40px 0;
         }
@@ -50,7 +50,7 @@ const StyleFooter = styled.footer`
       width: 100%;
       p {
         &:first-child {
-          color: ${GlobalStyles.color.white};
+          color: ${StyleConstant.color.white};
           font-family: copyMedium, sans-serif;
           padding: 0 0 40px 0;
         }
@@ -77,7 +77,7 @@ const StyleFooter = styled.footer`
         }
       }
       p {
-        color: ${GlobalStyles.color.white};
+        color: ${StyleConstant.color.white};
         font-family: copyMedium, sans-serif;
         padding: 0 0 40px 0;
       }

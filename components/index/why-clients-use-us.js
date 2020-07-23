@@ -5,7 +5,7 @@ import { ShoppingBag } from '@styled-icons/feather/ShoppingBag'
 import { Target } from '@styled-icons/feather/Target'
 import { BarChart2 } from '@styled-icons/feather/BarChart2'
 
-import * as GlobalStyles from '../../utils/style-constants'
+import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
@@ -17,7 +17,7 @@ const SectionStyled = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    max-width: ${GlobalStyles.width.page};
+    max-width: ${StyleConstant.width.page};
     padding: 0 20px;
     text-transform: uppercase;
     div {
