@@ -120,7 +120,7 @@ export default function Section() {
             {sliderItemAlt.map((altText, index) => (
               <div className='item' key={altText}>
                 <img
-                  alt={altText}
+                  alt={`${altText} logo`}
                   src={`/images/index/our-clients-${index + 1}.png`}
                 />
               </div>
