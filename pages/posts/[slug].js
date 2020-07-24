@@ -48,7 +48,7 @@ const ContentStyled = styled.div`
   }
 `
 
-export default function PostPage({ post }) {
+const PostPage = ({ post }) => {
   if (!post) {
     return <h1>Loading...</h1>
   }
@@ -103,3 +103,5 @@ export async function getStaticPaths() {
     fallback: false
   }
 }
+
+export default PostPage

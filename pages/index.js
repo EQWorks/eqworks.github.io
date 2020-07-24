@@ -11,7 +11,7 @@ const OurClientsNoSSR = dynamic(import('../components/index/our-clients'), {
   ssr: false
 })
 
-export default function Index() {
+const Index = () => {
   return (
     <>
       <HeroSection />
@@ -24,3 +24,5 @@ export default function Index() {
     </>
   )
 }
+
+export default Index
