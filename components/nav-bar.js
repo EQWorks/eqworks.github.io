@@ -68,7 +68,7 @@ const StyleNav = styled.nav`
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      width: 25%;
+      width: 15%;
       a {
         align-items: center;
         display: flex;
@@ -84,13 +84,14 @@ const StyleNav = styled.nav`
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      width: 75%;
+      width: 85%;
       ul {
         align-items: center;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         list-style-type: none;
+        padding: 0;
         li {
           a,
           p {
@@ -101,11 +102,16 @@ const StyleNav = styled.nav`
             cursor: pointer;
             display: inline-block;
             font-family: titleMedium, sans-serif;
-            font-size: 0.75em;
             padding: 0 15px;
             text-decoration: none;
             text-transform: uppercase;
             transition: color 0.5s ease-out;
+            ${breakpoint.sm`
+              font-size: 0.74em;
+            `}
+            ${breakpoint.md`
+              font-size: 0.8em;
+            `}
           }
           &:last-child {
             a {
@@ -390,6 +396,11 @@ const NavBar = ({ noHero }) => {
             <li>
               <Link href='/'>
                 <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/covid-19'>
+                <a>Covid-19</a>
               </Link>
             </li>
             <li
