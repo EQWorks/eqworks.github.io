@@ -5,7 +5,14 @@ import markdownToHtml from '../../utils/markdown-to-html'
 import * as StyleConstant from '../../utils/style-constants'
 
 const ArticleStyled = styled.article`
+  margin: 0 auto;
+  max-width: ${StyleConstant.width.article};
   padding: 20px;
+  hr {
+    border: 1px solid ${StyleConstant.color.greyLight};
+    margin: 20px 0;
+    max-width: ${StyleConstant.width.article};
+  }
 `
 
 const HeroStyled = styled.div`
@@ -13,14 +20,14 @@ const HeroStyled = styled.div`
   h1 {
     font-size: 36px;
     margin: 0 auto 20px auto;
-    max-width: 600px;
+    max-width: 700px;
   }
   h2 {
     color: ${StyleConstant.color.greyLight};
     font-family: titleLight, sans-serif;
     font-size: 20px;
     margin: 0 auto 30px auto;
-    max-width: 600px;
+    max-width: 700px;
   }
   p {
     font-family: titleLight, sans-serif;
@@ -31,12 +38,10 @@ const HeroStyled = styled.div`
 const ContentStyled = styled.div`
   img {
     height: auto;
-    max-width: 850px;
   }
   p,
   ul {
     margin: 0 auto 20px auto;
-    max-width: 850px;
   }
   strong {
     font-family: copyMedium, sans-serif;

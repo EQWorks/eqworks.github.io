@@ -22,6 +22,7 @@ export const height = {
 }
 
 export const width = {
+  article: '850px',
   page: '1200px;'
 }
 

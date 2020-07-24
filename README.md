@@ -34,19 +34,23 @@ author: 'EQ Works'
 category: 'Press Releases'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-**This text is bold**
+**This text will be bold**
 
-*This text is italicized.*
+*This text will be italicized*
 
-This list is important:
+The following will be a list:
+
 - First
 - Second
 - Third
 
-This is an image:
+This will be an image:
 ![image alt text](/images/posts/<YOUR_IMAGE_FILE>.jpg "Image title")
+
+This will be a divider:
+---
 ```
 
 ---

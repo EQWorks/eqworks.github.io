@@ -29,7 +29,7 @@ EQ Works (www.eqworks.com) enables businesses to understand, predict, and influe
 **ABOUT CADDLE**
 Caddle® is the largest mobile-first insights platform that rewards Canadian consumers for sharing data and engaging with brands. The Caddle data and insights marketplace is powered by the Caddle app, where consumers’ sign-up and complete research activities like answering surveys, uploading receipts and providing their opinion in exchange for cash-back rewards.
 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+---
 
 Neither the TSX-V nor its Regulation Services Provider (as that term is defined in policies of the TSX-V) accepts responsibility for the adequacy or accuracy of this release.
 
