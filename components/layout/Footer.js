@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as StyleConstant from '../utils/style-constants'
-import { breakpoint } from '../utils/style-breakpoints'
+import * as StyleConstant from '../../utils/style-constants'
+import { breakpoint } from '../../utils/style-breakpoints'
 
 const StyleFooter = styled.footer`
   background-color: #1E1E1E;
