@@ -36,6 +36,9 @@ const SectionStyled = styled.section`
     ${breakpoint.sm`
       width: 66%;
     `}
+    h2 {
+      margin: 0 0 20px 0;
+    }
     .bottom {
       align-items: center;
       display: flex;
