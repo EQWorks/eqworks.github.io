@@ -15,6 +15,7 @@ Next.js is built around the concept of pages. A page is a [React Component](http
 ## Posts
 
 This project renders [Markdown](https://en.wikipedia.org/wiki/Markdown) files as blog posts. If you are looking to add a new post, please do the following:
+
 - Create your Markdown file (feel free to use the **Markdown file starter** below), and save it to the appropriate folder: `/posts/<YOUR_MARKDOWN_FILE>.md`.
   - When naming your Markdown file, please use this convention: `YYYY-MM-DD-shortened-post-title.md`. Replace the `YYYY-MM-DD` with the publishing date of that post.
   - Ensure your Markdown file has the appropriate meta data at the top: `title, excerpt, date, author, and category`.
