@@ -1,10 +1,12 @@
-import GlobalStyle from '../utils/style-global'
+import StyleConstant from '../utils/style-global'
+
+import Layout from '../components/layout.js'
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <GlobalStyle />
+    <Layout>
+      <StyleConstant />
       <Component {...pageProps} />
-    </>
+    </Layout>
   )
 }

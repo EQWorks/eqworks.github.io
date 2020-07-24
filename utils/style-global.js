@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import * as GlobalStyles from './style-variables'
+import * as StyleConstant from './style-constants'
 
 const GlobalStyle = createGlobalStyle`
   // FONTS ==============================================================
@@ -61,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
 
   // ELEMENTS ===========================================================
     body {
-    background-color: ${GlobalStyles.colors.black};
+    background-color: ${StyleConstant.color.black};
     font-family: copyRegular, sans-serif;
     font-size: 16px;
     margin: 0;
@@ -72,6 +72,15 @@ const GlobalStyle = createGlobalStyle`
     font-family: titleBold, sans-serif;
     margin: 0;
     padding: 0;
+  }
+
+  h2 {
+    font-family: titleBold, sans-serif;
+    font-size: 2rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   p {

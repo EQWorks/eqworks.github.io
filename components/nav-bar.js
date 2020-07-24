@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as GlobalStyles from '../utils/style-variables'
+import * as StyleConstant from '../utils/style-constants'
 import { breakpoint } from '../utils/style-breakpoints'
 
 const StyleNav = styled.nav`
@@ -12,11 +12,11 @@ const StyleNav = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: ${GlobalStyles.zIndexes.navBar};
+  z-index: ${StyleConstant.zIndex.navBar};
   .navbar {
-    background-color: ${GlobalStyles.colors.white};
+    background-color: ${StyleConstant.color.white};
     display: flex;
-    height: 55px;
+    height: ${StyleConstant.height.navBar};
     justify-content: space-between;
     padding: 0 18px;
     ${breakpoint.sm`
@@ -44,7 +44,7 @@ const StyleNav = styled.nav`
       flex-direction: column;
       justify-content: center;
       div {
-        background-color: ${GlobalStyles.colors.greyLight};
+        background-color: ${StyleConstant.color.greyLight};
         height: 2px;
         margin: 3px 0;
         width: 25px;
@@ -55,14 +55,18 @@ const StyleNav = styled.nav`
     }
   }
   .navbar--md {
+    background-color: ${(props) =>
+      props.isTop && !props.noHero ? 'none' : `${StyleConstant.color.white}`};
     box-sizing: border-box;
     display: none;
+    padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
     position: absolute;
+    transition: background-color 0.5s ease-out;
     width: 100%;
     .navbar--md__left {
       align-items: center;
       display: flex;
-      height: 100%;
+      flex-direction: row;
       justify-content: flex-start;
       width: 25%;
       a {
@@ -70,7 +74,7 @@ const StyleNav = styled.nav`
         display: flex;
         justify-content: center;
         img {
-          height: 50px;
+          height: ${(props) => (props.isTop ? '50px' : '35px')};
           width: auto;
         }
       }
@@ -90,7 +94,10 @@ const StyleNav = styled.nav`
         li {
           a,
           p {
-            color: ${GlobalStyles.colors.white};
+            color: ${(props) =>
+              props.noHero || !props.isTop
+                ? `${StyleConstant.color.black}`
+                : `${StyleConstant.color.white}`};
             cursor: pointer;
             display: inline-block;
             font-family: titleMedium, sans-serif;
@@ -98,6 +105,7 @@ const StyleNav = styled.nav`
             padding: 0 15px;
             text-decoration: none;
             text-transform: uppercase;
+            transition: color 0.5s ease-out;
           }
           &:last-child {
             a {
@@ -108,13 +116,13 @@ const StyleNav = styled.nav`
       }
     }
     .navbar--md__right__sub-links {
-      color: ${GlobalStyles.colors.white};
+      color: ${StyleConstant.color.white};
       padding: 20px 0 0 0;
       position: absolute;
       width: 225px;
       ul {
         align-items: flex-start;
-        background-color: ${GlobalStyles.colors.black};
+        background-color: ${StyleConstant.color.black};
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -143,18 +151,19 @@ const StyleNav = styled.nav`
     ${breakpoint.sm`
       display: flex;
       justify-content: space-between;
-      padding: 18px;
     `}
   }
 `
 
 const StyleNavLinks = styled.div`
   align-items: flex-start;
-  background-color: ${GlobalStyles.colors.white};
+  background-color: ${StyleConstant.color.white};
   display: flex;
   height: 100vh;
   justify-content: center;
   left: 0;
+  min-height: 1000px;
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100vw;
@@ -167,7 +176,7 @@ const StyleNavLinks = styled.div`
         padding: 0;
         a,
         p {
-          color: ${GlobalStyles.colors.greyMedium};
+          color: ${StyleConstant.color.greyMedium};
           cursor: pointer;
           display: inline-block;
           font-family: titleMedium, sans-serif;
@@ -176,11 +185,11 @@ const StyleNavLinks = styled.div`
           text-decoration: none;
           transition: color 0.2s ease-out;
           &:hover {
-            color: ${GlobalStyles.colors.NavBarLinksListHover};
+            color: ${StyleConstant.color.NavBarLinksListHover};
           }
         }
         li {
-          border-bottom: 1px solid ${GlobalStyles.colors.greyBorder};
+          border-bottom: 1px solid ${StyleConstant.color.greyBorder};
         }
       }
       .navbar__links__inner__list--sub {
@@ -204,7 +213,8 @@ const StyleNavLinks = styled.div`
   }
 `
 
-export default function NavBar() {
+export default function NavBar({ noHero }) {
+  const [isTop, setIsTop] = useState(true)
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
   const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
     false
@@ -214,18 +224,31 @@ export default function NavBar() {
     toggleNavBarMdProductsSubLinks
   ] = useState(false)
 
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        setIsTop(false)
+      } else {
+        setIsTop(true)
+      }
+    })
+  })
+
   function handleSubLinkClick() {
     toggleNavBarLinks(!showNavBarLinks)
     toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)
   }
 
   return (
-    <StyleNav>
+    <StyleNav noHero={noHero} isTop={isTop}>
       <div className='navbar'>
         <div className='navbar__left'>
           <Link href='/'>
             <a>
-              <img src='/images/logo-eq-works-square-blue.png' />
+              <img
+                alt='eq works logo'
+                src='/images/logo-eq-works-square-blue.png'
+              />
             </a>
           </Link>
         </div>
@@ -242,6 +265,7 @@ export default function NavBar() {
             <div className='navbar__links__inner'>
               <div className='navbar__links__inner__close'>
                 <img
+                  alt='close button'
                   onClick={() => toggleNavBarLinks(!showNavBarLinks)}
                   src='/images/icon-x-grey.png'
                 />
@@ -270,6 +294,7 @@ export default function NavBar() {
                         <div className='navbar__links__inner'>
                           <div className='navbar__links__inner__close'>
                             <img
+                              alt='close button'
                               onClick={() =>
                                 toggleNavBarLinks(!showNavBarLinks)
                               }
@@ -348,7 +373,14 @@ export default function NavBar() {
         <div className='navbar--md__left'>
           <Link href='/'>
             <a>
-              <img src='/images/logo-eq-works-white.png' />
+              <img
+                alt='eq works logo'
+                src={
+                  isTop && !noHero
+                    ? '/images/logo-eq-works-white.png'
+                    : '/images/logo-eq-works-blue.png'
+                }
+              />
             </a>
           </Link>
         </div>

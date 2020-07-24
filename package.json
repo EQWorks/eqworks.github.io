@@ -14,13 +14,13 @@
     "email": "creativestudio@eqworks.com",
     "url": "https://github.com/EQWorks/cs-company-website/issues"
   },
-  "homepage": "https://github.com/EQWorks/cs-company-website#readme",
+  "homepage": "https://www.eqworks.com",
   "scripts": {
     "build": "next build",
     "dev": "next",
     "start": "next start",
-    "syntax-format": "prettier --write .",
-    "syntax-check": "prettier --check ."
+    "syntax-check": "prettier --check .",
+    "syntax-format": "prettier --write ."
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
@@ -28,9 +28,11 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-slick": "^0.27.0",
     "remark": "^12.0.1",
     "remark-html": "^11.0.2",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "styled-icons": "^10.11.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.7"

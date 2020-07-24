@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as GlobalStyles from '../utils/style-variables'
+import * as StyleConstant from '../utils/style-constants'
 import { breakpoint } from '../utils/style-breakpoints'
 
 const StyleFooter = styled.footer`
@@ -8,7 +8,7 @@ const StyleFooter = styled.footer`
   color: #808080;
   font-size: 0.9em;
   position: relative;
-  z-index: ${GlobalStyles.zIndexes.footer};
+  z-index: ${StyleConstant.zIndex.footer};
   .footer__inner {
     align-items: center;
     display: flex;
@@ -34,7 +34,7 @@ const StyleFooter = styled.footer`
       p {
         padding: 0 20px;
         &:first-child {
-          color: ${GlobalStyles.colors.white};
+          color: ${StyleConstant.color.white};
           font-family: copyMedium, sans-serif;
           padding: 0 0 40px 0;
         }
@@ -50,7 +50,7 @@ const StyleFooter = styled.footer`
       width: 100%;
       p {
         &:first-child {
-          color: ${GlobalStyles.colors.white};
+          color: ${StyleConstant.color.white};
           font-family: copyMedium, sans-serif;
           padding: 0 0 40px 0;
         }
@@ -77,7 +77,7 @@ const StyleFooter = styled.footer`
         }
       }
       p {
-        color: ${GlobalStyles.colors.white};
+        color: ${StyleConstant.color.white};
         font-family: copyMedium, sans-serif;
         padding: 0 0 40px 0;
       }
@@ -132,9 +132,9 @@ export default function Footer() {
         <div className='footer__inner__social'>
           <p>Find Us</p>
           <div>
-            <img src='/images/logo-twitter-grey.png' />
-            <img src='/images/logo-facebook-grey.png' />
-            <img src='/images/logo-linkedin-grey.png' />
+            <img alt='twitter icon' src='/images/logo-twitter-grey.png' />
+            <img alt='facebook icon' src='/images/logo-facebook-grey.png' />
+            <img alt='linkedin icon' src='/images/logo-linkedin-grey.png' />
           </div>
         </div>
         <div className='footer__inner__legal'>
