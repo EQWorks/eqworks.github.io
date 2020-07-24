@@ -48,7 +48,7 @@ const ContentStyled = styled.div`
   }
 `
 
-export default function PostPage({ post }) {
+const PostPage = ({ post }) => {
   if (!post) {
     return <h1>Loading...</h1>
   }
@@ -65,6 +65,21 @@ export default function PostPage({ post }) {
       <ContentStyled dangerouslySetInnerHTML={{ __html: post.content }} />
     </ArticleStyled>
   )
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug'])
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug
+        }
+      }
+    }),
+    fallback: false
+  }
 }
 
 export async function getStaticProps({ params }) {
@@ -89,17 +104,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug
-        }
-      }
-    }),
-    fallback: false
-  }
-}
+export default PostPage

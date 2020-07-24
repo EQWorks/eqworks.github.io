@@ -68,7 +68,7 @@ const StyleNav = styled.nav`
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      width: 25%;
+      width: 15%;
       a {
         align-items: center;
         display: flex;
@@ -84,13 +84,14 @@ const StyleNav = styled.nav`
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      width: 75%;
+      width: 85%;
       ul {
         align-items: center;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         list-style-type: none;
+        padding: 0;
         li {
           a,
           p {
@@ -101,11 +102,16 @@ const StyleNav = styled.nav`
             cursor: pointer;
             display: inline-block;
             font-family: titleMedium, sans-serif;
-            font-size: 0.75em;
             padding: 0 15px;
             text-decoration: none;
             text-transform: uppercase;
             transition: color 0.5s ease-out;
+            ${breakpoint.sm`
+              font-size: 0.74em;
+            `}
+            ${breakpoint.md`
+              font-size: 0.8em;
+            `}
           }
           &:last-child {
             a {
@@ -136,6 +142,7 @@ const StyleNav = styled.nav`
           width: 100%;
           a {
             box-sizing: border-box;
+            color: ${StyleConstant.color.white};
             display: inline-block;
             padding: 20px;
             width: 100%;
@@ -213,7 +220,7 @@ const StyleNavLinks = styled.div`
   }
 `
 
-export default function NavBar({ noHero }) {
+const NavBar = ({ noHero }) => {
   const [isTop, setIsTop] = useState(true)
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
   const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
@@ -234,7 +241,7 @@ export default function NavBar({ noHero }) {
     })
   })
 
-  function handleSubLinkClick() {
+  const handleSubLinkClick = () => {
     toggleNavBarLinks(!showNavBarLinks)
     toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)
   }
@@ -247,7 +254,7 @@ export default function NavBar({ noHero }) {
             <a>
               <img
                 alt='eq works logo'
-                src='/images/logo-eq-works-square-blue.png'
+                src='/images/components/logo-eq-works-square-blue.png'
               />
             </a>
           </Link>
@@ -267,7 +274,7 @@ export default function NavBar({ noHero }) {
                 <img
                   alt='close button'
                   onClick={() => toggleNavBarLinks(!showNavBarLinks)}
-                  src='/images/icon-x-grey.png'
+                  src='/images/components/icon-x-grey.png'
                 />
               </div>
               <div className='navbar__links__inner__list'>
@@ -298,7 +305,7 @@ export default function NavBar({ noHero }) {
                               onClick={() =>
                                 toggleNavBarLinks(!showNavBarLinks)
                               }
-                              src='/images/icon-x-grey.png'
+                              src='/images/components/icon-x-grey.png'
                             />
                           </div>
                           <div className='navbar__links__inner__list'>
@@ -377,8 +384,8 @@ export default function NavBar({ noHero }) {
                 alt='eq works logo'
                 src={
                   isTop && !noHero
-                    ? '/images/logo-eq-works-white.png'
-                    : '/images/logo-eq-works-blue.png'
+                    ? '/images/components/logo-eq-works-white.png'
+                    : '/images/components/logo-eq-works-blue.png'
                 }
               />
             </a>
@@ -389,6 +396,11 @@ export default function NavBar({ noHero }) {
             <li>
               <Link href='/'>
                 <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/covid-19'>
+                <a>Covid-19</a>
               </Link>
             </li>
             <li
@@ -449,3 +461,5 @@ export default function NavBar({ noHero }) {
     </StyleNav>
   )
 }
+
+export default NavBar

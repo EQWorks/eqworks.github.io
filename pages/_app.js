@@ -2,7 +2,7 @@ import StyleConstant from '../utils/style-global'
 
 import Layout from '../components/layout.js'
 
-export default function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <Layout>
       <StyleConstant />
@@ -10,3 +10,5 @@ export default function MyApp({ Component, pageProps }) {
     </Layout>
   )
 }
+
+export default App

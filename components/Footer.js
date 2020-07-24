@@ -102,7 +102,7 @@ const StyleFooter = styled.footer`
   }
 `
 
-export default function Footer() {
+const Footer = () => {
   return (
     <StyleFooter>
       <div className='footer__inner'>
@@ -132,9 +132,18 @@ export default function Footer() {
         <div className='footer__inner__social'>
           <p>Find Us</p>
           <div>
-            <img alt='twitter icon' src='/images/logo-twitter-grey.png' />
-            <img alt='facebook icon' src='/images/logo-facebook-grey.png' />
-            <img alt='linkedin icon' src='/images/logo-linkedin-grey.png' />
+            <img
+              alt='twitter icon'
+              src='/images/components/logo-twitter-grey.png'
+            />
+            <img
+              alt='facebook icon'
+              src='/images/components/logo-facebook-grey.png'
+            />
+            <img
+              alt='linkedin icon'
+              src='/images/components/logo-linkedin-grey.png'
+            />
           </div>
         </div>
         <div className='footer__inner__legal'>
@@ -153,3 +162,5 @@ export default function Footer() {
     </StyleFooter>
   )
 }
+
+export default Footer
