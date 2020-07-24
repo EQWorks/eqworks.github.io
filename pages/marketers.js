@@ -1,5 +1,15 @@
+import Hero from '../components/marketers/hero'
+import Understand from '../components/marketers/understand'
+import ServiceResults from '../components/marketers/service-results'
+
 const Marketers = () => {
-  return <h1>Marketers page.</h1>
+  return (
+    <>
+      <Hero />
+      <Understand />
+      <ServiceResults />
+    </>
+  )
 }
 
 export default Marketers
