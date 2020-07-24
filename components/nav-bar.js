@@ -136,6 +136,7 @@ const StyleNav = styled.nav`
           width: 100%;
           a {
             box-sizing: border-box;
+            color: ${StyleConstant.color.white};
             display: inline-block;
             padding: 20px;
             width: 100%;
