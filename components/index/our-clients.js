@@ -38,6 +38,7 @@ const SectionStyled = styled.section`
 
 export default function Section() {
   const sliderSettings = {
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 2000,
     dots: false,
