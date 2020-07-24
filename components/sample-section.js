@@ -5,10 +5,12 @@ import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section``
 
-export default function Section() {
+const Section = () => {
   return (
     <SectionStyled>
       <p>Hello there</p>
     </SectionStyled>
   )
 }
+
+export default Section

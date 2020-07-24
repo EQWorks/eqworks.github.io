@@ -67,6 +67,21 @@ const PostPage = ({ post }) => {
   )
 }
 
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug'])
+
+  return {
+    paths: posts.map((post) => {
+      return {
+        params: {
+          slug: post.slug
+        }
+      }
+    }),
+    fallback: false
+  }
+}
+
 export async function getStaticProps({ params }) {
   const post = getPostBySlug(params.slug, [
     'slug',
@@ -86,21 +101,6 @@ export async function getStaticProps({ params }) {
         content
       }
     }
-  }
-}
-
-export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
-
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug
-        }
-      }
-    }),
-    fallback: false
   }
 }
 

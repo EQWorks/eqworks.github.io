@@ -213,7 +213,7 @@ const StyleNavLinks = styled.div`
   }
 `
 
-export default function NavBar({ noHero }) {
+const NavBar = ({ noHero }) => {
   const [isTop, setIsTop] = useState(true)
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
   const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
@@ -234,7 +234,7 @@ export default function NavBar({ noHero }) {
     })
   })
 
-  function handleSubLinkClick() {
+  const handleSubLinkClick = () => {
     toggleNavBarLinks(!showNavBarLinks)
     toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)
   }
@@ -449,3 +449,5 @@ export default function NavBar({ noHero }) {
     </StyleNav>
   )
 }
+
+export default NavBar

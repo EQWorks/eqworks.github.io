@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-export default function Header() {
+const Header = () => {
   const pageTitle = (() => {
     const router = useRouter()
     let currentPage = ''
@@ -57,3 +57,5 @@ export default function Header() {
     </Head>
   )
 }
+
+export default Header

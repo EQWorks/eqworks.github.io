@@ -102,7 +102,7 @@ const StyleFooter = styled.footer`
   }
 `
 
-export default function Footer() {
+const Footer = () => {
   return (
     <StyleFooter>
       <div className='footer__inner'>
@@ -162,3 +162,5 @@ export default function Footer() {
     </StyleFooter>
   )
 }
+
+export default Footer

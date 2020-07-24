@@ -28,7 +28,7 @@ const SectionStyled = styled.section`
   }
 `
 
-export default function LocationBehaviour() {
+const LocationBehaviour = () => {
   return (
     <SectionStyled>
       <h2>Make moves with location behaviour</h2>
@@ -48,3 +48,5 @@ export default function LocationBehaviour() {
     </SectionStyled>
   )
 }
+
+export default LocationBehaviour
