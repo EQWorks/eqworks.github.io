@@ -1,5 +1,11 @@
+import Hero from '../components/covid-19/hero'
+
 const Covid19 = () => {
-  return <h1>Covid19 page.</h1>
+  return (
+    <>
+      <Hero />
+    </>
+  )
 }
 
 export default Covid19
