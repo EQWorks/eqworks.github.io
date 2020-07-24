@@ -247,7 +247,7 @@ export default function NavBar({ noHero }) {
             <a>
               <img
                 alt='eq works logo'
-                src='/images/logo-eq-works-square-blue.png'
+                src='/images/components/logo-eq-works-square-blue.png'
               />
             </a>
           </Link>
@@ -267,7 +267,7 @@ export default function NavBar({ noHero }) {
                 <img
                   alt='close button'
                   onClick={() => toggleNavBarLinks(!showNavBarLinks)}
-                  src='/images/icon-x-grey.png'
+                  src='/images/components/icon-x-grey.png'
                 />
               </div>
               <div className='navbar__links__inner__list'>
@@ -298,7 +298,7 @@ export default function NavBar({ noHero }) {
                               onClick={() =>
                                 toggleNavBarLinks(!showNavBarLinks)
                               }
-                              src='/images/icon-x-grey.png'
+                              src='/images/components/icon-x-grey.png'
                             />
                           </div>
                           <div className='navbar__links__inner__list'>
@@ -377,8 +377,8 @@ export default function NavBar({ noHero }) {
                 alt='eq works logo'
                 src={
                   isTop && !noHero
-                    ? '/images/logo-eq-works-white.png'
-                    : '/images/logo-eq-works-blue.png'
+                    ? '/images/components/logo-eq-works-white.png'
+                    : '/images/components/logo-eq-works-blue.png'
                 }
               />
             </a>
