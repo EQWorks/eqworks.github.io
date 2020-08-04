@@ -1,7 +1,7 @@
 [build]
   base = "/"
-  publish = ".next/"
-  command = "npm run build"
+  publish = "out/"
+  command = "next export"
   # shell exit $? = 0 to early return, thus ignore the build
   ignore = "git log -1 --pretty=%B"
 
