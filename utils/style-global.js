@@ -77,6 +77,8 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     font-family: titleBold, sans-serif;
     font-size: 2rem;
+    margin: 0;
+    padding: 0;
   }
 
   html {

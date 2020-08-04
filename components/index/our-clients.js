@@ -8,6 +8,7 @@ const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${StyleConstant.width.page};
   h2 {
+    margin: 20px 0;
     text-align: center;
   }
   .carousel {

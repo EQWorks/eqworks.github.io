@@ -92,7 +92,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const DigitalAdvertising = () => {
+const SimplifyYour = ({ title }) => {
   return (
     <SectionStyled>
       <div className='top'>
@@ -103,7 +103,7 @@ const DigitalAdvertising = () => {
           />
         </div>
         <div className='right'>
-          <h2>Simplify your digital advertising</h2>
+          <h2>Simplify your {title}</h2>
           <p className='subtitle'>
             Our product lineup means you get the best of <i>all</i> worlds – in
             one place.
@@ -171,4 +171,4 @@ const DigitalAdvertising = () => {
   )
 }
 
-export default DigitalAdvertising
+export default SimplifyYour

@@ -7,6 +7,7 @@ const SectionStyled = styled.section`
   max-width: ${StyleConstant.width.page};
   padding: 20px;
   h2 {
+    margin: 20px 0;
     text-align: center;
   }
   .video-container {

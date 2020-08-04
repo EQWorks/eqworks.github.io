@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import * as StyleConstant from '../utils/style-constants'
-import { breakpoint } from '../utils/style-breakpoints'
+import * as StyleConstant from '../../utils/style-constants'
+import { breakpoint } from '../../utils/style-breakpoints'
 
 import Header from './header'
 import NavBar from './nav-bar'

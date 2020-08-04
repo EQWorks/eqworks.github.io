@@ -5,7 +5,10 @@ import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
   ${breakpoint.sm`
-    display: none;
+    /* display: none; */
+  `}
+  ${breakpoint.md`
+    /* display: none; */
   `}
 `
 

@@ -13,6 +13,7 @@ const SectionStyled = styled.section`
     }
     h2 {
       font-size: 2em;
+      margin: 20px 0;
       ${breakpoint.sm`
         font-size: 3em;
       `}
