@@ -157,4 +157,4 @@ All JavaScript must formatted to the [Prettier](https://prettier.io/) configurat
 
 ## Contact
 
-Have any questions, concerns, or suggestions? Why not send the Creative team an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com))!
+Have any questions, concerns, or suggestions? Why not send the Creative team an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com)) :)
