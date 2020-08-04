@@ -7,6 +7,9 @@ const SectionStyled = styled.section`
   ${breakpoint.sm`
     /* display: none; */
   `}
+  ${breakpoint.md`
+    /* display: none; */
+  `}
 `
 
 const Section = () => {
