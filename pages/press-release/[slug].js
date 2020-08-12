@@ -1,9 +1,9 @@
 import ErrorPage from 'next/error'
 import Link from 'next/link'
-import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
+import { getAllEntries, getEntry } from '../../utils/contentful-api'
 import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 import Date from '../../components/shared/parse-date'
@@ -86,16 +86,14 @@ const Article = styled.div`
   }
 `
 
-const PressRelease = ({ pressRelease }) => {
+export default function PressRelease({ pressRelease }) {
   if (!pressRelease) {
     return <></>
   }
 
-  if (pressRelease.items.length !== 1) {
+  if (!pressRelease.author) {
     return <ErrorPage statusCode={404} />
   }
-
-  console.log(pressRelease)
 
   return (
     <PageStyled>
@@ -104,35 +102,23 @@ const PressRelease = ({ pressRelease }) => {
         <a className='press-releases-link'>Press Releases</a>
       </Link>
       <Article>
-        <h1>{pressRelease.items[0].fields.title}</h1>
-        <p className='excerpt'>{pressRelease.items[0].fields.excerpt}</p>
+        <h1>{pressRelease.title}</h1>
+        <p className='excerpt'>{pressRelease.excerpt}</p>
         <p className='author-date'>
-          {pressRelease.items[0].fields.author.fields.name} /{' '}
-          <Date
-            className='date'
-            dateString={pressRelease.items[0].fields.date}
-          />
+          {pressRelease.author.fields.name} /{' '}
+          <Date className='date' dateString={pressRelease.date} />
         </p>
         <div className='content'>
-          {documentToReactComponents(pressRelease.items[0].fields.content)}
+          {documentToReactComponents(pressRelease.content)}
         </div>
       </Article>
     </PageStyled>
   )
 }
 
-export default PressRelease
-
-// Contentful API: https://www.contentful.com/developers/docs/references/content-delivery-api/
 export async function getStaticProps({ params }) {
-  const pressRelease = await createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-  }).getEntries({
-    content_type: 'pressRelease',
-    'fields.slug[in]': params.slug,
-    limit: 1
-  })
+  const pressRelease = await getEntry('pressRelease', params.slug)
+
   return {
     props: {
       pressRelease
@@ -141,12 +127,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const allPressReleases = await createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-  }).getEntries({
-    content_type: 'pressRelease'
-  })
+  const allPressReleases = await getAllEntries('pressRelease')
 
   const slugArray = []
   allPressReleases.items.map((item) => {
@@ -156,6 +137,7 @@ export async function getStaticPaths() {
       }
     })
   })
+
   return {
     paths: slugArray,
     fallback: true

@@ -1,6 +1,6 @@
-import { createClient } from 'contentful'
 import styled from 'styled-components'
 
+import { getNEntries } from '../../utils/contentful-api'
 import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 import Preview from '../../components/press-releases/preview'
@@ -8,12 +8,6 @@ import Preview from '../../components/press-releases/preview'
 const SectionStyled = styled.section`
   background-color: ${StyleConstant.color.black};
   height: 100px;
-  ${breakpoint.sm`
-    /* display: none; */
-  `}
-  ${breakpoint.md`
-    /* display: none; */
-  `}
 `
 
 const ItemsStyled = styled.div`
@@ -22,26 +16,17 @@ const ItemsStyled = styled.div`
   justify-content: center;
 `
 
-const PressReleases = ({ pressReleases }) => {
-  // const slugArray = []
-  // pressReleases.items.map((item) => {
-  //   slugArray.push({
-  //     params: {
-  //       slug: item.fields.slug
-  //     }
-  //   })
-  // })
-  // console.log(slugArray)
+export default function PressReleases({ pressReleases }) {
   return (
     <>
       <SectionStyled />
       <ItemsStyled>
-        {pressReleases.items.map((item, index) => {
+        {pressReleases.map((pressRelease, index) => {
           const props = {
-            date: item.fields.date,
-            excerpt: item.fields.excerpt,
-            slug: item.fields.slug,
-            title: item.fields.title
+            date: pressRelease.fields.date,
+            excerpt: pressRelease.fields.excerpt,
+            slug: pressRelease.fields.slug,
+            title: pressRelease.fields.title
           }
           return <Preview key={index} {...props} />
         })}
@@ -50,18 +35,9 @@ const PressReleases = ({ pressReleases }) => {
   )
 }
 
-export default PressReleases
-
-// Contentful API: https://www.contentful.com/developers/docs/references/content-delivery-api/
 export async function getStaticProps() {
-  const pressReleases = await createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-  }).getEntries({
-    content_type: 'pressRelease',
-    limit: 3,
-    order: '-fields.date'
-  })
+  const pressReleases = await getNEntries('pressRelease', 4)
+
   return {
     props: {
       pressReleases
