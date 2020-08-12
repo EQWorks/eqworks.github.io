@@ -135,26 +135,6 @@ All JavaScript must formatted to the [Prettier](https://prettier.io/) configurat
 
 ---
 
-## Dependencies
-
-### Local
-
-- [gray-matter](https://www.npmjs.com/package/gray-matter) - Parse front-matter from a string or file..
-- [next](https://www.npmjs.com/package/next) - An opinionated React framework.
-- [prettier](https://www.npmjs.com/package/prettier) - Prettier is an opinionated code formatter.
-- [react](https://www.npmjs.com/package/react) - A JavaScript library for building user interfaces.
-- [react-dom](https://www.npmjs.com/package/react-dom) - React package for working with the DOM.
-- [remark](https://www.npmjs.com/package/remark) - Markdown processor powered by plugins part of the unified collective.
-- [remark-html](https://www.npmjs.com/package/remark-html) - Remark plugin to compile Markdown to HTML.
-- [styled-components](https://www.npmjs.com/package/styled-components) - Visual primitives for the component age.
-- [styled-icons](https://www.npmjs.com/package/styled-icons) - Icons from packs like Font Awesome, Material, Octicons, Feather, Icomoon, and Boxicons available as Styled Components.
-
-### Development
-
-- [babel-plugin-styled-components](https://www.npmjs.com/package/babel-plugin-styled-components) - A highly recommended supplement to the base styled-components library.
-
----
-
 ## Contact
 
 Have any questions, concerns, or suggestions? Why not send the Creative team an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com)) :)
