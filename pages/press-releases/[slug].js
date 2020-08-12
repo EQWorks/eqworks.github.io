@@ -143,7 +143,7 @@ export async function getStaticPaths() {
     paths: [
       {
         params: {
-          slug: 'eq'
+          slug: ''
         }
       }
     ],
