@@ -98,7 +98,7 @@ const PressRelease = ({ pressRelease }) => {
   return (
     <PageStyled>
       <TempPageTopPadding />
-      <Link href='/press-releases'>
+      <Link href='/press-releases/[slug]'>
         <a className='press-releases-link'>Press Releases</a>
       </Link>
       <Article>
