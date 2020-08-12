@@ -1,9 +1,9 @@
 import { createClient } from 'contentful'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../utils/style-constants'
-import { breakpoint } from '../utils/style-breakpoints'
-import Preview from '../components/press-releases/preview'
+import * as StyleConstant from '../../utils/style-constants'
+import { breakpoint } from '../../utils/style-breakpoints'
+import Preview from '../../components/press-releases/preview'
 
 const SectionStyled = styled.section`
   background-color: ${StyleConstant.color.black};

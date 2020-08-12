@@ -52,11 +52,11 @@ const Preview = ({ date, excerpt, slug, title }) => {
   return (
     <SectionStyled>
       <Date className='date' dateString={date} />
-      <Link as={`/press-releases/${slug}`} href='/press-releases/[slug]'>
+      <Link as={`/press-release/${slug}`} href='/press-release/[slug]'>
         <a className='title'>{title}</a>
       </Link>
       <p className='excerpt'>{excerpt.substring(0, 95) + '...'}</p>
-      <Link as={`/press-releases/${slug}`} href='/press-releases/[slug]'>
+      <Link as={`/press-release/${slug}`} href='/press-release/[slug]'>
         <a className='read-more'>Read More</a>
       </Link>
     </SectionStyled>
