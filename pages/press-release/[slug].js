@@ -1,5 +1,6 @@
 import ErrorPage from 'next/error'
 import Link from 'next/link'
+import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
@@ -87,6 +88,17 @@ const Article = styled.div`
 `
 
 export default function PressRelease({ pressRelease }) {
+  const dtrOptions = {
+    renderNode: {
+      [BLOCKS.EMBEDDED_ASSET]: (node) => (
+        <img
+          src={node.data?.target?.fields?.file?.url}
+          alt={node.data?.target?.fields?.title}
+        />
+      )
+    }
+  }
+
   if (!pressRelease) {
     return <></>
   }
@@ -109,7 +121,7 @@ export default function PressRelease({ pressRelease }) {
           <Date className='date' dateString={pressRelease.date} />
         </p>
         <div className='content'>
-          {documentToReactComponents(pressRelease.content)}
+          {documentToReactComponents(pressRelease.content, dtrOptions)}
         </div>
       </Article>
     </PageStyled>
