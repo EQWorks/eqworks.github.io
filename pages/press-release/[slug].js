@@ -95,6 +95,8 @@ const PressRelease = ({ pressRelease }) => {
     return <ErrorPage statusCode={404} />
   }
 
+  console.log(pressRelease)
+
   return (
     <PageStyled>
       <TempPageTopPadding />
@@ -139,14 +141,23 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          slug: ''
-        }
+  const allPressReleases = await createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+  }).getEntries({
+    content_type: 'pressRelease'
+  })
+
+  const slugArray = []
+  allPressReleases.items.map((item) => {
+    slugArray.push({
+      params: {
+        slug: item.fields.slug
       }
-    ],
+    })
+  })
+  return {
+    paths: slugArray,
     fallback: true
   }
 }

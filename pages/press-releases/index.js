@@ -23,6 +23,15 @@ const ItemsStyled = styled.div`
 `
 
 const PressReleases = ({ pressReleases }) => {
+  // const slugArray = []
+  // pressReleases.items.map((item) => {
+  //   slugArray.push({
+  //     params: {
+  //       slug: item.fields.slug
+  //     }
+  //   })
+  // })
+  // console.log(slugArray)
   return (
     <>
       <SectionStyled />
