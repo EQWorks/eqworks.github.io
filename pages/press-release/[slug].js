@@ -88,10 +88,12 @@ export default function PressRelease({ pressRelease }) {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         if (node.data.target.fields.file.contentType.includes('image')) {
-          return <img
-            src={node.data.target.fields.file.url}
-            alt={node.data.target.fields.title}
-          />
+          return (
+            <img
+              src={node.data.target.fields.file.url}
+              alt={node.data.target.fields.title}
+            />
+          )
         } else if (node.data.target.fields.file.contentType.includes('pdf')) {
           return <PDF url={node.data.target.fields.file.url} />
         }

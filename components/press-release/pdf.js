@@ -18,12 +18,7 @@ const SectionStyled = styled.div`
     margin: 10px auto 0 auto;
     max-width: 200px;
     width: 100%;
-    p {
-      font-feature-settings: 'tnum';
-      font-variant-numeric: tabular-nums;
-      text-align: center;
-      margin: 0 auto;
-    }
+
     svg {
       color: ${StyleConstant.color.black};
       cursor: pointer;
@@ -41,6 +36,12 @@ const SectionStyled = styled.div`
       &:hover {
         color: ${StyleConstant.color.greyLight};
       }
+    }
+    .page-numbers {
+      font-feature-settings: 'tnum';
+      font-variant-numeric: tabular-nums;
+      text-align: center;
+      margin: 0 auto;
     }
   }
   .link {
@@ -113,7 +114,7 @@ const PDF = ({ url }) => {
           onClick={previousPage}
           role='img'
         />
-        <p>
+        <p className='page-numbers'>
           {pageNumber} of {numPages}
         </p>
         <ChevronRight
