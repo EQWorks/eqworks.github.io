@@ -6,8 +6,9 @@ import styled from 'styled-components'
 
 import { getAllEntries, getEntry } from '../../utils/contentful-api'
 import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
 import Date from '../../components/shared/parse-date'
+
+import Carousel from '../../components/press-release/carousel'
 
 const PageStyled = styled.section`
   .press-releases-link {
@@ -28,12 +29,6 @@ const PageStyled = styled.section`
 const TempPageTopPadding = styled.div`
   background-color: ${StyleConstant.color.black};
   height: 100px;
-  ${breakpoint.sm`
-    /* display: none; */
-  `}
-  ${breakpoint.md`
-    /* display: none; */
-  `}
 `
 
 const Article = styled.div`
@@ -95,7 +90,12 @@ export default function PressRelease({ pressRelease }) {
           src={node.data?.target?.fields?.file?.url}
           alt={node.data?.target?.fields?.title}
         />
-      )
+      ),
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        if (node.data?.target?.fields?.hasOwnProperty('carousel')) {
+          return <Carousel slides={node.data.target.fields.carousel} />
+        }
+      }
     }
   }
 

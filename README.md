@@ -12,49 +12,6 @@ Next.js is built around the concept of pages. A page is a [React Component](http
 
 ---
 
-## Posts
-
-This project renders [Markdown](https://en.wikipedia.org/wiki/Markdown) files as blog posts. If you are looking to add a new post, please do the following:
-
-- Create your Markdown file (feel free to use the **Markdown file starter** below), and save it to the appropriate folder: `/posts/<YOUR_MARKDOWN_FILE>.md`.
-  - When naming your Markdown file, please use this convention: `YYYY-MM-DD-shortened-post-title.md`. Replace the `YYYY-MM-DD` with the publishing date of that post.
-  - Ensure your Markdown file has the appropriate meta data at the top: `title, excerpt, date, author, and category`.
-- Save any images relating to your Markdown file to the appropriate folder: `/images/posts/<YOUR_IMAGE_FILE>.jpg`.
-  - To reference your images, please use this convention: `![image alt text](/images/posts/<YOUR_IMAGE_FILE>.jpg "Image title")`.
-- Once the site has been updated with your Markdown file (and image files, if required), you can then visit your post at this address: `https://www.eqworks.com/posts/<shortened-post-title>`.
-
-### Markdown file starter
-
-```
----
-title: 'Your Post Title'
-excerpt: 'Short line to summarize the post'
-date: 'January 1, 2020'
-author: 'EQ Works'
-category: 'Press Releases'
----
-
-This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-**This text will be bold**
-
-*This text will be italicized*
-
-The following will be a list:
-
-- First
-- Second
-- Third
-
-This will be an image:
-![image alt text](/images/posts/<YOUR_IMAGE_FILE>.jpg "Image title")
-
-This will be a divider:
----
-```
-
----
-
 ## Development
 
 - Ensure your environment has [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/) installed.
