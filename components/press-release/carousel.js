@@ -7,8 +7,6 @@ const ImageStyled = styled.img`
 `
 
 const Carousel = ({ slides }) => {
-  console.log(Array.isArray(slides))
-
   const settings = {
     arrows: false,
     autoplay: true,

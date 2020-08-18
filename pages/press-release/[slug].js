@@ -9,6 +9,7 @@ import * as StyleConstant from '../../utils/style-constants'
 import Date from '../../components/shared/parse-date'
 
 import Carousel from '../../components/press-release/carousel'
+import PDF from '../../components/press-release/pdf'
 
 const PageStyled = styled.section`
   .press-releases-link {
@@ -85,14 +86,18 @@ const Article = styled.div`
 export default function PressRelease({ pressRelease }) {
   const dtrOptions = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => (
-        <img
-          src={node.data?.target?.fields?.file?.url}
-          alt={node.data?.target?.fields?.title}
-        />
-      ),
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        if (node.data.target.fields.file.contentType.includes('image')) {
+          return <img
+            src={node.data.target.fields.file.url}
+            alt={node.data.target.fields.title}
+          />
+        } else if (node.data.target.fields.file.contentType.includes('pdf')) {
+          return <PDF url={node.data.target.fields.file.url} />
+        }
+      },
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-        if (node.data?.target?.fields?.hasOwnProperty('carousel')) {
+        if (node.data.target.fields.hasOwnProperty('carousel')) {
           return <Carousel slides={node.data.target.fields.carousel} />
         }
       }
