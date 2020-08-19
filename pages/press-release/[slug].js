@@ -91,7 +91,12 @@ export default function PressRelease({ pressRelease }) {
         if (node.data.target.fields.file.contentType.includes('image')) {
           return <Image data={node.data.target.fields} />
         } else if (node.data.target.fields.file.contentType.includes('pdf')) {
-          return <PDF url={node.data.target.fields.file.url} />
+          return (
+            <PDF
+              id={node.data.target.sys.id}
+              url={node.data.target.fields.file.url}
+            />
+          )
         }
       },
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {

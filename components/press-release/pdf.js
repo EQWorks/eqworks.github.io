@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import Link from 'next/link'
 import { Document, Page } from 'react-pdf'
 import styled from 'styled-components'
@@ -8,6 +8,10 @@ import { ChevronRight } from '@styled-icons/feather/ChevronRight'
 import * as StyleConstant from '../../utils/style-constants'
 
 const SectionStyled = styled.div`
+  background-color: ${StyleConstant.color.white};
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 10px 0;
   max-width: 100%;
   text-align: center;
   .controls {
@@ -18,7 +22,6 @@ const SectionStyled = styled.div`
     margin: 10px auto 0 auto;
     max-width: 200px;
     width: 100%;
-
     svg {
       color: ${StyleConstant.color.black};
       cursor: pointer;
@@ -57,32 +60,51 @@ const SectionStyled = styled.div`
     position: relative;
     user-select: none;
     width: 100%;
-    .react-pdf__Page__textContent {
-      height: 100% !important;
-      max-width: 500px;
+    .react-pdf__Page__annotations {
+      height: 0;
+    }
+    .react-pdf__Page__canvas {
+      border-radius: 8px;
+      height: auto !important;
+      width: 100% !important;
     }
     .react-pdf__Page__svg {
       border-radius: 8px;
       height: auto !important;
-      width: auto !important;
+      width: 100% !important;
+      svg {
+        border-radius: 8px;
+        height: auto;
+        width: 100%;
+      }
     }
-    svg {
-      background-color: ${StyleConstant.color.white};
-      border-radius: 8px;
-      display: block;
-      height: auto;
-      max-width: 500px;
-      width: 100%;
+    .react-pdf__Page__textContent {
+      height: 0 !important;
+      width: 0 !important;
+      span {
+        font-size: 0 !important;
+      }
     }
   }
 `
 
-const PDF = ({ url }) => {
+const PDF = ({ id, url }) => {
   const [numPages, setNumPages] = useState(null)
   const [pageNumber, setPageNumber] = useState(1)
+  const [pdfHeight, setPdfHeight] = useState(0)
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', updateHeight)
+    updateHeight()
+    return () => window.removeEventListener('resize', updateHeight)
+  }, [])
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages)
+  }
+
+  const onRenderSuccess = () => {
+    updateHeight()
   }
 
   const nextPage = () => {
@@ -97,37 +119,48 @@ const PDF = ({ url }) => {
     }
   }
 
+  const updateHeight = () => {
+    const pdfHeight = document.getElementById(`pdf-${id}`).clientHeight
+    const controlsHeight = document.getElementById(`controls-${id}`)
+      .clientHeight
+    setPdfHeight(pdfHeight + controlsHeight)
+  }
+
   return (
-    <SectionStyled>
-      <Document
-        file={url}
-        onLoadError={console.error}
-        onLoadSuccess={onDocumentLoadSuccess}
-        renderMode='svg'
-      >
-        <Page pageNumber={pageNumber} />
-      </Document>
-      <div className='controls'>
-        <ChevronLeft
-          aria-label='left arrow'
-          className={pageNumber === 1 ? 'disabled' : null}
-          onClick={previousPage}
-          role='img'
-        />
-        <p className='page-numbers'>
-          {pageNumber} of {numPages}
-        </p>
-        <ChevronRight
-          aria-label='right arrow'
-          className={pageNumber === numPages ? 'disabled' : null}
-          onClick={nextPage}
-          role='img'
-        />
+    <SectionStyled style={{ height: pdfHeight }}>
+      <div id={`pdf-${id}`}>
+        <Document
+          file={url}
+          onLoadError={console.error}
+          onLoadSuccess={onDocumentLoadSuccess}
+          renderMode='svg'
+        >
+          <Page onRenderSuccess={onRenderSuccess} pageNumber={pageNumber} />
+        </Document>
       </div>
-      <div className='link'>
-        <Link href={url}>
-          <a target='_blank'>View file</a>
-        </Link>
+      <div id={`controls-${id}`}>
+        <div className='controls'>
+          <ChevronLeft
+            aria-label='left arrow'
+            className={pageNumber === 1 ? 'disabled' : null}
+            onClick={previousPage}
+            role='img'
+          />
+          <p className='page-numbers'>
+            {pageNumber} of {numPages}
+          </p>
+          <ChevronRight
+            aria-label='right arrow'
+            className={pageNumber === numPages ? 'disabled' : null}
+            onClick={nextPage}
+            role='img'
+          />
+        </div>
+        <div className='link'>
+          <Link href={url}>
+            <a target='_blank'>View file</a>
+          </Link>
+        </div>
       </div>
     </SectionStyled>
   )
