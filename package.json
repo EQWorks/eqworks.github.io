@@ -24,14 +24,16 @@
     "syntax-format": "prettier --write ."
   },
   "dependencies": {
-    "gray-matter": "^4.0.2",
+    "@contentful/rich-text-react-renderer": "^14.1.1",
+    "@contentful/rich-text-types": "^14.1.1",
+    "contentful": "^7.14.6",
+    "date-fns": "^2.15.0",
     "next": "^9.4.4",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-pdf": "^4.2.0",
     "react-slick": "^0.27.0",
-    "remark": "^12.0.1",
-    "remark-html": "^11.0.2",
     "styled-components": "^5.0.1",
     "styled-icons": "^10.11.0"
   },
