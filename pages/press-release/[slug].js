@@ -10,7 +10,9 @@ import Date from '../../components/shared/parse-date'
 
 import Carousel from '../../components/press-release/carousel'
 import Image from '../../components/press-release/image'
+import ImageExternal from '../../components/press-release/image-external'
 import PDF from '../../components/press-release/pdf'
+import YouTubeVideo from '../../components/press-release/youtube-video'
 
 const PageStyled = styled.section`
   .press-releases-link {
@@ -100,8 +102,12 @@ export default function PressRelease({ pressRelease }) {
         }
       },
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-        if (node.data.target.fields.hasOwnProperty('carousel')) {
+        if (node.data.target.sys.contentType.sys.id === 'externalImage') {
+          return <ImageExternal data={node.data.target.fields} />
+        } else if (node.data.target.sys.contentType.sys.id === 'carousel') {
           return <Carousel slides={node.data.target.fields.carousel} />
+        } else if (node.data.target.sys.contentType.sys.id === 'youTubeVideo') {
+          return <YouTubeVideo data={node.data.target.fields} />
         }
       }
     }

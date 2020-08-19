@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { Document, Page } from 'react-pdf'
 import styled from 'styled-components'
@@ -93,7 +93,7 @@ const PDF = ({ id, url }) => {
   const [pageNumber, setPageNumber] = useState(1)
   const [pdfHeight, setPdfHeight] = useState(0)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.addEventListener('resize', updateHeight)
     updateHeight()
     return () => window.removeEventListener('resize', updateHeight)
