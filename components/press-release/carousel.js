@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const ImageStyled = styled.img`
   margin: 0 auto;
+  max-width: 100%;
 `
 
 const Carousel = ({ slides }) => {
@@ -36,7 +37,11 @@ const Carousel = ({ slides }) => {
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index}>
-            <ImageStyled alt={slide.fields.title} src={slide.fields.file.url} />
+            <ImageStyled
+              alt={slide.fields.title}
+              style={{ width: slides[index].fields.file.details.image.width }}
+              src={slide.fields.file.url}
+            />
           </div>
         ))}
       </Slider>
