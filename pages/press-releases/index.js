@@ -36,7 +36,7 @@ export default function PressReleases({ pressReleases }) {
 }
 
 export async function getStaticProps() {
-  const pressReleases = await getNEntries('pressRelease', 4)
+  const pressReleases = await getNEntries('pressRelease', 3)
 
   return {
     props: {

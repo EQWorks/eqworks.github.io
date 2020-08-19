@@ -9,6 +9,7 @@ import * as StyleConstant from '../../utils/style-constants'
 import Date from '../../components/shared/parse-date'
 
 import Carousel from '../../components/press-release/carousel'
+import Image from '../../components/press-release/image'
 import PDF from '../../components/press-release/pdf'
 
 const PageStyled = styled.section`
@@ -88,12 +89,7 @@ export default function PressRelease({ pressRelease }) {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         if (node.data.target.fields.file.contentType.includes('image')) {
-          return (
-            <img
-              src={node.data.target.fields.file.url}
-              alt={node.data.target.fields.title}
-            />
-          )
+          return <Image data={node.data.target.fields} />
         } else if (node.data.target.fields.file.contentType.includes('pdf')) {
           return <PDF url={node.data.target.fields.file.url} />
         }
