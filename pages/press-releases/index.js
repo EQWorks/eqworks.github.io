@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
-import { getNEntries } from '../../utils/contentful-api'
+import { getNEntries } from '../../api/contentful'
 
 const Preview = dynamic(() => import('../../components/press-releases/preview'))
 

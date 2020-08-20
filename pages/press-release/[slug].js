@@ -5,7 +5,8 @@ import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
-import { getAllEntries, getEntry } from '../../utils/contentful-api'
+import { getAllEntries, getEntry } from '../../api/contentful'
+
 import Date from '../../components/shared/parse-date'
 
 const Carousel = dynamic(() =>
