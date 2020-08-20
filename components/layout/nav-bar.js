@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
+import ImgWebP from '../shared/img-webp'
+
 const StyleNav = styled.nav`
   align-items: center;
   box-sizing: border-box;
@@ -251,9 +253,10 @@ const NavBar = ({ noHero }) => {
         <div className='navbar__left'>
           <Link href='/'>
             <a>
-              <img
+              <ImgWebP
                 alt='eq works logo'
-                src='/images/components/logo-eq-works-square-blue.png'
+                fallback='/images/components/fallback/logo-eq-works-square-blue.png'
+                src='/images/components/logo-eq-works-square-blue.webp'
               />
             </a>
           </Link>
@@ -270,10 +273,11 @@ const NavBar = ({ noHero }) => {
           <StyleNavLinks>
             <div className='navbar__links__inner'>
               <div className='navbar__links__inner__close'>
-                <img
+                <ImgWebP
                   alt='close button'
+                  fallback='/images/components/fallback/icon-x-grey.png'
                   onClick={() => toggleNavBarLinks(!showNavBarLinks)}
-                  src='/images/components/icon-x-grey.png'
+                  src='/images/components/icon-x-grey.webp'
                 />
               </div>
               <div className='navbar__links__inner__list'>
@@ -299,12 +303,13 @@ const NavBar = ({ noHero }) => {
                       <StyleNavLinks>
                         <div className='navbar__links__inner'>
                           <div className='navbar__links__inner__close'>
-                            <img
+                            <ImgWebP
                               alt='close button'
+                              fallback='/images/components/fallback/icon-x-grey.png'
                               onClick={() =>
                                 toggleNavBarLinks(!showNavBarLinks)
                               }
-                              src='/images/components/icon-x-grey.png'
+                              src='/images/components/icon-x-grey.webp'
                             />
                           </div>
                           <div className='navbar__links__inner__list'>
@@ -379,12 +384,17 @@ const NavBar = ({ noHero }) => {
         <div className='navbar--md__left'>
           <Link href='/'>
             <a>
-              <img
+              <ImgWebP
                 alt='eq works logo'
+                fallback={
+                  isTop && !noHero
+                    ? '/images/components/fallback/logo-eq-works-white.png'
+                    : '/images/components/fallback/logo-eq-works-blue.png'
+                }
                 src={
                   isTop && !noHero
-                    ? '/images/components/logo-eq-works-white.png'
-                    : '/images/components/logo-eq-works-blue.png'
+                    ? '/images/components/logo-eq-works-white.webp'
+                    : '/images/components/logo-eq-works-blue.webp'
                 }
               />
             </a>

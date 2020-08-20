@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import ImgWebP from '../shared/img-webp'
+
 const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.page};
@@ -56,9 +58,10 @@ const Section = () => {
         </p>
       </div>
       <div className='right'>
-        <img
+        <ImgWebP
           alt='people working together at a table'
-          src='/images/marketers/serice-results.jpg'
+          fallback='/images/marketers/fallback/serice-results.jpg'
+          src='/images/marketers/serice-results.webp'
         />
       </div>
     </SectionStyled>

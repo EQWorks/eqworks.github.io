@@ -42,7 +42,7 @@ const SectionStyled = styled.section`
     padding: 40px 0 0 0;
     width: 100%;
     div {
-      background-image: url('/images/index/why-clients-use-us.jpg');
+      background-image: url('/images/index/fallback/why-clients-use-us.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;

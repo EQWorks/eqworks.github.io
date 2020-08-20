@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
+import ImgWebP from '../shared/img-webp'
+
 const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.page};
@@ -96,9 +98,10 @@ const SimplifyYour = ({ title }) => {
     <SectionStyled>
       <div className='top'>
         <div className='left'>
-          <img
+          <ImgWebP
             alt='abstract cube icon'
-            src='/images/index/digital-advertising-cube.png'
+            fallback='/images/index/fallback/digital-advertising-cube.png'
+            src='/images/index/digital-advertising-cube.webp'
           />
         </div>
         <div className='right'>
@@ -121,9 +124,10 @@ const SimplifyYour = ({ title }) => {
       </div>
       <div className='bottom'>
         <div>
-          <img
+          <ImgWebP
             alt='atom logo'
-            src='/images/index/digital-advertising-atom.png'
+            fallback='/images/index/fallback/digital-advertising-atom.png'
+            src='/images/index/digital-advertising-atom.webp'
           />
           <p className='title'>Media buying</p>
           <p className='grey'>
@@ -136,9 +140,10 @@ const SimplifyYour = ({ title }) => {
           </Link>
         </div>
         <div>
-          <img
+          <ImgWebP
             alt='locus logo'
-            src='/images/index/digital-advertising-locus.png'
+            fallback='/images/index/fallback/digital-advertising-locus.png'
+            src='/images/index/digital-advertising-locus.webp'
           />
           <p className='title'>Audience creation</p>
           <p className='grey'>
@@ -151,9 +156,10 @@ const SimplifyYour = ({ title }) => {
           </Link>
         </div>
         <div>
-          <img
+          <ImgWebP
             alt='visilink logo'
-            src='/images/index/digital-advertising-visilink.png'
+            fallback='/images/index/fallback/digital-advertising-visilink.png'
+            src='/images/index/digital-advertising-visilink.webp'
           />
           <p className='title'>Ad verification</p>
           <p className='grey'>

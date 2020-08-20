@@ -3,6 +3,8 @@ import { HardDrive } from '@styled-icons/feather/HardDrive'
 import { MapPin } from '@styled-icons/feather/MapPin'
 import { Smile } from '@styled-icons/feather/Smile'
 
+import ImgWebP from '../shared/img-webp'
+
 const SectionStyled = styled.section`
   align-items: center;
   background: linear-gradient(
@@ -88,9 +90,10 @@ const ConnectedDevices = () => {
   return (
     <SectionStyled>
       <div className='left'>
-        <img
+        <ImgWebP
           alt='abstract map of north america with a smartphone overlayed'
-          src='images/index/connected-devices.png'
+          fallback='images/index/fallback/connected-devices.png'
+          src='images/index/connected-devices.webp'
         />
       </div>
       <div className='right'>

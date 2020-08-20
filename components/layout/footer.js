@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
+import ImgWebP from '../shared/img-webp'
+
 const StyleFooter = styled.footer`
   background-color: #1e1e1e;
   color: #808080;
@@ -134,17 +136,20 @@ const Footer = () => {
         <div className='footer__inner__social'>
           <p>Find Us</p>
           <div>
-            <img
+            <ImgWebP
               alt='twitter icon'
-              src='/images/components/logo-twitter-grey.png'
+              fallback='/images/components/fallback/logo-twitter-grey.png'
+              src='/images/components/logo-twitter-grey.webp'
             />
-            <img
+            <ImgWebP
               alt='facebook icon'
-              src='/images/components/logo-facebook-grey.png'
+              fallback='/images/components/fallback/logo-facebook-grey.png'
+              src='/images/components/logo-facebook-grey.webp'
             />
-            <img
+            <ImgWebP
               alt='linkedin icon'
-              src='/images/components/logo-linkedin-grey.png'
+              fallback='/images/components/fallback/logo-linkedin-grey.png'
+              src='/images/components/logo-linkedin-grey.webp'
             />
           </div>
         </div>

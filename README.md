@@ -68,6 +68,20 @@ Order element attributes alphabetically. For example:
 <Smile aria-label='smiley face' role='img' />
 ```
 
+### Images
+
+This website uses [WebP](https://developers.google.com/speed/webp) as the image format for better compression and sending less down the wire to clients. We do keep a "fallback" file of every image to ensure maximum browser compatibility. See the `ImgWebP` component located in `/components/shared/img-webp.js` for how it works.
+
+To convert any image type (`.png`, `.jpg`, etc.) to the `.webp` format, you can do the following (or follow [this tutorial](https://www.smashingmagazine.com/2018/07/converting-images-to-webp/#:~:text=To%20export%20an%20image%20to,WEBP%E2%80%9D%20in%20the%20format%20dropdown.&text=After%20you%20make%20your%20selection,image%20to%20be%20exported%20to)):
+
+1. Install the webp CLI, run `brew install webp`.
+2. Convert the images you want:
+
+- Update one image: `cwebp -q 75 image.png -o image.webp`
+  - The `-q 75` flag refers to `quality of 75%`. Meaning the image will be reduced by 25% in "perceivable" quality.
+- Update all images of same extension in a directory, run `find ./ -type f -name '*.png' -exec sh -c 'cwebp -q 75 $1 -o "${1%.png}.webp"' _ {} \;`.
+  - Change `.png` in both instances to any other image format (e.g. `.jpg`).
+
 ### Styling
 
 - Styling for this website is using [styled-component](https://styled-components.com/).

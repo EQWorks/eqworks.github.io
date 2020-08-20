@@ -4,7 +4,7 @@ const SectionStyled = styled.section`
   align-items: center;
   color: ${({ theme }) => theme.color.black};
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('/images/marketers/hero.jpg');
+    url('/images/marketers/fallback/hero.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;

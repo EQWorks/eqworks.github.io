@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import ImgWebP from '../shared/img-webp'
+
 const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.article};
@@ -44,9 +46,10 @@ const Article = () => {
   return (
     <SectionStyled>
       <div className='header'>
-        <img
+        <ImgWebP
           alt='headshot of geoff rotstein'
-          src='/images/covid-19/article.jpg'
+          fallback='/images/covid-19/fallback/article.jpg'
+          src='/images/covid-19/article.webp'
         />
         <p>
           Geoffrey Rotstein
