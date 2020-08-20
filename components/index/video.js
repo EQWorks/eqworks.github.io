@@ -42,7 +42,7 @@ const Video = (props) => {
           height='315'
           loading='lazy'
           width='560'
-          src='https://www.youtube.com/embed/AgZhgUsTQfI'
+          src='https://www.youtube-nocookie.com/embed/AgZhgUsTQfI'
         ></iframe>
       </div>
     </SectionStyled>
