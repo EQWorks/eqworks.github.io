@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
+
+import ImgWebP from '../shared/img-webp'
 
 const StyleFooter = styled.footer`
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   color: #808080;
   font-size: 0.9em;
   position: relative;
-  z-index: ${StyleConstant.zIndex.footer};
+  z-index: ${({ theme }) => theme.zIndex.footer};
   .footer__inner {
     align-items: center;
     display: flex;
@@ -17,50 +17,52 @@ const StyleFooter = styled.footer`
     margin: 0 auto;
     max-width: 1400px;
     padding: 60px 20px 20px 20px;
-    ${breakpoint.xs`
+    @media ${({ theme }) => theme.breakpoint.xs} {
       padding: 60px 40px 20px 40px;
-    `}
-    ${breakpoint.sm`
+    }
+    @media ${({ theme }) => theme.breakpoint.sm} {
       padding: 60px 50px 40px 50px;
-    `}
-    ${breakpoint.lg`
+    }
+    @media ${({ theme }) => theme.breakpoint.lg} {
       align-items: flex-start;
       flex-direction: row;
       flex-wrap: wrap;
-    `}
+    }
     .footer__inner__about {
       padding: 0 0 40px 0;
       width: 100%;
       p {
         padding: 0 20px;
         &:first-child {
-          color: ${StyleConstant.color.white};
-          font-family: copyMedium, sans-serif;
+          color: ${({ theme }) => theme.color.white};
+          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.copy.medium};
           padding: 0 0 40px 0;
         }
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         box-sizing: border-box;
         padding: 0 40px 40px 0;
         width: 50%;
-      `}
+      }
     }
     .footer__inner__contact {
       padding: 0 0 40px 0;
       width: 100%;
       p {
         &:first-child {
-          color: ${StyleConstant.color.white};
-          font-family: copyMedium, sans-serif;
+          color: ${({ theme }) => theme.color.white};
+          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.copy.medium};
           padding: 0 0 40px 0;
         }
         &:last-child {
           padding: 40px 0 0 0;
         }
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         width: 25%;
-      `}
+      }
     }
     .footer__inner__social {
       padding: 0 0 40px 0;
@@ -77,13 +79,14 @@ const StyleFooter = styled.footer`
         }
       }
       p {
-        color: ${StyleConstant.color.white};
-        font-family: copyMedium, sans-serif;
+        color: ${({ theme }) => theme.color.white};
+        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.copy.medium};
         padding: 0 0 40px 0;
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         width: 25%;
-      `}
+      }
     }
     .footer__inner__legal {
       font-size: 0.8em;
@@ -91,13 +94,14 @@ const StyleFooter = styled.footer`
       width: 100%;
       a {
         color: #808080;
-        font-family: copyMedium, sans-serif;
+        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.copy.medium};
         text-decoration: none;
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         margin: 0 auto;
         max-width: 1200px;
-      `}
+      }
     }
   }
 `
@@ -132,17 +136,20 @@ const Footer = () => {
         <div className='footer__inner__social'>
           <p>Find Us</p>
           <div>
-            <img
+            <ImgWebP
               alt='twitter icon'
-              src='/images/components/logo-twitter-grey.png'
+              fallback='/images/components/fallback/logo-twitter-grey.png'
+              src='/images/components/logo-twitter-grey.webp'
             />
-            <img
+            <ImgWebP
               alt='facebook icon'
-              src='/images/components/logo-facebook-grey.png'
+              fallback='/images/components/fallback/logo-facebook-grey.png'
+              src='/images/components/logo-facebook-grey.webp'
             />
-            <img
+            <ImgWebP
               alt='linkedin icon'
-              src='/images/components/logo-linkedin-grey.png'
+              fallback='/images/components/fallback/logo-linkedin-grey.png'
+              src='/images/components/logo-linkedin-grey.webp'
             />
           </div>
         </div>

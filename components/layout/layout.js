@@ -1,22 +1,20 @@
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
 
 import Header from './header'
 import NavBar from './nav-bar'
 import Footer from './footer'
 
 const StyleContent = styled.div`
-  background-color: ${StyleConstant.color.white};
+  background-color: ${({ theme }) => theme.color.white};
   flex: 1;
 `
 
 const NoHeroPaddingStyle = styled.div`
   padding: 0;
-  ${breakpoint.sm`
-    padding: ${StyleConstant.height.navBarMD} 0 0 0;
-  `}
+  @media ${({ theme }) => theme.breakpoint.sm} {
+    padding: ${({ theme }) => theme.height.navBarMD};
+  }
 `
 
 const noHeroRoutes = ['/posts/[slug]']

@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
-
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   padding: 20px;
   h2 {
     margin: 20px 0;
@@ -38,12 +36,13 @@ const Video = (props) => {
       </h2>
       <div className='video-container'>
         <iframe
-          width='560'
-          height='315'
-          src='https://www.youtube-nocookie.com/embed/AgZhgUsTQfI'
-          frameBorder='0'
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
+          frameBorder='0'
+          height='315'
+          loading='lazy'
+          width='560'
+          src='https://www.youtube-nocookie.com/embed/AgZhgUsTQfI'
         ></iframe>
       </div>
     </SectionStyled>

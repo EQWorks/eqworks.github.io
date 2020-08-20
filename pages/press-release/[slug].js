@@ -1,22 +1,30 @@
+import dynamic from 'next/dynamic'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
 import Link from 'next/link'
 import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
-import { getAllEntries, getEntry } from '../../utils/contentful-api'
-import * as StyleConstant from '../../utils/style-constants'
+import { getAllEntries, getEntry } from '../../api/contentful'
+
 import Date from '../../components/shared/parse-date'
 
-import Carousel from '../../components/press-release/carousel'
-import Image from '../../components/press-release/image'
-import ImageExternal from '../../components/press-release/image-external'
-import PDF from '../../components/press-release/pdf'
-import YouTubeVideo from '../../components/press-release/youtube-video'
+const Carousel = dynamic(() =>
+  import('../../components/press-release/carousel')
+)
+const Image = dynamic(() => import('../../components/press-release/image'))
+const ImageExternal = dynamic(() =>
+  import('../../components/press-release/image-external')
+)
+const PDF = dynamic(() => import('../../components/press-release/pdf'))
+const YouTubeVideo = dynamic(() =>
+  import('../../components/press-release/youtube-video')
+)
 
 const PageStyled = styled.section`
   .press-releases-link {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     cursor: pointer;
     display: block;
     font-size: 0.9em;
@@ -25,40 +33,40 @@ const PageStyled = styled.section`
     text-decoration: none;
     transition: color 0.25s ease-out;
     &:hover {
-      color: ${StyleConstant.color.NavBarLinksListHover};
+      color: ${({ theme }) => theme.color.navBarLinksListHover};
     }
   }
 `
 
 const TempPageTopPadding = styled.div`
-  background-color: ${StyleConstant.color.black};
+  background-color: ${({ theme }) => theme.color.black};
   height: 100px;
 `
 
 const Article = styled.div`
-  color: ${StyleConstant.color.greyLight};
+  color: ${({ theme }) => theme.color.greyLight};
   margin: 0 auto;
-  max-width: ${StyleConstant.width.article};
+  max-width: ${({ theme }) => theme.width.article};
   padding: 0 20px 40px 20px;
   h1 {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     font-size: 2em;
     margin: 0 0 30px 0;
     text-align: center;
   }
   .author-date {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     font-size: 0.9em;
     margin: 0 0 30px 0;
     text-align: center;
   }
   .content {
     a {
-      color: ${StyleConstant.color.black};
+      color: ${({ theme }) => theme.color.black};
       text-decoration: none;
       transition: color 0.25s ease-out;
       &:hover {
-        color: ${StyleConstant.color.NavBarLinksListHover};
+        color: ${({ theme }) => theme.color.navBarLinksListHover};
       }
     }
     p {
@@ -78,7 +86,8 @@ const Article = styled.div`
     }
   }
   .excerpt {
-    font-family: copyLight, sans-serif;
+    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.copy.light};
     font-size: 1.5em;
     line-height: 1.25em;
     margin: 0 0 20px 0;
@@ -123,6 +132,9 @@ export default function PressRelease({ pressRelease }) {
 
   return (
     <PageStyled>
+      <Head>
+        <title>{pressRelease.title} | EQ Works</title>
+      </Head>
       <TempPageTopPadding />
       <Link href='/press-releases'>
         <a className='press-releases-link'>Press Releases</a>

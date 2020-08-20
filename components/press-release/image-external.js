@@ -12,7 +12,7 @@ const ImageExternal = ({ data }) => {
       <img alt={data.title} src={data.imageUrl} />
       <p>
         Source:{' '}
-        <a href={data.imageUrl} target='_blank'>
+        <a href={data.imageUrl} samesite='none' secure='true' target='_blank'>
           {data.sourceName}
         </a>
       </p>

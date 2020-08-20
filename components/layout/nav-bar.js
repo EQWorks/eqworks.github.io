@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
-import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
+
+import ImgWebP from '../shared/img-webp'
 
 const StyleNav = styled.nav`
   align-items: center;
@@ -12,16 +12,16 @@ const StyleNav = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: ${StyleConstant.zIndex.navBar};
+  z-index: ${({ theme }) => theme.zIndex.navBar};
   .navbar {
-    background-color: ${StyleConstant.color.white};
+    background-color: ${({ theme }) => theme.color.white};
     display: flex;
-    height: ${StyleConstant.height.navBar};
+    height: ${({ theme }) => theme.height.navBar};
     justify-content: space-between;
     padding: 0 18px;
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       display: none;
-    `}
+    }
     .navbar__left {
       align-items: center;
       display: flex;
@@ -44,19 +44,19 @@ const StyleNav = styled.nav`
       flex-direction: column;
       justify-content: center;
       div {
-        background-color: ${StyleConstant.color.greyLight};
+        background-color: ${({ theme }) => theme.color.greyLight};
         height: 2px;
         margin: 3px 0;
         width: 25px;
       }
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         display: none;
-      `}
+      }
     }
   }
   .navbar--md {
     background-color: ${(props) =>
-      props.isTop && !props.noHero ? 'none' : `${StyleConstant.color.white}`};
+      props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -96,22 +96,21 @@ const StyleNav = styled.nav`
           a,
           p {
             color: ${(props) =>
-              props.noHero || !props.isTop
-                ? `${StyleConstant.color.black}`
-                : `${StyleConstant.color.white}`};
+              props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
             cursor: pointer;
             display: inline-block;
-            font-family: titleMedium, sans-serif;
+            font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
+            font-weight: ${({ theme }) => theme.font.title.medium};
             padding: 0 15px;
             text-decoration: none;
             text-transform: uppercase;
             transition: color 0.5s ease-out;
-            ${breakpoint.sm`
+            @media ${({ theme }) => theme.breakpoint.sm} {
               font-size: 0.74em;
-            `}
-            ${breakpoint.md`
+            }
+            @media ${({ theme }) => theme.breakpoint.md} {
               font-size: 0.8em;
-            `}
+            }
           }
           &:last-child {
             a {
@@ -122,13 +121,13 @@ const StyleNav = styled.nav`
       }
     }
     .navbar--md__right__sub-links {
-      color: ${StyleConstant.color.white};
+      color: ${({ theme }) => theme.color.white};
       padding: 20px 0 0 0;
       position: absolute;
       width: 225px;
       ul {
         align-items: flex-start;
-        background-color: ${StyleConstant.color.black};
+        background-color: ${({ theme }) => theme.color.black};
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -142,7 +141,7 @@ const StyleNav = styled.nav`
           width: 100%;
           a {
             box-sizing: border-box;
-            color: ${StyleConstant.color.white};
+            color: ${({ theme }) => theme.color.white};
             display: inline-block;
             padding: 20px;
             width: 100%;
@@ -155,16 +154,16 @@ const StyleNav = styled.nav`
         }
       }
     }
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       display: flex;
       justify-content: space-between;
-    `}
+    }
   }
 `
 
 const StyleNavLinks = styled.div`
   align-items: flex-start;
-  background-color: ${StyleConstant.color.white};
+  background-color: ${({ theme }) => theme.color.white};
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -183,27 +182,29 @@ const StyleNavLinks = styled.div`
         padding: 0;
         a,
         p {
-          color: ${StyleConstant.color.greyMedium};
+          color: ${({ theme }) => theme.color.greyMedium};
           cursor: pointer;
           display: inline-block;
-          font-family: titleMedium, sans-serif;
+          font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.title.medium};
           font-size: 1.75em;
           padding: 20px 0;
           text-decoration: none;
           transition: color 0.2s ease-out;
           &:hover {
-            color: ${StyleConstant.color.NavBarLinksListHover};
+            color: ${({ theme }) => theme.color.navBarLinksListHover};
           }
         }
         li {
-          border-bottom: 1px solid ${StyleConstant.color.greyBorder};
+          border-bottom: 1px solid ${({ theme }) => theme.color.greyBorder};
         }
       }
       .navbar__links__inner__list--sub {
         li {
           a,
           p:not(:first-child) {
-            font-family: titleRegular, sans-serif;
+            font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
+            font-weight: ${({ theme }) => theme.font.title.regular};
             font-size: 1.5em;
           }
         }
@@ -252,9 +253,10 @@ const NavBar = ({ noHero }) => {
         <div className='navbar__left'>
           <Link href='/'>
             <a>
-              <img
+              <ImgWebP
                 alt='eq works logo'
-                src='/images/components/logo-eq-works-square-blue.png'
+                fallback='/images/components/fallback/logo-eq-works-square-blue.png'
+                src='/images/components/logo-eq-works-square-blue.webp'
               />
             </a>
           </Link>
@@ -271,10 +273,11 @@ const NavBar = ({ noHero }) => {
           <StyleNavLinks>
             <div className='navbar__links__inner'>
               <div className='navbar__links__inner__close'>
-                <img
+                <ImgWebP
                   alt='close button'
+                  fallback='/images/components/fallback/icon-x-grey.png'
                   onClick={() => toggleNavBarLinks(!showNavBarLinks)}
-                  src='/images/components/icon-x-grey.png'
+                  src='/images/components/icon-x-grey.webp'
                 />
               </div>
               <div className='navbar__links__inner__list'>
@@ -300,12 +303,13 @@ const NavBar = ({ noHero }) => {
                       <StyleNavLinks>
                         <div className='navbar__links__inner'>
                           <div className='navbar__links__inner__close'>
-                            <img
+                            <ImgWebP
                               alt='close button'
+                              fallback='/images/components/fallback/icon-x-grey.png'
                               onClick={() =>
                                 toggleNavBarLinks(!showNavBarLinks)
                               }
-                              src='/images/components/icon-x-grey.png'
+                              src='/images/components/icon-x-grey.webp'
                             />
                           </div>
                           <div className='navbar__links__inner__list'>
@@ -380,12 +384,17 @@ const NavBar = ({ noHero }) => {
         <div className='navbar--md__left'>
           <Link href='/'>
             <a>
-              <img
+              <ImgWebP
                 alt='eq works logo'
+                fallback={
+                  isTop && !noHero
+                    ? '/images/components/fallback/logo-eq-works-white.png'
+                    : '/images/components/fallback/logo-eq-works-blue.png'
+                }
                 src={
                   isTop && !noHero
-                    ? '/images/components/logo-eq-works-white.png'
-                    : '/images/components/logo-eq-works-blue.png'
+                    ? '/images/components/logo-eq-works-white.webp'
+                    : '/images/components/logo-eq-works-blue.webp'
                 }
               />
             </a>

@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
+import ImgWebP from '../shared/img-webp'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   padding: 40px 20px;
   .top {
     align-items: center;
@@ -17,15 +16,15 @@ const SectionStyled = styled.section`
     .left {
       text-align: center;
       width: 100%;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         width: 33%;
-      `}
+      }
     }
     .right {
       width: 100%;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         width: 66%;
-      `}
+      }
       h2 {
         margin: 0 0 20px 0;
       }
@@ -33,23 +32,24 @@ const SectionStyled = styled.section`
         margin: 0 0 20px 0;
       }
       .grey {
-        color: ${StyleConstant.color.greyLight};
+        color: ${({ theme }) => theme.color.greyLight};
       }
       .subtitle {
-        font-family: copyBold, sans-serif;
+        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.copy.bold};
       }
     }
   }
   .bottom {
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       align-items: flex-start;
       display: flex;
       justify-content: center;
-    `}
+    }
     a {
-      background-color: ${StyleConstant.color.NavBarLinksListHover};
+      background-color: ${({ theme }) => theme.color.navBarLinksListHover};
       border: none;
-      color: ${StyleConstant.color.white};
+      color: ${({ theme }) => theme.color.white};
       cursor: pointer;
       display: inline-block;
       font-size: 0.75em;
@@ -59,7 +59,7 @@ const SectionStyled = styled.section`
       text-transform: uppercase;
       transition: all 0.25s ease-out;
       &:hover {
-        background-color: ${StyleConstant.color.black};
+        background-color: ${({ theme }) => theme.color.black};
       }
     }
     div {
@@ -67,25 +67,26 @@ const SectionStyled = styled.section`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         padding: 0 20px;
         text-align: center;
-      `}
+      }
     }
     img {
       max-width: 200px;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         height: 50px;
         max-width: 100%;
         width: auto;
-      `}
+      }
     }
     .grey {
-      color: ${StyleConstant.color.greyLight};
+      color: ${({ theme }) => theme.color.greyLight};
       margin: 0 0 20px 0;
     }
     .title {
-      font-family: copyBold, sans-serif;
+      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.copy.bold};
       margin: 20px 0;
       text-transform: uppercase;
     }
@@ -97,9 +98,10 @@ const SimplifyYour = ({ title }) => {
     <SectionStyled>
       <div className='top'>
         <div className='left'>
-          <img
+          <ImgWebP
             alt='abstract cube icon'
-            src='/images/index/digital-advertising-cube.png'
+            fallback='/images/index/fallback/digital-advertising-cube.png'
+            src='/images/index/digital-advertising-cube.webp'
           />
         </div>
         <div className='right'>
@@ -122,9 +124,10 @@ const SimplifyYour = ({ title }) => {
       </div>
       <div className='bottom'>
         <div>
-          <img
+          <ImgWebP
             alt='atom logo'
-            src='/images/index/digital-advertising-atom.png'
+            fallback='/images/index/fallback/digital-advertising-atom.png'
+            src='/images/index/digital-advertising-atom.webp'
           />
           <p className='title'>Media buying</p>
           <p className='grey'>
@@ -137,9 +140,10 @@ const SimplifyYour = ({ title }) => {
           </Link>
         </div>
         <div>
-          <img
+          <ImgWebP
             alt='locus logo'
-            src='/images/index/digital-advertising-locus.png'
+            fallback='/images/index/fallback/digital-advertising-locus.png'
+            src='/images/index/digital-advertising-locus.webp'
           />
           <p className='title'>Audience creation</p>
           <p className='grey'>
@@ -152,9 +156,10 @@ const SimplifyYour = ({ title }) => {
           </Link>
         </div>
         <div>
-          <img
+          <ImgWebP
             alt='visilink logo'
-            src='/images/index/digital-advertising-visilink.png'
+            fallback='/images/index/fallback/digital-advertising-visilink.png'
+            src='/images/index/digital-advertising-visilink.webp'
           />
           <p className='title'>Ad verification</p>
           <p className='grey'>

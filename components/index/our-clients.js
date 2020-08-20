@@ -2,11 +2,11 @@ import Head from 'next/head'
 import Slider from 'react-slick'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
+import ImgWebP from '../shared/img-webp'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   h2 {
     margin: 20px 0;
     text-align: center;
@@ -27,7 +27,7 @@ const SectionStyled = styled.section`
     padding: 40px 0 0 0;
     width: 100%;
     div {
-      background-image: url('/images/index/our-clients-background.jpg');
+      background-image: url('/images/index/fallback/our-clients-background.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -121,14 +121,16 @@ const OurClients = () => {
           <Slider {...sliderSettings}>
             {sliderItemAlt.map((altText, index) => (
               <div className='item' key={altText}>
-                <img
+                <ImgWebP
                   alt={`${altText} logo`}
-                  src={`/images/index/our-clients-${index + 1}.png`}
+                  fallback={`/images/index/fallback/our-clients-${
+                    index + 1
+                  }.png`}
+                  src={`/images/index/our-clients-${index + 1}.webp`}
                 />
               </div>
             ))}
           </Slider>
-          <img />
         </div>
       </div>
     </SectionStyled>

@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
-
 const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: 700px;
@@ -13,16 +11,18 @@ const SectionStyled = styled.section`
     max-width: 400px;
   }
   .content {
-    color: ${StyleConstant.color.greyLight};
+    color: ${({ theme }) => theme.color.greyLight};
     margin: 0 0 20px 0;
     max-width: 600px;
   }
   .footer {
-    font-family: titleBold, sans-serif;
+    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.copy.bold};
     margin: 20px 0 0 0;
   }
   .subtitle {
-    font-family: titleBold, sans-serif;
+    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.copy.bold};
     font-size: 1.5rem;
     margin: 0 0 20px 0;
   }

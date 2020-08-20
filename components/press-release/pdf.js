@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
 import { Document, Page } from 'react-pdf'
 import styled from 'styled-components'
 import { ChevronLeft } from '@styled-icons/feather/ChevronLeft'
 import { ChevronRight } from '@styled-icons/feather/ChevronRight'
 
-import * as StyleConstant from '../../utils/style-constants'
-
 const SectionStyled = styled.div`
-  background-color: ${StyleConstant.color.white};
+  background-color: ${({ theme }) => theme.color.white};
   display: flex;
   flex-direction: column;
   margin: 0 0 10px 0;
@@ -23,21 +21,21 @@ const SectionStyled = styled.div`
     max-width: 200px;
     width: 100%;
     svg {
-      color: ${StyleConstant.color.black};
+      color: ${({ theme }) => theme.color.black};
       cursor: pointer;
       height: auto;
       margin: 0 auto;
       transition: all 0.25s ease-out;
       width: 40px;
       &:hover {
-        color: ${StyleConstant.color.NavBarLinksListHover};
+        color: ${({ theme }) => theme.color.navBarLinksListHover};
       }
     }
     .disabled {
-      color: ${StyleConstant.color.greyLight};
+      color: ${({ theme }) => theme.color.greyLight};
       cursor: default;
       &:hover {
-        color: ${StyleConstant.color.greyLight};
+        color: ${({ theme }) => theme.color.greyLight};
       }
     }
     .page-numbers {
@@ -53,7 +51,7 @@ const SectionStyled = styled.div`
     }
   }
   .react-pdf__Page {
-    border: 1px solid ${StyleConstant.color.greyLight};
+    border: 1px solid ${({ theme }) => theme.color.greyLight};
     border-radius: 8px;
     margin: 0 auto;
     max-width: 500px;

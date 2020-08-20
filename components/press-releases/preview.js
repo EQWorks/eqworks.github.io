@@ -1,41 +1,40 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
 import Date from '../shared/parse-date'
 
 const SectionStyled = styled.section`
   padding: 40px;
   width: 100%;
-  ${breakpoint.sm`
+  @media ${({ theme }) => theme.breakpoint.sm} {
     max-width: 250px;
     padding: 40px;
-  `}
+  }
   .excerpt {
-    color: ${StyleConstant.color.greyLight};
+    color: ${({ theme }) => theme.color.greyLight};
     margin: 0 0 10px 0;
   }
   .date {
     font-size: 0.8em;
     display: block;
-    color: ${StyleConstant.color.greyLight};
+    color: ${({ theme }) => theme.color.greyLight};
     margin: 0 0 10px 0;
   }
   .read-more {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     cursor: pointer;
     display: block;
-    font-family: copyMedium, sans-serif;
+    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.copy.medium};
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.25s ease-out;
     &:hover {
-      color: ${StyleConstant.color.NavBarLinksListHover};
+      color: ${({ theme }) => theme.color.navBarLinksListHover};
     }
   }
   .title {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     cursor: pointer;
     display: block;
     margin: 0 0 10px 0;
@@ -43,7 +42,7 @@ const SectionStyled = styled.section`
     text-transform: uppercase;
     transition: color 0.25s ease-out;
     &:hover {
-      color: ${StyleConstant.color.NavBarLinksListHover};
+      color: ${({ theme }) => theme.color.navBarLinksListHover};
     }
   }
 `

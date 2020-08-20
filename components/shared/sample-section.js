@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
-  ${breakpoint.sm`
+  color: ${({ theme }) => theme.color.white};
+  @media ${({ theme }) => theme.breakpoint.sm} {
     /* display: none; */
-  `}
-  ${breakpoint.md`
-    /* display: none; */
-  `}
+  }
 `
 
 const Section = () => {
