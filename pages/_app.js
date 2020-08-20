@@ -6,10 +6,10 @@ import Layout from '../components/layout/layout.js'
 
 const theme = {
   breakpoint: {
-    xs: '576px',
-    sm: '768px',
-    md: '992px',
-    lg: '1200px'
+    xs: '(min-width: 576px)',
+    sm: '(min-width: 768px)',
+    md: '(min-width: 992px)',
+    lg: '(min-width: 1200px)'
   },
   color: {
     black: '#1D1D1D',

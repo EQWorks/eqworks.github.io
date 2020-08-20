@@ -5,8 +5,6 @@ import { ShoppingBag } from '@styled-icons/feather/ShoppingBag'
 import { Target } from '@styled-icons/feather/Target'
 import { BarChart2 } from '@styled-icons/feather/BarChart2'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   padding: 40px 0 0 0;
   text-align: center;
@@ -23,15 +21,15 @@ const SectionStyled = styled.section`
       margin: 0 0 30px 0;
       text-align: center;
       width: 100%;
-      ${breakpoint.xs`
+      @media ${({ theme }) => theme.breakpoint.xs} {
         width: 50%;
-      `}
-      ${breakpoint.sm`
+      }
+      @media ${({ theme }) => theme.breakpoint.sm} {
         width: 33%;
-      `}
-      ${breakpoint.md`
+      }
+      @media ${({ theme }) => theme.breakpoint.md} {
         width: 20%;
-      `}
+      }
     }
     svg {
       height: auto;

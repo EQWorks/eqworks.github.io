@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.article};
@@ -13,9 +11,9 @@ const SectionStyled = styled.section`
     h2 {
       font-size: 2em;
       margin: 20px 0;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         font-size: 3em;
-      `}
+      }
     }
     p {
       margin: 0 0 20px 0;
@@ -35,9 +33,9 @@ const SectionStyled = styled.section`
     p {
       color: ${({ theme }) => theme.color.greyLight};
       padding: 0 0 0 10px;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         padding: 0 0 0 20px;
-      `}
+      }
     }
   }
 `

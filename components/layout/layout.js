@@ -1,8 +1,6 @@
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 import Header from './header'
 import NavBar from './nav-bar'
 import Footer from './footer'
@@ -14,9 +12,9 @@ const StyleContent = styled.div`
 
 const NoHeroPaddingStyle = styled.div`
   padding: 0;
-  ${breakpoint.sm`
+  @media ${({ theme }) => theme.breakpoint.sm} {
     padding: ${({ theme }) => theme.height.navBarMD};
-  `}
+  }
 `
 
 const noHeroRoutes = ['/posts/[slug]']

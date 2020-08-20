@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.page};
@@ -16,15 +14,15 @@ const SectionStyled = styled.section`
     .left {
       text-align: center;
       width: 100%;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         width: 33%;
-      `}
+      }
     }
     .right {
       width: 100%;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         width: 66%;
-      `}
+      }
       h2 {
         margin: 0 0 20px 0;
       }
@@ -41,11 +39,11 @@ const SectionStyled = styled.section`
     }
   }
   .bottom {
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       align-items: flex-start;
       display: flex;
       justify-content: center;
-    `}
+    }
     a {
       background-color: ${({ theme }) => theme.color.navBarLinksListHover};
       border: none;
@@ -67,18 +65,18 @@ const SectionStyled = styled.section`
       display: flex;
       flex-direction: column;
       justify-content: center;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         padding: 0 20px;
         text-align: center;
-      `}
+      }
     }
     img {
       max-width: 200px;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         height: 50px;
         max-width: 100%;
         width: auto;
-      `}
+      }
     }
     .grey {
       color: ${({ theme }) => theme.color.greyLight};

@@ -1,17 +1,15 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 import Date from '../shared/parse-date'
 
 const SectionStyled = styled.section`
   padding: 40px;
   width: 100%;
-  ${breakpoint.sm`
+  @media ${({ theme }) => theme.breakpoint.sm} {
     max-width: 250px;
     padding: 40px;
-  `}
+  }
   .excerpt {
     color: ${({ theme }) => theme.color.greyLight};
     margin: 0 0 10px 0;

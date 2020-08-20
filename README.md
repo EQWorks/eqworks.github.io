@@ -81,25 +81,26 @@ Order element attributes alphabetically. For example:
 .container {
   /* declaration-property: declaration-value */
   -webkit-box-shadow: none;
+  box-shadow: none;
   display: inline-block;
-  font-family: 'FontRobotoBold', sans-serif;
+  font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+  font-weight: ${({ theme }) => theme.font.copy.regular};
   text-align: center;
   a {
     text-decoration: none;
   }
   p {
-    color: $color-white;
+    color: ${({ theme }) => theme.color.white};
     &:focus {
       background-color: #790100;
-      color: $color-black;
+      color: ${({ theme }) => theme.color.black};
+    }
+    @media ${({ theme }) => theme.breakpoint.md} {
+      color: ${({ theme }) => theme.color.black};
     }
   }
-  ${breakpoint.sm`
-    font-size: 12px;
-    padding: 14px 20px;
-  `}
   .item {
-    border: 1px solid $color-grey;
+    border: 1px solid color: ${({ theme }) => theme.color.greyLight};
   }
 }
 ```

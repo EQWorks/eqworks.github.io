@@ -1,10 +1,8 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const StyleFooter = styled.footer`
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   color: #808080;
   font-size: 0.9em;
   position: relative;
@@ -17,17 +15,17 @@ const StyleFooter = styled.footer`
     margin: 0 auto;
     max-width: 1400px;
     padding: 60px 20px 20px 20px;
-    ${breakpoint.xs`
+    @media ${({ theme }) => theme.breakpoint.xs} {
       padding: 60px 40px 20px 40px;
-    `}
-    ${breakpoint.sm`
+    }
+    @media ${({ theme }) => theme.breakpoint.sm} {
       padding: 60px 50px 40px 50px;
-    `}
-    ${breakpoint.lg`
+    }
+    @media ${({ theme }) => theme.breakpoint.lg} {
       align-items: flex-start;
       flex-direction: row;
       flex-wrap: wrap;
-    `}
+    }
     .footer__inner__about {
       padding: 0 0 40px 0;
       width: 100%;
@@ -40,11 +38,11 @@ const StyleFooter = styled.footer`
           padding: 0 0 40px 0;
         }
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         box-sizing: border-box;
         padding: 0 40px 40px 0;
         width: 50%;
-      `}
+      }
     }
     .footer__inner__contact {
       padding: 0 0 40px 0;
@@ -60,9 +58,9 @@ const StyleFooter = styled.footer`
           padding: 40px 0 0 0;
         }
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         width: 25%;
-      `}
+      }
     }
     .footer__inner__social {
       padding: 0 0 40px 0;
@@ -84,9 +82,9 @@ const StyleFooter = styled.footer`
         font-weight: ${({ theme }) => theme.font.copy.medium};
         padding: 0 0 40px 0;
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         width: 25%;
-      `}
+      }
     }
     .footer__inner__legal {
       font-size: 0.8em;
@@ -98,10 +96,10 @@ const StyleFooter = styled.footer`
         font-weight: ${({ theme }) => theme.font.copy.medium};
         text-decoration: none;
       }
-      ${breakpoint.lg`
+      @media ${({ theme }) => theme.breakpoint.lg} {
         margin: 0 auto;
         max-width: 1200px;
-      `}
+      }
     }
   }
 `

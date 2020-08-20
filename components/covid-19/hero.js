@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   align-items: center;
   background-color: ${({ theme }) => theme.color.black};
@@ -15,19 +13,19 @@ const SectionStyled = styled.section`
   height: calc(50vh - ${({ theme }) => theme.height.navBar});
   justify-content: center;
   padding: 0 20px;
-  ${breakpoint.sm`
+  @media ${({ theme }) => theme.breakpoint.sm} {
     height: 100vh;
-  `}
+  }
   h1 {
     font-size: 2em;
     text-align: center;
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       font-size: 3.5em;
       max-width: 700px;
-    `}
-    ${breakpoint.md`
+    }
+    @media ${({ theme }) => theme.breakpoint.md} {
       font-size: 4.5em;
-    `}
+    }
   }
 `
 

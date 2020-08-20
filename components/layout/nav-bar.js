@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const StyleNav = styled.nav`
   align-items: center;
   box-sizing: border-box;
@@ -19,9 +17,9 @@ const StyleNav = styled.nav`
     height: ${({ theme }) => theme.height.navBar};
     justify-content: space-between;
     padding: 0 18px;
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       display: none;
-    `}
+    }
     .navbar__left {
       align-items: center;
       display: flex;
@@ -49,9 +47,9 @@ const StyleNav = styled.nav`
         margin: 3px 0;
         width: 25px;
       }
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         display: none;
-      `}
+      }
     }
   }
   .navbar--md {
@@ -105,12 +103,12 @@ const StyleNav = styled.nav`
             text-decoration: none;
             text-transform: uppercase;
             transition: color 0.5s ease-out;
-            ${breakpoint.sm`
+            @media ${({ theme }) => theme.breakpoint.sm} {
               font-size: 0.74em;
-            `}
-            ${breakpoint.md`
+            }
+            @media ${({ theme }) => theme.breakpoint.md} {
               font-size: 0.8em;
-            `}
+            }
           }
           &:last-child {
             a {
@@ -154,10 +152,10 @@ const StyleNav = styled.nav`
         }
       }
     }
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       display: flex;
       justify-content: space-between;
-    `}
+    }
   }
 `
 

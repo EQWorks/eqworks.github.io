@@ -1,25 +1,23 @@
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.page};
   padding: 20px;
-  ${breakpoint.sm`
+  @media ${({ theme }) => theme.breakpoint.sm} {
     display: flex;
-  `}
+  }
   h2 {
     margin: 0 0 20px 0;
   }
   .left {
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       padding: 0 20px 0 0;
-      width: 60%
-    `}
-    ${breakpoint.md`
-      width: 50%
-    `}
+      width: 60%;
+    }
+    @media ${({ theme }) => theme.breakpoint.md} {
+      width: 50%;
+    }
     p {
       margin: 0 auto 20px auto;
     }
@@ -31,12 +29,12 @@ const SectionStyled = styled.section`
   }
   .right {
     text-align: center;
-    ${breakpoint.sm`
-      width: 40%
-    `}
-    ${breakpoint.md`
-      width: 50%
-    `}
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      width: 40%;
+    }
+    @media ${({ theme }) => theme.breakpoint.md} {
+      width: 50%;
+    }
     img {
       height: auto;
       max-width: 500px;

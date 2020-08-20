@@ -3,8 +3,6 @@ import { HardDrive } from '@styled-icons/feather/HardDrive'
 import { MapPin } from '@styled-icons/feather/MapPin'
 import { Smile } from '@styled-icons/feather/Smile'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   align-items: center;
   background: linear-gradient(
@@ -20,9 +18,9 @@ const SectionStyled = styled.section`
   .left {
     text-align: center;
     width: 100%;
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       width: 33%;
-    `}
+    }
     img {
       height: auto;
       margin: 0 auto;
@@ -32,9 +30,9 @@ const SectionStyled = styled.section`
   }
   .right {
     width: 100%;
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       width: 66%;
-    `}
+    }
     h2 {
       margin: 0 0 20px 0;
     }
@@ -43,21 +41,21 @@ const SectionStyled = styled.section`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         justify-content: flex-start;
-      `}
+      }
       div {
         margin: 30px 0 0 0;
         text-align: center;
         width: 100%;
-        ${breakpoint.sm`
+        @media ${({ theme }) => theme.breakpoint.sm} {
           text-align: left;
           width: 33%;
-        `}
-        ${breakpoint.md`
+        }
+        @media ${({ theme }) => theme.breakpoint.md} {
           text-align: left;
           width: 25%;
-        `}
+        }
         svg {
           height: auto;
           margin: 0 0 10px 0;
@@ -71,16 +69,16 @@ const SectionStyled = styled.section`
     }
     .top {
       text-align: center;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         text-align: left;
-      `}
+      }
       p {
         margin: 0 auto;
         max-width: 400px;
-        ${breakpoint.sm`
+        @media ${({ theme }) => theme.breakpoint.sm} {
           margin: 0;
           max-width: 600px;
-        `}
+        }
       }
     }
   }

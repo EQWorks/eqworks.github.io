@@ -1,15 +1,10 @@
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   color: ${({ theme }) => theme.color.white};
-  ${breakpoint.sm`
+  @media ${({ theme }) => theme.breakpoint.sm} {
     /* display: none; */
-  `}
-  ${breakpoint.md`
-    /* display: none; */
-  `}
+  }
 `
 
 const Section = () => {

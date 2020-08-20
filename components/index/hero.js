@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-import { breakpoint } from '../../utils/style-breakpoints'
-
 const SectionStyled = styled.section`
   background-color: ${({ theme }) => theme.color.black};
   padding: 0;
@@ -19,12 +17,12 @@ const SectionStyled = styled.section`
     width: 100%;
     text-align: center;
     z-index: ${({ theme }) => theme.zIndex.pageContent};
-    ${breakpoint.sm`
+    @media ${({ theme }) => theme.breakpoint.sm} {
       height: 100vh;
-    `}
+    }
     div {
       display: none;
-      ${breakpoint.md`
+      @media ${({ theme }) => theme.breakpoint.md} {
         align-items: center;
         border: 1px solid ${({ theme }) => theme.color.white};
         border-radius: 100%;
@@ -34,14 +32,14 @@ const SectionStyled = styled.section`
         justify-content: center;
         margin: 40px 0 0 0;
         width: 60px;
-      `}
+      }
     }
     h1 {
       font-size: 3em;
       max-width: 800px;
-      ${breakpoint.sm`
+      @media ${({ theme }) => theme.breakpoint.sm} {
         font-size: 4em;
-      `}
+      }
     }
     p {
       font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;

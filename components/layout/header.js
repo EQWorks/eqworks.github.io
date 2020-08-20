@@ -30,7 +30,11 @@ const Header = () => {
       <meta name='theme-color' content='#ffffff' />
 
       {/* google fonts */}
-      <link crossOrigin href='https://fonts.gstatic.com' rel='preconnect' />
+      <link
+        crossOrigin='true'
+        href='https://fonts.gstatic.com'
+        rel='preconnect'
+      />
       <link
         as='style'
         href='https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;700&family=Montserrat:wght@400;500;700&display=swap'
