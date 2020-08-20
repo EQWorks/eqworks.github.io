@@ -36,12 +36,13 @@ const Video = (props) => {
       </h2>
       <div className='video-container'>
         <iframe
-          width='560'
-          height='315'
-          src='https://www.youtube-nocookie.com/embed/AgZhgUsTQfI'
-          frameBorder='0'
           allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
           allowFullScreen
+          frameBorder='0'
+          height='315'
+          loading='lazy'
+          width='560'
+          src='https://www.youtube.com/embed/AgZhgUsTQfI'
         ></iframe>
       </div>
     </SectionStyled>
