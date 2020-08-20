@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import ErrorPage from 'next/error'
 import Link from 'next/link'
 import { BLOCKS } from '@contentful/rich-text-types'
@@ -8,11 +9,17 @@ import { getAllEntries, getEntry } from '../../utils/contentful-api'
 import * as StyleConstant from '../../utils/style-constants'
 import Date from '../../components/shared/parse-date'
 
-import Carousel from '../../components/press-release/carousel'
-import Image from '../../components/press-release/image'
-import ImageExternal from '../../components/press-release/image-external'
-import PDF from '../../components/press-release/pdf'
-import YouTubeVideo from '../../components/press-release/youtube-video'
+const Carousel = dynamic(() =>
+  import('../../components/press-release/carousel')
+)
+const Image = dynamic(() => import('../../components/press-release/image'))
+const ImageExternal = dynamic(() =>
+  import('../../components/press-release/image-external')
+)
+const PDF = dynamic(() => import('../../components/press-release/pdf'))
+const YouTubeVideo = dynamic(() =>
+  import('../../components/press-release/youtube-video')
+)
 
 const PageStyled = styled.section`
   .press-releases-link {

@@ -1,9 +1,10 @@
+import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
 import { getNEntries } from '../../utils/contentful-api'
 import * as StyleConstant from '../../utils/style-constants'
-import { breakpoint } from '../../utils/style-breakpoints'
-import Preview from '../../components/press-releases/preview'
+
+const Preview = dynamic(() => import('../../components/press-releases/preview'))
 
 const SectionStyled = styled.section`
   background-color: ${StyleConstant.color.black};

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
+
 import Date from '../shared/parse-date'
 
 const SectionStyled = styled.section`

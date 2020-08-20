@@ -1,11 +1,17 @@
 import dynamic from 'next/dynamic'
 
-import HeroSection from '../components/index/hero'
-import VideoSection from '../components/index/video'
-import WhyClientsUseUsSection from '../components/index/why-clients-use-us'
-import LocationBehaviour from '../components/index/location-behaviour'
-import ConnectedDevices from '../components/index/connected-devices'
-import SimplifyYour from '../components/shared/simplify-your'
+const HeroSection = dynamic(() => import('../components/index/hero'))
+const VideoSection = dynamic(() => import('../components/index/video'))
+const WhyClientsUseUsSection = dynamic(() =>
+  import('../components/index/why-clients-use-us')
+)
+const LocationBehaviour = dynamic(() =>
+  import('../components/index/location-behaviour')
+)
+const ConnectedDevices = dynamic(() =>
+  import('../components/index/connected-devices')
+)
+const SimplifyYour = dynamic(() => import('../components/shared/simplify-your'))
 // ssr rendering of react-slick results in an error when using response breakpoints.
 const OurClientsNoSSR = dynamic(import('../components/index/our-clients'), {
   ssr: false

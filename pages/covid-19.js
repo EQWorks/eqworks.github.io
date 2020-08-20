@@ -1,5 +1,7 @@
-import Hero from '../components/covid-19/hero'
-import Article from '../components/covid-19/article'
+import dynamic from 'next/dynamic'
+
+const Hero = dynamic(() => import('../components/covid-19/hero'))
+const Article = dynamic(() => import('../components/covid-19/article'))
 
 const Covid19 = () => {
   return (

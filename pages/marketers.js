@@ -1,7 +1,11 @@
-import Hero from '../components/marketers/hero'
-import Understand from '../components/marketers/understand'
-import ServiceResults from '../components/marketers/service-results'
-import SimplifyYour from '../components/shared/simplify-your'
+import dynamic from 'next/dynamic'
+
+const Hero = dynamic(() => import('../components/marketers/hero'))
+const Understand = dynamic(() => import('../components/marketers/understand'))
+const ServiceResults = dynamic(() =>
+  import('../components/marketers/service-results')
+)
+const SimplifyYour = dynamic(() => import('../components/shared/simplify-your'))
 
 const Marketers = () => {
   return (

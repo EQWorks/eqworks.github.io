@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+
 import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
