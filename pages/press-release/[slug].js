@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
 import Link from 'next/link'
 import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
@@ -131,6 +132,9 @@ export default function PressRelease({ pressRelease }) {
 
   return (
     <PageStyled>
+      <Head>
+        <title>{pressRelease.title} | EQ Works</title>
+      </Head>
       <TempPageTopPadding />
       <Link href='/press-releases'>
         <a className='press-releases-link'>Press Releases</a>
