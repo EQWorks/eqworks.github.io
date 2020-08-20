@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const StyleFooter = styled.footer`
@@ -9,7 +8,7 @@ const StyleFooter = styled.footer`
   color: #808080;
   font-size: 0.9em;
   position: relative;
-  z-index: ${StyleConstant.zIndex.footer};
+  z-index: ${({ theme }) => theme.zIndex.footer};
   .footer__inner {
     align-items: center;
     display: flex;
@@ -35,8 +34,9 @@ const StyleFooter = styled.footer`
       p {
         padding: 0 20px;
         &:first-child {
-          color: ${StyleConstant.color.white};
-          font-family: copyMedium, sans-serif;
+          color: ${({ theme }) => theme.color.white};
+          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.copy.medium};
           padding: 0 0 40px 0;
         }
       }
@@ -51,8 +51,9 @@ const StyleFooter = styled.footer`
       width: 100%;
       p {
         &:first-child {
-          color: ${StyleConstant.color.white};
-          font-family: copyMedium, sans-serif;
+          color: ${({ theme }) => theme.color.white};
+          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.copy.medium};
           padding: 0 0 40px 0;
         }
         &:last-child {
@@ -78,8 +79,9 @@ const StyleFooter = styled.footer`
         }
       }
       p {
-        color: ${StyleConstant.color.white};
-        font-family: copyMedium, sans-serif;
+        color: ${({ theme }) => theme.color.white};
+        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.copy.medium};
         padding: 0 0 40px 0;
       }
       ${breakpoint.lg`
@@ -92,7 +94,8 @@ const StyleFooter = styled.footer`
       width: 100%;
       a {
         color: #808080;
-        font-family: copyMedium, sans-serif;
+        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.copy.medium};
         text-decoration: none;
       }
       ${breakpoint.lg`

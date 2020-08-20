@@ -6,7 +6,6 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
 import { getAllEntries, getEntry } from '../../utils/contentful-api'
-import * as StyleConstant from '../../utils/style-constants'
 import Date from '../../components/shared/parse-date'
 
 const Carousel = dynamic(() =>
@@ -23,7 +22,7 @@ const YouTubeVideo = dynamic(() =>
 
 const PageStyled = styled.section`
   .press-releases-link {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     cursor: pointer;
     display: block;
     font-size: 0.9em;
@@ -32,40 +31,40 @@ const PageStyled = styled.section`
     text-decoration: none;
     transition: color 0.25s ease-out;
     &:hover {
-      color: ${StyleConstant.color.NavBarLinksListHover};
+      color: ${({ theme }) => theme.color.navBarLinksListHover};
     }
   }
 `
 
 const TempPageTopPadding = styled.div`
-  background-color: ${StyleConstant.color.black};
+  background-color: ${({ theme }) => theme.color.black};
   height: 100px;
 `
 
 const Article = styled.div`
-  color: ${StyleConstant.color.greyLight};
+  color: ${({ theme }) => theme.color.greyLight};
   margin: 0 auto;
-  max-width: ${StyleConstant.width.article};
+  max-width: ${({ theme }) => theme.width.article};
   padding: 0 20px 40px 20px;
   h1 {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     font-size: 2em;
     margin: 0 0 30px 0;
     text-align: center;
   }
   .author-date {
-    color: ${StyleConstant.color.black};
+    color: ${({ theme }) => theme.color.black};
     font-size: 0.9em;
     margin: 0 0 30px 0;
     text-align: center;
   }
   .content {
     a {
-      color: ${StyleConstant.color.black};
+      color: ${({ theme }) => theme.color.black};
       text-decoration: none;
       transition: color 0.25s ease-out;
       &:hover {
-        color: ${StyleConstant.color.NavBarLinksListHover};
+        color: ${({ theme }) => theme.color.navBarLinksListHover};
       }
     }
     p {
@@ -85,7 +84,8 @@ const Article = styled.div`
     }
   }
   .excerpt {
-    font-family: copyLight, sans-serif;
+    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.copy.light};
     font-size: 1.5em;
     line-height: 1.25em;
     margin: 0 0 20px 0;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const StyleNav = styled.nav`
@@ -13,11 +12,11 @@ const StyleNav = styled.nav`
   position: sticky;
   top: 0;
   width: 100%;
-  z-index: ${StyleConstant.zIndex.navBar};
+  z-index: ${({ theme }) => theme.zIndex.navBar};
   .navbar {
-    background-color: ${StyleConstant.color.white};
+    background-color: ${({ theme }) => theme.color.white};
     display: flex;
-    height: ${StyleConstant.height.navBar};
+    height: ${({ theme }) => theme.height.navBar};
     justify-content: space-between;
     padding: 0 18px;
     ${breakpoint.sm`
@@ -45,7 +44,7 @@ const StyleNav = styled.nav`
       flex-direction: column;
       justify-content: center;
       div {
-        background-color: ${StyleConstant.color.greyLight};
+        background-color: ${({ theme }) => theme.color.greyLight};
         height: 2px;
         margin: 3px 0;
         width: 25px;
@@ -57,7 +56,7 @@ const StyleNav = styled.nav`
   }
   .navbar--md {
     background-color: ${(props) =>
-      props.isTop && !props.noHero ? 'none' : `${StyleConstant.color.white}`};
+      props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -97,12 +96,11 @@ const StyleNav = styled.nav`
           a,
           p {
             color: ${(props) =>
-              props.noHero || !props.isTop
-                ? `${StyleConstant.color.black}`
-                : `${StyleConstant.color.white}`};
+              props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
             cursor: pointer;
             display: inline-block;
-            font-family: titleMedium, sans-serif;
+            font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
+            font-weight: ${({ theme }) => theme.font.title.medium};
             padding: 0 15px;
             text-decoration: none;
             text-transform: uppercase;
@@ -123,13 +121,13 @@ const StyleNav = styled.nav`
       }
     }
     .navbar--md__right__sub-links {
-      color: ${StyleConstant.color.white};
+      color: ${({ theme }) => theme.color.white};
       padding: 20px 0 0 0;
       position: absolute;
       width: 225px;
       ul {
         align-items: flex-start;
-        background-color: ${StyleConstant.color.black};
+        background-color: ${({ theme }) => theme.color.black};
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -143,7 +141,7 @@ const StyleNav = styled.nav`
           width: 100%;
           a {
             box-sizing: border-box;
-            color: ${StyleConstant.color.white};
+            color: ${({ theme }) => theme.color.white};
             display: inline-block;
             padding: 20px;
             width: 100%;
@@ -165,7 +163,7 @@ const StyleNav = styled.nav`
 
 const StyleNavLinks = styled.div`
   align-items: flex-start;
-  background-color: ${StyleConstant.color.white};
+  background-color: ${({ theme }) => theme.color.white};
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -184,27 +182,29 @@ const StyleNavLinks = styled.div`
         padding: 0;
         a,
         p {
-          color: ${StyleConstant.color.greyMedium};
+          color: ${({ theme }) => theme.color.greyMedium};
           cursor: pointer;
           display: inline-block;
-          font-family: titleMedium, sans-serif;
+          font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.title.medium};
           font-size: 1.75em;
           padding: 20px 0;
           text-decoration: none;
           transition: color 0.2s ease-out;
           &:hover {
-            color: ${StyleConstant.color.NavBarLinksListHover};
+            color: ${({ theme }) => theme.color.navBarLinksListHover};
           }
         }
         li {
-          border-bottom: 1px solid ${StyleConstant.color.greyBorder};
+          border-bottom: 1px solid ${({ theme }) => theme.color.greyBorder};
         }
       }
       .navbar__links__inner__list--sub {
         li {
           a,
           p:not(:first-child) {
-            font-family: titleRegular, sans-serif;
+            font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
+            font-weight: ${({ theme }) => theme.font.title.regular};
             font-size: 1.5em;
           }
         }

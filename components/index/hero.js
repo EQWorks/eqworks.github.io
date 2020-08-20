@@ -1,25 +1,24 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
-  background-color: ${StyleConstant.color.black};
+  background-color: ${({ theme }) => theme.color.black};
   padding: 0;
   .hero__content {
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
-    color: ${StyleConstant.color.white};
+    color: ${({ theme }) => theme.color.white};
     display: flex;
     flex-direction: column;
-    height: calc(100vh - ${StyleConstant.height.navBar});
+    height: calc(100vh - ${({ theme }) => theme.height.navBar});
     justify-content: center;
     padding: 0 20px;
     position: relative;
     width: 100%;
     text-align: center;
-    z-index: ${StyleConstant.zIndex.pageContent};
+    z-index: ${({ theme }) => theme.zIndex.pageContent};
     ${breakpoint.sm`
       height: 100vh;
     `}
@@ -27,7 +26,7 @@ const SectionStyled = styled.section`
       display: none;
       ${breakpoint.md`
         align-items: center;
-        border: 1px solid ${StyleConstant.color.white};
+        border: 1px solid ${({ theme }) => theme.color.white};
         border-radius: 100%;
         cursor: pointer;
         display: flex;
@@ -45,7 +44,8 @@ const SectionStyled = styled.section`
       `}
     }
     p {
-      font-family: titleRegular, sans-serif;
+      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.copy.regular};
       font-size: 2em;
       margin: 20px 0 0 0;
     }
@@ -56,10 +56,10 @@ const SectionStyled = styled.section`
     min-width: 100%;
     position: absolute;
     right: 0%;
-    z-index: ${StyleConstant.zIndex.indexHeroVideo};
+    z-index: ${({ theme }) => theme.zIndex.indexHeroVideo};
   }
   #scrollToLocation {
-    bottom: calc(${StyleConstant.height.navBarScrolled} / 2);
+    bottom: calc(${({ theme }) => theme.height.navBarScrolled} / 2);
     opacity: 0;
     position: absolute;
   }

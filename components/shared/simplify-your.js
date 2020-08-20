@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   padding: 40px 20px;
   .top {
     align-items: center;
@@ -33,10 +32,11 @@ const SectionStyled = styled.section`
         margin: 0 0 20px 0;
       }
       .grey {
-        color: ${StyleConstant.color.greyLight};
+        color: ${({ theme }) => theme.color.greyLight};
       }
       .subtitle {
-        font-family: copyBold, sans-serif;
+        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.copy.bold};
       }
     }
   }
@@ -47,9 +47,9 @@ const SectionStyled = styled.section`
       justify-content: center;
     `}
     a {
-      background-color: ${StyleConstant.color.NavBarLinksListHover};
+      background-color: ${({ theme }) => theme.color.navBarLinksListHover};
       border: none;
-      color: ${StyleConstant.color.white};
+      color: ${({ theme }) => theme.color.white};
       cursor: pointer;
       display: inline-block;
       font-size: 0.75em;
@@ -59,7 +59,7 @@ const SectionStyled = styled.section`
       text-transform: uppercase;
       transition: all 0.25s ease-out;
       &:hover {
-        background-color: ${StyleConstant.color.black};
+        background-color: ${({ theme }) => theme.color.black};
       }
     }
     div {
@@ -81,11 +81,12 @@ const SectionStyled = styled.section`
       `}
     }
     .grey {
-      color: ${StyleConstant.color.greyLight};
+      color: ${({ theme }) => theme.color.greyLight};
       margin: 0 0 20px 0;
     }
     .title {
-      font-family: copyBold, sans-serif;
+      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.copy.bold};
       margin: 20px 0;
       text-transform: uppercase;
     }

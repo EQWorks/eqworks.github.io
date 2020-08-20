@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
-
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   padding: 20px;
   h2 {
     margin: 20px 0;

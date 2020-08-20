@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   padding: 20px;
   ${breakpoint.sm`
     display: flex;
@@ -25,7 +24,8 @@ const SectionStyled = styled.section`
       margin: 0 auto 20px auto;
     }
     .subtitle {
-      font-family: copyBold, sans-serif;
+      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.copy.bold};
       margin: 0 0 20px 0;
     }
   }

@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   padding: 40px 20px 20px 20px;
   ${breakpoint.sm`
     display: flex;

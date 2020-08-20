@@ -5,7 +5,6 @@ import { ShoppingBag } from '@styled-icons/feather/ShoppingBag'
 import { Target } from '@styled-icons/feather/Target'
 import { BarChart2 } from '@styled-icons/feather/BarChart2'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
@@ -17,7 +16,7 @@ const SectionStyled = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    max-width: ${StyleConstant.width.page};
+    max-width: ${({ theme }) => theme.width.page};
     padding: 0 20px;
     text-transform: uppercase;
     div {
@@ -57,7 +56,8 @@ const SectionStyled = styled.section`
     margin: 0 0 20px 0;
     padding: 0 20px;
     h2 {
-      font-family: titleBold, sans-serif;
+      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.copy.bold};
       font-size: 1.5em;
     }
   }

@@ -3,7 +3,6 @@ import { HardDrive } from '@styled-icons/feather/HardDrive'
 import { MapPin } from '@styled-icons/feather/MapPin'
 import { Smile } from '@styled-icons/feather/Smile'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
@@ -13,7 +12,7 @@ const SectionStyled = styled.section`
     rgba(3, 78, 144, 0.9) 0%,
     rgba(25, 180, 215, 0.9) 100%
   );
-  color: ${StyleConstant.color.white};
+  color: ${({ theme }) => theme.color.white};
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -65,7 +64,8 @@ const SectionStyled = styled.section`
           width: 40px;
         }
         .bold {
-          font-family: copyBold, sans-serif;
+          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.copy.bold};
         }
       }
     }

@@ -2,11 +2,9 @@ import Head from 'next/head'
 import Slider from 'react-slick'
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
-
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.page};
+  max-width: ${({ theme }) => theme.width.page};
   h2 {
     margin: 20px 0;
     text-align: center;

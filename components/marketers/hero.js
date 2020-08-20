@@ -1,17 +1,16 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
   align-items: center;
-  background-color: ${StyleConstant.color.black};
+  color: ${({ theme }) => theme.color.black};
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url('/images/marketers/hero.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: ${StyleConstant.color.white};
+  color: ${({ theme }) => theme.color.white};
   display: flex;
   height: 400px;
   justify-content: center;

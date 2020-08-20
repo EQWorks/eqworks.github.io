@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 
-import * as StyleConstant from '../../utils/style-constants'
 import { breakpoint } from '../../utils/style-breakpoints'
 
 const SectionStyled = styled.section`
   margin: 0 auto;
-  max-width: ${StyleConstant.width.article};
+  max-width: ${({ theme }) => theme.width.article};
   padding: 20px;
   article {
     a {
@@ -22,7 +21,8 @@ const SectionStyled = styled.section`
       margin: 0 0 20px 0;
     }
     .bold {
-      font-family: copyBold, sans-serif;
+      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.copy.bold};
     }
   }
   .header {
@@ -33,7 +33,7 @@ const SectionStyled = styled.section`
       max-width: 65px;
     }
     p {
-      color: ${StyleConstant.color.greyLight};
+      color: ${({ theme }) => theme.color.greyLight};
       padding: 0 0 0 10px;
       ${breakpoint.sm`
         padding: 0 0 0 20px;
