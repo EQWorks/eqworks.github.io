@@ -23,10 +23,11 @@ const YouTubeVideo = ({ data }) => {
   return (
     <SectionStyled>
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${videoId}`}
-        frameBorder='0'
         allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
+        frameBorder='0'
+        loading='lazy'
+        src={`https://www.youtube-nocookie.com/embed/${videoId}`}
       ></iframe>
     </SectionStyled>
   )
