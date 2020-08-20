@@ -29,15 +29,15 @@
     "@styled-icons/feather": "^10.15.1",
     "contentful": "^7.14.6",
     "date-fns": "^2.15.0",
-    "next": "^9.4.4",
+    "next": "^9.5.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-pdf": "^4.2.0",
-    "react-slick": "^0.27.0",
-    "styled-components": "^5.0.1"
+    "react-slick": "^0.27.10",
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-styled-components": "^1.11.1",
     "prettier": "^2.0.5"
   }
 }
