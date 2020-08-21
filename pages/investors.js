@@ -7,6 +7,10 @@ const InvestingFuture = dynamic(() =>
 const FinancialInfo = dynamic(() =>
   import('../components/investors/financial-info')
 )
+// ssr rendering of react-slick results in an error when using response breakpoints.
+const OurClientsNoSSR = dynamic(import('../components/shared/our-clients'), {
+  ssr: false
+})
 
 const Investors = () => {
   return (
@@ -14,6 +18,7 @@ const Investors = () => {
       <Hero />
       <InvestingFuture />
       <FinancialInfo />
+      <OurClientsNoSSR />
     </>
   )
 }

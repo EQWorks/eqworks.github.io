@@ -37,7 +37,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const OurClients = () => {
+const OurClients = ({ header }) => {
   const sliderSettings = {
     arrows: false,
     autoplay: true,
@@ -112,9 +112,11 @@ const OurClients = () => {
           type='text/css'
         />
       </Head>
-      <div className='image'>
-        <div aria-label='people walking on the street' role='img' />
-      </div>
+      {header && (
+        <div className='image'>
+          <div aria-label='people walking on the street' role='img' />
+        </div>
+      )}
       <div>
         <h2>Our Clients</h2>
         <div className='carousel'>

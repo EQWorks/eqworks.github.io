@@ -13,7 +13,7 @@ const ConnectedDevices = dynamic(() =>
 )
 const SimplifyYour = dynamic(() => import('../components/shared/simplify-your'))
 // ssr rendering of react-slick results in an error when using response breakpoints.
-const OurClientsNoSSR = dynamic(import('../components/index/our-clients'), {
+const OurClientsNoSSR = dynamic(import('../components/shared/our-clients'), {
   ssr: false
 })
 
@@ -26,7 +26,7 @@ const Index = () => {
       <LocationBehaviour />
       <ConnectedDevices />
       <SimplifyYour title='digital advertising' />
-      <OurClientsNoSSR />
+      <OurClientsNoSSR header />
     </>
   )
 }
