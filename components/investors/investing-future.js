@@ -12,11 +12,20 @@ const SectionStyled = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     div {
-      padding: 20px 0;
+      padding: 30px 0 20px 0;
       width: 100%;
+      @media ${({ theme }) => theme.breakpoint.sm} {
+        width: 50%;
+      }
+      @media ${({ theme }) => theme.breakpoint.md} {
+        width: 33%;
+      }
       p {
         margin: 0 auto;
         max-width: 350px;
+        @media ${({ theme }) => theme.breakpoint.sm} {
+          max-width: 300px;
+        }
       }
       svg {
         color: ${({ theme }) => theme.color.navBarLinksListHover};
@@ -25,7 +34,8 @@ const SectionStyled = styled.section`
       }
     }
     .subtitle {
-      font-family: copyBold, sans-serif;
+      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.copy.bold};
       padding: 20px 0 10px 0;
     }
   }
