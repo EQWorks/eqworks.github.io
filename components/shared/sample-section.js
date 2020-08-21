@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.color.black};
   @media ${({ theme }) => theme.breakpoint.sm} {
     /* display: none; */
   }
