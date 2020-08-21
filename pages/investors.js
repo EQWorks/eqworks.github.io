@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic'
 
+import { getNEntries } from '../api/contentful'
+
 const Hero = dynamic(() => import('../components/investors/hero'))
 const InvestingFuture = dynamic(() =>
   import('../components/investors/investing-future')
@@ -11,15 +13,28 @@ const FinancialInfo = dynamic(() =>
 const OurClientsNoSSR = dynamic(import('../components/shared/our-clients'), {
   ssr: false
 })
+const RecentReleases = dynamic(() =>
+  import('../components/investors/recent-releases')
+)
 
-const Investors = () => {
+export default function Investors({ pressReleases }) {
   return (
     <>
       <Hero />
       <InvestingFuture />
       <FinancialInfo />
+      <RecentReleases pressReleases={pressReleases} />
       <OurClientsNoSSR />
     </>
   )
 }
-export default Investors
+
+export async function getStaticProps() {
+  const pressReleases = await getNEntries('pressRelease', 3)
+
+  return {
+    props: {
+      pressReleases
+    }
+  }
+}
