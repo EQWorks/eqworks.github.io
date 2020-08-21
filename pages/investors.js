@@ -1,4 +1,14 @@
+import dynamic from 'next/dynamic'
+
+const Hero = dynamic(() => import('../components/investors/hero'))
+const InvestingFuture = dynamic(() => import('../components/investors/investing-future'))
+
 const Investors = () => {
-  return <h1>Investors page.</h1>
+  return (
+    <>
+      <Hero />
+      <InvestingFuture />
+    </>
+    )
 }
 export default Investors
