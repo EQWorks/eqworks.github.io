@@ -86,7 +86,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const ConnectedDevices = () => {
+export default function ConnectedDevices() {
   return (
     <SectionStyled>
       <div className='left'>
@@ -139,5 +139,3 @@ const ConnectedDevices = () => {
     </SectionStyled>
   )
 }
-
-export default ConnectedDevices

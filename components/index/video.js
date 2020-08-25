@@ -26,7 +26,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const Video = (props) => {
+export default function Video(props) {
   return (
     <SectionStyled>
       <h2>
@@ -48,5 +48,3 @@ const Video = (props) => {
     </SectionStyled>
   )
 }
-
-export default Video

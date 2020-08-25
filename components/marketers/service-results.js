@@ -45,7 +45,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const Section = () => {
+export default function Section() {
   return (
     <SectionStyled>
       <div className='left'>
@@ -67,5 +67,3 @@ const Section = () => {
     </SectionStyled>
   )
 }
-
-export default Section

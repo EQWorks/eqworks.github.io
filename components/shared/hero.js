@@ -4,7 +4,7 @@ const SectionStyled = styled.section`
   align-items: center;
   background-color: ${({ theme }) => theme.color.black};
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('/images/investors/fallback/hero.jpg');
+    url(${(props) => props.imgSrc});
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,24 +14,22 @@ const SectionStyled = styled.section`
   justify-content: center;
   padding: 0 20px;
   @media ${({ theme }) => theme.breakpoint.sm} {
-    height: 500px;
+    height: ${(props) => (props.fullHeight ? '100vh' : '400px')};
   }
   h1 {
     font-size: 2em;
     text-align: center;
     @media ${({ theme }) => theme.breakpoint.sm} {
-      font-size: 2.5em;
-      max-width: 700px;
+      font-size: ${(props) => (props.fullHeight ? '4em' : '2.5em')};
+      max-width: ${(props) => (props.fullHeight ? '800px' : '700px')};
     }
   }
 `
 
-const Hero = () => {
+export default function Hero({ fullHeight, imgSrc, title }) {
   return (
-    <SectionStyled>
-      <h1>We don’t look to what’s coming next - we're already&nbsp;there.</h1>
+    <SectionStyled fullHeight={fullHeight} imgSrc={imgSrc}>
+      {title && <h1>{title}</h1>}
     </SectionStyled>
   )
 }
-
-export default Hero

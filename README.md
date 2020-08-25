@@ -4,15 +4,7 @@ EQ Works company website.
 
 ---
 
-## Framework
-
-This website was built using the [Next.js](https://nextjs.org/) framework.
-
-Next.js is built around the concept of pages. A page is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, or `.tsx` file in the pages directory.
-
----
-
-## Content
+## Blog
 
 There is a "blog" aspect to this website. This is where we post Press Releases, Case Studies, Insights, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful, and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
 
@@ -20,7 +12,17 @@ Once we are ready for posting, we will provide helpful walkthroughs of that proc
 
 ---
 
+# Forms
+
+This project uses [Formspree](https://formspree.io/) to handle form submissions.
+
+---
+
 ## Development
+
+This website was built using the [Next.js](https://nextjs.org/) framework.
+
+Next.js is built around the concept of pages. A page is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, or `.tsx` file in the pages directory.
 
 1. Ensure your environment has [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/) installed.
 2. Clone repository, run `git clone https://github.com/EQWorks/cs-company-website.git`.
@@ -77,7 +79,7 @@ To convert any image type (`.png`, `.jpg`, etc.) to the `.webp` format, you can 
 1. Install the webp CLI, run `brew install webp`.
 2. Convert the images you want:
 
-- Update one image: `cwebp -q 75 image.png -o image.webp`
+- Update one image, run `cwebp -q 75 image.png -o image.webp`
   - The `-q 75` flag refers to `quality of 75%`. Meaning the image will be reduced by 25% in "perceivable" quality.
 - Update all images of same extension in a directory, run `find ./ -type f -name '*.png' -exec sh -c 'cwebp -q 75 $1 -o "${1%.png}.webp"' _ {} \;`.
   - Change `.png` in both instances to any other image format (e.g. `.jpg`).
@@ -91,8 +93,10 @@ To convert any image type (`.png`, `.jpg`, etc.) to the `.webp` format, you can 
 - Place `@media` declarations at the end of properties.
 - For example:
 
-```scss
-.container {
+```jsx
+import styled from 'styled-components'
+
+const sectionStyled = styled.section`
   /* declaration-property: declaration-value */
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -116,11 +120,11 @@ To convert any image type (`.png`, `.jpg`, etc.) to the `.webp` format, you can 
   .item {
     border: 1px solid color: ${({ theme }) => theme.color.greyLight};
   }
-}
+`
 ```
 
 ---
 
 ## Contact
 
-Have any questions, concerns, or suggestions? Why not send the Creative team an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com)) :)
+Have any questions, concerns, or suggestions? Why not send the Creative team an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com)) 😊

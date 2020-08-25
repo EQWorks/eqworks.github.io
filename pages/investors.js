@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 
 import { getNEntries } from '../api/contentful'
 
-const Hero = dynamic(() => import('../components/investors/hero'))
+const Hero = dynamic(() => import('../components/shared/hero'))
 const InvestingFuture = dynamic(() =>
   import('../components/investors/investing-future')
 )
@@ -20,7 +20,10 @@ const RecentReleases = dynamic(() =>
 export default function Investors({ pressReleases }) {
   return (
     <>
-      <Hero />
+      <Hero
+        imgSrc='/images/investors/fallback/hero.jpg'
+        title={`We don't looks to what's coming next - we're already there.`}
+      />
       <InvestingFuture />
       <FinancialInfo />
       <RecentReleases pressReleases={pressReleases} />

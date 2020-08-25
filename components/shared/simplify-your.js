@@ -93,7 +93,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const SimplifyYour = ({ title }) => {
+export default function SimplifyYour({ title }) {
   return (
     <SectionStyled>
       <div className='top'>
@@ -175,5 +175,3 @@ const SimplifyYour = ({ title }) => {
     </SectionStyled>
   )
 }
-
-export default SimplifyYour

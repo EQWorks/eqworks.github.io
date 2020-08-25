@@ -7,7 +7,7 @@ const ImageStyled = styled.img`
   max-width: 100%;
 `
 
-const Carousel = ({ slides }) => {
+export default function Carousel({ slides }) {
   const settings = {
     arrows: false,
     autoplay: true,
@@ -48,5 +48,3 @@ const Carousel = ({ slides }) => {
     </div>
   )
 }
-
-export default Carousel

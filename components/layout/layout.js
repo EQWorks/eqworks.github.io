@@ -19,7 +19,7 @@ const NoHeroPaddingStyle = styled.div`
 
 const noHeroRoutes = ['/posts/[slug]']
 
-const Layout = (props) => {
+export default function Layout(props) {
   const router = useRouter()
 
   return (
@@ -34,5 +34,3 @@ const Layout = (props) => {
     </>
   )
 }
-
-export default Layout

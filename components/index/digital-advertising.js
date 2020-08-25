@@ -93,7 +93,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const DigitalAdvertising = () => {
+export default function DigitalAdvertising() {
   return (
     <SectionStyled>
       <div className='top'>
@@ -175,5 +175,3 @@ const DigitalAdvertising = () => {
     </SectionStyled>
   )
 }
-
-export default DigitalAdvertising

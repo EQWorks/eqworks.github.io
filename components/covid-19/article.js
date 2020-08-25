@@ -42,7 +42,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const Article = () => {
+export default function Article() {
   return (
     <SectionStyled>
       <div className='header'>
@@ -180,5 +180,3 @@ const Article = () => {
     </SectionStyled>
   )
 }
-
-export default Article
