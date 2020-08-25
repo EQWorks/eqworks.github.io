@@ -76,7 +76,7 @@ const ROUTES = [
   }
 ]
 
-const Header = () => {
+export default function Header() {
   const pageInfo = (() => {
     const router = useRouter()
     const currentRoute =
@@ -140,5 +140,3 @@ const Header = () => {
     </Head>
   )
 }
-
-export default Header

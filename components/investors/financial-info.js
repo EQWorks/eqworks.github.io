@@ -41,7 +41,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const FinancialInfo = () => {
+export default function FinancialInfo() {
   return (
     <SectionStyled>
       <div className='left'>
@@ -58,5 +58,3 @@ const FinancialInfo = () => {
     </SectionStyled>
   )
 }
-
-export default FinancialInfo

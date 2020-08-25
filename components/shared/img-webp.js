@@ -1,4 +1,9 @@
-const ImgWebP = ({ fallback, src, type = 'image/webp', ...props }) => {
+export default function ImgWebP({
+  fallback,
+  src,
+  type = 'image/webp',
+  ...props
+}) {
   return (
     <picture>
       <source srcSet={src} type={type} />
@@ -6,5 +11,3 @@ const ImgWebP = ({ fallback, src, type = 'image/webp', ...props }) => {
     </picture>
   )
 }
-
-export default ImgWebP

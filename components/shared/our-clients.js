@@ -37,7 +37,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const OurClients = ({ header }) => {
+export default function OurClients({ header }) {
   const sliderSettings = {
     arrows: false,
     autoplay: true,
@@ -138,5 +138,3 @@ const OurClients = ({ header }) => {
     </SectionStyled>
   )
 }
-
-export default OurClients

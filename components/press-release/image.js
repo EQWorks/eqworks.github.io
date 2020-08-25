@@ -4,7 +4,7 @@ const ImageStyled = styled.img`
   max-width: 100%;
 `
 
-const Image = ({ data }) => {
+export default function Image({ data }) {
   return (
     <ImageStyled
       alt={data.alt}
@@ -13,5 +13,3 @@ const Image = ({ data }) => {
     />
   )
 }
-
-export default Image

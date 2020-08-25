@@ -86,7 +86,7 @@ const SectionStyled = styled.div`
   }
 `
 
-const PDF = ({ id, url }) => {
+export default function PDF({ id, url }) {
   const [numPages, setNumPages] = useState(null)
   const [pageNumber, setPageNumber] = useState(1)
   const [pdfHeight, setPdfHeight] = useState(0)
@@ -163,5 +163,3 @@ const PDF = ({ id, url }) => {
     </SectionStyled>
   )
 }
-
-export default PDF

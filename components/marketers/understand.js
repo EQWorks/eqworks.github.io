@@ -25,7 +25,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const Understand = () => {
+export default function Understand() {
   return (
     <SectionStyled>
       <h2>Understand, apply, and target.</h2>
@@ -43,5 +43,3 @@ const Understand = () => {
     </SectionStyled>
   )
 }
-
-export default Understand

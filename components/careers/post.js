@@ -7,10 +7,12 @@ const SectionStyled = styled.section`
   }
 `
 
-export default function Section() {
+export default function Post() {
   return (
     <SectionStyled>
       <p>Hello there</p>
     </SectionStyled>
   )
 }
+
+export default Post

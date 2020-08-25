@@ -6,7 +6,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const ImageExternal = ({ data }) => {
+export default function ImageExternal({ data }) {
   return (
     <SectionStyled>
       <img alt={data.title} src={data.imageUrl} />
@@ -19,5 +19,3 @@ const ImageExternal = ({ data }) => {
     </SectionStyled>
   )
 }
-
-export default ImageExternal

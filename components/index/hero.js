@@ -63,7 +63,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const Hero = () => {
+export default function Hero() {
   const scrollToElement = () => {
     document.getElementById('scrollToLocation').scrollIntoView()
   }
@@ -88,5 +88,3 @@ const Hero = () => {
     </SectionStyled>
   )
 }
-
-export default Hero

@@ -47,7 +47,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const Preview = ({ date, excerpt, slug, title }) => {
+export default function Preview({ date, excerpt, slug, title }) {
   return (
     <SectionStyled>
       <Date className='date' dateString={date} />
@@ -61,5 +61,3 @@ const Preview = ({ date, excerpt, slug, title }) => {
     </SectionStyled>
   )
 }
-
-export default Preview

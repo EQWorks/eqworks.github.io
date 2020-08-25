@@ -17,7 +17,7 @@ const OurClientsNoSSR = dynamic(import('../components/shared/our-clients'), {
   ssr: false
 })
 
-const Index = () => {
+export default function Index() {
   return (
     <>
       <Hero />
@@ -30,5 +30,3 @@ const Index = () => {
     </>
   )
 }
-
-export default Index

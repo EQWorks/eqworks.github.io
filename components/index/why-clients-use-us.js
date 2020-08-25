@@ -61,7 +61,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const WhyClientsUseUs = () => {
+export default function WhyClientsUseUs() {
   return (
     <SectionStyled>
       <div className='title'>
@@ -95,5 +95,3 @@ const WhyClientsUseUs = () => {
     </SectionStyled>
   )
 }
-
-export default WhyClientsUseUs

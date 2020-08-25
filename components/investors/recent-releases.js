@@ -18,7 +18,7 @@ const ItemsStyled = styled.div`
   justify-content: center;
 `
 
-const RecentReleases = ({ pressReleases }) => {
+export default function RecentReleases({ pressReleases }) {
   return (
     <SectionStyled>
       <h2>Recent Releases</h2>
@@ -36,5 +36,3 @@ const RecentReleases = ({ pressReleases }) => {
     </SectionStyled>
   )
 }
-
-export default RecentReleases

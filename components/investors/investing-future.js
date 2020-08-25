@@ -41,7 +41,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const InvestingFuture = () => {
+export default function InvestingFuture() {
   return (
     <SectionStyled>
       <h2>Investing in the Future</h2>
@@ -77,5 +77,3 @@ const InvestingFuture = () => {
     </SectionStyled>
   )
 }
-
-export default InvestingFuture

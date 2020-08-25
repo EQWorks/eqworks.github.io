@@ -17,7 +17,7 @@ const SectionStyled = styled.section`
   }
 `
 
-const YouTubeVideo = ({ data }) => {
+export default function YouTubeVideo({ data }) {
   const videoId = data.url.split('v=')[1].substring(0, 11)
 
   return (
@@ -32,5 +32,3 @@ const YouTubeVideo = ({ data }) => {
     </SectionStyled>
   )
 }
-
-export default YouTubeVideo
