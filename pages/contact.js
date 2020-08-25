@@ -1,3 +1,16 @@
+import dynamic from 'next/dynamic'
+
+const Hero = dynamic(() => import('../components/shared/hero'))
+const InfoForm = dynamic(() => import('../components/contact/info-form'))
+
 export default function Contact() {
-  return <h1>Contact page.</h1>
+  return (
+    <>
+      <Hero
+        imgSrc='/images/contact/fallback/hero.jpg'
+        title={`Let's connect!`}
+      />
+      <InfoForm />
+    </>
+  )
 }
