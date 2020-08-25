@@ -4,15 +4,7 @@ EQ Works company website.
 
 ---
 
-## Framework
-
-This website was built using the [Next.js](https://nextjs.org/) framework.
-
-Next.js is built around the concept of pages. A page is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, or `.tsx` file in the pages directory.
-
----
-
-## Content
+## Blog
 
 There is a "blog" aspect to this website. This is where we post Press Releases, Case Studies, Insights, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful, and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
 
@@ -20,7 +12,17 @@ Once we are ready for posting, we will provide helpful walkthroughs of that proc
 
 ---
 
+# Forms
+
+This project uses [Formspree](https://formspree.io/) to handle form submissions.
+
+---
+
 ## Development
+
+This website was built using the [Next.js](https://nextjs.org/) framework.
+
+Next.js is built around the concept of pages. A page is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, or `.tsx` file in the pages directory.
 
 1. Ensure your environment has [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/) installed.
 2. Clone repository, run `git clone https://github.com/EQWorks/cs-company-website.git`.
