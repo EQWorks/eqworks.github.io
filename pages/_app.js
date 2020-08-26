@@ -1,4 +1,5 @@
 import App from 'next/app'
+import 'mapbox-gl/dist/mapbox-gl.css'
 import { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../styles/global'
