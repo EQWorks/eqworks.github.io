@@ -1,3 +1,5 @@
+import React, { useEffect, useRef, useState } from 'react'
+import mapboxgl from 'mapbox-gl'
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
@@ -6,16 +8,47 @@ const SectionStyled = styled.section`
     display: block;
     width: 100vw;
   }
+  .map {
+    height: 500px;
+    .mapboxgl-ctrl-logo {
+      display: none;
+    }
+  }
 `
 
 export default function Section() {
+  const [map, setMap] = useState(null)
+  const mapContainer = useRef(null)
+
+  useEffect(() => {
+    mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN
+
+    const coordinates = [-79.389718, 43.670791]
+
+    const initializeMap = ({ setMap, mapContainer }) => {
+      const map = new mapboxgl.Map({
+        attributionControl: false,
+        center: coordinates,
+        container: mapContainer.current,
+        scrollZoom: false,
+        style: 'mapbox://styles/mapbox/light-v10',
+        zoom: 15
+      })
+
+      new mapboxgl.Marker().setLngLat(coordinates).addTo(map)
+
+      map.on('load', () => {
+        setMap(map)
+        map.resize()
+      })
+    }
+
+    if (!map) initializeMap({ setMap, mapContainer })
+  }, [map])
+
   return (
     <SectionStyled>
-      <iframe
-        frameborder={0}
-        height={500}
-        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.90781640506!2d-79.39187304893944!3d43.67088697901827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34afa0cbf83b%3A0x156240b075d4225b!2sEQ%20Works!5e0!3m2!1sen!2sca!4v1598386914310!5m2!1sen!2sca'
-      ></iframe>
+      <div className='map' ref={(el) => (mapContainer.current = el)} />
     </SectionStyled>
   )
 }

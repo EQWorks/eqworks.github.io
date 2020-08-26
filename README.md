@@ -18,6 +18,12 @@ This project uses [Formspree](https://formspree.io/) to handle form submissions.
 
 ---
 
+# Maps
+
+This project uses [Mapbox](https://www.mapbox.com/) to embed interact maps.
+
+---
+
 ## Development
 
 This website was built using the [Next.js](https://nextjs.org/) framework.
