@@ -17,7 +17,13 @@ export async function getAllEntries(contentType) {
   return entries
 }
 
-export async function getEntry(contentType, slug) {
+export async function getEntryById(id) {
+  const entry = await getClient().getEntry(id)
+
+  return entry.fields
+}
+
+export async function getEntryBySlug(contentType, slug) {
   const entries = await getClient().getEntries({
     content_type: contentType,
     'fields.slug[in]': slug,

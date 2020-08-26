@@ -12,13 +12,13 @@ Once we are ready for posting, we will provide helpful walkthroughs of that proc
 
 ---
 
-# Forms
+## Forms
 
 This project uses [Formspree](https://formspree.io/) to handle form submissions.
 
 ---
 
-# Maps
+## Maps
 
 This project uses [Mapbox](https://www.mapbox.com/) to embed interact maps.
 
