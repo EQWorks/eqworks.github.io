@@ -41,6 +41,7 @@ export default function Video(props) {
           frameBorder='0'
           height='315'
           loading='lazy'
+          title='EQ Works introduction video.'
           width='560'
           src='https://www.youtube-nocookie.com/embed/AgZhgUsTQfI'
         ></iframe>

@@ -28,6 +28,7 @@ export default function YouTubeVideo({ data }) {
         frameBorder='0'
         loading='lazy'
         src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+        title={data.title}
       ></iframe>
     </SectionStyled>
   )
