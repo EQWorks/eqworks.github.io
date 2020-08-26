@@ -1,26 +1,12 @@
-import dynamic from 'next/dynamic'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import Link from 'next/link'
-import { BLOCKS } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
-import { getAllEntries, getEntry } from '../../api/contentful'
+import { getAllEntries, getEntryBySlug } from '../../api/contentful'
 
 import Date from '../../components/shared/parse-date'
-
-const Carousel = dynamic(() =>
-  import('../../components/press-release/carousel')
-)
-const Image = dynamic(() => import('../../components/press-release/image'))
-const ImageExternal = dynamic(() =>
-  import('../../components/press-release/image-external')
-)
-const PDF = dynamic(() => import('../../components/press-release/pdf'))
-const YouTubeVideo = dynamic(() =>
-  import('../../components/press-release/youtube-video')
-)
+import ArticleContent from '../../components/shared/article-content'
 
 const PageStyled = styled.section`
   .press-releases-link {
@@ -96,32 +82,6 @@ const Article = styled.div`
 `
 
 export default function PressRelease({ pressRelease }) {
-  const dtrOptions = {
-    renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        if (node.data.target.fields.file.contentType.includes('image')) {
-          return <Image data={node.data.target.fields} />
-        } else if (node.data.target.fields.file.contentType.includes('pdf')) {
-          return (
-            <PDF
-              id={node.data.target.sys.id}
-              url={node.data.target.fields.file.url}
-            />
-          )
-        }
-      },
-      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-        if (node.data.target.sys.contentType.sys.id === 'externalImage') {
-          return <ImageExternal data={node.data.target.fields} />
-        } else if (node.data.target.sys.contentType.sys.id === 'carousel') {
-          return <Carousel slides={node.data.target.fields.carousel} />
-        } else if (node.data.target.sys.contentType.sys.id === 'youTubeVideo') {
-          return <YouTubeVideo data={node.data.target.fields} />
-        }
-      }
-    }
-  }
-
   if (!pressRelease) {
     return <></>
   }
@@ -146,16 +106,14 @@ export default function PressRelease({ pressRelease }) {
           {pressRelease.author.fields.name} /{' '}
           <Date className='date' dateString={pressRelease.date} />
         </p>
-        <div className='content'>
-          {documentToReactComponents(pressRelease.content, dtrOptions)}
-        </div>
+        <ArticleContent content={pressRelease.content} />
       </Article>
     </PageStyled>
   )
 }
 
 export async function getStaticProps({ params }) {
-  const pressRelease = await getEntry('pressRelease', params.slug)
+  const pressRelease = await getEntryBySlug('pressRelease', params.slug)
 
   return {
     props: {
