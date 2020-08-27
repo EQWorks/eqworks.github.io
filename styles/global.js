@@ -46,6 +46,11 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     flex-direction: column;
   }
+  
+  .no-scroll {
+    height: 100%;
+    overflow: hidden;
+  }
 `
 
 export default GlobalStyle

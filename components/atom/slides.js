@@ -8,6 +8,12 @@ import styled from 'styled-components'
 const SectionStyled = styled.section`
   .carousel {
     background-color: ${({ theme }) => theme.color.black};
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: ${({ theme }) => theme.zIndex.indexHeroVideo};
     .item {
       align-items: center;
       display: flex !important;
@@ -24,31 +30,43 @@ const SectionStyled = styled.section`
       background-color: orange;
     }
   }
+  .scroll-container {
+    height: 100vh;
+    overflow: auto;
+    opacity: 0;
+    -ms-overflow-style: none;
+    position: relative;
+    scrollbar-width: none;
+    width: 100vw;
+    z-index: ${({ theme }) => theme.zIndex.footer};
+    .content {
+      height: 105vh;
+    }
+  }
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 export default function Slides() {
-  const [end, setEnd] = useState(0)
-  const [rowData, setRowData] = useState([])
-  const [slideIndex, setIndex] = useState(0)
-
-  const parentRef = useRef(null)
-  const sliderRef = useRef()
+  const scrollResetPosition = 12
+  const delayBetweenScrolls = 1500
+  const [scrollTop, setScrollTop] = useState(scrollResetPosition)
+  let scrollReset = false
+  let userScrolled = false
 
   useEffect(() => {
-    if (!parentRef.current) {
-      return
-    }
-    parentRef.current.addEventListener('wheel', (e) => handleScroll(e))
-
+    document.body.classList.add('no-scroll')
+    const scrollDetector = document.getElementById('vertical-carousel')
+    scrollDetector.scrollTo(0, scrollResetPosition)
+    scrollDetector.addEventListener('scroll', handleScroll)
     return () => {
-      parentRef.current.removeEventListener('wheel', (e) => handleScroll(e))
+      document.body.classList.remove('no-scroll')
+      scrollDetector.removeEventListener('scroll', handleScroll)
     }
-  }, [parentRef, rowData])
+  }, [])
 
   const sliderSettings = {
-    afterChange: (current) => {
-      setEnd(current)
-    },
     arrows: false,
     autoplay: false,
     autoplaySpeed: 2000,
@@ -60,11 +78,31 @@ export default function Slides() {
     verticalSwiping: true
   }
 
-  const handleScroll = (e) => {
-    if (e.deltaY < 0) {
-      sliderRef && sliderRef.current.slickPrev()
-    } else if (e.deltaY > 0) {
-      sliderRef && sliderRef.current.slickNext()
+  const handleScroll = (event) => {
+    if (!scrollReset) {
+      scrollReset = true
+      return
+    }
+
+    if (!userScrolled) {
+      userScrolled = true
+
+      const currentScroll = event.target.scrollTop
+
+      if (currentScroll > scrollTop) {
+        console.log('up')
+      } else {
+        console.log('down')
+      }
+      setScrollTop(currentScroll)
+
+      window.setTimeout(() => {
+        scrollReset = false
+        userScrolled = false
+        document
+          .getElementById('vertical-carousel')
+          .scrollTo(0, scrollResetPosition)
+      }, delayBetweenScrolls)
     }
   }
 
@@ -83,17 +121,18 @@ export default function Slides() {
           type='text/css'
         />
       </Head>
-      <div>
-        <div className='carousel' ref={parentRef}>
-          <Slider ref={sliderRef} {...sliderSettings}>
-            <div className='item item-1'>
-              <p>1</p>
-            </div>
-            <div className='item item-2'>
-              <p>2</p>
-            </div>
-          </Slider>
-        </div>
+      <div className='scroll-container' id='vertical-carousel'>
+        <p className='content'>scroll me</p>
+      </div>
+      <div className='carousel'>
+        <Slider {...sliderSettings}>
+          <div className='item item-1'>
+            <p>1</p>
+          </div>
+          <div className='item item-2'>
+            <p>2</p>
+          </div>
+        </Slider>
       </div>
     </SectionStyled>
   )
