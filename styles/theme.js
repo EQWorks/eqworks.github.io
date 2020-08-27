@@ -6,6 +6,7 @@ const theme = {
     lg: '(min-width: 1200px)'
   },
   color: {
+    accentBlue: '#3542E4',
     black: '#1D1D1D',
     greyBorder: '#EEF1F6',
     greyDark: '#333333',
