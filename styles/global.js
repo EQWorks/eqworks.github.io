@@ -46,6 +46,11 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     flex-direction: column;
   }
+
+  #fp-nav ul li a span,
+  .fp-slidesNav ul li a span {
+    background: ${({ theme }) => theme.color.white} !important;
+  }
   
   .no-scroll {
     height: 100%;
