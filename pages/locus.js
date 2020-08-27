@@ -1,3 +1,11 @@
+import dynamic from 'next/dynamic'
+
+const Slides = dynamic(() => import('../components/locus/slides'))
+
 export default function Locus() {
-  return <h1>Locus page.</h1>
+  return (
+    <>
+      <Slides />
+    </>
+  )
 }
