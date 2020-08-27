@@ -17,7 +17,7 @@ const NoHeroPaddingStyle = styled.div`
   }
 `
 
-const noHeroRoutes = ['/posts/[slug]']
+const noHeroRoutes = ['/atom']
 const noFooterRoutes = ['/atom', '/locus']
 
 export default function Layout(props) {
