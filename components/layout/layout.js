@@ -18,6 +18,7 @@ const NoHeroPaddingStyle = styled.div`
 `
 
 const noHeroRoutes = ['/posts/[slug]']
+const noFooterRoutes = ['/atom', '/locus']
 
 export default function Layout(props) {
   const router = useRouter()
@@ -30,7 +31,7 @@ export default function Layout(props) {
         {noHeroRoutes.includes(router.pathname) && <NoHeroPaddingStyle />}
         {props.children}
       </StyleContent>
-      <Footer />
+      <Footer noFooter={noFooterRoutes.includes(router.pathname)} />
     </>
   )
 }
