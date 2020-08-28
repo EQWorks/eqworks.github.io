@@ -18,18 +18,18 @@ const SectionStyled = styled.section`
       flex-direction: column;
       justify-content: center;
       padding: ${({ theme }) => theme.height.navBar} 40px
-        ${({ theme }) => theme.height.navBar} 40px;
+        calc(${({ theme }) => theme.height.navBar} / 2) 40px;
       text-align: center;
       @media ${({ theme }) => theme.breakpoint.sm} {
         padding: ${({ theme }) => theme.height.navBarMD} 40px
-          ${({ theme }) => theme.height.navBarMD} 40px;
+          calc(${({ theme }) => theme.height.navBarMD} / 2) 40px;
       }
     }
   }
   .section-1 {
     background-color: ${({ theme }) => theme.color.black};
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/images/atom/fallback/slide-1-background.jpg');
+      url('/images/locus/fallback/slide-1-background.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,30 +46,59 @@ const SectionStyled = styled.section`
     }
   }
   .section-2 {
+    background-color: ${({ theme }) => theme.color.white};
+    margin: 0 auto;
+    max-width: ${({ theme }) => theme.width.page};
     h2 {
       font-size: 1.5em;
       margin: 0 auto 50px auto;
-      max-width: 800px;
+      max-width: 500px;
       @media ${({ theme }) => theme.breakpoint.sm} {
+        font-size: 2em;
+        margin: 0 auto 20px auto;
+        max-width: 600px;
+      }
+      @media ${({ theme }) => theme.breakpoint.md} {
         font-size: 3em;
+        margin: 0 auto 60px auto;
+        max-width: 700px;
       }
     }
-    p {
-      font-size: 1em;
-      margin: 0 auto 50px auto;
-      max-width: 700px;
-      @media ${({ theme }) => theme.breakpoint.sm} {
-        font-size: 1.25em;
+    .items {
+      @media ${({ theme }) => theme.breakpoint.md} {
+        align-items: center;
+        display: flex;
+        justify-content: center;
       }
-      &:last-child {
-        margin: 0 auto;
+      .item {
+        margin: 0 auto 20px auto;
+        max-width: 400px;
+        @media ${({ theme }) => theme.breakpoint.sm} {
+          margin: 0 auto 40px auto;
+          max-width: 600px;
+        }
+        @media ${({ theme }) => theme.breakpoint.md} {
+          padding: 0 20px;
+        }
+        p {
+          color: ${({ theme }) => theme.color.greyLight};
+          text-align: left;
+        }
+        .title {
+          color: ${({ theme }) => theme.color.black};
+          font-weight: ${({ theme }) => theme.font.copy.bold};
+          text-transform: uppercase;
+          .number {
+            color: ${({ theme }) => theme.color.navBarLinksListHover};
+          }
+        }
       }
     }
   }
   .section-3 {
     background-color: ${({ theme }) => theme.color.black};
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url('/images/atom/fallback/slide-3-background.jpg');
+      url('/images/locus/fallback/slide-3-background.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -92,6 +121,7 @@ const SectionStyled = styled.section`
     }
   }
   .section-4 {
+    background-color: ${({ theme }) => theme.color.white};
     h2 {
       font-size: 2em;
       margin: 0 auto 50px auto;
@@ -119,6 +149,9 @@ export default function Slides() {
   useEffect(() => {
     const navigationElement = document.getElementById('fp-nav')
     navigationElement.classList.add('fp-nav-white')
+    return () => {
+      document.getElementById('fullpage').remove()
+    }
   }, [])
 
   const updateNavDotsStyling = (origin, destination, direction) => {
@@ -136,7 +169,7 @@ export default function Slides() {
     <SectionStyled>
       <ReactFullpage
         licenseKey={process.env.FULLPAGE_JS_LICENSE_KEY}
-        onLeave={updateNavDotsStyling}
+        // onLeave={updateNavDotsStyling}
         scrollingSpeed={1000}
         navigation={true}
         render={() => {
@@ -144,33 +177,68 @@ export default function Slides() {
             <ReactFullpage.Wrapper>
               <div className='section section-1'>
                 <ImgWebP
-                  alt='atom logo'
-                  fallback='/images/atom/fallback/logo-atom.png'
-                  src='/images/atom/logo-atom.webp'
+                  alt='locus logo'
+                  fallback='/images/locus/fallback/logo-locus.png'
+                  src='/images/locus/logo-locus.webp'
                 />
-                <h1>The next generation of media buying.</h1>
+                <h1>Create audiences with impact.</h1>
               </div>
               <div className='section section-2'>
-                <h2>The most advanced location-based media buying tool.</h2>
-                <p>
-                  Our proprietary self-serve programmatic solution and the most
-                  advanced location-based advertising tool – all rolled into
-                  one.
-                </p>
-                <p>
-                  Execute on desktop and mobile based on preset location-powered
-                  audiences or build your own from various geographical and
-                  demographic inputs, plus get powerful advertising insights on
-                  our very own reporting dashboard.
-                </p>
+                <h2>Delivering powerful results from where people go.</h2>
+                <div className='items'>
+                  <div className='item'>
+                    <p className='title'>
+                      <span className='number'>01 |</span> Get Visual
+                    </p>
+                    <p>
+                      <b>
+                        Leverage LOCUS location behaviour data to determine and
+                        visually analyze your audiences.
+                      </b>{' '}
+                      Overlay physical locations and demographical factors to
+                      create high-value custom audiences.
+                    </p>
+                  </div>
+                  <div className='item'>
+                    <p className='title'>
+                      <span className='number'>02 |</span> Competitor Insights
+                    </p>
+                    <p>
+                      <b>
+                        Know more about your competitor’s customers than they
+                        do.
+                      </b>{' '}
+                      Access information that’s otherwise impossible to obtain,
+                      and compare your traffic with your competitors across
+                      KPIs.
+                    </p>
+                  </div>
+                  <div className='item'>
+                    <p className='title'>
+                      <span className='number'>03 |</span> Data Access
+                    </p>
+                    <p>
+                      <b>
+                        Access customized reporting and attribution metrics.
+                      </b>{' '}
+                      Plus, export your custom audiences for media buying
+                      through our in-house platform or another media buying
+                      partner.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className='section section-3'>
-                <h2>Gain powerful insights.</h2>
+                <h2>Uncover your blind spots.</h2>
                 <p>
-                  Get the metrics you need to make smart decisions with
-                  comprehensive data, covering geo-locations, times of day,
-                  creatives, domains, apps, operating systems and device types,
-                  session depth, and much more.
+                  An individual may indicate a preference toward certain
+                  behaviours, but their actions convey an entirely different
+                  picture.
+                </p>
+                <p>
+                  Nothing provides a more genuine indication of purchase intent
+                  than location behaviour, and now you can access that with
+                  LOCUS.
                 </p>
               </div>
               <div className='section section-4'>

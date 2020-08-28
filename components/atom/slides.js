@@ -18,11 +18,11 @@ const SectionStyled = styled.section`
       flex-direction: column;
       justify-content: center;
       padding: ${({ theme }) => theme.height.navBar} 40px
-        ${({ theme }) => theme.height.navBar} 40px;
+        calc(${({ theme }) => theme.height.navBar} / 2) 40px;
       text-align: center;
       @media ${({ theme }) => theme.breakpoint.sm} {
         padding: ${({ theme }) => theme.height.navBarMD} 40px
-          ${({ theme }) => theme.height.navBarMD} 40px;
+          calc(${({ theme }) => theme.height.navBarMD} / 2) 40px;
       }
     }
   }
@@ -46,6 +46,7 @@ const SectionStyled = styled.section`
     }
   }
   .section-2 {
+    background-color: ${({ theme }) => theme.color.white};
     h2 {
       font-size: 1.5em;
       margin: 0 auto 50px auto;
@@ -92,6 +93,7 @@ const SectionStyled = styled.section`
     }
   }
   .section-4 {
+    background-color: ${({ theme }) => theme.color.white};
     h2 {
       font-size: 2em;
       margin: 0 auto 50px auto;
@@ -119,6 +121,9 @@ export default function Slides() {
   useEffect(() => {
     const navigationElement = document.getElementById('fp-nav')
     navigationElement.classList.add('fp-nav-white')
+    return () => {
+      document.getElementById('fullpage').remove()
+    }
   }, [])
 
   const updateNavDotsStyling = (origin, destination, direction) => {

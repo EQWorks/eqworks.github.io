@@ -13,7 +13,7 @@ const StyleContent = styled.div`
 const NoHeroPaddingStyle = styled.div`
   padding: 0;
   @media ${({ theme }) => theme.breakpoint.sm} {
-    padding: ${({ theme }) => theme.height.navBarMD};
+    padding: calc(${({ theme }) => theme.height.navBarMD} / 2);
   }
 `
 
