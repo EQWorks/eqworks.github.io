@@ -7,6 +7,7 @@ import { getAllEntries, getEntryBySlug } from '../../api/contentful'
 
 import Date from '../../components/shared/parse-date'
 import ArticleContent from '../../components/shared/article-content'
+import ReadingTime from '../../components/press-release/reading-time'
 
 const PageStyled = styled.section`
   .press-releases-link {
@@ -106,6 +107,7 @@ export default function PressRelease({ pressRelease }) {
           {pressRelease.author.fields.name} /{' '}
           <Date className='date' dateString={pressRelease.date} />
         </p>
+        <ReadingTime data={pressRelease.content.content} />
         <ArticleContent content={pressRelease.content} />
       </Article>
     </PageStyled>
