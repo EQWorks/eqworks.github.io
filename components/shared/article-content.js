@@ -3,6 +3,7 @@ import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
+const Blockquote = dynamic(() => import('../press-release/blockquote'))
 const Carousel = dynamic(() => import('../press-release/carousel'))
 const Image = dynamic(() => import('../press-release/image'))
 const ImageExternal = dynamic(() => import('../press-release/image-external'))
@@ -63,6 +64,9 @@ export default function ArticleContent({ content }) {
         } else if (node.data.target.sys.contentType.sys.id === 'youTubeVideo') {
           return <YouTubeVideo data={node.data.target.fields} />
         }
+      },
+      [BLOCKS.QUOTE]: (node) => {
+        return <Blockquote data={node.content} />
       }
     }
   }
