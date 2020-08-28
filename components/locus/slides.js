@@ -113,10 +113,13 @@ const SectionStyled = styled.section`
     }
     p {
       font-size: 1em;
-      margin: 0 auto;
+      margin: 0 auto 20px auto;
       max-width: 700px;
       @media ${({ theme }) => theme.breakpoint.sm} {
         font-size: 1.25em;
+      }
+      &:last-child {
+        margin: 0 auto;
       }
     }
   }
@@ -169,7 +172,7 @@ export default function Slides() {
     <SectionStyled>
       <ReactFullpage
         licenseKey={process.env.FULLPAGE_JS_LICENSE_KEY}
-        // onLeave={updateNavDotsStyling}
+        onLeave={updateNavDotsStyling}
         scrollingSpeed={1000}
         navigation={true}
         render={() => {
@@ -242,7 +245,7 @@ export default function Slides() {
                 </p>
               </div>
               <div className='section section-4'>
-                <h2>Get ahead with Atom.</h2>
+                <h2>Get LOCUS working for you.</h2>
                 <Link href='/contact'>
                   <a className='link'>Book a demo</a>
                 </Link>
