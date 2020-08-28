@@ -40,6 +40,7 @@ const theme = {
     page: '1200px'
   },
   zIndex: {
+    page404: 12,
     navBar: 11,
     footer: 10,
     pageContent: 5,
