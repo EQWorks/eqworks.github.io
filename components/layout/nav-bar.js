@@ -335,11 +335,6 @@ export default function NavBar({ noHero }) {
                                   <a onClick={handleSubLinkClick}>Locus</a>
                                 </Link>
                               </li>
-                              <li>
-                                <Link href='/visilink'>
-                                  <a onClick={handleSubLinkClick}>Visilink</a>
-                                </Link>
-                              </li>
                             </ul>
                           </div>
                         </div>
@@ -433,11 +428,6 @@ export default function NavBar({ noHero }) {
                     <li>
                       <Link href='/locus'>
                         <a>Locus</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href='/visilink'>
-                        <a>Visilink</a>
                       </Link>
                     </li>
                   </ul>
