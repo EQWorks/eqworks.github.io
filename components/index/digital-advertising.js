@@ -155,22 +155,6 @@ export default function DigitalAdvertising() {
             <a>Learn more</a>
           </Link>
         </div>
-        <div>
-          <ImgWebP
-            alt='visilink logo'
-            fallback='/images/index/fallback/digital-advertising-visilink.png'
-            src='/images/index/digital-advertising-visilink.webp'
-          />
-          <p className='title'>Ad verification</p>
-          <p className='grey'>
-            First of its kind, Visilink is the most effective way to measure the
-            performance of a digital campaign and uncover the right strategy for
-            your brand.
-          </p>
-          <Link href='/visilink'>
-            <a>Learn more</a>
-          </Link>
-        </div>
       </div>
     </SectionStyled>
   )

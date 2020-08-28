@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-    body {
+  body {
     background-color: ${({ theme }) => theme.color.black};
     font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
     font-weight: ${({ theme }) => theme.font.copy.regular};
@@ -45,6 +45,23 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+  }
+
+  .fp-nav-black {
+    ul li a span {
+      background: ${({ theme }) => theme.color.black} !important;
+    }
+  }
+
+  .fp-nav-white {
+    ul li a span {
+      background: ${({ theme }) => theme.color.white} !important;
+    }
+  }
+  
+  .no-scroll {
+    height: 100%;
+    overflow: hidden;
   }
 `
 

@@ -13,11 +13,12 @@ const StyleContent = styled.div`
 const NoHeroPaddingStyle = styled.div`
   padding: 0;
   @media ${({ theme }) => theme.breakpoint.sm} {
-    padding: ${({ theme }) => theme.height.navBarMD};
+    padding: calc(${({ theme }) => theme.height.navBarMD} / 2);
   }
 `
 
-const noHeroRoutes = ['/posts/[slug]']
+const noHeroRoutes = ['/atom', '/locus']
+const noFooterRoutes = ['/atom', '/locus']
 
 export default function Layout(props) {
   const router = useRouter()
@@ -30,7 +31,7 @@ export default function Layout(props) {
         {noHeroRoutes.includes(router.pathname) && <NoHeroPaddingStyle />}
         {props.children}
       </StyleContent>
-      <Footer />
+      <Footer noFooter={noFooterRoutes.includes(router.pathname)} />
     </>
   )
 }

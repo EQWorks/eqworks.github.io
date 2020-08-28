@@ -67,12 +67,6 @@ const ROUTES = [
     path: '/privacy-policy',
     title: 'Privacy Policy',
     description: 'EQ Works privacy policy.'
-  },
-  {
-    path: '/visilink',
-    title: 'Visilink',
-    description:
-      'With Visilink, you can finally close the loop between ad spend and measurable business outcomes and take attribution to a whole new level.'
   }
 ]
 

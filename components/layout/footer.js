@@ -106,7 +106,11 @@ const StyleFooter = styled.footer`
   }
 `
 
-export default function Footer() {
+export default function Footer({ noFooter }) {
+  if (noFooter) {
+    return null
+  }
+
   return (
     <StyleFooter>
       <div className='footer__inner'>
