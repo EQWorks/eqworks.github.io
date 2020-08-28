@@ -39,8 +39,6 @@ const BlockquoteStyled = styled.blockquote`
 `
 
 export default function Blockquote({ data }) {
-  console.log(data)
-
   return (
     <BlockquoteStyled>
       <div className='left'>
