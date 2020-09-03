@@ -9,7 +9,7 @@ const getClient = () => {
   return client
 }
 
-export async function getEntries(contentType, category, numberOfPosts = false) {
+export async function getEntries(contentType, category, numberOfPosts = false, skip = false) {
   const query = {
     content_type: contentType,
     'fields.categories.sys.id[in]': category,
@@ -18,6 +18,10 @@ export async function getEntries(contentType, category, numberOfPosts = false) {
 
   if (numberOfPosts && !isNaN(numberOfPosts)) {
     query.limit = numberOfPosts
+  }
+
+  if (skip) {
+    query.skip = skip
   }
 
   const entries = await getClient().getEntries(query)
