@@ -9,12 +9,20 @@ const getClient = () => {
   return client
 }
 
-export async function getAllEntries(contentType) {
-  const entries = await getClient().getEntries({
-    content_type: contentType
-  })
+export async function getEntries(contentType, category, numberOfPosts = false) {
+  const query = {
+    content_type: contentType,
+    'fields.categories.sys.id[in]': category,
+    order: '-fields.date'
+  }
 
-  return entries
+  if (numberOfPosts && !isNaN(numberOfPosts)) {
+    query.limit = numberOfPosts
+  }
+
+  const entries = await getClient().getEntries(query)
+
+  return entries.items
 }
 
 export async function getEntryById(id) {
@@ -31,14 +39,4 @@ export async function getEntryBySlug(contentType, slug) {
   })
 
   return entries.items[0].fields
-}
-
-export async function getNEntries(contentType, numberOfPreviews) {
-  const entries = await getClient().getEntries({
-    content_type: contentType,
-    limit: numberOfPreviews,
-    order: '-fields.date'
-  })
-
-  return entries.items
 }

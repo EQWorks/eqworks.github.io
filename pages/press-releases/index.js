@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
-import { getNEntries } from '../../api/contentful'
+import { getEntries } from '../../api/contentful'
 
 const Preview = dynamic(() => import('../../components/press-releases/preview'))
 
@@ -36,7 +36,7 @@ export default function PressReleases({ pressReleases }) {
 }
 
 export async function getStaticProps() {
-  const pressReleases = await getNEntries('pressRelease', 3)
+  const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
 
   return {
     props: {

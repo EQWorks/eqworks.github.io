@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { getAllEntries, getEntryBySlug } from '../../api/contentful'
+import { getEntries, getEntryBySlug } from '../../api/contentful'
 
 import Date from '../../components/shared/parse-date'
 import ArticleContent from '../../components/shared/article-content'
@@ -115,7 +115,7 @@ export default function PressRelease({ pressRelease }) {
 }
 
 export async function getStaticProps({ params }) {
-  const pressRelease = await getEntryBySlug('pressRelease', params.slug)
+  const pressRelease = await getEntryBySlug('post', params.slug)
 
   return {
     props: {
@@ -125,10 +125,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const allPressReleases = await getAllEntries('pressRelease')
+  const allPressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
 
   const slugArray = []
-  allPressReleases.items.map((item) => {
+  allPressReleases.map((item) => {
     slugArray.push({
       params: {
         slug: item.fields.slug
