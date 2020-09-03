@@ -4,21 +4,22 @@ import styled from 'styled-components'
 import Date from '../shared/parse-date'
 
 const SectionStyled = styled.section`
+  max-width: 600px;
   padding: 40px;
   width: 100%;
-  @media ${({ theme }) => theme.breakpoint.sm} {
-    max-width: 250px;
-    padding: 40px;
-  }
   .excerpt {
     color: ${({ theme }) => theme.color.greyLight};
     margin: 0 0 10px 0;
   }
-  .date {
+  .author-date {
     font-size: 0.8em;
     display: block;
     color: ${({ theme }) => theme.color.greyLight};
     margin: 0 0 10px 0;
+    span {
+      color: ${({ theme }) => theme.color.black};
+      margin: 0 10px 0 0;
+    }
   }
   .read-more {
     color: ${({ theme }) => theme.color.black};
@@ -47,10 +48,12 @@ const SectionStyled = styled.section`
   }
 `
 
-export default function Preview({ date, excerpt, slug, title }) {
+export default function Preview({ author, date, excerpt, slug, title }) {
   return (
     <SectionStyled>
-      <Date className='date' dateString={date} />
+      <p className='author-date'>
+        <span>{author}</span> <Date dateString={date} />
+      </p>
       <Link as={`/press-release/${slug}`} href='/press-release/[slug]'>
         <a className='title'>{title}</a>
       </Link>

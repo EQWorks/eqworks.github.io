@@ -3,12 +3,8 @@ import styled from 'styled-components'
 
 import { getEntries } from '../../api/contentful'
 
+const Hero = dynamic(() => import('../../components/shared/hero'))
 const Preview = dynamic(() => import('../../components/press-releases/preview'))
-
-const SectionStyled = styled.section`
-  background-color: ${({ theme }) => theme.color.black};
-  height: 100px;
-`
 
 const ItemsStyled = styled.div`
   display: flex;
@@ -19,10 +15,14 @@ const ItemsStyled = styled.div`
 export default function PressReleases({ pressReleases }) {
   return (
     <>
-      <SectionStyled />
+      <Hero
+        imgSrc='/images/press-releases/fallback/hero.jpg'
+        title='Press Releases'
+      />
       <ItemsStyled>
         {pressReleases.map((pressRelease, index) => {
           const props = {
+            author: pressRelease.fields.author.fields.name,
             date: pressRelease.fields.date,
             excerpt: pressRelease.fields.excerpt,
             slug: pressRelease.fields.slug,
