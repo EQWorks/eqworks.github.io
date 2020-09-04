@@ -49,7 +49,7 @@ export default function Preview({ featuredImage, slug, title }) {
       <Link as={`/case-study/${slug}`} href='/case-study/[slug]'>
         <a>
           <ImageStyled featuredImage={featuredImage}>
-            <div class='overlay' />
+            <div className='overlay' />
           </ImageStyled>
           <p>{title}</p>
         </a>

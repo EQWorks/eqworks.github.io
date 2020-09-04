@@ -10,9 +10,12 @@ const Hero = dynamic(() => import('../../components/shared/hero'))
 const Preview = dynamic(() => import('../../components/press-releases/preview'))
 
 const ItemsStyled = styled.div`
+  align-items: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: no-wrap;
   justify-content: center;
+  width: 100%;
 `
 
 const PaginationStyled = styled.div`
@@ -32,29 +35,17 @@ export default function PressReleases({ pressReleasesData }) {
   const TOTAL_PRESS_RELEASES = pressReleasesData.length
   const ENTRIES_PER_PAGE = 5
 
-  // useEffect(() => {
-  //   async function anyNameFunction() {
-  //     return await getEntries(
-  //       'post',
-  //       '4cuZTcGorM9T6djiI3JQ8l',
-  //       ENTRIES_PER_PAGE,
-  //       page * ENTRIES_PER_PAGE
-  //     )
-  //   }
-  //   anyNameFunction().then((response) => {
-  //     setPressReleases(response)
-  //   })
-  // }, [page])
-
   const nextPage = () => {
     if (page < Math.floor(TOTAL_PRESS_RELEASES / ENTRIES_PER_PAGE)) {
       setPage(page + 1)
+      window.scrollTo(0, 0)
     }
   }
 
   const previousPage = () => {
     if (page > 0) {
       setPage(page - 1)
+      window.scrollTo(0, 0)
     }
   }
 
