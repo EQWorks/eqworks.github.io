@@ -25,11 +25,6 @@ const PageStyled = styled.section`
   }
 `
 
-const TempPageTopPadding = styled.div`
-  background-color: ${({ theme }) => theme.color.black};
-  height: 100px;
-`
-
 const Article = styled.div`
   color: ${({ theme }) => theme.color.greyLight};
   margin: 0 auto;
@@ -96,7 +91,6 @@ export default function PressRelease({ pressRelease }) {
       <Head>
         <title>{pressRelease.title} | EQ Works</title>
       </Head>
-      <TempPageTopPadding />
       <Link href='/press-releases'>
         <a className='press-releases-link'>Press Releases</a>
       </Link>

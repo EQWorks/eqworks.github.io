@@ -17,8 +17,13 @@ const NoHeroPaddingStyle = styled.div`
   }
 `
 
-const noHeroRoutes = ['/atom', '/locus']
-const noFooterRoutes = ['/atom', '/locus']
+const NO_HERO_ROUTES = [
+  '/atom',
+  '/case-study/[slug]',
+  '/locus',
+  '/press-release/[slug]'
+]
+const NO_FOOTER_ROUTES = ['/atom', '/locus']
 
 export default function Layout(props) {
   const router = useRouter()
@@ -27,11 +32,11 @@ export default function Layout(props) {
     <>
       <Header />
       <StyleContent>
-        <NavBar noHero={noHeroRoutes.includes(router.pathname)} />
-        {noHeroRoutes.includes(router.pathname) && <NoHeroPaddingStyle />}
+        <NavBar noHero={NO_HERO_ROUTES.includes(router.pathname)} />
+        {NO_HERO_ROUTES.includes(router.pathname) && <NoHeroPaddingStyle />}
         {props.children}
       </StyleContent>
-      <Footer noFooter={noFooterRoutes.includes(router.pathname)} />
+      <Footer noFooter={NO_FOOTER_ROUTES.includes(router.pathname)} />
     </>
   )
 }
