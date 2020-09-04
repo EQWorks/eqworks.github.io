@@ -7,7 +7,9 @@ import { ChevronRight } from '@styled-icons/feather/ChevronRight'
 import { getEntries } from '../../api/contentful'
 
 const Hero = dynamic(() => import('../../components/shared/hero'))
-const Preview = dynamic(() => import('../../components/press-releases/preview'))
+const EntryPreview = dynamic(() =>
+  import('../../components/press-releases/entry-preview')
+)
 
 const ItemsStyled = styled.div`
   align-items: center;
@@ -69,7 +71,7 @@ export default function PressReleases({ pressReleasesData }) {
               slug: pressRelease.fields.slug,
               title: pressRelease.fields.title
             }
-            return <Preview key={index} {...props} />
+            return <EntryPreview key={index} {...props} />
           })}
       </ItemsStyled>
       <PaginationStyled>

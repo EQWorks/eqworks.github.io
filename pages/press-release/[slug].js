@@ -6,8 +6,8 @@ import styled from 'styled-components'
 import { getEntries, getEntryBySlug } from '../../api/contentful'
 
 import Date from '../../components/shared/parse-date'
-import ArticleContent from '../../components/shared/article-content'
-import ReadingTime from '../../components/press-release/reading-time'
+import EntryContent from '../../components/shared/entry-content'
+import ReadingTime from '../../components/shared/reading-time'
 
 const PageStyled = styled.section`
   .press-releases-link {
@@ -102,7 +102,7 @@ export default function PressRelease({ pressRelease }) {
           <Date className='date' dateString={pressRelease.date} />
         </p>
         <ReadingTime data={pressRelease.content.content} />
-        <ArticleContent content={pressRelease.content} />
+        <EntryContent content={pressRelease.content} />
       </Article>
     </PageStyled>
   )

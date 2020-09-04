@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
-const Preview = dynamic(() => import('./preview'))
+const EntryPreview = dynamic(() => import('./entry-preview'))
 
 const SectionStyled = styled.section`
   background-color: ${({ theme }) => theme.color.white};
@@ -29,7 +29,7 @@ export default function RecentStudies({ caseStudies }) {
             slug: caseStudy.fields.slug,
             title: caseStudy.fields.title
           }
-          return <Preview key={index} {...props} />
+          return <EntryPreview key={index} {...props} />
         })}
       </ItemsStyled>
     </SectionStyled>

@@ -43,7 +43,6 @@ const ImageStyled = styled.div`
 `
 
 export default function Preview({ featuredImage, slug, title }) {
-  // <img alt={featuredImage.title} src={featuredImage.file.url} />
   return (
     <SectionStyled>
       <Link as={`/case-study/${slug}`} href='/case-study/[slug]'>

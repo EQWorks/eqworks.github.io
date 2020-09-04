@@ -1,11 +1,10 @@
 import ErrorPage from 'next/error'
 import Head from 'next/head'
-import Link from 'next/link'
 import styled from 'styled-components'
 
 import { getEntries, getEntryBySlug } from '../../api/contentful'
 
-import ArticleContent from '../../components/shared/article-content'
+import EntryContent from '../../components/shared/entry-content'
 
 const PageStyled = styled.section`
   margin: 0 auto;
@@ -135,7 +134,7 @@ export default function PressRelease({ caseStudy }) {
         <div className='left'>
           <ImageStyled imageUrl={caseStudy.featuredImage.fields.file.url} />
           <div className='content'>
-            <ArticleContent content={caseStudy.content} />
+            <EntryContent content={caseStudy.content} />
           </div>
         </div>
         <div className='right'>

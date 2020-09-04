@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import ArticleContent from '../shared/article-content'
+import EntryContent from '../shared/entry-content'
 import Date from '../shared/parse-date'
 
 const SectionStyled = styled.section`
@@ -35,7 +35,7 @@ export default function Content({ privacyPolicy }) {
         Last updated on <Date dateString={privacyPolicy.lastUpdated} />
       </p>
       <h1>{privacyPolicy.title}</h1>
-      <ArticleContent content={privacyPolicy.content} />
+      <EntryContent content={privacyPolicy.content} />
     </SectionStyled>
   )
 }

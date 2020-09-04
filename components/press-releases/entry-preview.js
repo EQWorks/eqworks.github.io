@@ -48,7 +48,7 @@ const SectionStyled = styled.section`
   }
 `
 
-export default function Preview({ author, date, excerpt, slug, title }) {
+export default function EntryPreview({ author, date, excerpt, slug, title }) {
   return (
     <SectionStyled>
       <p className='author-date'>
