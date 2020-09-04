@@ -9,11 +9,23 @@ const getClient = () => {
   return client
 }
 
-export async function getEntries(contentType, category, numberOfPosts = false, skip = false) {
+export async function getEntries(
+  contentType,
+  category = false,
+  order = false,
+  numberOfPosts = false,
+  skip = false
+) {
   const query = {
-    content_type: contentType,
-    'fields.categories.sys.id[in]': category,
-    order: '-fields.date'
+    content_type: contentType
+  }
+
+  if (category) {
+    query['fields.categories.sys.id[in]'] = category
+  }
+
+  if (order) {
+    query.order = '-fields.date'
   }
 
   if (numberOfPosts && !isNaN(numberOfPosts)) {
