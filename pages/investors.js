@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-import { getNEntries } from '../api/contentful'
+import { getEntries } from '../api/contentful'
 
 const Hero = dynamic(() => import('../components/shared/hero'))
 const InvestingFuture = dynamic(() =>
@@ -33,7 +33,12 @@ export default function Investors({ pressReleases }) {
 }
 
 export async function getStaticProps() {
-  const pressReleases = await getNEntries('pressRelease', 3)
+  const pressReleases = await getEntries(
+    'post',
+    '4cuZTcGorM9T6djiI3JQ8l',
+    true,
+    3
+  )
 
   return {
     props: {

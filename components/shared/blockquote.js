@@ -7,7 +7,7 @@ const BlockquoteStyled = styled.blockquote`
   display: flex;
   margin: 0;
   padding: 20px;
-  .left {
+  .left-side {
     display: none;
     min-width: 25px;
     width: 25px;
@@ -19,7 +19,7 @@ const BlockquoteStyled = styled.blockquote`
       width: 100%;
     }
   }
-  .right {
+  .right-side {
     @media ${({ theme }) => theme.breakpoint.xs} {
       padding: 0 0 0 20px;
       width: calc(100% - 25px);
@@ -41,12 +41,12 @@ const BlockquoteStyled = styled.blockquote`
 export default function Blockquote({ data }) {
   return (
     <BlockquoteStyled>
-      <div className='left'>
+      <div className='left-side'>
         <QuoteLeft aria-label='left quote' role='img' />
       </div>
-      <div className='right'>
-        <p>{data[0].content[0].value}</p>
-        <p>{data[1].content[0].value}</p>
+      <div className='right-side'>
+        {data[0] && <p>{data[0].content[0].value}</p>}
+        {data[1] && <p>{data[1].content[0].value}</p>}
       </div>
     </BlockquoteStyled>
   )

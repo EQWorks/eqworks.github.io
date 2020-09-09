@@ -50,7 +50,7 @@ export default function FinancialInfo() {
           Statements are published quarterly. Click below to access current and
           historic&nbsp;reports.
         </p>
-        <Link href='/'>
+        <Link href='/financial-reports'>
           <a>View All</a>
         </Link>
       </div>

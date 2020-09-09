@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { getAllEntries, getEntryBySlug } from '../../api/contentful'
+import { getEntries, getEntryBySlug } from '../../api/contentful'
 
 import Date from '../../components/shared/parse-date'
-import ArticleContent from '../../components/shared/article-content'
-import ReadingTime from '../../components/press-release/reading-time'
+import EntryContent from '../../components/shared/entry-content'
+import ReadingTime from '../../components/shared/reading-time'
 
 const PageStyled = styled.section`
   .press-releases-link {
@@ -23,11 +23,6 @@ const PageStyled = styled.section`
       color: ${({ theme }) => theme.color.navBarLinksListHover};
     }
   }
-`
-
-const TempPageTopPadding = styled.div`
-  background-color: ${({ theme }) => theme.color.black};
-  height: 100px;
 `
 
 const Article = styled.div`
@@ -96,7 +91,6 @@ export default function PressRelease({ pressRelease }) {
       <Head>
         <title>{pressRelease.title} | EQ Works</title>
       </Head>
-      <TempPageTopPadding />
       <Link href='/press-releases'>
         <a className='press-releases-link'>Press Releases</a>
       </Link>
@@ -108,14 +102,14 @@ export default function PressRelease({ pressRelease }) {
           <Date className='date' dateString={pressRelease.date} />
         </p>
         <ReadingTime data={pressRelease.content.content} />
-        <ArticleContent content={pressRelease.content} />
+        <EntryContent content={pressRelease.content} />
       </Article>
     </PageStyled>
   )
 }
 
 export async function getStaticProps({ params }) {
-  const pressRelease = await getEntryBySlug('pressRelease', params.slug)
+  const pressRelease = await getEntryBySlug('post', params.slug)
 
   return {
     props: {
@@ -125,10 +119,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const allPressReleases = await getAllEntries('pressRelease')
+  const allPressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
 
   const slugArray = []
-  allPressReleases.items.map((item) => {
+  allPressReleases.map((item) => {
     slugArray.push({
       params: {
         slug: item.fields.slug

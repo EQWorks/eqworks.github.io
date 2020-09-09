@@ -3,12 +3,12 @@ import { BLOCKS } from '@contentful/rich-text-types'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import styled from 'styled-components'
 
-const Blockquote = dynamic(() => import('../press-release/blockquote'))
-const Carousel = dynamic(() => import('../press-release/carousel'))
-const Image = dynamic(() => import('../press-release/image'))
-const ImageExternal = dynamic(() => import('../press-release/image-external'))
-const PDF = dynamic(() => import('../press-release/pdf'))
-const YouTubeVideo = dynamic(() => import('../press-release/youtube-video'))
+const Blockquote = dynamic(() => import('./blockquote'))
+const Carousel = dynamic(() => import('./carousel'))
+const Image = dynamic(() => import('./image'))
+const ImageExternal = dynamic(() => import('./image-external'))
+const PDF = dynamic(() => import('./pdf'))
+const YouTubeVideo = dynamic(() => import('./youtube-video'))
 
 const ContentStyled = styled.div`
   a {
@@ -41,7 +41,7 @@ const ContentStyled = styled.div`
   }
 `
 
-export default function ArticleContent({ content }) {
+export default function EntryContent({ content }) {
   const dtrOptions = {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
