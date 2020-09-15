@@ -41,7 +41,8 @@ const SectionStyled = styled.section`
       }
     }
     img {
-      margin: 0 0 20px 0;
+      margin: 0 0 40px 0;
+      max-width: 395px;
       width: 100%;
     }
   }
@@ -150,8 +151,8 @@ export default function Slides() {
               <div className='section section-1'>
                 <ImgWebP
                   alt='atom logo'
-                  fallback='/images/atom/fallback/logo-atom.png'
-                  src='/images/atom/logo-atom.webp'
+                  fallback='/images/components/fallback/logo-atom-white.png'
+                  src='/images/components/logo-atom-white.webp'
                 />
                 <h1>The next generation of media buying.</h1>
               </div>
