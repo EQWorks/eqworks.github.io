@@ -126,8 +126,8 @@ export default function SimplifyYour({ title }) {
         <div>
           <ImgWebP
             alt='atom logo'
-            fallback='/images/index/fallback/digital-advertising-atom.png'
-            src='/images/index/digital-advertising-atom.webp'
+            fallback='/images/components/fallback/logo-atom-black.png'
+            src='/images/components/logo-atom-black.webp'
           />
           <p className='title'>Media buying</p>
           <p className='grey'>

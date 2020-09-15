@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { Facebook } from '@styled-icons/boxicons-logos/Facebook'
+import { Linkedin } from '@styled-icons/boxicons-logos/Linkedin'
+import { Twitter } from '@styled-icons/boxicons-logos/Twitter'
 
 import ImgWebP from '../shared/img-webp'
 
 const StyleFooter = styled.footer`
   background-color: #1e1e1e;
-  color: #808080;
+  color: ${({ theme }) => theme.color.greyTextFooter};
   font-size: 0.9em;
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.footer};
@@ -72,10 +75,30 @@ const StyleFooter = styled.footer`
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        img {
-          height: 24px;
-          padding: 0 10px;
-          width: auto;
+        a {
+          color: ${({ theme }) => theme.color.greyTextFooter};
+          margin: 0 10px;
+          transition: all 0.25s ease-out;
+          &:first-child {
+            margin: 0 10px 0 0;
+            &:hover {
+              color: #00acee;
+            }
+          }
+          &:nth-child(2) {
+            &:hover {
+              color: #3b5998;
+            }
+          }
+          &:nth-child(3) {
+            &:hover {
+              color: #0e76a8;
+            }
+          }
+          svg {
+            height: 30px;
+            width: auto;
+          }
         }
       }
       p {
@@ -93,7 +116,7 @@ const StyleFooter = styled.footer`
       text-align: right;
       width: 100%;
       a {
-        color: #808080;
+        color: ${({ theme }) => theme.color.greyTextFooter};
         font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
         font-weight: ${({ theme }) => theme.font.copy.medium};
         text-decoration: none;
@@ -140,21 +163,21 @@ export default function Footer({ noFooter }) {
         <div className='footer__inner__social'>
           <p>Find Us</p>
           <div>
-            <ImgWebP
-              alt='twitter icon'
-              fallback='/images/components/fallback/logo-twitter-grey.png'
-              src='/images/components/logo-twitter-grey.webp'
-            />
-            <ImgWebP
-              alt='facebook icon'
-              fallback='/images/components/fallback/logo-facebook-grey.png'
-              src='/images/components/logo-facebook-grey.webp'
-            />
-            <ImgWebP
-              alt='linkedin icon'
-              fallback='/images/components/fallback/logo-linkedin-grey.png'
-              src='/images/components/logo-linkedin-grey.webp'
-            />
+            <Link href='https://twitter.com/eqworkscorp/'>
+              <a rel='noopener noreferrer' target='_blank'>
+                <Twitter aria-label='Twitter icon' role='img' />
+              </a>
+            </Link>
+            <Link href='https://www.facebook.com/eqworkscorp/'>
+              <a rel='noopener noreferrer' target='_blank'>
+                <Facebook aria-label='Facebook icon' role='img' />
+              </a>
+            </Link>
+            <Link href='https://www.linkedin.com/company/eq-works/'>
+              <a rel='noopener noreferrer' target='_blank'>
+                <Linkedin aria-label='Twitter icon' role='img' />
+              </a>
+            </Link>
           </div>
         </div>
         <div className='footer__inner__legal'>

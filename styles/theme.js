@@ -12,6 +12,7 @@ const theme = {
     greyDark: '#333333',
     greyMedium: '#777777',
     greyLight: '#BFBFBF',
+    greyTextFooter: '#808080',
     navBarLinksListHover: '#F95F51',
     white: '#FFFFFF'
   },

@@ -12,11 +12,15 @@ const PageStyled = styled.section`
   padding: 20px 0;
   .header {
     margin: 0 auto 20px auto;
-    max-width: ${({ theme }) => theme.width.article};
+    max-width: ${({ theme }) => theme.width.page};
     padding: 0 20px;
+    @media ${({ theme }) => theme.breakpoint.lg} {
+      padding: 0;
+    }
     h1 {
       font-size: 1.5em;
-      margin: 0 0 20px;
+      margin: 0 0 20px 0;
+      max-width: 800px;
       text-align: left;
       @media ${({ theme }) => theme.breakpoint.sm} {
         font-size: 2em;
