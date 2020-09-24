@@ -136,7 +136,7 @@ export default function SimplifyYour({ title }) {
             employed by Fortune 500 companies.
           </p>
           <Link href='/atom'>
-            <a>Learn more</a>
+            <a>Learn more about Atom</a>
           </Link>
         </div>
         <div>
@@ -152,7 +152,7 @@ export default function SimplifyYour({ title }) {
             provide deep customer insights.
           </p>
           <Link href='/locus'>
-            <a>Learn more</a>
+            <a>Learn more about Locus</a>
           </Link>
         </div>
       </div>
