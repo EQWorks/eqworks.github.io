@@ -1,4 +1,6 @@
+import react, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
+import styled from 'styled-components'
 
 import { getEntries } from '../api/contentful'
 
@@ -12,7 +14,24 @@ const RecentStudies = dynamic(() =>
   import('../components/marketers/recent-studies')
 )
 
-export default function Marketers({ caseStudies }) {
+const StyleNoContent = styled.div`
+  margin: 20px auto;
+  max-width: ${({ theme }) => theme.width.article};
+  h2 {
+    font-size: 2em;
+  }
+`
+
+export default function Marketers() {
+  const [caseStudies, setCaseStudies] = useState(false)
+
+  useEffect(() => {
+    async function fetchData() {
+      setCaseStudies(await getEntries('caseStudy', false, false, 3))
+    }
+    fetchData()
+  }, [])
+
   return (
     <>
       <Hero
@@ -22,17 +41,17 @@ export default function Marketers({ caseStudies }) {
       <Understand />
       <ServiceResults />
       <SimplifyYour title='tech stack' />
-      <RecentStudies caseStudies={caseStudies} />
+      {!caseStudies && (
+        <StyleNoContent>
+          <h2>Loading content...</h2>
+        </StyleNoContent>
+      )}
+      {caseStudies === 'error' && (
+        <StyleNoContent>
+          <h2>Error loading Case Studies, please try again.</h2>
+        </StyleNoContent>
+      )}
+      {(caseStudies && caseStudies !== 'error') && <RecentStudies caseStudies={caseStudies.items} />}
     </>
   )
-}
-
-export async function getStaticProps() {
-  const caseStudies = await getEntries('caseStudy', false, false, 3)
-
-  return {
-    props: {
-      caseStudies
-    }
-  }
 }

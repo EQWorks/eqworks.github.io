@@ -25,41 +25,25 @@ export default function PrivacyPolicy() {
     fetchData()
   }, [])
 
-  if (!financialReports) {
-    return (
-      <>
-        <Hero
-          imgSrc='/images/financial-reports/fallback/hero.jpg'
-          title='EQ Works Privacy'
-        />
-        <StyleNoContent>
-          <h2>Loading content...</h2>
-        </StyleNoContent>
-      </>
-    )
-  }
-
-  if (financialReports === 'error') {
-    return (
-      <>
-        <Hero
-          imgSrc='/images/financial-reports/fallback/hero.jpg'
-          title='EQ Works Privacy'
-        />
-        <StyleNoContent>
-          <h2>Error loading Financial Reports, please try again.</h2>
-        </StyleNoContent>
-      </>
-    )
-  }
-
   return (
     <>
       <Hero
         imgSrc='/images/financial-reports/fallback/hero.jpg'
         title={financialReports.title}
       />
-      <Content financialReports={financialReports.fields} />
+      {!financialReports && (
+        <StyleNoContent>
+          <h2>Loading content...</h2>
+        </StyleNoContent>
+      )}
+      {financialReports === 'error' && (
+        <StyleNoContent>
+          <h2>Error loading Financial Reports, please try again.</h2>
+        </StyleNoContent>
+      )}
+      {financialReports && financialReports !== 'error' && (
+        <Content financialReports={financialReports.fields} />
+      )}
     </>
   )
 }

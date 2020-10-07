@@ -25,20 +25,6 @@ export default function PrivacyPolicy() {
     fetchData()
   }, [])
 
-  if (!privacyPolicy) {
-    return (
-      <>
-        <Hero
-          imgSrc='/images/privacy-policy/fallback/hero.jpg'
-          title='EQ Works Privacy'
-        />
-        <StyleNoContent>
-          <h2>Loading content...</h2>
-        </StyleNoContent>
-      </>
-    )
-  }
-
   if (privacyPolicy === 'error') {
     return (
       <>
@@ -59,7 +45,19 @@ export default function PrivacyPolicy() {
         imgSrc='/images/privacy-policy/fallback/hero.jpg'
         title='EQ Works Privacy'
       />
-      <Content privacyPolicy={privacyPolicy.fields} />
+      {!privacyPolicy && (
+        <StyleNoContent>
+          <h2>Loading content...</h2>
+        </StyleNoContent>
+      )}
+      {privacyPolicy === 'error' && (
+        <StyleNoContent>
+          <h2>Error loading Privacy Policy, please try again.</h2>
+        </StyleNoContent>
+      )}
+      {privacyPolicy && privacyPolicy !== 'error' && (
+        <Content privacyPolicy={privacyPolicy.fields} />
+      )}
     </>
   )
 }

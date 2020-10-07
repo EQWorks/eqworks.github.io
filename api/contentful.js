@@ -36,9 +36,16 @@ export async function getEntries(
     query.skip = skip
   }
 
-  const entries = await getClient().getEntries(query)
+  const response = await getClient()
+    .getEntries(query)
+    .then((entry) => {
+      return entry
+    })
+    .catch(() => {
+      return 'error'
+    })
 
-  return entries.items
+  return response
 }
 
 export async function getEntryById(id) {
