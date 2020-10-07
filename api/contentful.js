@@ -42,9 +42,16 @@ export async function getEntries(
 }
 
 export async function getEntryById(id) {
-  const entry = await getClient().getEntry(id)
+  const response = await getClient()
+    .getEntry(id)
+    .then((entry) => {
+      return entry
+    })
+    .catch(() => {
+      return 'error'
+    })
 
-  return entry.fields
+  return response
 }
 
 export async function getEntryBySlug(contentType, slug) {
