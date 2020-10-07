@@ -51,7 +51,9 @@ export default function Marketers() {
           <h2>Error loading Case Studies, please try again.</h2>
         </StyleNoContent>
       )}
-      {(caseStudies && caseStudies !== 'error') && <RecentStudies caseStudies={caseStudies.items} />}
+      {caseStudies && caseStudies !== 'error' && (
+        <RecentStudies caseStudies={caseStudies.items} />
+      )}
     </>
   )
 }
