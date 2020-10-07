@@ -1,6 +1,7 @@
 # directories
 .next
 node_modules
+out
 
 # files
 .DS_Store
