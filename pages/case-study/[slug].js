@@ -123,15 +123,23 @@ const StyleNoContent = styled.div`
 
 export default function PressRelease() {
   const router = useRouter()
+  const { slug } = router.query
+
   const [caseStudy, setCaseStudy] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
-      const { slug } = router.query
-      setCaseStudy(await getEntryBySlug('caseStudy', slug))
+      if (slug) {
+        const data = await getEntryBySlug('caseStudy', slug)
+        if (data.items.length !== 0) {
+          setCaseStudy(data.items[0].fields)
+        } else {
+          setCaseStudy('error')
+        }
+      }
     }
     fetchData()
-  }, [])
+  }, [slug])
 
   if (!caseStudy) {
     return (

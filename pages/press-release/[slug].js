@@ -89,15 +89,23 @@ const StyleNoContent = styled.div`
 
 export default function PressRelease() {
   const router = useRouter()
+  const { slug } = router.query
+
   const [pressRelease, setPressRelease] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
-      const { slug } = router.query
-      setPressRelease(await getEntryBySlug('post', slug))
+      if (slug) {
+        const data = await getEntryBySlug('post', slug)
+        if (data.items.length !== 0) {
+          setPressRelease(data.items[0].fields)
+        } else {
+          setPressRelease('error')
+        }
+      }
     }
     fetchData()
-  }, [])
+  }, [slug])
 
   if (!pressRelease) {
     return (

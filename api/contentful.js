@@ -62,11 +62,18 @@ export async function getEntryById(id) {
 }
 
 export async function getEntryBySlug(contentType, slug) {
-  const entries = await getClient().getEntries({
-    content_type: contentType,
-    'fields.slug[in]': slug,
-    limit: 1
-  })
+  const response = await getClient()
+    .getEntries({
+      content_type: contentType,
+      'fields.slug': slug,
+      limit: 1
+    })
+    .then((entry) => {
+      return entry
+    })
+    .catch(() => {
+      return 'error'
+    })
 
-  return entries.items[0].fields
+  return response
 }
