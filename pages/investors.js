@@ -66,18 +66,3 @@ export default function Investors() {
     </>
   )
 }
-
-// export async function getStaticProps() {
-// const pressReleases = await getEntries(
-//   'post',
-//   '4cuZTcGorM9T6djiI3JQ8l',
-//   true,
-//   3
-// )
-//
-//   return {
-//     props: {
-//       pressReleases
-//     }
-//   }
-// }

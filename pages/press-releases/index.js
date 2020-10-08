@@ -30,15 +30,36 @@ const PaginationStyled = styled.div`
   }
 `
 
-export default function PressReleases({ pressReleasesData }) {
-  const [pressReleases, setPressReleases] = useState(pressReleasesData)
+const StyleNoContent = styled.div`
+  margin: 20px auto;
+  max-width: ${({ theme }) => theme.width.article};
+  h2 {
+    font-size: 2em;
+  }
+`
+
+export default function PressReleases() {
+  const [pressReleases, setPressReleases] = useState(false)
+  const [totalPressReleases, setTotalPressReleases] = useState(0)
   const [page, setPage] = useState(0)
 
-  const TOTAL_PRESS_RELEASES = pressReleasesData.length
   const ENTRIES_PER_PAGE = 5
 
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
+      if (data.total > 0) {
+        setPressReleases(data.items)
+        setTotalPressReleases(data.total)
+      } else {
+        setPressReleases('error')
+      }
+    }
+    fetchData()
+  }, [])
+
   const nextPage = () => {
-    if (page < Math.floor(TOTAL_PRESS_RELEASES / ENTRIES_PER_PAGE)) {
+    if (page < Math.floor(totalPressReleases / ENTRIES_PER_PAGE)) {
       setPage(page + 1)
       window.scrollTo(0, 0)
     }
@@ -49,6 +70,28 @@ export default function PressReleases({ pressReleasesData }) {
       setPage(page - 1)
       window.scrollTo(0, 0)
     }
+  }
+
+  if (!pressReleases) {
+    return (
+      <StyleNoContent>
+        <h2>Loading content...</h2>
+      </StyleNoContent>
+    )
+  }
+
+  if (pressReleases === 'error') {
+    return (
+      <>
+        <Hero
+          imgSrc='/images/press-releases/fallback/hero.jpg'
+          title='Press Releases'
+        />
+        <StyleNoContent>
+          <h2>Error loading Press Releases, please try again.</h2>
+        </StyleNoContent>
+      </>
+    )
   }
 
   return (
@@ -80,7 +123,7 @@ export default function PressReleases({ pressReleasesData }) {
         </button>
         <button
           disabled={
-            page === Math.floor(TOTAL_PRESS_RELEASES / ENTRIES_PER_PAGE)
+            page === Math.floor(totalPressReleases / ENTRIES_PER_PAGE)
               ? true
               : false
           }
@@ -91,14 +134,4 @@ export default function PressReleases({ pressReleasesData }) {
       </PaginationStyled>
     </>
   )
-}
-
-export async function getStaticProps() {
-  const pressReleasesData = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
-
-  return {
-    props: {
-      pressReleasesData
-    }
-  }
 }

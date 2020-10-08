@@ -140,31 +140,3 @@ export default function PressRelease() {
     </PageStyled>
   )
 }
-
-// export async function getStaticProps({ params }) {
-//   const pressRelease = await getEntryBySlug('post', params.slug)
-
-//   return {
-//     props: {
-//       pressRelease
-//     }
-//   }
-// }
-
-// export async function getStaticPaths() {
-//   const allPressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
-
-//   const slugArray = []
-//   allPressReleases.map((item) => {
-//     slugArray.push({
-//       params: {
-//         slug: item.fields.slug
-//       }
-//     })
-//   })
-
-//   return {
-//     paths: slugArray,
-//     fallback: true
-//   }
-// }
