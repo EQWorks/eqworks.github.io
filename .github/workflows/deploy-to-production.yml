@@ -20,7 +20,15 @@ jobs:
         run: npm ci
       - name: Build & export
         run: npm run build # create an optimized production build of the website.
+        env:
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          CONTENTFUL_PREVIEW_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}
+          CONTENTFUL_PREVIEW_SECRET: ${{ secrets.CONTENTFUL_PREVIEW_SECRET }}
+          FULLPAGE_JS_LICENSE_KEY: ${{ secrets.FULLPAGE_JS_LICENSE_KEY }}
+          MAPBOX_ACCESS_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
       - run: npm run export # export your app to static HTML (to the 'out' directory).
+      - name: Create 'out' files
       - run: echo "eqworks.com" > ./out/CNAME # create a CNAME file inside the 'out' with the content eqworks.com, for DNS configuration.
       - run: touch ./out/.nojekyll # create a .nojekyll file inside the 'out', this stops GitHub Pages from applying the Jekyll theme to the _next folder.
       - name: Deploy 🚀
