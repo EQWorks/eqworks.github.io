@@ -1,9 +1,11 @@
+import react, { useEffect, useState } from 'react'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
-import { getEntries, getEntryBySlug } from '../../api/contentful'
+import { getEntryBySlug } from '../../api/contentful'
 
 import Date from '../../components/shared/parse-date'
 import EntryContent from '../../components/shared/entry-content'
@@ -77,12 +79,35 @@ const Article = styled.div`
   }
 `
 
-export default function PressRelease({ pressRelease }) {
+const StyleNoContent = styled.div`
+  margin: 20px auto;
+  max-width: ${({ theme }) => theme.width.article};
+  h2 {
+    font-size: 2em;
+  }
+`
+
+export default function PressRelease() {
+  const router = useRouter()
+  const [pressRelease, setPressRelease] = useState(false)
+
+  useEffect(() => {
+    async function fetchData() {
+      const { slug } = router.query
+      setPressRelease(await getEntryBySlug('post', slug))
+    }
+    fetchData()
+  }, [])
+
   if (!pressRelease) {
-    return <></>
+    return (
+      <StyleNoContent>
+        <h2>Loading content...</h2>
+      </StyleNoContent>
+    )
   }
 
-  if (!pressRelease.author) {
+  if (!pressRelease.title) {
     return <ErrorPage statusCode={404} />
   }
 
@@ -108,30 +133,30 @@ export default function PressRelease({ pressRelease }) {
   )
 }
 
-export async function getStaticProps({ params }) {
-  const pressRelease = await getEntryBySlug('post', params.slug)
+// export async function getStaticProps({ params }) {
+//   const pressRelease = await getEntryBySlug('post', params.slug)
 
-  return {
-    props: {
-      pressRelease
-    }
-  }
-}
+//   return {
+//     props: {
+//       pressRelease
+//     }
+//   }
+// }
 
-export async function getStaticPaths() {
-  const allPressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
+// export async function getStaticPaths() {
+//   const allPressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
 
-  const slugArray = []
-  allPressReleases.map((item) => {
-    slugArray.push({
-      params: {
-        slug: item.fields.slug
-      }
-    })
-  })
+//   const slugArray = []
+//   allPressReleases.map((item) => {
+//     slugArray.push({
+//       params: {
+//         slug: item.fields.slug
+//       }
+//     })
+//   })
 
-  return {
-    paths: slugArray,
-    fallback: true
-  }
-}
+//   return {
+//     paths: slugArray,
+//     fallback: true
+//   }
+// }
