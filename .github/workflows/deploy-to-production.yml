@@ -19,9 +19,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build & export
-        run: npm run build
-      - run: npm run export
-      - run: touch ./out/.nojekyll
+        run: npm run build # create an optimized production build of the website.
+      - run: npm run export # export your app to static HTML (to the 'out' directory).
+      - run: echo "eqworks.com" > ./out/CNAME # create a CNAME file inside the 'out' with the content eqworks.com, for DNS configuration.
+      - run: touch ./out/.nojekyll # create a .nojekyll file inside the 'out', this stops GitHub Pages from applying the Jekyll theme to the _next folder.
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
