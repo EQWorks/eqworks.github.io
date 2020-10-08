@@ -1,8 +1,10 @@
+import react, { useEffect, useState } from 'react'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
-import { getEntries, getEntryBySlug } from '../../api/contentful'
+import { getEntryBySlug } from '../../api/contentful'
 
 import EntryContent from '../../components/shared/entry-content'
 
@@ -111,9 +113,32 @@ const ImageStyled = styled.div`
   }
 `
 
-export default function PressRelease({ caseStudy }) {
+const StyleNoContent = styled.div`
+  margin: 20px auto;
+  max-width: ${({ theme }) => theme.width.article};
+  h2 {
+    font-size: 2em;
+  }
+`
+
+export default function PressRelease() {
+  const router = useRouter()
+  const [caseStudy, setCaseStudy] = useState(false)
+
+  useEffect(() => {
+    async function fetchData() {
+      const { slug } = router.query
+      setCaseStudy(await getEntryBySlug('caseStudy', slug))
+    }
+    fetchData()
+  }, [])
+
   if (!caseStudy) {
-    return <></>
+    return (
+      <StyleNoContent>
+        <h2>Loading content...</h2>
+      </StyleNoContent>
+    )
   }
 
   if (!caseStudy.title) {
@@ -154,32 +179,4 @@ export default function PressRelease({ caseStudy }) {
       </div>
     </PageStyled>
   )
-}
-
-export async function getStaticProps({ params }) {
-  const caseStudy = await getEntryBySlug('caseStudy', params.slug)
-
-  return {
-    props: {
-      caseStudy
-    }
-  }
-}
-
-export async function getStaticPaths() {
-  const allPressReleases = await getEntries('caseStudy')
-
-  const slugArray = []
-  allPressReleases.map((item) => {
-    slugArray.push({
-      params: {
-        slug: item.fields.slug
-      }
-    })
-  })
-
-  return {
-    paths: slugArray,
-    fallback: true
-  }
 }
