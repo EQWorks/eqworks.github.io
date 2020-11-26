@@ -2,11 +2,14 @@
 
 EQ Works company website.
 
+- **Production URL:** https://eqworks.com
+- **Staging URL:** https://elated-poincare-f5f978.netlify.app/
+
 ---
 
 ## Blog
 
-There is a "blog" aspect to this website. This is where we post Press Releases, Case Studies, Insights, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful, and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
+There is a "blog" aspect to this website. This is where we post **Press Releases**, **Case Studies**, **Insights**, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful, and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
 
 For contributing content, please visit this [Google Drive folder containing guides and walkthroughs](https://drive.google.com/drive/folders/1IVVPuNTpHZMi1OjolZkVtkQiJ1bQPKgw?usp=sharing).
 
@@ -14,21 +17,21 @@ For contributing content, please visit this [Google Drive folder containing guid
 
 ## Forms
 
-This project uses [Formspree](https://formspree.io/) to handle form submissions.
+This website uses [Formspree](https://formspree.io/) to handle form submissions.
 
 ---
 
 ## Maps
 
-This project uses [Mapbox](https://www.mapbox.com/) to embed interact maps.
+This website uses [Mapbox](https://www.mapbox.com/) to embed interact maps.
 
 ---
 
 ## Development
 
-This website was built using the [Next.js](https://nextjs.org/) framework.
+This website is built using the [Next.js](https://nextjs.org/) framework.
 
-Next.js is built around the concept of pages. A page is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, or `.tsx` file in the pages directory.
+### Local development
 
 1. Ensure your environment has [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/) installed.
 2. Clone repository, run `git clone https://github.com/EQWorks/eqworks.github.io.git`.
@@ -36,11 +39,50 @@ Next.js is built around the concept of pages. A page is a [React Component](http
 4. Start the website in development mode, run `npm run dev`.
 5. View website at http://localhost:3000.
 
+### Development workflow
+
+1. Update the `origin/master` reference, run `git fetch --prune && git pull`.
+2. Checkout to the `staging` branch, run `git checkout staging`.
+3. Checkout to a `feature-branch` (this is where you can make your changes), run `git checkout -b [feature-branch]`.
+4. Once your `feature-branch` is ready to be added to the website, request a PR to merge your `feature-branch` into the `staging` branch.
+5. Once your `feature-branch` is accepted and merged into the `staging` branch, head over to our [staging preview URL](https://elated-poincare-f5f978.netlify.app/) to test your feature, and ensure everything is working.
+6. Once the [staging preview URL](https://elated-poincare-f5f978.netlify.app/) has been tested and everything is working, you can then request a PR to merge the `staging` branch into the `master` branch.
+7. Once the staging branch is accepted and merged into the master branch, head over to our [production URL](https://eqworks.com) to test, and ensure everything is working. **Important:** We do not delete the `staging` branch after merging with `master`. This way our [staging preview URL](https://elated-poincare-f5f978.netlify.app/) is preserved, and we can add new features to the `staging` after merging, enabling us to easily repeat the cycle.
+8. Rinse and repeat!
+
+### Git branch diagram
+
+```
+PRESENT
+| |
+| | <- staging (retained for future feature branches to be created)
+| |
+|\|<- staging (merged into master but not deleted after)
+| |
+| |\<- feature-branch  (merged into staging and deleted after)
+| | |
+| | |<- feature-branch (your feature branch where you work on your code)
+| |/
+| |
+| |<- staging (this represents the staging website, where we all branch our features off of)
+|/
+|<- master (this represents the live website)
+PAST
+```
+
+---
+
+## Staging
+
+We are hosting the staging website using [Netlify](https://www.netlify.com/), a static website hosting platform. The staging website is used for internal preview and testing of the website before deploying the changes to production.
+
+When `feature-branches` are merged into the `staging` branch, this triggers Netlify to build and export the website to the [staging preview URL](https://elated-poincare-f5f978.netlify.app/).
+
 ---
 
 ## Production
 
-We are hosting the website using [GitHub Pages](https://pages.github.com/). When changes are merged into the `master` branch, this will trigger a workflow that builds and exports the website to the `gh-pages` branch. This branch is used for production, and it is where the website is being published.
+We are hosting the live website using [GitHub Pages](https://pages.github.com/). When the `staging` branch is merged into the `master` branch, this triggers a workflow that builds and exports the website to the `gh-pages` branch. This branch is used for production, and it is where the [live website](https://eqworks.com) is published.
 
 To host this website anywhere, you can do the following:
 
