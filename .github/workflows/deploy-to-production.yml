@@ -21,7 +21,6 @@ jobs:
       - name: Build & export
         run: npm run build # create an optimized production build of the website.
         env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           CONTENTFUL_PREVIEW_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}
@@ -32,7 +31,7 @@ jobs:
       - run: echo "eqworks.com" > ./out/CNAME # create a CNAME file inside the 'out' with the content eqworks.com, for DNS configuration.
       - run: touch ./out/.nojekyll # create a .nojekyll file inside the 'out', this stops GitHub Pages from applying the Jekyll theme to the _next folder.
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.5.9
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
