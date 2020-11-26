@@ -2,8 +2,6 @@ name: Deploy To Production
 on:
   push:
     branches: [master]
-  pull_request:
-    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,7 +29,7 @@ jobs:
       - run: echo "eqworks.com" > ./out/CNAME # create a CNAME file inside the 'out' with the content eqworks.com, for DNS configuration.
       - run: touch ./out/.nojekyll # create a .nojekyll file inside the 'out', this stops GitHub Pages from applying the Jekyll theme to the _next folder.
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.5.9
+        uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages

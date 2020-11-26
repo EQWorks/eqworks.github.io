@@ -1,6 +1,6 @@
 {
-  "name": "cs-company-website",
-  "version": "0.4.0",
+  "name": "eqworks.github.io",
+  "version": "1.0.0",
   "description": "EQ Works company website.",
   "author": "EQ Works",
   "license": "MIT",
@@ -8,11 +8,11 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EQWorks/cs-company-website.git"
+    "url": "https://github.com/EQWorks/eqworks.github.io.git"
   },
   "bugs": {
     "email": "creativestudio@eqworks.com",
-    "url": "https://github.com/EQWorks/cs-company-website/issues"
+    "url": "https://github.com/EQWorks/eqworks.github.io/issues"
   },
   "homepage": "https://www.eqworks.com",
   "scripts": {

@@ -8,7 +8,7 @@ EQ Works company website.
 
 There is a "blog" aspect to this website. This is where we post Press Releases, Case Studies, Insights, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful, and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
 
-Once we are ready for posting, we will provide helpful walkthroughs of that process right here. Stay tuned!
+For contributing content, please visit this [Google Drive folder containing guides and walkthroughs](https://drive.google.com/drive/folders/1IVVPuNTpHZMi1OjolZkVtkQiJ1bQPKgw?usp=sharing).
 
 ---
 
@@ -31,7 +31,7 @@ This website was built using the [Next.js](https://nextjs.org/) framework.
 Next.js is built around the concept of pages. A page is a [React Component](https://reactjs.org/docs/components-and-props.html) exported from a `.js`, `.jsx`, `.ts`, or `.tsx` file in the pages directory.
 
 1. Ensure your environment has [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/) installed.
-2. Clone repository, run `git clone https://github.com/EQWorks/cs-company-website.git`.
+2. Clone repository, run `git clone https://github.com/EQWorks/eqworks.github.io.git`.
 3. Install dependencies, run `npm i`.
 4. Start the website in development mode, run `npm run dev`.
 5. View website at http://localhost:3000.
@@ -40,7 +40,7 @@ Next.js is built around the concept of pages. A page is a [React Component](http
 
 ## Production
 
-We are hosting our website using the cloud platform [Vercel](https://vercel.com/eq-works). Vercel hosts this static website, and provides internal URLs for development previews.
+We are hosting the website using [GitHub Pages](https://pages.github.com/). When changes are merged into the `master` branch, this will trigger a workflow that builds and exports the website to the `gh-pages` branch. This branch is used for production, and it is where the website is being published.
 
 To host this website anywhere, you can do the following:
 
