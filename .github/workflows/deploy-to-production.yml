@@ -3,7 +3,7 @@ on:
   push:
     branches: [master]
 jobs:
-  build:
+  deploy-to-production:
     runs-on: ubuntu-latest
     strategy:
       matrix:

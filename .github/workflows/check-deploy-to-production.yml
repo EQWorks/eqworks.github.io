@@ -1,11 +1,11 @@
-name: Deploy To Production
+name: Check Deploy To Production
 on:
   push:
     branches: [master, staging]
   pull_request:
     branches: [master, staging]
 jobs:
-  build:
+  check-deploy-to-production:
     runs-on: ubuntu-latest
     strategy:
       matrix:
