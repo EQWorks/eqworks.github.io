@@ -1,4 +1,3 @@
-import react, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
@@ -22,16 +21,7 @@ const StyleNoContent = styled.div`
   }
 `
 
-export default function Marketers() {
-  const [caseStudies, setCaseStudies] = useState(false)
-
-  useEffect(() => {
-    async function fetchData() {
-      setCaseStudies(await getEntries('caseStudy', false, false, 3))
-    }
-    fetchData()
-  }, [])
-
+export default function Marketers({ caseStudies }) {
   return (
     <>
       <Hero
@@ -41,19 +31,21 @@ export default function Marketers() {
       <Understand />
       <ServiceResults />
       <SimplifyYour title='tech stack' />
-      {!caseStudies && (
-        <StyleNoContent>
-          <h2>Loading content...</h2>
-        </StyleNoContent>
-      )}
-      {caseStudies === 'error' && (
-        <StyleNoContent>
-          <h2>Error loading Case Studies, please try again.</h2>
-        </StyleNoContent>
-      )}
-      {caseStudies && caseStudies !== 'error' && (
-        <RecentStudies caseStudies={caseStudies.items} />
+      {caseStudies && (
+        <RecentStudies caseStudies={caseStudies} />
       )}
     </>
   )
+}
+
+// This also gets called at build time
+export async function getStaticProps() {
+  const caseStudies = await getEntries('caseStudy', false, false, 3)
+
+  // Pass post data to the page via props
+  if (caseStudies.total !== 0) {
+    return { props: { caseStudies: caseStudies.items } }
+  } else {
+    return { props: { caseStudies: false } }
+  }
 }

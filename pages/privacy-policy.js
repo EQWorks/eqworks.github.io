@@ -15,27 +15,20 @@ const StyleNoContent = styled.div`
 `
 
 export default function PrivacyPolicy({ privacyPolicy }) {
-  if (!privacyPolicy) {
-    return (
-      <>
-        <Hero
-          imgSrc='/images/privacy-policy/fallback/hero.jpg'
-          title='EQ Works Privacy'
-        />
-        <StyleNoContent>
-          <h2>Error loading Privacy Policy, please try again.</h2>
-        </StyleNoContent>
-      </>
-    )
-  }
-
   return (
     <>
       <Hero
         imgSrc='/images/privacy-policy/fallback/hero.jpg'
         title='EQ Works Privacy'
       />
-      <Content privacyPolicy={privacyPolicy.fields} />
+      {!privacyPolicy && (
+        <StyleNoContent>
+          <h2>Error loading Privacy Policy, please try again.</h2>
+        </StyleNoContent>
+      )}
+      {privacyPolicy && (
+        <Content privacyPolicy={privacyPolicy.fields} />
+      )}
     </>
   )
 }
