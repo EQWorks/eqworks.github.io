@@ -3,7 +3,7 @@
 EQ Works company website.
 
 - **Production URL:** https://eqworks.com
-- **Staging URL:** https://elated-poincare-f5f978.netlify.app/
+- **Staging URL:** https://eqworks-staging.netlify.app/
 
 ---
 
@@ -45,9 +45,9 @@ This website is built using the [Next.js](https://nextjs.org/) framework.
 2. Checkout to the `staging` branch, run `git checkout staging`.
 3. Checkout to a `feature-branch` (this is where you can make your changes), run `git checkout -b [feature-branch]`.
 4. Once your `feature-branch` is ready to be added to the website, request a PR to merge your `feature-branch` into the `staging` branch.
-5. Once your `feature-branch` is accepted and merged into the `staging` branch, head over to our [staging preview URL](https://elated-poincare-f5f978.netlify.app/) to test your feature, and ensure everything is working.
-6. Once the [staging preview URL](https://elated-poincare-f5f978.netlify.app/) has been tested and everything is working, you can then request a PR to merge the `staging` branch into the `master` branch.
-7. Once the staging branch is accepted and merged into the master branch, head over to our [production URL](https://eqworks.com) to test, and ensure everything is working. **Important:** We do not delete the `staging` branch after merging with `master`. This way our [staging preview URL](https://elated-poincare-f5f978.netlify.app/) is preserved, and we can add new features to the `staging` after merging, enabling us to easily repeat the cycle.
+5. Once your `feature-branch` is accepted and merged into the `staging` branch, head over to our [staging preview URL](https://eqworks-staging.netlify.app/) to test your feature, and ensure everything is working.
+6. Once the [staging preview URL](https://eqworks-staging.netlify.app/) has been tested and everything is working, you can then request a PR to merge the `staging` branch into the `master` branch.
+7. Once the staging branch is accepted and merged into the master branch, head over to our [production URL](https://eqworks.com) to test, and ensure everything is working. **Important:** We do not delete the `staging` branch after merging with `master`. This way our [staging preview URL](https://eqworks-staging.netlify.app/) is preserved, and we can add new features to the `staging` after merging, enabling us to easily repeat the cycle.
 8. Rinse and repeat!
 
 ### Git branch diagram
@@ -76,7 +76,7 @@ PAST
 
 We are hosting the staging website using [Netlify](https://www.netlify.com/), a static website hosting platform. The staging website is used for internal preview and testing of the website before deploying the changes to production.
 
-When `feature-branches` are merged into the `staging` branch, this triggers Netlify to build and export the website to the [staging preview URL](https://elated-poincare-f5f978.netlify.app/).
+When `feature-branches` are merged into the `staging` branch, this triggers Netlify to build and export the website to the [staging preview URL](https://eqworks-staging.netlify.app/).
 
 ---
 
