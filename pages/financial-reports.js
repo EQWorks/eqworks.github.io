@@ -1,4 +1,3 @@
-import react, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
@@ -15,16 +14,7 @@ const StyleNoContent = styled.div`
   }
 `
 
-export default function PrivacyPolicy() {
-  const [financialReports, setFinancialReports] = useState(false)
-
-  useEffect(() => {
-    async function fetchData() {
-      setFinancialReports(await getEntryById('7Buylp0Gj1cnfGKiglmwoM'))
-    }
-    fetchData()
-  }, [])
-
+export default function PrivacyPolicy({ financialReports }) {
   return (
     <>
       <Hero
@@ -33,17 +23,22 @@ export default function PrivacyPolicy() {
       />
       {!financialReports && (
         <StyleNoContent>
-          <h2>Loading content...</h2>
-        </StyleNoContent>
-      )}
-      {financialReports === 'error' && (
-        <StyleNoContent>
           <h2>Error loading Financial Reports, please try again.</h2>
         </StyleNoContent>
       )}
-      {financialReports && financialReports !== 'error' && (
-        <Content financialReports={financialReports.fields} />
-      )}
+      {financialReports && <Content financialReports={financialReports} />}
     </>
   )
+}
+
+// This also gets called at build time
+export async function getStaticProps() {
+  const financialReports = await getEntryById('7Buylp0Gj1cnfGKiglmwoM')
+
+  // Pass post data to the page via props
+  if (financialReports.fields) {
+    return { props: { financialReports: financialReports.fields } }
+  } else {
+    return { props: { financialReports: false } }
+  }
 }
