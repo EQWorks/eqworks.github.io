@@ -1,4 +1,3 @@
-import react, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
@@ -15,17 +14,8 @@ const StyleNoContent = styled.div`
   }
 `
 
-export default function PrivacyPolicy() {
-  const [privacyPolicy, setPrivacyPolicy] = useState(false)
-
-  useEffect(() => {
-    async function fetchData() {
-      setPrivacyPolicy(await getEntryById('1qQczsvP6curvMDVXZGY0r'))
-    }
-    fetchData()
-  }, [])
-
-  if (privacyPolicy === 'error') {
+export default function PrivacyPolicy({ privacyPolicy }) {
+  if (!privacyPolicy) {
     return (
       <>
         <Hero
@@ -45,19 +35,19 @@ export default function PrivacyPolicy() {
         imgSrc='/images/privacy-policy/fallback/hero.jpg'
         title='EQ Works Privacy'
       />
-      {!privacyPolicy && (
-        <StyleNoContent>
-          <h2>Loading content...</h2>
-        </StyleNoContent>
-      )}
-      {privacyPolicy === 'error' && (
-        <StyleNoContent>
-          <h2>Error loading Privacy Policy, please try again.</h2>
-        </StyleNoContent>
-      )}
-      {privacyPolicy && privacyPolicy !== 'error' && (
-        <Content privacyPolicy={privacyPolicy.fields} />
-      )}
+      <Content privacyPolicy={privacyPolicy.fields} />
     </>
   )
+}
+
+// This also gets called at build time
+export async function getStaticProps() {
+  const privacyPolicy = await getEntryById('1qQczsvP6curvMDVXZGY0r')
+
+  // Pass post data to the page via props
+  if (privacyPolicy.fields) {
+    return { props: { privacyPolicy } }
+  } else {
+    return { props: { privacyPolicy: false } }
+  }
 }
