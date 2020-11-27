@@ -1,4 +1,3 @@
-import react, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 
@@ -27,18 +26,7 @@ const StyleNoContent = styled.div`
   }
 `
 
-export default function Investors() {
-  const [pressReleases, setPressReleases] = useState(false)
-
-  useEffect(() => {
-    async function fetchData() {
-      setPressReleases(
-        await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l', true, 3)
-      )
-    }
-    fetchData()
-  }, [])
-
+export default function Investors({ pressReleases }) {
   return (
     <>
       <Hero
@@ -49,20 +37,28 @@ export default function Investors() {
       <FinancialInfo />
       {!pressReleases && (
         <StyleNoContent>
-          <h2>Loading content...</h2>
-        </StyleNoContent>
-      )}
-      {pressReleases && pressReleases.items.length === 0 && (
-        <StyleNoContent>
           <h2>Error loading Press Releases, please try again.</h2>
         </StyleNoContent>
       )}
-      {pressReleases &&
-        pressReleases.items.length !== 0 &&
-        pressReleases !== 'error' && (
-          <RecentReleases pressReleases={pressReleases.items} />
-        )}
+      {pressReleases && <RecentReleases pressReleases={pressReleases} />}
       <OurClientsNoSSR />
     </>
   )
+}
+
+// This also gets called at build time
+export async function getStaticProps() {
+  const pressReleases = await getEntries(
+    'post',
+    '4cuZTcGorM9T6djiI3JQ8l',
+    true,
+    3
+  )
+
+  // Pass post data to the page via props
+  if (pressReleases.items.length !== 0) {
+    return { props: { pressReleases: pressReleases.items } }
+  } else {
+    return { props: { pressReleases: false } }
+  }
 }

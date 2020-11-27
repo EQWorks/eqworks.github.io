@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
 import { ChevronLeft } from '@styled-icons/feather/ChevronLeft'
@@ -38,28 +38,13 @@ const StyleNoContent = styled.div`
   }
 `
 
-export default function PressReleases() {
-  const [pressReleases, setPressReleases] = useState(false)
-  const [totalPressReleases, setTotalPressReleases] = useState(0)
+export default function PressReleases({ pressReleases }) {
   const [page, setPage] = useState(0)
 
   const ENTRIES_PER_PAGE = 5
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
-      if (data.total > 0) {
-        setPressReleases(data.items)
-        setTotalPressReleases(data.total)
-      } else {
-        setPressReleases('error')
-      }
-    }
-    fetchData()
-  }, [])
-
   const nextPage = () => {
-    if (page < Math.floor(totalPressReleases / ENTRIES_PER_PAGE)) {
+    if (page < Math.floor(pressReleases.length / ENTRIES_PER_PAGE)) {
       setPage(page + 1)
       window.scrollTo(0, 0)
     }
@@ -73,14 +58,6 @@ export default function PressReleases() {
   }
 
   if (!pressReleases) {
-    return (
-      <StyleNoContent>
-        <h2>Loading content...</h2>
-      </StyleNoContent>
-    )
-  }
-
-  if (pressReleases === 'error') {
     return (
       <>
         <Hero
@@ -123,7 +100,7 @@ export default function PressReleases() {
         </button>
         <button
           disabled={
-            page === Math.floor(totalPressReleases / ENTRIES_PER_PAGE)
+            page === Math.floor(pressReleases.length / ENTRIES_PER_PAGE)
               ? true
               : false
           }
@@ -134,4 +111,16 @@ export default function PressReleases() {
       </PaginationStyled>
     </>
   )
+}
+
+// This also gets called at build time
+export async function getStaticProps() {
+  const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
+
+  // Pass post data to the page via props
+  if (pressReleases.items.length !== 0) {
+    return { props: { pressReleases: pressReleases.items } }
+  } else {
+    return { props: { pressReleases: false } }
+  }
 }

@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 const Hero = dynamic(() => import('../components/shared/hero'))
 const Content = dynamic(() => import('../components/browser-opt-out/content'))
 
-export default function PrivacyPolicy({ privacyPolicy }) {
+export default function PrivacyPolicy() {
   return (
     <>
       <Hero
