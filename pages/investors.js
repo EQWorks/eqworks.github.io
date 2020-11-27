@@ -48,7 +48,12 @@ export default function Investors({ pressReleases }) {
 
 // This also gets called at build time
 export async function getStaticProps() {
-  const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l', true, 3)
+  const pressReleases = await getEntries(
+    'post',
+    '4cuZTcGorM9T6djiI3JQ8l',
+    true,
+    3
+  )
 
   // Pass post data to the page via props
   if (pressReleases.items.length !== 0) {
