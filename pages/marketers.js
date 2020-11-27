@@ -31,9 +31,7 @@ export default function Marketers({ caseStudies }) {
       <Understand />
       <ServiceResults />
       <SimplifyYour title='tech stack' />
-      {caseStudies && (
-        <RecentStudies caseStudies={caseStudies} />
-      )}
+      {caseStudies && <RecentStudies caseStudies={caseStudies} />}
     </>
   )
 }

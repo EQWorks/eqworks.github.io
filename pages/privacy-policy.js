@@ -26,9 +26,7 @@ export default function PrivacyPolicy({ privacyPolicy }) {
           <h2>Error loading Privacy Policy, please try again.</h2>
         </StyleNoContent>
       )}
-      {privacyPolicy && (
-        <Content privacyPolicy={privacyPolicy.fields} />
-      )}
+      {privacyPolicy && <Content privacyPolicy={privacyPolicy.fields} />}
     </>
   )
 }
