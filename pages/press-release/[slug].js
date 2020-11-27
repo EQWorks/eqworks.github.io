@@ -1,11 +1,9 @@
-import react, { useEffect, useState } from 'react'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
-import { getEntryBySlug } from '../../api/contentful'
+import { getEntries, getEntryBySlug } from '../../api/contentful'
 
 import Date from '../../components/shared/parse-date'
 import EntryContent from '../../components/shared/entry-content'
@@ -87,35 +85,8 @@ const StyleNoContent = styled.div`
   }
 `
 
-export default function PressRelease() {
-  const router = useRouter()
-  const { slug } = router.query
-
-  const [pressRelease, setPressRelease] = useState(false)
-
-  useEffect(() => {
-    async function fetchData() {
-      if (slug) {
-        const data = await getEntryBySlug('post', slug)
-        if (data.items.length !== 0) {
-          setPressRelease(data.items[0].fields)
-        } else {
-          setPressRelease('error')
-        }
-      }
-    }
-    fetchData()
-  }, [slug])
-
+export default function PressRelease({ pressRelease }) {
   if (!pressRelease) {
-    return (
-      <StyleNoContent>
-        <h2>Loading content...</h2>
-      </StyleNoContent>
-    )
-  }
-
-  if (!pressRelease.title) {
     return <ErrorPage statusCode={404} />
   }
 
@@ -139,4 +110,36 @@ export default function PressRelease() {
       </Article>
     </PageStyled>
   )
+}
+
+// This function gets called at build time
+export async function getStaticPaths() {
+  // Call an external API endpoint to get posts
+  const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
+
+  // Get the paths we want to pre-render based on posts
+  const paths = pressReleases.items.map((pressRelease) => ({
+    params: { slug: pressRelease.fields.slug }
+  }))
+
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+// This also gets called at build time
+export async function getStaticProps({ params }) {
+  // params contains the post `slug`.
+  // If the route is like /press-release/1, then params.slug is 1
+  const pressRelease = await getEntryBySlug('post', params.slug)
+
+  // Pass post data to the page via props
+  if (pressRelease.items.length !== 0) {
+    return { props: { pressRelease: pressRelease.items[0].fields } }
+  } else {
+    return { props: { pressRelease: false } }
+  }
 }
