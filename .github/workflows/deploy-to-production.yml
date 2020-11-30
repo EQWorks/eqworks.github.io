@@ -45,8 +45,8 @@ jobs:
       - name: Export app
         run: npm run export # exports the app to static HTML (to the 'out' directory).
 
-      - name: Create eqworks.com CNAME file
-        run: echo "eqworks.com" > ./out/CNAME # creates a 'CNAME' file inside the 'out' directory with the content 'eqworks.com', for DNS configuration.
+      - name: Create www.eqworks.com CNAME file
+        run: echo "www.eqworks.com" > ./out/CNAME # creates a 'CNAME' file inside the 'out' directory with the content 'www.eqworks.com', for DNS configuration.
 
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll # creates a '.nojekyll' file inside the 'out' directory, this stops GitHub Pages from applying the Jekyll theme to the '_next' folder.
