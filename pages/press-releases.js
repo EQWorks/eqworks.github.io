@@ -4,11 +4,11 @@ import styled from 'styled-components'
 import { ChevronLeft } from '@styled-icons/feather/ChevronLeft'
 import { ChevronRight } from '@styled-icons/feather/ChevronRight'
 
-import { getEntries } from '../../api/contentful'
+import { getEntries } from '../api/contentful'
 
-const Hero = dynamic(() => import('../../components/shared/hero'))
+const Hero = dynamic(() => import('../components/shared/hero'))
 const EntryPreview = dynamic(() =>
-  import('../../components/press-releases/entry-preview')
+  import('../components/press-releases/entry-preview')
 )
 
 const ItemsStyled = styled.div`
@@ -115,7 +115,7 @@ export default function PressReleases({ pressReleases }) {
 
 // This also gets called at build time
 export async function getStaticProps() {
-  const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l')
+  const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l', true)
 
   // Pass post data to the page via props
   if (pressReleases.items.length !== 0) {
