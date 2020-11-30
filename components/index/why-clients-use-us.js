@@ -86,7 +86,7 @@ export default function WhyClientsUseUs() {
         </div>
         <div>
           <BarChart2 aria-label='bar graph' role='img' />
-          <p>Verified walk-ins</p>
+          <p>Data insights</p>
         </div>
       </div>
       <div className='image'>

@@ -31,7 +31,7 @@ export default function Investors({ pressReleases }) {
     <>
       <Hero
         imgSrc='/images/investors/fallback/hero.jpg'
-        title={`We don't looks to what's coming next - we're already there.`}
+        title={`We don't look to what's coming next - we're already there.`}
       />
       <InvestingFuture />
       <FinancialInfo />

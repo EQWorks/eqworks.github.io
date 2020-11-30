@@ -38,10 +38,10 @@ export default function Section() {
     <SectionStyled>
       <h2>Browser Opt-Out</h2>
       <p>
-        You may opt out of interest-based advertising on your browser by
+        You may opt-out of interest-based advertising on your browser by
         clicking the button below. Please note that this does not mean that you
-        will no longer see advertising online, simply that advertisements you
-        are served may no longer be relevant to your&nbsp;interests.
+        will no longer see advertising online, simply that the advertisements
+        you are served may no longer be relevant to your&nbsp;interests.
       </p>
       <p className='subtitle'>
         <i>

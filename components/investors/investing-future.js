@@ -69,7 +69,7 @@ export default function InvestingFuture() {
           <p className='subtitle'>Industry Leadership</p>
           <p>
             Our winning combination of data science and location behaviour
-            insights makes us the leader in the fastest growing segment of the
+            insights makes us the leader in the fastest-growing segment of the
             advertising industry.
           </p>
         </div>
