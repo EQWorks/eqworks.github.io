@@ -4,12 +4,15 @@ EQ Works company website.
 
 - **Production URL:** https://eqworks.com
 - **Staging URL:** https://eqworks-staging.netlify.app/
+- **Accounts Holder:** creativestudio@eqworks.com
 
 ---
 
 ## Blog
 
 There is a "blog" aspect to this website. This is where we post **Press Releases**, **Case Studies**, **Insights**, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful, and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
+
+Whenever new content on Contentful is either published or unpublished, this will send out a webhook to this repository (see the [deploy-to-production workflow file](https://github.com/EQWorks/eqworks.github.io/blob/master/.github/workflows/deploy-to-production.yml)) that will trigger a rebuild of the website. This allows for the website to remain static while maintaining access the latest content from Contentful. The GitHub account authenticating the GitHub webhook is the CreativeStudioEQ account.
 
 For contributing content, please visit this [Google Drive folder containing guides and walkthroughs](https://drive.google.com/drive/folders/1IVVPuNTpHZMi1OjolZkVtkQiJ1bQPKgw?usp=sharing).
 
@@ -175,4 +178,6 @@ const sectionStyled = styled.section`
 
 ## Contact
 
-Have any questions, concerns, or suggestions? Why not send the Creative team an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com)) 😊
+All services and platforms used for this project ([Contentful](https://www.contentful.com/), [Formspree](https://formspree.io/), [GitHub](https://github.com/CreativeStudioEQ), [Mapbox](https://www.mapbox.com/), and [Netlify](https://www.netlify.com/)) are managed by the Creative Studio.
+
+Have any questions, concerns, or suggestions? Why not send the Creative Studio an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com)) 😊

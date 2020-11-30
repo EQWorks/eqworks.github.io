@@ -1,28 +1,35 @@
 name: Check Deploy To Production
+
 on:
-  push:
-    branches: [master, staging]
   pull_request:
-    branches: [master, staging]
+    types: [assigned, opened, synchronize, reopened]
+
 jobs:
   check-deploy-to-production:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         node-version: [14.x]
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Set node to v${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Cache app build
         uses: actions/cache@v2
         with:
           path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
+
       - name: Install packages
         run: npm ci # installs packages with a clean slate (ci refers to continuous integration)
+
       - name: Build app
         run: npm run build # creates an optimized production build of the app.
         env:
@@ -32,9 +39,12 @@ jobs:
           CONTENTFUL_PREVIEW_SECRET: ${{ secrets.CONTENTFUL_PREVIEW_SECRET }}
           FULLPAGE_JS_LICENSE_KEY: ${{ secrets.FULLPAGE_JS_LICENSE_KEY }}
           MAPBOX_ACCESS_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
+
       - name: Export app
         run: npm run export # exports the app to static HTML (to the 'out' directory).
+
       - name: Create eqworks.com CNAME file
         run: echo "eqworks.com" > ./out/CNAME # creates a 'CNAME' file inside the 'out' directory with the content 'eqworks.com', for DNS configuration.
+
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll # creates a '.nojekyll' file inside the 'out' directory, this stops GitHub Pages from applying the Jekyll theme to the '_next' folder.
