@@ -1,11 +1,11 @@
-name: Deploy To Production
+name: Check Deploy To Production
 
 on:
   pull_request:
     types: [assigned, opened, synchronize, reopened]
 
 jobs:
-  deploy-to-production:
+  check-deploy-to-production:
     runs-on: ubuntu-latest
 
     strategy:
