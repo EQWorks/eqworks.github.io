@@ -164,7 +164,7 @@ export default function Slides() {
                   one.
                 </p>
                 <p>
-                  Execute on desktop and mobile based on preset location-powered
+                  Execute on desktop and mobile-based on preset location-powered
                   audiences or build your own from various geographical and
                   demographic inputs, plus get powerful advertising insights on
                   our very own reporting dashboard.

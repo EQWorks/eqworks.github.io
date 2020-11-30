@@ -89,10 +89,10 @@ export default function Article() {
           </li>
         </ul>
         <p>
-          These technological elements are universal to all smart phones, and if
+          These technological elements are universal to all smartphones, and if
           used properly, they can create safe, secure and powerful networks that
           Governments can leverage as readily as multinational technology
-          companies. The most compelling attribute of mobile-phone based Contact
+          companies. The most compelling attribute of mobile-phone-based Contact
           Tracing is that{' '}
           <span className='bold'>
             benefits can be achieved without breaching the trust and privacy of

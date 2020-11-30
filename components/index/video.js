@@ -30,9 +30,9 @@ export default function Video(props) {
   return (
     <SectionStyled>
       <h2>
-        What we do it cool but you can't tell by the&nbsp;website
+        What we do is cool but you can't tell by the&nbsp;website
         <br />
-        What this&nbsp;instead.
+        Watch this&nbsp;instead.
       </h2>
       <div className='video-container'>
         <iframe
