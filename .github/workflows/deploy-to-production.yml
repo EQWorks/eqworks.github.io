@@ -3,6 +3,8 @@ name: Deploy To Production
 on:
   push:
     branches: [master]
+  repository_dispatch:
+    types: contentful-webhook
 
 jobs:
   deploy-to-production:
