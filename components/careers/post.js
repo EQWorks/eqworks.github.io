@@ -61,7 +61,7 @@ export default function Post() {
           <li>Demonstrated time management and multitasking abilities</li>
           <li>Solid Microsoft suite skills (Excel, Powerpoint)</li>
           <li>Excellent verbal and written communication skills</li>
-          <li>Detail oriented and able to meet tight deadlines</li>
+          <li>Detail-oriented and able to meet tight deadlines</li>
         </ul>
         <p>ADDITIONAL NOTES</p>
         <p>Full Benefits Coverage Including Medical, Dental and Vision</p>
