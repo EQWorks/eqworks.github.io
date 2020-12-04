@@ -22,7 +22,7 @@ const SectionStyled = styled.section`
       width: 33%;
     }
     p {
-      color: ${({ theme }) => theme.color.greyLight};
+      color: ${({ theme }) => theme.color.greyMedium};
       margin: 0 0 20px 0;
     }
     .title {
@@ -38,7 +38,7 @@ const SectionStyled = styled.section`
       width: 66%;
     }
     form {
-      color: ${({ theme }) => theme.color.greyLight};
+      color: ${({ theme }) => theme.color.greyMedium};
       button {
         background-color: ${({ theme }) => theme.color.white};
         border: 2px solid ${({ theme }) => theme.color.black};
@@ -54,7 +54,7 @@ const SectionStyled = styled.section`
         }
       }
       input {
-        border: 1px solid ${({ theme }) => theme.color.greyLight};
+        border: 1px solid ${({ theme }) => theme.color.greyMedium};
         border-radius: 5px;
         box-sizing: border-box;
         margin: 0 0 30px 0;
@@ -83,7 +83,7 @@ const SectionStyled = styled.section`
           }
         }
         p {
-          color: ${({ theme }) => theme.color.greyLight};
+          color: ${({ theme }) => theme.color.greyMedium};
         }
         .subtext {
           font-weight: ${({ theme }) => theme.font.copy.bold};

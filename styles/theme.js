@@ -10,7 +10,7 @@ const theme = {
     black: '#1D1D1D',
     greyBorder: '#EEF1F6',
     greyDark: '#333333',
-    greyMedium: '#777777',
+    greyMedium: '#616161',
     greyLight: '#BFBFBF',
     greyTextFooter: '#808080',
     navBarLinksListHover: '#F95F51',

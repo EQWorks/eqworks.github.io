@@ -44,7 +44,7 @@ const StyleNav = styled.nav`
       flex-direction: column;
       justify-content: center;
       div {
-        background-color: ${({ theme }) => theme.color.greyLight};
+        background-color: ${({ theme }) => theme.color.greyMedium};
         height: 2px;
         margin: 3px 0;
         width: 25px;

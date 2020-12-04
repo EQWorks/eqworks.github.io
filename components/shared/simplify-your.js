@@ -32,7 +32,7 @@ const SectionStyled = styled.section`
         margin: 0 0 20px 0;
       }
       .grey {
-        color: ${({ theme }) => theme.color.greyLight};
+        color: ${({ theme }) => theme.color.greyMedium};
       }
       .subtitle {
         font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
@@ -81,7 +81,7 @@ const SectionStyled = styled.section`
       }
     }
     .grey {
-      color: ${({ theme }) => theme.color.greyLight};
+      color: ${({ theme }) => theme.color.greyMedium};
       margin: 0 0 20px 0;
     }
     .title {

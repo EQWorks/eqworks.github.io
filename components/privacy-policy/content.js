@@ -4,7 +4,7 @@ import EntryContent from '../shared/entry-content'
 import Date from '../shared/parse-date'
 
 const SectionStyled = styled.section`
-  color: ${({ theme }) => theme.color.greyLight};
+  color: ${({ theme }) => theme.color.greyMedium};
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.article};
   padding: 40px 20px 40px 20px;

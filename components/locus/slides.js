@@ -81,7 +81,7 @@ const SectionStyled = styled.section`
           padding: 0 20px;
         }
         p {
-          color: ${({ theme }) => theme.color.greyLight};
+          color: ${({ theme }) => theme.color.greyMedium};
           text-align: left;
         }
         .title {
