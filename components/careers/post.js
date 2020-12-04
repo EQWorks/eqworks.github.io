@@ -19,11 +19,11 @@ const SectionStyled = styled.section`
     opacity: 0.33;
   }
   p {
-    color: ${({ theme }) => theme.color.greyLight};
+    color: ${({ theme }) => theme.color.greyMedium};
     margin: 0 0 20px 0;
   }
   ul {
-    color: ${({ theme }) => theme.color.greyLight};
+    color: ${({ theme }) => theme.color.greyMedium};
     margin: 0 0 20px 0;
   }
 `

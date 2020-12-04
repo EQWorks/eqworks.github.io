@@ -30,7 +30,7 @@ const PageStyled = styled.section`
       }
     }
     .category {
-      color: ${({ theme }) => theme.color.greyLight};
+      color: ${({ theme }) => theme.color.greyMedium};
       font-size: 1em;
       @media ${({ theme }) => theme.breakpoint.sm} {
         font-size: 1.5em;
@@ -54,7 +54,7 @@ const PageStyled = styled.section`
         width: 66%;
       }
       .content {
-        color: ${({ theme }) => theme.color.greyLight};
+        color: ${({ theme }) => theme.color.greyMedium};
         margin: 0 auto;
         max-width: ${({ theme }) => theme.width.article};
         padding: 20px;
@@ -95,7 +95,7 @@ const HighlightsStyled = styled.div`
     font-weight: ${({ theme }) => theme.font.copy.bold};
   }
   ul li {
-    color: ${({ theme }) => theme.color.greyLight};
+    color: ${({ theme }) => theme.color.greyMedium};
   }
 `
 

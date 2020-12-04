@@ -18,7 +18,11 @@ const SectionStyled = styled.section`
       }
     }
     p {
+      color: ${({ theme }) => theme.color.greyMedium};
       margin: 0 0 20px 0;
+    }
+    ul {
+      color: ${({ theme }) => theme.color.greyMedium};
     }
     .bold {
       font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
@@ -33,7 +37,7 @@ const SectionStyled = styled.section`
       max-width: 65px;
     }
     p {
-      color: ${({ theme }) => theme.color.greyLight};
+      color: ${({ theme }) => theme.color.greyMedium};
       padding: 0 0 0 10px;
       @media ${({ theme }) => theme.breakpoint.sm} {
         padding: 0 0 0 20px;
