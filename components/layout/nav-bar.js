@@ -44,7 +44,7 @@ const StyleNav = styled.nav`
       flex-direction: column;
       justify-content: center;
       div {
-        background-color: ${({ theme }) => theme.color.greyLight};
+        background-color: ${({ theme }) => theme.color.greyMedium};
         height: 2px;
         margin: 3px 0;
         width: 25px;
@@ -55,8 +55,7 @@ const StyleNav = styled.nav`
     }
   }
   .navbar--md {
-    background-color: ${(props) =>
-      props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
+    background-color: ${(props) => props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -95,8 +94,7 @@ const StyleNav = styled.nav`
         li {
           a,
           p {
-            color: ${(props) =>
-              props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
+            color: ${(props) => props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
             cursor: pointer;
             display: inline-block;
             font-family: ${({ theme }) => theme.font.title.name}, sans-serif;

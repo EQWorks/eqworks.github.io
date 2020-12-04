@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
-  color: ${({ theme }) => theme.color.greyLight};
+  color: ${({ theme }) => theme.color.greyMedium};
   margin: 0 auto;
   max-width: 600px;
   padding: 40px 20px;

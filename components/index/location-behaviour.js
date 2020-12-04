@@ -11,7 +11,7 @@ const SectionStyled = styled.section`
     max-width: 400px;
   }
   .content {
-    color: ${({ theme }) => theme.color.greyLight};
+    color: ${({ theme }) => theme.color.greyMedium};
     margin: 0 0 20px 0;
     max-width: 600px;
   }

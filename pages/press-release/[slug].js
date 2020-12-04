@@ -26,7 +26,7 @@ const PageStyled = styled.section`
 `
 
 const Article = styled.div`
-  color: ${({ theme }) => theme.color.greyLight};
+  color: ${({ theme }) => theme.color.greyMedium};
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.article};
   padding: 0 20px 40px 20px;

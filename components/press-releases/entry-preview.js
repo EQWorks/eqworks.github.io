@@ -8,13 +8,13 @@ const SectionStyled = styled.section`
   padding: 40px;
   width: 100%;
   .excerpt {
-    color: ${({ theme }) => theme.color.greyLight};
+    color: ${({ theme }) => theme.color.greyMedium};
     margin: 0 0 10px 0;
   }
   .author-date {
     font-size: 0.8em;
     display: block;
-    color: ${({ theme }) => theme.color.greyLight};
+    color: ${({ theme }) => theme.color.greyMedium};
     margin: 0 0 10px 0;
     span {
       color: ${({ theme }) => theme.color.black};

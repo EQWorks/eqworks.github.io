@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import UnorderedList from './unordered-list'
 
 const SectionStyled = styled.section`
-  color: ${({ theme }) => theme.color.greyLight};
+  color: ${({ theme }) => theme.color.greyMedium};
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
