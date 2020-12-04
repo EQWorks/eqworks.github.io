@@ -55,7 +55,8 @@ const StyleNav = styled.nav`
     }
   }
   .navbar--md {
-    background-color: ${(props) => props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
+    background-color: ${(props) =>
+      props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -94,7 +95,8 @@ const StyleNav = styled.nav`
         li {
           a,
           p {
-            color: ${(props) => props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
+            color: ${(props) =>
+              props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
             cursor: pointer;
             display: inline-block;
             font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
