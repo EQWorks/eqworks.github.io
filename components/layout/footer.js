@@ -182,7 +182,7 @@ export default function Footer({ noFooter }) {
         </div>
         <div className='footer__inner__legal'>
           <p>
-            © 2020 EQ Works |{' '}
+            © {new Date().getFullYear()} EQ Works |{' '}
             <Link href='/privacy-policy'>
               <a>Privacy Policy</a>
             </Link>{' '}
