@@ -13,7 +13,7 @@ const FinancialInfo = dynamic(() =>
 const RecentReleases = dynamic(() =>
   import('../components/investors/recent-releases')
 )
-const Media = dynamic(() => import('../components/investors/media'))
+const InTheNews = dynamic(() => import('../components/investors/in-the-news'))
 const AnalystReports = dynamic(() =>
   import('../components/investors/analyst-reports')
 )
@@ -45,7 +45,7 @@ export default function Investors({ pressReleases }) {
         </StyleNoContent>
       )}
       {pressReleases && <RecentReleases pressReleases={pressReleases} />}
-      <Media />
+      <InTheNews />
       <AnalystReports />
       <OurClientsNoSSR />
     </>
