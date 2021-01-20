@@ -56,7 +56,7 @@ export default function AnalystReports() {
               src='/images/investors/fallback/analyst-reports-canaccord-genuity.png'
             />
           </div>
-          <Link href='https://www.eqworks.com'>
+          <Link href='/documents/investors/analyst-report-canaccord-genuity.pdf'>
             <a className='link' target='_blank'>
               View PDF
             </a>
@@ -65,11 +65,11 @@ export default function AnalystReports() {
         <div className='item'>
           <div className='img-container'>
             <img
-              alt='Echelon Wealth Investors logo'
-              src='/images/investors/fallback/analyst-reports-echelon-wealth-partners.png'
+              alt='Echelon Capital Markets logo'
+              src='/images/investors/fallback/analyst-reports-echelon-capital-markets.png'
             />
           </div>
-          <Link href='https://www.eqworks.com'>
+          <Link href='/documents/investors/analyst-report-echelon.pdf'>
             <a className='link' target='_blank'>
               View PDF
             </a>
@@ -82,7 +82,7 @@ export default function AnalystReports() {
               src='/images/investors/fallback/analyst-reports-eresearch.jpg'
             />
           </div>
-          <Link href='https://www.eqworks.com'>
+          <Link href='/documents/investors/analyst-report-eresearch.pdf'>
             <a className='link' target='_blank'>
               View PDF
             </a>
