@@ -38,10 +38,10 @@ const SectionStyled = styled.section`
   }
 `
 
-export default function Media() {
+export default function InTheNews() {
   return (
     <SectionStyled>
-      <h2>Media</h2>
+      <h2>In the&nbsp;News</h2>
       <div className='videos'>
         <div className='video-container'>
           <iframe
