@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
-  max-width: ${({ theme }) => theme.width.page};
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px 40px 0;
   text-align: center;
