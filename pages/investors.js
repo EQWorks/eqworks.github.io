@@ -10,13 +10,16 @@ const InvestingFuture = dynamic(() =>
 const FinancialInfo = dynamic(() =>
   import('../components/investors/financial-info')
 )
+const RecentReleases = dynamic(() =>
+  import('../components/investors/recent-releases')
+)
+const Media = dynamic(() =>
+  import('../components/investors/media')
+)
 // ssr rendering of react-slick results in an error when using response breakpoints.
 const OurClientsNoSSR = dynamic(import('../components/shared/our-clients'), {
   ssr: false
 })
-const RecentReleases = dynamic(() =>
-  import('../components/investors/recent-releases')
-)
 
 const StyleNoContent = styled.div`
   margin: 20px auto;
@@ -41,6 +44,7 @@ export default function Investors({ pressReleases }) {
         </StyleNoContent>
       )}
       {pressReleases && <RecentReleases pressReleases={pressReleases} />}
+      <Media />
       <OurClientsNoSSR />
     </>
   )
