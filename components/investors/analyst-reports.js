@@ -47,7 +47,10 @@ export default function AnalystReports() {
       <div className='items'>
         <div className='item'>
           <div className='img-container'>
-            <img alt='Canaccord Genuity logo' src='/images/investors/fallback/analyst-reports-canaccord-genuity.png' />
+            <img
+              alt='Canaccord Genuity logo'
+              src='/images/investors/fallback/analyst-reports-canaccord-genuity.png'
+            />
           </div>
           <Link href='https://www.eqworks.com'>
             <a className='link' target='_blank'>
@@ -57,7 +60,10 @@ export default function AnalystReports() {
         </div>
         <div className='item'>
           <div className='img-container'>
-            <img alt='Echelon Wealth Investors logo' src='/images/investors/fallback/analyst-reports-echelon-wealth-partners.png' />
+            <img
+              alt='Echelon Wealth Investors logo'
+              src='/images/investors/fallback/analyst-reports-echelon-wealth-partners.png'
+            />
           </div>
           <Link href='https://www.eqworks.com'>
             <a className='link' target='_blank'>
@@ -67,7 +73,10 @@ export default function AnalystReports() {
         </div>
         <div className='item'>
           <div className='img-container'>
-            <img alt='eResearch logo' src='/images/investors/fallback/analyst-reports-eresearch.jpg' />
+            <img
+              alt='eResearch logo'
+              src='/images/investors/fallback/analyst-reports-eresearch.jpg'
+            />
           </div>
           <Link href='https://www.eqworks.com'>
             <a className='link' target='_blank'>

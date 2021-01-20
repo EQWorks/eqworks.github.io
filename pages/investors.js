@@ -13,9 +13,7 @@ const FinancialInfo = dynamic(() =>
 const RecentReleases = dynamic(() =>
   import('../components/investors/recent-releases')
 )
-const Media = dynamic(() =>
-  import('../components/investors/media')
-)
+const Media = dynamic(() => import('../components/investors/media'))
 const AnalystReports = dynamic(() =>
   import('../components/investors/analyst-reports')
 )
