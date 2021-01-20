@@ -35,6 +35,10 @@ const SectionStyled = styled.section`
         font-weight: ${({ theme }) => theme.font.copy.bold};
         text-decoration: none;
         text-transform: uppercase;
+        transition: all 0.25s ease-out;
+        &:hover {
+          color: ${({ theme }) => theme.color.navBarLinksListHover};
+        }
       }
     }
   }
