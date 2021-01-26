@@ -20,7 +20,7 @@ const SectionStyled = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-	  z-index: ${({ theme }) => theme.zIndex.pageContent};
+    z-index: ${({ theme }) => theme.zIndex.pageContent};
     h1 {
       font-size: 2em;
       font-weight: ${({ theme }) => theme.font.regular};
@@ -82,7 +82,7 @@ const SectionStyled = styled.section`
     left: 0;
     overflow: hidden;
     position: absolute;
-	  top: 0;
+    top: 0;
     width: 100%;
     video {
       box-sizing: border-box;
@@ -97,13 +97,13 @@ const SectionStyled = styled.section`
   }
   .video-container:after {
     /* background: rgba(0, 0, 0, 0.5); */
-	  content: '';
+    content: '';
     height: 100%;
     left: 0;
     position: absolute;
     width: 100%;
     top: 0;
-	  z-index: ${({ theme }) => theme.zIndex.indexHeroVideo};
+    z-index: ${({ theme }) => theme.zIndex.indexHeroVideo};
   }
 `
 
@@ -111,17 +111,10 @@ export default function Hero() {
   return (
     <SectionStyled>
       <div className='video-container'>
-        <video
-          autoPlay
-          className='video'
-          muted
-          loop
-          playsInline
-        >
+        <video autoPlay className='video' muted loop playsInline>
           <source src='/video/index/hero.mp4' type='video/mp4' />
         </video>
       </div>
-
 
       <div className='content'>
         <h1>Bring Data to Life with EQ&nbsp;Works</h1>
