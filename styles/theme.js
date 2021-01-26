@@ -5,6 +5,9 @@ const theme = {
     md: '(min-width: 992px)',
     lg: '(min-width: 1200px)'
   },
+  breakpointVertical: {
+    xs: '(min-height: 560px)'
+  },
   color: {
     accentBlue: '#3542E4',
     black: '#1D1D1D',
