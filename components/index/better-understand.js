@@ -34,10 +34,13 @@ const SectionStyled = styled.section`
       }
     }
     .right {
-      padding: ${({ theme }) => theme.spacing[5]}px ${({ theme }) => theme.spacing[3]}px;
+      padding: ${({ theme }) => theme.spacing[5]}px
+        ${({ theme }) => theme.spacing[3]}px;
       text-align: center;
       @media ${({ theme }) => theme.breakpoint.md} {
-        padding: ${({ theme }) => theme.spacing[5]}px ${({ theme }) => theme.spacing[3]}px ${({ theme }) => theme.spacing[5]}px 0;
+        padding: ${({ theme }) => theme.spacing[5]}px
+          ${({ theme }) => theme.spacing[3]}px
+          ${({ theme }) => theme.spacing[5]}px 0;
         text-align: left;
       }
       h2 {
@@ -83,12 +86,14 @@ export default function BetterUnderstand() {
           <div className='image' />
         </div>
         <div className='right'>
-          <h2>Better <span className='color-blue'>Understand</span> Your Consumers</h2>
+          <h2>
+            Better <span className='color-blue'>Understand</span> Your Consumers
+          </h2>
           <div className='divider' />
           <p className='paragraph-1'>
-            Where consumers are and where they’ve been not only
-            reveal their day to day habits in the physical world, but
-            also their values and who they aspire to&nbsp;be.
+            Where consumers are and where they’ve been not only reveal their day
+            to day habits in the physical world, but also their values and who
+            they aspire to&nbsp;be.
           </p>
           <p className='font-weight-bold'>
             99% of consumers shop in store with their mobile&nbsp;device.
