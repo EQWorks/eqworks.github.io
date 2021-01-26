@@ -23,7 +23,6 @@ const SectionStyled = styled.section`
     z-index: ${({ theme }) => theme.zIndex.pageContent};
     h1 {
       font-size: 2em;
-      font-weight: ${({ theme }) => theme.font.regular};
       margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
       text-transform: uppercase;
       @media ${({ theme }) => theme.breakpoint.xs} {

@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: ${({ theme }) => theme.font.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.bold};
+    font-weight: ${({ theme }) => theme.font.regular};
     line-height: 1.25em;
     margin: 0;
     padding: 0;
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-family: ${({ theme }) => theme.font.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.bold};
+    font-weight: ${({ theme }) => theme.font.regular};
     font-size: 2em;
     margin: 0;
     padding: 0;
@@ -47,6 +47,10 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+  }
+
+  .color-blue {
+    color: ${({ theme }) => theme.color.blue};
   }
 
   .font-weight-bold {
