@@ -4,26 +4,23 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
-  background-color: ${({ theme }) => theme.color.blue};
-  padding: 0;
+  align-items: center;
+  color: ${({ theme }) => theme.color.white};
+  display: flex;
+  box-sizing: border-box;
+  height: calc(100vh - ${({ theme }) => theme.height.navBar});
+  justify-content: center;
+  padding: 0 ${({ theme }) => theme.spacing[3]}px;
+  text-align: center;
+  @media ${({ theme }) => theme.breakpoint.sm} {
+    height: 100vh;
+  }
   .content {
     align-items: center;
-    /* background: rgba(0, 0, 0, 0.5); */
-    box-sizing: border-box;
-    color: ${({ theme }) => theme.color.white};
     display: flex;
     flex-direction: column;
-    height: calc(100vh - ${({ theme }) => theme.height.navBar});
     justify-content: center;
-    min-height: 600px;
-    padding: 0 ${({ theme }) => theme.spacing[3]}px;
-    position: relative;
-    width: 100%;
-    text-align: center;
     z-index: ${({ theme }) => theme.zIndex.pageContent};
-    @media ${({ theme }) => theme.breakpoint.sm} {
-      height: 100vh;
-    }
     h1 {
       font-size: 2em;
       font-weight: ${({ theme }) => theme.font.regular};
@@ -49,10 +46,13 @@ const SectionStyled = styled.section`
     .footer {
       align-items: center;
       bottom: 0;
-      display: flex;
+      display: none;
       margin: 0 auto ${({ theme }) => theme.spacing[4]}px auto;
       position: absolute;
       text-align: center;
+      @media ${({ theme }) => theme.breakpointVertical.xs} {
+        display: flex;
+      }
       a {
         align-items: center;
         color: ${({ theme }) => theme.color.white};
@@ -76,42 +76,47 @@ const SectionStyled = styled.section`
       margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
     }
   }
-  .video {
-    /* bottom: 0; */
-    height: 100vh;
-    /* min-height: 100%; */
-    /* min-width: 100%; */
+  .video-container {
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
     position: absolute;
-    right: 0;
-    top: ${({ theme }) => theme.height.navBar};
-    /* width: 100%; */
-    z-index: ${({ theme }) => theme.zIndex.indexHeroVideo};
-    @media ${({ theme }) => theme.breakpoint.sm} {
-      top: 0;
+    top: 0;
+    width: 100%;
+    video {
+      box-sizing: border-box;
+      left: 50%;
+      min-height: 100%;
+      min-width: 100%;
+      object-fit: cover;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
     }
+  }
+  .video-container:after {
+    /* background: rgba(0, 0, 0, 0.5); */
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: ${({ theme }) => theme.zIndex.indexHeroVideo};
   }
 `
 
 export default function Hero() {
-  const sectionElement = React.useRef(null)
-  const videoElement = React.useRef(null)
-
-  React.useLayoutEffect(() => {
-    function updateSize() {
-      videoElement.current.style.height = `${sectionElement.current.clientHeight}px`
-    }
-    window.addEventListener('resize', updateSize)
-    updateSize()
-
-    return () => window.removeEventListener('resize', updateSize)
-  }, [])
-
   return (
-    <SectionStyled ref={sectionElement}>
-      <div
-        aria-label='Scrolling animated graphics of charts and graphs.'
-        className='content'
-      >
+    <SectionStyled>
+      <div className='video-container'>
+        <video autoPlay className='video' muted loop playsInline>
+          <source src='/video/index/hero.mp4' type='video/mp4' />
+        </video>
+      </div>
+
+      <div className='content'>
         <h1>Bring Data to Life with EQ&nbsp;Works</h1>
 
         <div className='divider' />
@@ -141,17 +146,6 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-
-      <video
-        autoPlay
-        className='video'
-        muted
-        loop
-        playsInline
-        ref={videoElement}
-      >
-        <source src='/video/index/hero.mp4' type='video/mp4' />
-      </video>
     </SectionStyled>
   )
 }
