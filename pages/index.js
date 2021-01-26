@@ -4,9 +4,7 @@ const Hero = dynamic(() => import('../components/index/hero'))
 const BetterUnderstand = dynamic(() =>
   import('../components/index/better-understand')
 )
-const Tabs = dynamic(() =>
-  import('../components/index/tabs')
-)
+const Tabs = dynamic(() => import('../components/index/tabs'))
 const LocationBehaviour = dynamic(() =>
   import('../components/index/location-behaviour')
 )

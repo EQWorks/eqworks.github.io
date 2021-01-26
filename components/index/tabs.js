@@ -5,7 +5,8 @@ const SectionStyled = styled.section`
   margin: 0 auto;
   max-width: ${({ theme }) => theme.width.page};
   .content-container {
-    padding: ${({ theme }) => theme.spacing[5]}px ${({ theme }) => theme.spacing[3]}px;
+    padding: ${({ theme }) => theme.spacing[5]}px
+      ${({ theme }) => theme.spacing[3]}px;
     @media ${({ theme }) => theme.breakpoint.md} {
       align-items: center;
       display: flex;
@@ -70,7 +71,8 @@ const SectionStyled = styled.section`
   .divider {
     background-color: ${({ theme }) => theme.color.greyLight};
     height: 1px;
-    margin: ${({ theme }) => theme.spacing[5]}px auto ${({ theme }) => theme.spacing[5]}px auto;
+    margin: ${({ theme }) => theme.spacing[5]}px auto
+      ${({ theme }) => theme.spacing[5]}px auto;
     width: 66%;
   }
 `
@@ -85,16 +87,23 @@ export default function Tabs() {
       <div className='content-container'>
         <div className='tabs'>
           <ul>
-            <li className={(tabValue === 0) ? 'active' : null} onClick={() => setTabValue(0)}>
+            <li
+              className={tabValue === 0 ? 'active' : null}
+              onClick={() => setTabValue(0)}
+            >
               <p className='font-weight-bold title'>Locus DMP</p>
               {tabValue === 0 && (
                 <p className='content'>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas lobortis molestie velit, id venenatis dui condimentum.
+                  Maecenas lobortis molestie velit, id venenatis dui
+                  condimentum.
                 </p>
               )}
             </li>
-            <li className={(tabValue === 1) ? 'active' : null} onClick={() => setTabValue(1)}>
+            <li
+              className={tabValue === 1 ? 'active' : null}
+              onClick={() => setTabValue(1)}
+            >
               <p className='font-weight-bold title'>Atom DSP</p>
               {tabValue === 1 && (
                 <p className='content'>
@@ -104,7 +113,10 @@ export default function Tabs() {
                 </p>
               )}
             </li>
-            <li className={(tabValue === 2) ? 'active' : null} onClick={() => setTabValue(2)}>
+            <li
+              className={tabValue === 2 ? 'active' : null}
+              onClick={() => setTabValue(2)}
+            >
               <p className='font-weight-bold title'>Cognitive</p>
               {tabValue === 2 && (
                 <p className='content'>
@@ -113,7 +125,10 @@ export default function Tabs() {
                 </p>
               )}
             </li>
-            <li className={(tabValue === 3) ? 'active' : null} onClick={() => setTabValue(3)}>
+            <li
+              className={tabValue === 3 ? 'active' : null}
+              onClick={() => setTabValue(3)}
+            >
               <p className='font-weight-bold title'>Creative Studio</p>
               {tabValue === 3 && (
                 <p className='content'>
@@ -127,18 +142,10 @@ export default function Tabs() {
         </div>
 
         <div className='image'>
-          {tabValue === 0 && (
-            <div className='image-file file-0' />
-          )}
-          {tabValue === 1 && (
-            <div className='image-file file-1' />
-          )}
-          {tabValue === 2 && (
-            <div className='image-file file-2' />
-          )}
-          {tabValue === 3 && (
-            <div className='image-file file-3' />
-          )}
+          {tabValue === 0 && <div className='image-file file-0' />}
+          {tabValue === 1 && <div className='image-file file-1' />}
+          {tabValue === 2 && <div className='image-file file-2' />}
+          {tabValue === 3 && <div className='image-file file-3' />}
         </div>
       </div>
     </SectionStyled>
