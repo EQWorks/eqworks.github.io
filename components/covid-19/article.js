@@ -24,10 +24,6 @@ const SectionStyled = styled.section`
     ul {
       color: ${({ theme }) => theme.color.greyMedium};
     }
-    .bold {
-      font-family: ${({ theme }) => theme.font.name}, sans-serif;
-      font-weight: ${({ theme }) => theme.font.bold};
-    }
   }
   .header {
     align-items: center;
@@ -98,7 +94,7 @@ export default function Article() {
           Governments can leverage as readily as multinational technology
           companies. The most compelling attribute of mobile-phone-based Contact
           Tracing is that{' '}
-          <span className='bold'>
+          <span className='font-weight-bold'>
             benefits can be achieved without breaching the trust and privacy of
             the public
           </span>
@@ -110,7 +106,7 @@ export default function Article() {
           country and from location to location. All of our models and data are
           fully privacy compliant. Our team has studied the Contact Tracing
           solutions being deployed in other parts of the world with a{' '}
-          <span className='bold'>
+          <span className='font-weight-bold'>
             goal to maintain Canadian standards for societal norms and public
             trust while adopting international best practices
           </span>
@@ -123,41 +119,41 @@ export default function Article() {
           Our technology and our expertise provide the initial footprint for a
           Contact Tracing application that is tested and ready. Our focus has
           been on{' '}
-          <span className='bold'>
+          <span className='font-weight-bold'>
             Proactive Prevention NOT Policing Enforcement
           </span>{' '}
           and our work is based on the following principles:
         </p>
         <ul>
           <li>
-            <span className='bold'>Prevention</span> – Given the right tools,
+            <span className='font-weight-bold'>Prevention</span> – Given the right tools,
             stakeholders (e.g. public health officials, first responders,
             citizens) can take proactive, preventative action to flatten the
             curve.
           </li>
           <li>
-            <span className='bold'>Privacy</span> – No solution should force a
+            <span className='font-weight-bold'>Privacy</span> – No solution should force a
             trade-off between privacy and public health. Until COVID-19, few
             topics were of more concern than privacy, user control, and public
             confidence in the technologies we use in our daily lives.
           </li>
           <li>
-            <span className='bold'>Knowledge</span> – Armed with the right
+            <span className='font-weight-bold'>Knowledge</span> – Armed with the right
             information, we believe individuals will act in accordance with
             their own best interest, and that of their families, friends, and
             communities.
           </li>
           <li>
-            <span className='bold'>Collaboration</span> – Broad-based solutions,
+            <span className='font-weight-bold'>Collaboration</span> – Broad-based solutions,
             require coalitions – government, not-for-profit institutes, other
             technology providers – in order to achieve critical mass.
           </li>
           <li>
-            <span className='bold'>Canadian</span> – We believe it is essential
+            <span className='font-weight-bold'>Canadian</span> – We believe it is essential
             that Canada leverage made-in-Canada solutions.
           </li>
         </ul>
-        <p className='bold'>
+        <p className='font-weight-bold'>
           Contact Tracing technology and expertise resides in Canada now and can
           be used to help flatten the curve today.
         </p>

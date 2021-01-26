@@ -8,6 +8,8 @@ const theme = {
   color: {
     accentBlue: '#3542E4',
     black: '#1D1D1D',
+    blue: '#3232F5',
+    blueDark: '#1F0795',
     greyBorder: '#EEF1F6',
     greyDark: '#333333',
     greyMedium: '#616161',
@@ -27,6 +29,14 @@ const theme = {
     navBar: '55px',
     navBarMD: '94px',
     navBarScrolled: '58px'
+  },
+  spacing: {
+    0: 0,
+    1: 4,
+    2: 8,
+    3: 16,
+    4: 32,
+    5: 64,
   },
   width: {
     article: '800px',

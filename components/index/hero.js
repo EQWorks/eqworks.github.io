@@ -1,18 +1,23 @@
+
+import { Newspaper } from '@styled-icons/fa-solid/Newspaper'
+import Link from 'next/link'
+import * as React from 'react'
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
-  background-color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.color.blue};
   padding: 0;
-  .hero__content {
+  .content {
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     box-sizing: border-box;
     color: ${({ theme }) => theme.color.white};
     display: flex;
     flex-direction: column;
     height: calc(100vh - ${({ theme }) => theme.height.navBar});
     justify-content: center;
-    padding: 0 20px;
+    min-height: 600px;
+    padding: 0 ${({ theme }) => theme.spacing[3]}px;
     position: relative;
     width: 100%;
     text-align: center;
@@ -20,71 +25,122 @@ const SectionStyled = styled.section`
     @media ${({ theme }) => theme.breakpoint.sm} {
       height: 100vh;
     }
-    div {
-      display: none;
-      @media ${({ theme }) => theme.breakpoint.md} {
-        align-items: center;
-        border: 1px solid ${({ theme }) => theme.color.white};
-        border-radius: 100%;
-        cursor: pointer;
-        display: flex;
-        height: 60px;
-        justify-content: center;
-        margin: 40px 0 0 0;
-        width: 60px;
-      }
-    }
     h1 {
-      font-size: 3em;
-      max-width: 800px;
+      font-size: 2em;
+      font-weight: ${({ theme }) => theme.font.regular};
+      margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
+      text-transform: uppercase;
+      @media ${({ theme }) => theme.breakpoint.xs} {
+        font-size: 2.5em;
+      }
       @media ${({ theme }) => theme.breakpoint.sm} {
-        font-size: 4em;
+        line-height: 1em;
+        font-size: 3em;
       }
     }
     p {
-      font-family: ${({ theme }) => theme.font.name}, sans-serif;
-      font-weight: ${({ theme }) => theme.font.regular};
-      font-size: 2em;
-      margin: 20px 0 0 0;
+      max-width: ${({ theme }) => theme.width.article};
+    }
+    .divider {
+        background-color: ${({ theme }) => theme.color.white};
+        height: 5px;
+        margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
+        width: 100px;
+      }
+    .footer {
+      align-items: center;
+      bottom: 0;
+      display: flex;
+      margin: 0 auto ${({ theme }) => theme.spacing[4]}px auto;
+      position: absolute;
+      text-align: center;
+      a {
+        align-items: center;
+        color: ${({ theme }) => theme.color.white};
+        display: flex;
+        text-decoration: none;
+        .icon {
+          align-items: center;
+          border: 2px solid ${({ theme }) => theme.color.white};
+          border-radius: 100%;
+          display: flex;
+          margin: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+        }
+        svg {
+          color: ${({ theme }) => theme.color.white};
+          padding: ${({ theme }) => theme.spacing[2]}px;
+          width: 20px;
+        }
+      }
+    }
+    .subtitle-1 {
+      margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
     }
   }
-  .hero__video {
-    bottom: 0;
-    min-height: 100%;
-    min-width: 100%;
+  .video {
+    /* bottom: 0; */
+    height: 100vh;
+    /* min-height: 100%; */
+    /* min-width: 100%; */
     position: absolute;
-    right: 0%;
+    right: 0;
+    top: ${({ theme }) => theme.height.navBar};
+    /* width: 100%; */
     z-index: ${({ theme }) => theme.zIndex.indexHeroVideo};
-  }
-  #scrollToLocation {
-    bottom: calc(${({ theme }) => theme.height.navBarScrolled} / 2);
-    opacity: 0;
-    position: absolute;
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      top: 0;
+    }
   }
 `
 
 export default function Hero() {
-  const scrollToElement = () => {
-    document.getElementById('scrollToLocation').scrollIntoView()
-  }
+  const sectionElement = React.useRef(null)
+  const videoElement = React.useRef(null)
+
+  React.useLayoutEffect(() => {
+    function updateSize() {
+      videoElement.current.style.height = `${sectionElement.current.clientHeight}px`
+    }
+    window.addEventListener('resize', updateSize)
+    updateSize()
+
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
 
   return (
-    <SectionStyled>
-      <div aria-label='stock video of foot traffic' className='hero__content'>
-        <h1>Powerful Results from Where People&nbsp;Go</h1>
-        <p>Connect with and understand your&nbsp;audience.</p>
-        <div
-          aria-label='select this button to navigate to next section'
-          onClick={scrollToElement}
-          role='button'
-        >
-          ↓
+    <SectionStyled ref={sectionElement}>
+      <div aria-label='Scrolling animated graphics of charts and graphs.' className='content'>
+        <h1>Bring Data to Life with EQ&nbsp;Works</h1>
+
+        <div className='divider' />
+
+        <p className='subtitle-1'>
+          EQ enables businesses to {' '}
+          <span className='font-weight-bold'>Understand</span>,{' '}
+          <span className='font-weight-bold'>Predict</span>, and{' '}
+          <span className='font-weight-bold'>Influence</span> customer&nbsp;behaviour.
+        </p>
+
+        <p>
+          Using unique data sets, advanced analytics, machine learning, and artificial intelligence, integrated
+          into our proprietary DMP & DSP, EQ is trusted by some of the world’s largest&nbsp;brands.
+        </p>
+
+        <div className='footer'>
+          <Link href='/press-releases'>
+            <a>
+              <div className='icon'>
+                <Newspaper aria-label='Newspaper.' role='img' />
+              </div>
+              <p>Read our latest news »</p>
+            </a>
+          </Link>
         </div>
       </div>
-      <video autoPlay className='hero__video' muted loop>
-        <source src='/video/background-people-walking.mp4' type='video/mp4' />
+
+      <video autoPlay className='video' muted loop playsInline ref={videoElement}>
+        <source src='/video/index/hero.mp4' type='video/mp4' />
       </video>
-      <div id='scrollToLocation' />
     </SectionStyled>
   )
 }

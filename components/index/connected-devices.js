@@ -63,10 +63,6 @@ const SectionStyled = styled.section`
           margin: 0 0 10px 0;
           width: 40px;
         }
-        .bold {
-          font-family: ${({ theme }) => theme.font.name}, sans-serif;
-          font-weight: ${({ theme }) => theme.font.bold};
-        }
       }
     }
     .top {
@@ -113,7 +109,7 @@ export default function ConnectedDevices() {
           <div>
             <MapPin aria-label='map pin' role='img' />
             <p>
-              <span className='bold'>40,000,000</span>
+              <span className='font-weight-bold'>40,000,000</span>
               <br />
               Points of interest
             </p>
@@ -121,7 +117,7 @@ export default function ConnectedDevices() {
           <div>
             <Smile aria-label='smiley face' role='img' />
             <p>
-              <span className='bold'>300,000 +</span>
+              <span className='font-weight-bold'>300,000 +</span>
               <br />
               App integrations
             </p>
@@ -129,7 +125,7 @@ export default function ConnectedDevices() {
           <div>
             <HardDrive aria-label='hard drive disk' role='img' />
             <p>
-              <span className='bold'>7 TB</span>
+              <span className='font-weight-bold'>7 TB</span>
               <br />
               Data daily
             </p>
