@@ -4,8 +4,8 @@ const Hero = dynamic(() => import('../components/index/hero'))
 const BetterUnderstand = dynamic(() =>
   import('../components/index/better-understand')
 )
-const WhyClientsUseUs = dynamic(() =>
-  import('../components/index/why-clients-use-us')
+const Tabs = dynamic(() =>
+  import('../components/index/tabs')
 )
 const LocationBehaviour = dynamic(() =>
   import('../components/index/location-behaviour')
@@ -24,7 +24,7 @@ export default function Index() {
     <>
       <Hero />
       <BetterUnderstand />
-      <WhyClientsUseUs />
+      <Tabs />
       <LocationBehaviour />
       <ConnectedDevices />
       <SimplifyYour title='digital advertising' />
