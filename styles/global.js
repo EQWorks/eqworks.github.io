@@ -10,6 +10,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+  button {
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.regular};
+    border: none;
+  }
+
   h1 {
     font-family: ${({ theme }) => theme.font.name}, sans-serif;
     font-weight: ${({ theme }) => theme.font.regular};
