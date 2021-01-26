@@ -52,7 +52,7 @@ export default function InTheNews() {
             loading='lazy'
             title='VIRTUAL PANEL: "AI in the Cloud - A Look at the Canadian-listed Smallcap Technology Sector"'
             width='560'
-            src='https://www.youtube-nocookie.com/embed/Cp_DPsdAqmg'
+            src='https://www.youtube.com/embed/Cp_DPsdAqmg'
           ></iframe>
         </div>
         <div className='video-container'>

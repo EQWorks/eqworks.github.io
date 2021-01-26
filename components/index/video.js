@@ -43,7 +43,7 @@ export default function Video(props) {
           loading='lazy'
           title='EQ Works introduction video.'
           width='560'
-          src='https://www.youtube-nocookie.com/embed/AgZhgUsTQfI'
+          src='https://www.youtube.com/embed/AgZhgUsTQfI'
         ></iframe>
       </div>
     </SectionStyled>
