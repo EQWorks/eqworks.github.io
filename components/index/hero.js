@@ -42,8 +42,8 @@ const SectionStyled = styled.section`
       }
     }
     p {
-      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-      font-weight: ${({ theme }) => theme.font.copy.regular};
+      font-family: ${({ theme }) => theme.font.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.regular};
       font-size: 2em;
       margin: 20px 0 0 0;
     }

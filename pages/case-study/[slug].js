@@ -92,7 +92,7 @@ const HighlightsStyled = styled.div`
   }
   p {
     color: ${({ theme }) => theme.color.black};
-    font-weight: ${({ theme }) => theme.font.copy.bold};
+    font-weight: ${({ theme }) => theme.font.bold};
   }
   ul li {
     color: ${({ theme }) => theme.color.greyMedium};

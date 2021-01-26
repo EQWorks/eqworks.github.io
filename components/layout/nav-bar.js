@@ -56,7 +56,7 @@ const StyleNav = styled.nav`
   }
   .navbar--md {
     background-color: ${(props) =>
-      props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
+    props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -96,11 +96,11 @@ const StyleNav = styled.nav`
           a,
           p {
             color: ${(props) =>
-              props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
+    props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
             cursor: pointer;
             display: inline-block;
-            font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
-            font-weight: ${({ theme }) => theme.font.title.medium};
+            font-family: ${({ theme }) => theme.font.name}, sans-serif;
+            font-weight: ${({ theme }) => theme.font.semiBold};
             padding: 0 15px;
             text-decoration: none;
             text-transform: uppercase;
@@ -185,8 +185,8 @@ const StyleNavLinks = styled.div`
           color: ${({ theme }) => theme.color.greyMedium};
           cursor: pointer;
           display: inline-block;
-          font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
-          font-weight: ${({ theme }) => theme.font.title.medium};
+          font-family: ${({ theme }) => theme.font.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.semiBold};
           font-size: 1.75em;
           padding: 20px 0;
           text-decoration: none;
@@ -203,8 +203,8 @@ const StyleNavLinks = styled.div`
         li {
           a,
           p:not(:first-child) {
-            font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
-            font-weight: ${({ theme }) => theme.font.title.regular};
+            font-family: ${({ theme }) => theme.font.name}, sans-serif;
+            font-weight: ${({ theme }) => theme.font.regular};
             font-size: 1.5em;
           }
         }

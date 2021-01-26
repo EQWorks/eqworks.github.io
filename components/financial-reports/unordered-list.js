@@ -19,7 +19,7 @@ const SectionStyled = styled.section`
       margin: 0 0 10px 0;
       a {
         color: ${({ theme }) => theme.color.black};
-        font-weight: ${({ theme }) => theme.font.copy.medium};
+        font-weight: ${({ theme }) => theme.font.semiBold};
         text-decoration: none;
       }
       h2 {

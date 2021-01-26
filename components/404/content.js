@@ -24,7 +24,7 @@ const SectionStyled = styled.section`
   }
   p {
     font-size: 2em;
-    font-weight: ${({ theme }) => theme.font.copy.bold};
+    font-weight: ${({ theme }) => theme.font.bold};
     margin: 0 auto 20px auto;
     max-width: 600px;
   }
@@ -36,7 +36,7 @@ const SectionStyled = styled.section`
     text-transform: uppercase;
   }
   .subtitle {
-    font-weight: ${({ theme }) => theme.font.copy.bold};
+    font-weight: ${({ theme }) => theme.font.bold};
     font-size: 2em;
   }
   @media ${({ theme }) => theme.breakpoint.sm} {

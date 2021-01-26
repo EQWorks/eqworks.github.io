@@ -32,7 +32,7 @@ const BlockquoteStyled = styled.blockquote`
         margin: 0 0 10px 0;
       }
       &:last-child {
-        font-weight: ${({ theme }) => theme.font.copy.bold};
+        font-weight: ${({ theme }) => theme.font.bold};
       }
     }
   }

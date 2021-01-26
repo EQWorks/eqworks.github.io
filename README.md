@@ -152,8 +152,8 @@ const sectionStyled = styled.section`
   -webkit-box-shadow: none;
   box-shadow: none;
   display: inline-block;
-  font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-  font-weight: ${({ theme }) => theme.font.copy.regular};
+  font-family: ${({ theme }) => theme.font.name}, sans-serif;
+  font-weight: ${({ theme }) => theme.font.regular};
   text-align: center;
   a {
     text-decoration: none;

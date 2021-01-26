@@ -64,8 +64,8 @@ const SectionStyled = styled.section`
           width: 40px;
         }
         .bold {
-          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-          font-weight: ${({ theme }) => theme.font.copy.bold};
+          font-family: ${({ theme }) => theme.font.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.bold};
         }
       }
     }

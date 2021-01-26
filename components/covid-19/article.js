@@ -25,8 +25,8 @@ const SectionStyled = styled.section`
       color: ${({ theme }) => theme.color.greyMedium};
     }
     .bold {
-      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-      font-weight: ${({ theme }) => theme.font.copy.bold};
+      font-family: ${({ theme }) => theme.font.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.bold};
     }
   }
   .header {

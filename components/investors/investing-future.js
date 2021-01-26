@@ -34,8 +34,8 @@ const SectionStyled = styled.section`
       }
     }
     .subtitle {
-      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-      font-weight: ${({ theme }) => theme.font.copy.bold};
+      font-family: ${({ theme }) => theme.font.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.bold};
       padding: 20px 0 10px 0;
     }
   }

@@ -17,19 +17,11 @@ const theme = {
     white: '#FFFFFF'
   },
   font: {
-    copy: {
-      name: 'Hind',
-      light: 300,
-      regular: 400,
-      medium: 500,
-      bold: 700
-    },
-    title: {
-      name: 'Montserrat',
-      regular: 400,
-      medium: 500,
-      bold: 700
-    }
+    name: 'Open Sans',
+    light: 300,
+    regular: 400,
+    semiBold: 600,
+    bold: 700,
   },
   height: {
     navBar: '55px',

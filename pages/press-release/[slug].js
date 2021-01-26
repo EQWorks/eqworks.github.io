@@ -68,8 +68,8 @@ const Article = styled.div`
     }
   }
   .excerpt {
-    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.copy.light};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.light};
     font-size: 1.5em;
     line-height: 1.25em;
     margin: 0 0 20px 0;

@@ -16,8 +16,8 @@ const SectionStyled = styled.section`
     cursor: pointer;
     border: 2px solid ${({ theme }) => theme.color.black};
     display: inline-block;
-    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.copy.medium};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.semiBold};
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.25s ease-out;
@@ -28,7 +28,7 @@ const SectionStyled = styled.section`
     }
   }
   .subtitle {
-    font-weight: ${({ theme }) => theme.font.copy.bold};
+    font-weight: ${({ theme }) => theme.font.bold};
     margin: 20px auto;
   }
 `

@@ -38,8 +38,8 @@ const StyleFooter = styled.footer`
         padding: 0 20px;
         &:first-child {
           color: ${({ theme }) => theme.color.white};
-          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-          font-weight: ${({ theme }) => theme.font.copy.medium};
+          font-family: ${({ theme }) => theme.font.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.semiBold};
           padding: 0 0 40px 0;
         }
       }
@@ -55,8 +55,8 @@ const StyleFooter = styled.footer`
       p {
         &:first-child {
           color: ${({ theme }) => theme.color.white};
-          font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-          font-weight: ${({ theme }) => theme.font.copy.medium};
+          font-family: ${({ theme }) => theme.font.name}, sans-serif;
+          font-weight: ${({ theme }) => theme.font.semiBold};
           padding: 0 0 40px 0;
         }
         &:last-child {
@@ -103,8 +103,8 @@ const StyleFooter = styled.footer`
       }
       p {
         color: ${({ theme }) => theme.color.white};
-        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-        font-weight: ${({ theme }) => theme.font.copy.medium};
+        font-family: ${({ theme }) => theme.font.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.semiBold};
         padding: 0 0 40px 0;
       }
       @media ${({ theme }) => theme.breakpoint.lg} {
@@ -117,8 +117,8 @@ const StyleFooter = styled.footer`
       width: 100%;
       a {
         color: ${({ theme }) => theme.color.greyTextFooter};
-        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-        font-weight: ${({ theme }) => theme.font.copy.medium};
+        font-family: ${({ theme }) => theme.font.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.semiBold};
         text-decoration: none;
       }
       @media ${({ theme }) => theme.breakpoint.lg} {

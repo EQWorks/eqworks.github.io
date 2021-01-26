@@ -16,13 +16,13 @@ const SectionStyled = styled.section`
     max-width: 600px;
   }
   .footer {
-    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.copy.bold};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.bold};
     margin: 20px 0 0 0;
   }
   .subtitle {
-    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.copy.bold};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.bold};
     font-size: 1.5rem;
     margin: 0 0 20px 0;
   }

@@ -27,7 +27,7 @@ const SectionStyled = styled.section`
     }
     .title {
       color: ${({ theme }) => theme.color.black};
-      font-weight: ${({ theme }) => theme.font.copy.bold};
+      font-weight: ${({ theme }) => theme.font.bold};
       font-size: 1.2em;
     }
   }
@@ -43,7 +43,7 @@ const SectionStyled = styled.section`
         background-color: ${({ theme }) => theme.color.white};
         border: 2px solid ${({ theme }) => theme.color.black};
         cursor: pointer;
-        font-weight: ${({ theme }) => theme.font.copy.bold};
+        font-weight: ${({ theme }) => theme.font.bold};
         margin: 0 0 20px 0;
         padding: 10px 20px;
         text-transform: uppercase;
@@ -86,18 +86,18 @@ const SectionStyled = styled.section`
           color: ${({ theme }) => theme.color.greyMedium};
         }
         .subtext {
-          font-weight: ${({ theme }) => theme.font.copy.bold};
+          font-weight: ${({ theme }) => theme.font.bold};
         }
         .subtitle {
           color: ${({ theme }) => theme.color.black};
-          font-weight: ${({ theme }) => theme.font.copy.bold};
+          font-weight: ${({ theme }) => theme.font.bold};
           margin: 0 0 20px 0;
         }
       }
     }
     .title {
       color: ${({ theme }) => theme.color.black};
-      font-weight: ${({ theme }) => theme.font.copy.bold};
+      font-weight: ${({ theme }) => theme.font.bold};
       font-size: 1.2em;
       margin: 0 0 10px 0;
     }

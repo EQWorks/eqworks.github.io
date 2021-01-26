@@ -32,7 +32,7 @@ const SectionStyled = styled.section`
       }
       a {
         color: ${({ theme }) => theme.color.black};
-        font-weight: ${({ theme }) => theme.font.copy.bold};
+        font-weight: ${({ theme }) => theme.font.bold};
         text-decoration: none;
         text-transform: uppercase;
         transition: all 0.25s ease-out;

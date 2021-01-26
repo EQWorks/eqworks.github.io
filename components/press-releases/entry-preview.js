@@ -25,8 +25,8 @@ const SectionStyled = styled.section`
     color: ${({ theme }) => theme.color.black};
     cursor: pointer;
     display: block;
-    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.copy.medium};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.semiBold};
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.25s ease-out;

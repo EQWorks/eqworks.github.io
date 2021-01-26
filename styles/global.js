@@ -3,23 +3,23 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.color.black};
-    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.copy.regular};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.regular};
     font-size: 16px;
     margin: 0;
     padding: 0;
   }
 
   h1 {
-    font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.title.bold};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.bold};
     margin: 0;
     padding: 0;
   }
 
   h2 {
-    font-family: ${({ theme }) => theme.font.title.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.title.bold};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.bold};
     font-size: 2rem;
     margin: 0;
     padding: 0;
@@ -35,8 +35,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-    font-weight: ${({ theme }) => theme.font.copy.regular};
+    font-family: ${({ theme }) => theme.font.name}, sans-serif;
+    font-weight: ${({ theme }) => theme.font.regular};
     margin: 0;
     padding: 0;
   }
@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
       background: ${({ theme }) => theme.color.white} !important;
     }
   }
-  
+
   .no-scroll {
     height: 100%;
     overflow: hidden;
