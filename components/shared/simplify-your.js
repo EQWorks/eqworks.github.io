@@ -35,8 +35,8 @@ const SectionStyled = styled.section`
         color: ${({ theme }) => theme.color.greyMedium};
       }
       .subtitle {
-        font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-        font-weight: ${({ theme }) => theme.font.copy.bold};
+        font-family: ${({ theme }) => theme.font.name}, sans-serif;
+        font-weight: ${({ theme }) => theme.font.bold};
       }
     }
   }
@@ -85,8 +85,8 @@ const SectionStyled = styled.section`
       margin: 0 0 20px 0;
     }
     .title {
-      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-      font-weight: ${({ theme }) => theme.font.copy.bold};
+      font-family: ${({ theme }) => theme.font.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.bold};
       margin: 20px 0;
       text-transform: uppercase;
     }

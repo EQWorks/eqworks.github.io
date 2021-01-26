@@ -142,6 +142,7 @@ To convert any image type (`.png`, `.jpg`, etc.) to the `.webp` format, you can 
 - Order declaration properties alphabetically, but ignore vendor prefixes (`-webkit`, `-moz`, `-o`, `-ms`). Meaning `-webkit-box-shadow` should be treated as starting with the letter `b`.
 - Order action selectors alphabetically.
 - Place `@media` declarations at the end of properties.
+- Place classes alphabetically after element selector. For example: `a {} p {} .button{} .item {}`.
 - For example:
 
 ```jsx
@@ -152,8 +153,8 @@ const sectionStyled = styled.section`
   -webkit-box-shadow: none;
   box-shadow: none;
   display: inline-block;
-  font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-  font-weight: ${({ theme }) => theme.font.copy.regular};
+  font-family: ${({ theme }) => theme.font.name}, sans-serif;
+  font-weight: ${({ theme }) => theme.font.regular};
   text-align: center;
   a {
     text-decoration: none;

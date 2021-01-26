@@ -54,8 +54,8 @@ const SectionStyled = styled.section`
     margin: 0 0 20px 0;
     padding: 0 20px;
     h2 {
-      font-family: ${({ theme }) => theme.font.copy.name}, sans-serif;
-      font-weight: ${({ theme }) => theme.font.copy.bold};
+      font-family: ${({ theme }) => theme.font.name}, sans-serif;
+      font-weight: ${({ theme }) => theme.font.bold};
       font-size: 1.5em;
     }
   }

@@ -106,7 +106,7 @@ const SectionStyled = styled.section`
     .link {
       background-color: ${({ theme }) => theme.color.navBarLinksListHover};
       color: ${({ theme }) => theme.color.white};
-      font-weight: ${({ theme }) => theme.font.copy.bold};
+      font-weight: ${({ theme }) => theme.font.bold};
       padding: 15px 30px;
       text-decoration: none;
       text-transform: uppercase;

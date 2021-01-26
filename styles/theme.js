@@ -8,6 +8,8 @@ const theme = {
   color: {
     accentBlue: '#3542E4',
     black: '#1D1D1D',
+    blue: '#3232F5',
+    blueDark: '#1F0795',
     greyBorder: '#EEF1F6',
     greyDark: '#333333',
     greyMedium: '#616161',
@@ -17,24 +19,24 @@ const theme = {
     white: '#FFFFFF'
   },
   font: {
-    copy: {
-      name: 'Hind',
-      light: 300,
-      regular: 400,
-      medium: 500,
-      bold: 700
-    },
-    title: {
-      name: 'Montserrat',
-      regular: 400,
-      medium: 500,
-      bold: 700
-    }
+    name: 'Open Sans',
+    light: 300,
+    regular: 400,
+    semiBold: 600,
+    bold: 700
   },
   height: {
     navBar: '55px',
     navBarMD: '94px',
     navBarScrolled: '58px'
+  },
+  spacing: {
+    0: 0,
+    1: 4,
+    2: 8,
+    3: 16,
+    4: 32,
+    5: 64
   },
   width: {
     article: '800px',
