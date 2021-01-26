@@ -56,7 +56,7 @@ const StyleNav = styled.nav`
   }
   .navbar--md {
     background-color: ${(props) =>
-    props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
+      props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
     box-sizing: border-box;
     display: none;
     padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
@@ -96,7 +96,7 @@ const StyleNav = styled.nav`
           a,
           p {
             color: ${(props) =>
-    props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
+              props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
             cursor: pointer;
             display: inline-block;
             font-family: ${({ theme }) => theme.font.name}, sans-serif;

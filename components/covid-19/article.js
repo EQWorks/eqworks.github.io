@@ -126,31 +126,33 @@ export default function Article() {
         </p>
         <ul>
           <li>
-            <span className='font-weight-bold'>Prevention</span> – Given the right tools,
-            stakeholders (e.g. public health officials, first responders,
-            citizens) can take proactive, preventative action to flatten the
-            curve.
+            <span className='font-weight-bold'>Prevention</span> – Given the
+            right tools, stakeholders (e.g. public health officials, first
+            responders, citizens) can take proactive, preventative action to
+            flatten the curve.
           </li>
           <li>
-            <span className='font-weight-bold'>Privacy</span> – No solution should force a
-            trade-off between privacy and public health. Until COVID-19, few
-            topics were of more concern than privacy, user control, and public
-            confidence in the technologies we use in our daily lives.
+            <span className='font-weight-bold'>Privacy</span> – No solution
+            should force a trade-off between privacy and public health. Until
+            COVID-19, few topics were of more concern than privacy, user
+            control, and public confidence in the technologies we use in our
+            daily lives.
           </li>
           <li>
-            <span className='font-weight-bold'>Knowledge</span> – Armed with the right
-            information, we believe individuals will act in accordance with
-            their own best interest, and that of their families, friends, and
-            communities.
+            <span className='font-weight-bold'>Knowledge</span> – Armed with the
+            right information, we believe individuals will act in accordance
+            with their own best interest, and that of their families, friends,
+            and communities.
           </li>
           <li>
-            <span className='font-weight-bold'>Collaboration</span> – Broad-based solutions,
-            require coalitions – government, not-for-profit institutes, other
-            technology providers – in order to achieve critical mass.
+            <span className='font-weight-bold'>Collaboration</span> –
+            Broad-based solutions, require coalitions – government,
+            not-for-profit institutes, other technology providers – in order to
+            achieve critical mass.
           </li>
           <li>
-            <span className='font-weight-bold'>Canadian</span> – We believe it is essential
-            that Canada leverage made-in-Canada solutions.
+            <span className='font-weight-bold'>Canadian</span> – We believe it
+            is essential that Canada leverage made-in-Canada solutions.
           </li>
         </ul>
         <p className='font-weight-bold'>

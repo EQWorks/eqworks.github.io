@@ -23,7 +23,7 @@ const theme = {
     light: 300,
     regular: 400,
     semiBold: 600,
-    bold: 700,
+    bold: 700
   },
   height: {
     navBar: '55px',
@@ -36,7 +36,7 @@ const theme = {
     2: 8,
     3: 16,
     4: 32,
-    5: 64,
+    5: 64
   },
   width: {
     article: '800px',

@@ -1,4 +1,3 @@
-
 import { Newspaper } from '@styled-icons/fa-solid/Newspaper'
 import Link from 'next/link'
 import * as React from 'react'
@@ -42,11 +41,11 @@ const SectionStyled = styled.section`
       max-width: ${({ theme }) => theme.width.article};
     }
     .divider {
-        background-color: ${({ theme }) => theme.color.white};
-        height: 5px;
-        margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
-        width: 100px;
-      }
+      background-color: ${({ theme }) => theme.color.white};
+      height: 5px;
+      margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
+      width: 100px;
+    }
     .footer {
       align-items: center;
       bottom: 0;
@@ -109,21 +108,26 @@ export default function Hero() {
 
   return (
     <SectionStyled ref={sectionElement}>
-      <div aria-label='Scrolling animated graphics of charts and graphs.' className='content'>
+      <div
+        aria-label='Scrolling animated graphics of charts and graphs.'
+        className='content'
+      >
         <h1>Bring Data to Life with EQ&nbsp;Works</h1>
 
         <div className='divider' />
 
         <p className='subtitle-1'>
-          EQ enables businesses to {' '}
+          EQ enables businesses to{' '}
           <span className='font-weight-bold'>Understand</span>,{' '}
           <span className='font-weight-bold'>Predict</span>, and{' '}
-          <span className='font-weight-bold'>Influence</span> customer&nbsp;behaviour.
+          <span className='font-weight-bold'>Influence</span>{' '}
+          customer&nbsp;behaviour.
         </p>
 
         <p>
-          Using unique data sets, advanced analytics, machine learning, and artificial intelligence, integrated
-          into our proprietary DMP & DSP, EQ is trusted by some of the world’s largest&nbsp;brands.
+          Using unique data sets, advanced analytics, machine learning, and
+          artificial intelligence, integrated into our proprietary DMP & DSP, EQ
+          is trusted by some of the world’s largest&nbsp;brands.
         </p>
 
         <div className='footer'>
@@ -138,7 +142,14 @@ export default function Hero() {
         </div>
       </div>
 
-      <video autoPlay className='video' muted loop playsInline ref={videoElement}>
+      <video
+        autoPlay
+        className='video'
+        muted
+        loop
+        playsInline
+        ref={videoElement}
+      >
         <source src='/video/index/hero.mp4' type='video/mp4' />
       </video>
     </SectionStyled>
