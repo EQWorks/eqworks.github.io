@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-family: ${({ theme }) => theme.font.name}, sans-serif;
     font-size: 2em;
-    font-weight: ${({ theme }) => theme.font.regular};
+    font-weight: ${({ theme }) => theme.font.light};
     line-height: 1.25em;
     margin: 0;
     padding: 0;
@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   h2 {
     font-family: ${({ theme }) => theme.font.name}, sans-serif;
     font-size: 1.5em;
-    font-weight: ${({ theme }) => theme.font.regular};
+    font-weight: ${({ theme }) => theme.font.light};
     margin: 0;
     padding: 0;
     @media ${({ theme }) => theme.breakpoint.sm} {

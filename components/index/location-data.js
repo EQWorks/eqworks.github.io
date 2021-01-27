@@ -7,7 +7,6 @@ const SectionStyled = styled.section`
     background-color: ${({ theme }) => theme.color.blue};
     box-sizing: border-box;
     .content {
-      border: 1px solid red;
       box-sizing: border-box;
       margin: 0 auto;
       max-width: ${({ theme }) => theme.width.page};
@@ -15,12 +14,74 @@ const SectionStyled = styled.section`
         ${({ theme }) => theme.spacing[3]}px;
       text-align: center;
       h2 {
-        font-size: 1.5em;
         margin: 0 auto;
         max-width: 750px;
         text-transform: uppercase;
+      }
+      .image-globe {
+        width: 100%;
+      }
+      .products {
+        margin: -100px 0 0 0;
+        @media ${({ theme }) => theme.breakpoint.xs} {
+          margin: -150px 0 0 0;
+        }
         @media ${({ theme }) => theme.breakpoint.sm} {
-          font-size: 2em;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          margin: -175px 0 0 0;
+        }
+        @media ${({ theme }) => theme.breakpoint.md} {
+          margin: -200px 0 0 0;
+        }
+        @media ${({ theme }) => theme.breakpoint.md} {
+          margin: -250px 0 0 0;
+        }
+        .left {
+          @media ${({ theme }) => theme.breakpoint.sm} {
+            padding: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+          }
+          @media ${({ theme }) => theme.breakpoint.sm} {
+            padding: 0 ${({ theme }) => theme.spacing[4]}px 0 0;
+          }
+        }
+        .logo {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
+          img {
+            margin: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+            max-width: 150px;
+            width: 100%;
+            @media ${({ theme }) => theme.breakpoint.xs} {
+              max-width: 175px;
+            }
+          }
+          p {
+            font-size: 2em;
+            font-weight: ${({ theme }) => theme.font.light};
+            @media ${({ theme }) => theme.breakpoint.xs} {
+              font-size: 2.25em;
+            }
+          }
+        }
+        .right {
+          @media ${({ theme }) => theme.breakpoint.sm} {
+            padding: 0 0 0 ${({ theme }) => theme.spacing[3]}px;
+          }
+          @media ${({ theme }) => theme.breakpoint.sm} {
+            padding: 0 0 0 ${({ theme }) => theme.spacing[4]}px;
+          }
+        }
+        .screenshot {
+          margin: 0 0 ${({ theme }) => theme.spacing[5]}px 0;
+          .screenshot-image {
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+          }
         }
       }
     }
@@ -48,6 +109,39 @@ export default function LocationData() {
       <div className='container'>
         <div className='content'>
           <h2>EQ Provides a Wealth of Geo-Spatial Location Data in our&nbsp;Algorithms</h2>
+          <img
+            alt={
+              `Globe with logos and text emerging from different areas: Consumer Purchase Data,
+              Mastercard logo, Real Estate, Statistics Canada logo, Credit Score Data, TMG Analytics logo,
+              Automotive data, Behavioural data, Caddle logo, and Opta logo.`
+            }
+            className='image-globe'
+            src='/images/index/fallback/location-data-world.png'
+          />
+          <div className='products'>
+            <div className='left screenshot'>
+              <div className='logo'>
+                <img alt='Locus logo' src='/images/components/fallback/logo-locus-white.png' />
+                <p>DMP</p>
+              </div>
+              <img
+                alt='Product design screenshot of EQ Locus platform'
+                className='screenshot-image'
+                src='/images/index/fallback/location-data-locus.png'
+              />
+            </div>
+            <div className='right screenshot'>
+              <div className='logo'>
+                <img alt='Atom logo' src='/images/components/fallback/logo-atom-white.png' />
+                <p>DSP</p>
+              </div>
+              <img
+                alt='Product design screenshot of EQ Atom platform'
+                className='screenshot-image'
+                src='/images/index/fallback/location-data-atom.jpg'
+              />
+            </div>
+          </div>
         </div>
       </div>
 
