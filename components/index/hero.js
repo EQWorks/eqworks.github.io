@@ -22,16 +22,8 @@ const SectionStyled = styled.section`
     justify-content: center;
     z-index: ${({ theme }) => theme.zIndex.pageContent};
     h1 {
-      font-size: 2em;
       margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
       text-transform: uppercase;
-      @media ${({ theme }) => theme.breakpoint.xs} {
-        font-size: 2.5em;
-      }
-      @media ${({ theme }) => theme.breakpoint.sm} {
-        line-height: 1em;
-        font-size: 3em;
-      }
     }
     p {
       max-width: ${({ theme }) => theme.width.article};

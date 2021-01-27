@@ -5,9 +5,7 @@ const BetterUnderstand = dynamic(() =>
   import('../components/index/better-understand')
 )
 const Tabs = dynamic(() => import('../components/index/tabs'))
-const LocationBehaviour = dynamic(() =>
-  import('../components/index/location-behaviour')
-)
+const LocationData = dynamic(() => import('../components/index/location-data'))
 const ConnectedDevices = dynamic(() =>
   import('../components/index/connected-devices')
 )
@@ -23,7 +21,7 @@ export default function Index() {
       <Hero />
       <BetterUnderstand />
       <Tabs />
-      <LocationBehaviour />
+      <LocationData />
       <ConnectedDevices />
       <SimplifyYour title='digital advertising' />
       <OurClientsNoSSR header />
