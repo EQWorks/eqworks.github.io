@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import Slider from 'react-slick'
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
@@ -17,6 +19,25 @@ const SectionStyled = styled.section`
         margin: 0 auto;
         max-width: 750px;
         text-transform: uppercase;
+      }
+      .carousel {
+        box-sizing: border-box;
+        .item {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex !important;
+          flex-direction: column;
+          justify-content: center;
+          padding: 20px;
+          .message {
+            margin: 0;
+            max-width: 150px;
+          }
+          .title {
+            font-size: 2em;
+            font-weight: ${({ theme }) => theme.font.regular};
+          }
+        }
       }
       .image-globe {
         width: 100%;
@@ -98,8 +119,80 @@ const SectionStyled = styled.section`
 `
 
 export default function LocationData() {
+  const sliderSettings = {
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: false,
+    slidesToScroll: 1,
+    slidesToShow: 5,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 4
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  }
+
+  const sliderItems = [
+    {
+      title: '20B+',
+      message: 'Daily Online Interactions'
+    },
+    {
+      title: '100K+',
+      message: 'App Access through Syndication partnership'
+    },
+    {
+      title: '2.4B+',
+      message: 'Device Graph North America'
+    },
+    {
+      title: '260+',
+      message: 'Terabytes of Data Collected Monthly'
+    },
+    {
+      title: '18M+',
+      message: 'MAU Devices in Canada'
+    },
+  ]
+
   return (
     <SectionStyled>
+      <Head>
+        <link
+          charSet='UTF-8'
+          href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css'
+          rel='stylesheet'
+          type='text/css'
+        />
+        <link
+          href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
+          rel='stylesheet'
+          type='text/css'
+        />
+      </Head>
+
       <div className='shape'>
         <svg height='100%' preserveAspectRatio='none' width='100%' viewBox='0 0 100 100'>
           <polygon points='50 100, 100 0, 100 100, 0 100, 0 0' />
@@ -109,6 +202,7 @@ export default function LocationData() {
       <div className='container'>
         <div className='content'>
           <h2>EQ Provides a Wealth of Geo-Spatial Location Data in our&nbsp;Algorithms</h2>
+
           <img
             alt={
               `Globe with logos and text emerging from different areas: Consumer Purchase Data,
@@ -118,6 +212,7 @@ export default function LocationData() {
             className='image-globe'
             src='/images/index/fallback/location-data-world.png'
           />
+
           <div className='products'>
             <div className='left screenshot'>
               <div className='logo'>
@@ -141,6 +236,17 @@ export default function LocationData() {
                 src='/images/index/fallback/location-data-atom.jpg'
               />
             </div>
+          </div>
+
+          <div className='carousel'>
+            <Slider {...sliderSettings}>
+              {sliderItems.map((item) => (
+                <div className='item' key={item.title}>
+                  <p className='title'>{item.title}</p>
+                  <p className='message'>{item.message}</p>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
