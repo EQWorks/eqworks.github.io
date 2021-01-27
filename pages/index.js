@@ -5,9 +5,7 @@ const BetterUnderstand = dynamic(() =>
   import('../components/index/better-understand')
 )
 const Tabs = dynamic(() => import('../components/index/tabs'))
-const LocationData = dynamic(() =>
-  import('../components/index/location-data')
-)
+const LocationData = dynamic(() => import('../components/index/location-data'))
 const ConnectedDevices = dynamic(() =>
   import('../components/index/connected-devices')
 )

@@ -174,7 +174,7 @@ export default function LocationData() {
     {
       title: '18M+',
       message: 'MAU Devices in Canada'
-    },
+    }
   ]
 
   return (
@@ -194,21 +194,27 @@ export default function LocationData() {
       </Head>
 
       <div className='shape'>
-        <svg height='100%' preserveAspectRatio='none' width='100%' viewBox='0 0 100 100'>
+        <svg
+          height='100%'
+          preserveAspectRatio='none'
+          width='100%'
+          viewBox='0 0 100 100'
+        >
           <polygon points='50 100, 100 0, 100 100, 0 100, 0 0' />
         </svg>
       </div>
 
       <div className='container'>
         <div className='content'>
-          <h2>EQ Provides a Wealth of Geo-Spatial Location Data in our&nbsp;Algorithms</h2>
+          <h2>
+            EQ Provides a Wealth of Geo-Spatial Location Data in
+            our&nbsp;Algorithms
+          </h2>
 
           <img
-            alt={
-              `Globe with logos and text emerging from different areas: Consumer Purchase Data,
+            alt={`Globe with logos and text emerging from different areas: Consumer Purchase Data,
               Mastercard logo, Real Estate, Statistics Canada logo, Credit Score Data, TMG Analytics logo,
-              Automotive data, Behavioural data, Caddle logo, and Opta logo.`
-            }
+              Automotive data, Behavioural data, Caddle logo, and Opta logo.`}
             className='image-globe'
             src='/images/index/fallback/location-data-world.png'
           />
@@ -216,7 +222,10 @@ export default function LocationData() {
           <div className='products'>
             <div className='left screenshot'>
               <div className='logo'>
-                <img alt='Locus logo' src='/images/components/fallback/logo-locus-white.png' />
+                <img
+                  alt='Locus logo'
+                  src='/images/components/fallback/logo-locus-white.png'
+                />
                 <p>DMP</p>
               </div>
               <img
@@ -227,7 +236,10 @@ export default function LocationData() {
             </div>
             <div className='right screenshot'>
               <div className='logo'>
-                <img alt='Atom logo' src='/images/components/fallback/logo-atom-white.png' />
+                <img
+                  alt='Atom logo'
+                  src='/images/components/fallback/logo-atom-white.png'
+                />
                 <p>DSP</p>
               </div>
               <img
@@ -252,7 +264,12 @@ export default function LocationData() {
       </div>
 
       <div className='shape'>
-        <svg height='100%' preserveAspectRatio='none' width='100%' viewBox='0 0 100 100'>
+        <svg
+          height='100%'
+          preserveAspectRatio='none'
+          width='100%'
+          viewBox='0 0 100 100'
+        >
           <polygon points='0 0, 100 0, 50, 100' />
         </svg>
       </div>
