@@ -82,8 +82,7 @@ export default function Tabs() {
             {tabValue === 0 && (
               <p className='content'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas lobortis molestie velit, id venenatis dui
-                condimentum.
+                Maecenas lobortis molestie velit, id venenatis dui condimentum.
               </p>
             )}
           </li>

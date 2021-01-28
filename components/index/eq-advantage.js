@@ -31,19 +31,34 @@ export default function EQAdvantage() {
       <h2>The EQ Advantage</h2>
       <div className='items'>
         <div className='item'>
-          <img alt='Brain icon' src='/images/index/fallback/eq-advantage-1.png' />
+          <img
+            alt='Brain icon'
+            src='/images/index/fallback/eq-advantage-1.png'
+          />
           <p>Purely Canadian tech stack with our DSP Atom & DMP&nbsp;Locus</p>
         </div>
         <div className='item'>
-          <img alt='Avatar icon' src='/images/index/fallback/eq-advantage-2.png' />
-          <p>Mastercard partnership gives ability to create custom segments with actionable&nbsp;insights</p>
+          <img
+            alt='Avatar icon'
+            src='/images/index/fallback/eq-advantage-2.png'
+          />
+          <p>
+            Mastercard partnership gives ability to create custom segments with
+            actionable&nbsp;insights
+          </p>
         </div>
         <div className='item'>
-          <img alt='Computer with charts icon' src='/images/index/fallback/eq-advantage-3.png' />
+          <img
+            alt='Computer with charts icon'
+            src='/images/index/fallback/eq-advantage-3.png'
+          />
           <p>Inherently Insights-Driven Data Machine&nbsp;Learning</p>
         </div>
         <div className='item'>
-          <img alt='Trophy icon' src='/images/index/fallback/eq-advantage-4.png' />
+          <img
+            alt='Trophy icon'
+            src='/images/index/fallback/eq-advantage-4.png'
+          />
           <p>Award winning in-house Creative Studio</p>
         </div>
       </div>

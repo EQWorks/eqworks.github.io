@@ -111,8 +111,9 @@ export default function OurClients({ header }) {
               <div className='item' key={altText}>
                 <ImgWebP
                   alt={`${altText} logo`}
-                  fallback={`/images/index/fallback/our-clients-${index + 1
-                    }.png`}
+                  fallback={`/images/index/fallback/our-clients-${
+                    index + 1
+                  }.png`}
                   src={`/images/index/our-clients-${index + 1}.webp`}
                 />
               </div>
