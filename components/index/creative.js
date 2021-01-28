@@ -12,6 +12,7 @@ const SectionStyled = styled.section`
   padding: 0 ${({ theme }) => theme.spacing[2]}px;
   h2 {
     margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
+    text-transform: uppercase;
     @media ${({ theme }) => theme.breakpoint.md} {
       margin: 0 0 ${({ theme }) => theme.spacing[3]}px 0;
     }

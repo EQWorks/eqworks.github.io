@@ -34,7 +34,6 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${({ theme }) => theme.font.light};
     margin: 0;
     padding: 0;
-    text-transform: uppercase;
     @media ${({ theme }) => theme.breakpoint.sm} {
       font-size: 2em;
     }
