@@ -17,7 +17,10 @@ const SectionStyled = styled.section`
     justify-content: space-around;
     .item {
       max-width: 250px;
-      margin: ${({ theme }) => theme.spacing[2]}px;
+      margin: ${({ theme }) => theme.spacing[2]}px
+        ${({ theme }) => theme.spacing[2]}px
+        ${({ theme }) => theme.spacing[4]}px
+        ${({ theme }) => theme.spacing[2]}px;
     }
   }
 `
