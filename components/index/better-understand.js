@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
-  margin: 0 auto;
+  margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
   max-width: ${({ theme }) => theme.width.page};
   @media ${({ theme }) => theme.breakpoint.md} {
-    padding: ${({ theme }) => theme.spacing[5]}px 0;
+    padding: 0 ${({ theme }) => theme.spacing[2]}px;
   }
   .image-bar {
     background-color: ${({ theme }) => theme.color.greyMedium};
@@ -25,7 +25,7 @@ const SectionStyled = styled.section`
         display: block;
       }
       @media ${({ theme }) => theme.breakpoint.lg} {
-        padding: 0 ${({ theme }) => theme.spacing[5]}px;
+        padding: 0 ${({ theme }) => theme.spacing[8]}px;
       }
       .image {
         background-color: ${({ theme }) => theme.color.greyMedium};
@@ -34,20 +34,20 @@ const SectionStyled = styled.section`
       }
     }
     .right {
-      padding: ${({ theme }) => theme.spacing[5]}px
-        ${({ theme }) => theme.spacing[3]}px;
+      padding: ${({ theme }) => theme.spacing[8]}px
+        ${({ theme }) => theme.spacing[2]}px;
       text-align: center;
       @media ${({ theme }) => theme.breakpoint.md} {
-        padding: ${({ theme }) => theme.spacing[5]}px
-          ${({ theme }) => theme.spacing[3]}px
-          ${({ theme }) => theme.spacing[5]}px 0;
+        padding: ${({ theme }) => theme.spacing[8]}px
+          ${({ theme }) => theme.spacing[2]}px
+          ${({ theme }) => theme.spacing[8]}px 0;
         text-align: left;
       }
       h2 {
-        margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
+        margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
         text-transform: uppercase;
         @media ${({ theme }) => theme.breakpoint.md} {
-          margin: 0 0 ${({ theme }) => theme.spacing[3]}px 0;
+          margin: 0 0 ${({ theme }) => theme.spacing[2]}px 0;
           max-width: 400px;
         }
       }
@@ -61,16 +61,16 @@ const SectionStyled = styled.section`
       .divider {
         background-color: ${({ theme }) => theme.color.blue};
         height: 5px;
-        margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
+        margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
         width: 100px;
         @media ${({ theme }) => theme.breakpoint.md} {
-          margin: 0 0 ${({ theme }) => theme.spacing[3]}px 0;
+          margin: 0 0 ${({ theme }) => theme.spacing[2]}px 0;
         }
       }
       .paragraph-1 {
-        margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
+        margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
         @media ${({ theme }) => theme.breakpoint.md} {
-          margin: 0 0 ${({ theme }) => theme.spacing[3]}px 0;
+          margin: 0 0 ${({ theme }) => theme.spacing[2]}px 0;
         }
       }
     }

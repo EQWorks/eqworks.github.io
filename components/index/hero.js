@@ -10,7 +10,8 @@ const SectionStyled = styled.section`
   box-sizing: border-box;
   height: calc(100vh - ${({ theme }) => theme.height.navBar});
   justify-content: center;
-  padding: 0 ${({ theme }) => theme.spacing[3]}px;
+  margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
+  padding: 0 ${({ theme }) => theme.spacing[2]}px;
   text-align: center;
   @media ${({ theme }) => theme.breakpoint.sm} {
     height: 100vh;
@@ -54,17 +55,17 @@ const SectionStyled = styled.section`
           border: 2px solid ${({ theme }) => theme.color.white};
           border-radius: 100%;
           display: flex;
-          margin: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+          margin: 0 ${({ theme }) => theme.spacing[2]}px 0 0;
         }
         svg {
           color: ${({ theme }) => theme.color.white};
-          padding: ${({ theme }) => theme.spacing[2]}px;
+          padding: ${({ theme }) => theme.spacing[1]}px;
           width: 20px;
         }
       }
     }
     .subtitle-1 {
-      margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
+      margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
     }
   }
   .video-container {

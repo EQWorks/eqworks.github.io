@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 const SectionStyled = styled.section`
   color: ${({ theme }) => theme.color.white};
-  padding: ${({ theme }) => theme.spacing[5]}px 0;
+  margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
+  padding: 0;
   .container {
     background-color: ${({ theme }) => theme.color.blue};
     box-sizing: border-box;
@@ -11,8 +12,8 @@ const SectionStyled = styled.section`
       box-sizing: border-box;
       margin: 0 auto;
       max-width: ${({ theme }) => theme.width.page};
-      padding: ${({ theme }) => theme.spacing[5]}px
-        ${({ theme }) => theme.spacing[3]}px;
+      padding: ${({ theme }) => theme.spacing[8]}px
+        ${({ theme }) => theme.spacing[2]}px;
       text-align: center;
       h2 {
         margin: 0 auto;
@@ -60,7 +61,7 @@ const SectionStyled = styled.section`
         }
         .left {
           @media ${({ theme }) => theme.breakpoint.sm} {
-            padding: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+            padding: 0 ${({ theme }) => theme.spacing[2]}px 0 0;
           }
           @media ${({ theme }) => theme.breakpoint.sm} {
             padding: 0 ${({ theme }) => theme.spacing[4]}px 0 0;
@@ -72,7 +73,7 @@ const SectionStyled = styled.section`
           justify-content: center;
           margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
           img {
-            margin: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+            margin: 0 ${({ theme }) => theme.spacing[2]}px 0 0;
             max-width: 150px;
             width: 100%;
             @media ${({ theme }) => theme.breakpoint.xs} {
@@ -89,14 +90,14 @@ const SectionStyled = styled.section`
         }
         .right {
           @media ${({ theme }) => theme.breakpoint.sm} {
-            padding: 0 0 0 ${({ theme }) => theme.spacing[3]}px;
+            padding: 0 0 0 ${({ theme }) => theme.spacing[2]}px;
           }
           @media ${({ theme }) => theme.breakpoint.sm} {
             padding: 0 0 0 ${({ theme }) => theme.spacing[4]}px;
           }
         }
         .screenshot {
-          margin: 0 0 ${({ theme }) => theme.spacing[5]}px 0;
+          margin: 0 0 ${({ theme }) => theme.spacing[8]}px 0;
           .screenshot-image {
             border-radius: 10px;
             max-width: 400px;
