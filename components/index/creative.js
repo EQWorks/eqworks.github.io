@@ -45,7 +45,8 @@ const SectionStyled = styled.section`
     .text {
       margin: 0 auto ${({ theme }) => theme.spacing[3]}px auto;
     }
-    .subtitle, .text {
+    .subtitle,
+    .text {
       max-width: 500px;
       @media ${({ theme }) => theme.breakpoint.md} {
         margin: 0 0 ${({ theme }) => theme.spacing[3]}px 0;
@@ -72,12 +73,12 @@ const SectionStyled = styled.section`
 
 export default function Creative() {
   const theme = useTheme()
-  const [width, setWidth] = React.useState(null);
+  const [width, setWidth] = React.useState(null)
 
   React.useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
+    const handleResize = () => setWidth(window.innerWidth)
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize)
 
     handleResize()
 
@@ -91,12 +92,16 @@ export default function Creative() {
           <h2>Award-Winning Omni-Channel Creative</h2>
         )}
         {width >= theme.breakpointValue.md && (
-          <h2>Award-Winning<br />Omni-Channel Creative</h2>
+          <h2>
+            Award-Winning
+            <br />
+            Omni-Channel Creative
+          </h2>
         )}
         <div className='divider' />
         <p className='subtitle'>
-          A Canadian-based Creative Studio here to help cut
-          through marketing noise and influence customers to drive real&nbsp;results.
+          A Canadian-based Creative Studio here to help cut through marketing
+          noise and influence customers to drive real&nbsp;results.
         </p>
         <p className='text'>
           Our in-house studio includes bespoke custom ads on campaigns that

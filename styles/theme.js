@@ -9,7 +9,7 @@ const theme = {
     xs: 576,
     sm: 768,
     md: 992,
-    lg: 1200,
+    lg: 1200
   },
   breakpointVertical: {
     xs: '(min-height: 560px)'
