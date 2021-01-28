@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Slider from 'react-slick'
 import styled from 'styled-components'
 
@@ -21,19 +20,6 @@ export default function Carousel({ slides }) {
 
   return (
     <div>
-      <Head>
-        <link
-          charSet='UTF-8'
-          href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css'
-          rel='stylesheet'
-          type='text/css'
-        />
-        <link
-          href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
-          rel='stylesheet'
-          type='text/css'
-        />
-      </Head>
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index}>

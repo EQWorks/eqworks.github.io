@@ -107,6 +107,19 @@ export default function Header() {
         rel='stylesheet'
       />
 
+      {/* react-slick */}
+      <link
+        charSet='UTF-8'
+        href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css'
+        rel='stylesheet'
+        type='text/css'
+      />
+      <link
+        href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
+        rel='stylesheet'
+        type='text/css'
+      />
+
       {/* site icons */}
       <link
         rel='apple-touch-icon'
