@@ -5,6 +5,12 @@ const theme = {
     md: '(min-width: 992px)',
     lg: '(min-width: 1200px)'
   },
+  breakpointValue: {
+    xs: 576,
+    sm: 768,
+    md: 992,
+    lg: 1200
+  },
   breakpointVertical: {
     xs: '(min-height: 560px)'
   },

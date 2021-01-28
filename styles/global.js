@@ -37,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
     @media ${({ theme }) => theme.breakpoint.sm} {
       font-size: 2em;
     }
+    @media ${({ theme }) => theme.breakpoint.md} {
+      font-size: 2.5em;
+    }
   }
 
   h3 {
