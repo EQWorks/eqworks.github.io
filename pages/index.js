@@ -23,6 +23,7 @@ export default function Index() {
       <Tabs />
       <LocationData />
       <EQAdvantage />
+      <Divider />
       <Creative />
       <OurClientsNoSSR header />
     </>
