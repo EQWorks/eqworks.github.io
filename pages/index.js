@@ -4,10 +4,11 @@ const Hero = dynamic(() => import('../components/index/hero'))
 const BetterUnderstand = dynamic(() =>
   import('../components/index/better-understand')
 )
+const Divider = dynamic(() => import('../components/shared/divider'))
 const Tabs = dynamic(() => import('../components/index/tabs'))
 const LocationData = dynamic(() => import('../components/index/location-data'))
-const ConnectedDevices = dynamic(() =>
-  import('../components/index/connected-devices')
+const EQAdvantage = dynamic(() =>
+  import('../components/index/eq-advantage')
 )
 const SimplifyYour = dynamic(() => import('../components/shared/simplify-your'))
 // ssr rendering of react-slick results in an error when using response breakpoints.
@@ -20,9 +21,10 @@ export default function Index() {
     <>
       <Hero />
       <BetterUnderstand />
+      <Divider />
       <Tabs />
       <LocationData />
-      <ConnectedDevices />
+      <EQAdvantage />
       <SimplifyYour title='digital advertising' />
       <OurClientsNoSSR header />
     </>

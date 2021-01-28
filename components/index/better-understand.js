@@ -35,12 +35,11 @@ const SectionStyled = styled.section`
     }
     .right {
       padding: ${({ theme }) => theme.spacing[8]}px
-        ${({ theme }) => theme.spacing[2]}px;
+          ${({ theme }) => theme.spacing[2]}px 0
+          ${({ theme }) => theme.spacing[2]}px;
       text-align: center;
       @media ${({ theme }) => theme.breakpoint.md} {
-        padding: ${({ theme }) => theme.spacing[8]}px
-          ${({ theme }) => theme.spacing[2]}px
-          ${({ theme }) => theme.spacing[8]}px 0;
+        padding: 0 ${({ theme }) => theme.spacing[2]}px 0 0;
         text-align: left;
       }
       h2 {
