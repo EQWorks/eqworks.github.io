@@ -17,7 +17,7 @@ const SectionStyled = styled.section`
       text-align: center;
       h2 {
         margin: 0 auto;
-        max-width: 750px;
+        max-width: 800px;
         text-transform: uppercase;
       }
       .carousel {

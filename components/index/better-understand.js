@@ -47,7 +47,7 @@ const SectionStyled = styled.section`
         text-transform: uppercase;
         @media ${({ theme }) => theme.breakpoint.md} {
           margin: 0 0 ${({ theme }) => theme.spacing[2]}px 0;
-          max-width: 400px;
+          max-width: 450px;
         }
       }
       p {
