@@ -7,7 +7,7 @@ const SectionStyled = styled.section`
   color: ${({ theme }) => theme.color.black};
   font-size: ${(props) => (props.largeFont ? '2em' : '1em')};
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
   max-width: ${({ theme }) => theme.width.page};
   padding: 0 ${({ theme }) => theme.spacing[2]}px;
   h2 {
@@ -113,7 +113,7 @@ export default function Creative() {
       <div className='right'>
         <img
           alt='Multiple devices (desktop monitor, laptop, tablet, and mobile) displaying an ad unit at difference sizes.'
-          src='/images/index/fallback/creative-devices.png'
+          src='/images/index/fallback/creative-devices.jpg'
         />
       </div>
     </SectionStyled>
