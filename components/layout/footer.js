@@ -17,7 +17,8 @@ const StyleFooter = styled.footer`
     background-size: cover;
     color: ${({ theme }) => theme.color.white};
     margin: 0 auto ${({ theme }) => theme.spacing[6]}px auto;
-    padding: ${({ theme }) => theme.spacing[12]}px ${({ theme }) => theme.spacing[2]}px;
+    padding: ${({ theme }) => theme.spacing[12]}px
+      ${({ theme }) => theme.spacing[2]}px;
     text-align: center;
     @media ${({ theme }) => theme.breakpoint.sm} {
       margin: 0 auto ${({ theme }) => theme.spacing[8]}px auto;
