@@ -9,10 +9,7 @@ const Tabs = dynamic(() => import('../components/index/tabs'))
 const LocationData = dynamic(() => import('../components/index/location-data'))
 const EQAdvantage = dynamic(() => import('../components/index/eq-advantage'))
 const Creative = dynamic(() => import('../components/index/creative'))
-// ssr rendering of react-slick results in an error when using response breakpoints.
-const OurClientsNoSSR = dynamic(import('../components/shared/our-clients'), {
-  ssr: false
-})
+const Brands = dynamic(() => import('../components/index/brands'))
 
 export default function Index() {
   return (
@@ -25,7 +22,7 @@ export default function Index() {
       <EQAdvantage />
       <Divider />
       <Creative />
-      <OurClientsNoSSR header />
+      <Brands />
     </>
   )
 }

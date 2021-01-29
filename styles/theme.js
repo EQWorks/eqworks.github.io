@@ -19,6 +19,7 @@ const theme = {
     black: '#1D1D1D',
     blue: '#3232F5',
     blueDark: '#1F0795',
+    greyBackground: '#F0F0F0',
     greyBorder: '#EEF1F6',
     greyDark: '#333333',
     greyMedium: '#616161',
