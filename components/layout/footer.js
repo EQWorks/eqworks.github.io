@@ -4,10 +4,35 @@ import { Github } from '@styled-icons/boxicons-logos/Github'
 import { Linkedin } from '@styled-icons/boxicons-logos/Linkedin'
 import { Twitter } from '@styled-icons/boxicons-logos/Twitter'
 
+import Button from '../shared/button'
+
 const StyleFooter = styled.footer`
   background-color: ${({ theme }) => theme.color.blue};
   position: relative;
   z-index: ${({ theme }) => theme.zIndex.footer};
+  .cta {
+    background-image: url('/images/components/fallback/footer-background.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: ${({ theme }) => theme.color.white};
+    margin: 0 auto ${({ theme }) => theme.spacing[6]}px auto;
+    padding: ${({ theme }) => theme.spacing[12]}px ${({ theme }) => theme.spacing[2]}px;
+    text-align: center;
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      margin: 0 auto ${({ theme }) => theme.spacing[8]}px auto;
+    }
+    @media ${({ theme }) => theme.breakpoint.md} {
+      margin: 0 auto ${({ theme }) => theme.spacing[10]}px auto;
+    }
+    @media ${({ theme }) => theme.breakpoint.lg} {
+      margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
+    }
+    h2 {
+      margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
+      text-transform: uppercase;
+    }
+  }
   .content {
     color: ${({ theme }) => theme.color.white};
     display: flex;
@@ -119,6 +144,10 @@ export default function Footer({ noFooter }) {
 
   return (
     <StyleFooter>
+      <div className='cta'>
+        <h2>Together - LET'S CREATE IMPRESIONS.</h2>
+        <Button href='/contact' secondary text="Let's connect" />
+      </div>
       <div className='content'>
         <div className='contact'>
           <p className='logo'>EQ WORKS</p>
