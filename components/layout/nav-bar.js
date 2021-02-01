@@ -90,6 +90,11 @@ const NavStyled = styled.nav`
           ul {
             font-size: 0.75em;
             margin: 0 0 0 ${({ theme }) => theme.spacing[3]}px;
+            li {
+              &:first-child {
+                padding: ${({ theme }) => theme.spacing[2]}px 0;
+              }
+            }
           }
         }
       }
@@ -137,16 +142,14 @@ export default function Section() {
                 <summary>Products</summary>
                 <ul>
                   <li>
-                    <li>
-                      <Link href='/locus'>
-                        <a onClick={() => setMobileLinks(!mobileLinks)}>Locus</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href='/atom'>
-                        <a onClick={() => setMobileLinks(!mobileLinks)}>Atom</a>
-                      </Link>
-                    </li>
+                    <Link href='/locus'>
+                      <a onClick={() => setMobileLinks(!mobileLinks)}>Locus</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/atom'>
+                      <a onClick={() => setMobileLinks(!mobileLinks)}>Atom</a>
+                    </Link>
                   </li>
                 </ul>
               </details>
