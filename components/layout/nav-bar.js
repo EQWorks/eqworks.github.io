@@ -48,6 +48,9 @@ const NavStyled = styled.nav`
           font-weight: ${({ theme }) => theme.font.light};
           padding: ${({ theme }) => theme.spacing[1]}px ${({ theme }) => theme.spacing[2]}px;
           text-decoration: none;
+          @media ${({ theme }) => theme.breakpoint.md} {
+            padding: ${({ theme }) => theme.spacing[1]}px ${({ theme }) => theme.spacing[3]}px;
+          }
         }
         ul li a:hover {
           color: ${({ theme }) => theme.color.white};
@@ -69,7 +72,8 @@ const NavStyled = styled.nav`
         ul li ul.dropdown li a {
           color: ${({ theme }) => theme.color.black};
           background-color: ${({ theme }) => theme.color.white};
-          font-weight: ${({ theme }) => theme.font.light};
+          font-weight: ${({ theme }) => theme.font.semiBold};
+          padding: ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[3]}px;
         }
         ul li:hover ul.dropdown {
           display: block;
@@ -106,6 +110,12 @@ const NavStyled = styled.nav`
         font-size: 0.9em;
         font-weight: ${({ theme }) => theme.font.light};
         padding: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+        @media ${({ theme }) => theme.breakpoint.md} {
+          padding: 0 ${({ theme }) => theme.spacing[4]}px 0 0;
+        }
+        @media ${({ theme }) => theme.breakpoint.lg} {
+          padding: 0 ${({ theme }) => theme.spacing[5]}px 0 0;
+        }
       }
       a:last-child {
         background-color: ${({ theme }) => theme.color.greyBorder};
