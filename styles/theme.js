@@ -36,7 +36,7 @@ const theme = {
     bold: 700
   },
   height: {
-    navBar: '55px',
+    navBar: '56px',
     navBarMD: '94px',
     navBarScrolled: '58px'
   },

@@ -45,8 +45,9 @@ export default function Layout(props) {
     <>
       <Header />
       <StyleContent>
-        <NavBar noHero={NO_HERO_ROUTES.includes(router.pathname)} />
-        {NO_HERO_ROUTES.includes(router.pathname) && <NoHeroPaddingStyle />}
+        <NavBar />
+        {/* <NavBar noHero={NO_HERO_ROUTES.includes(router.pathname)} /> */}
+        {/* {NO_HERO_ROUTES.includes(router.pathname) && <NoHeroPaddingStyle />} */}
         {props.children}
       </StyleContent>
       <Footer noFooter={NO_FOOTER_ROUTES.includes(router.pathname)} />
