@@ -9,8 +9,89 @@ const NavStyled = styled.nav`
   position: sticky;
   top: 0;
   z-index: ${({ theme }) => theme.zIndex.navBar};
-  @media ${({ theme }) => theme.breakpoint.sm} {
-    /* display: none; */
+  .desktop {
+    align-items: center;
+    box-sizing: border-box;
+    display: none;
+    justify-content: space-between;
+    padding: 0 ${({ theme }) => theme.spacing[2]}px;
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      display: flex;
+    }
+    .desktop__left {
+      align-items: stretch;
+      display: flex;
+      justify-content: flex-start;
+      .desktop__links {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        ul {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          height: 100%;
+          list-style: none;
+          padding: 0;
+        }
+        ul li {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          height: 100%;
+          position: relative;
+          text-align: left;
+        }
+        ul li a, ul li p {
+          color: ${({ theme }) => theme.color.white};
+          display: block;
+          font-weight: ${({ theme }) => theme.font.light};
+          padding: ${({ theme }) => theme.spacing[1]}px ${({ theme }) => theme.spacing[3]}px;
+          text-decoration: none;
+        }
+        ul li a:hover {
+          color: ${({ theme }) => theme.color.white};
+        }
+        ul li ul.dropdown {
+          background-color: ${({ theme }) => theme.color.white};
+          display: none;
+          left: 0;
+          min-width: 100%;
+          position: absolute;
+          top: 100%;
+          z-index: ${({ theme }) => theme.zIndex.navBar};
+        }
+        ul li ul.dropdown li {
+          height: auto;
+          margin: 0;
+          padding: 0;
+        }
+        ul li ul.dropdown li a {
+          color: ${({ theme }) => theme.color.black};
+          background-color: ${({ theme }) => theme.color.white};
+          font-weight: ${({ theme }) => theme.font.light};
+        }
+        ul li:hover ul.dropdown {
+          display: block;
+        }
+        ul li ul.dropdown li {
+          display: block;
+        }
+      }
+      .desktop__logo {
+        a {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          margin: 0 ${({ theme }) => theme.spacing[2]}px 0 0;
+          padding: ${({ theme }) => theme.spacing[2]}px 0;
+        }
+        img {
+          height: 40px;
+          text-align: left;
+        }
+      }
+    }
   }
   .mobile {
     align-items: center;
@@ -18,6 +99,9 @@ const NavStyled = styled.nav`
     display: flex;
     justify-content: space-between;
     padding: ${({ theme }) => theme.spacing[1]}px;
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      display: none;
+    }
     .mobile__left {
       align-items: center;
       display: flex;
@@ -177,6 +261,49 @@ export default function Section() {
           </ul>
         </div>
       )}
+      <div className='desktop'>
+        <div className='desktop__left'>
+          <div className='desktop__logo'>
+            <Link href='/'>
+              <a><img alt='EQ Works company logo' src='/images/components/fallback/logo-eq.svg' /></a>
+            </Link>
+          </div>
+          <div className='desktop__links'>
+            <ul>
+              <li>
+                <p>Products &#9662;</p>
+                <ul className='dropdown'>
+                  <li>
+                    <Link href='/locus'>
+                      <a>Locus</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/atom'>
+                      <a>Atom</a>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link href='/marketers'>
+                  <a>Marketers</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/investors'>
+                  <a>Investors</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/careers'>
+                  <a>Careers</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </NavStyled>
   )
 }
