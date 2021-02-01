@@ -42,14 +42,17 @@ const NavStyled = styled.nav`
           position: relative;
           text-align: left;
         }
-        ul li a, ul li p {
+        ul li a,
+        ul li p {
           color: ${({ theme }) => theme.color.white};
           display: block;
           font-weight: ${({ theme }) => theme.font.light};
-          padding: ${({ theme }) => theme.spacing[1]}px ${({ theme }) => theme.spacing[2]}px;
+          padding: ${({ theme }) => theme.spacing[1]}px
+            ${({ theme }) => theme.spacing[2]}px;
           text-decoration: none;
           @media ${({ theme }) => theme.breakpoint.md} {
-            padding: ${({ theme }) => theme.spacing[1]}px ${({ theme }) => theme.spacing[3]}px;
+            padding: ${({ theme }) => theme.spacing[1]}px
+              ${({ theme }) => theme.spacing[3]}px;
           }
         }
         ul li a:hover {
@@ -73,7 +76,8 @@ const NavStyled = styled.nav`
           color: ${({ theme }) => theme.color.black};
           background-color: ${({ theme }) => theme.color.white};
           font-weight: ${({ theme }) => theme.font.semiBold};
-          padding: ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[3]}px;
+          padding: ${({ theme }) => theme.spacing[2]}px
+            ${({ theme }) => theme.spacing[3]}px;
         }
         ul li:hover ul.dropdown {
           display: block;
@@ -104,7 +108,6 @@ const NavStyled = styled.nav`
         align-items: center;
         color: ${({ theme }) => theme.color.white};
         display: flex;
-        text-decoration: none;
       }
       a:first-child {
         font-size: 0.9em;
@@ -122,6 +125,7 @@ const NavStyled = styled.nav`
         color: ${({ theme }) => theme.color.black};
         font-weight: ${({ theme }) => theme.font.semiBold};
         padding: 0 ${({ theme }) => theme.spacing[2]}px;
+        text-decoration: none;
       }
     }
   }
@@ -172,7 +176,8 @@ const NavStyled = styled.nav`
     color: ${({ theme }) => theme.color.black};
     height: calc(100vh - ${({ theme }) => theme.height.navBar});
     overflow-y: scroll;
-    padding: ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[2]}px;
+    padding: ${({ theme }) => theme.spacing[2]}px
+      ${({ theme }) => theme.spacing[2]}px;
     position: absolute;
     width: 100%;
     z-index: ${({ theme }) => theme.zIndex.navBar};
@@ -219,13 +224,13 @@ const NavStyled = styled.nav`
 `
 
 export default function Section() {
-  const [mobileLinks, setMobileLinks] = React.useState(false);
+  const [mobileLinks, setMobileLinks] = React.useState(false)
 
   React.useEffect(() => {
     if (mobileLinks) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'visible';
+      document.body.style.overflow = 'visible'
     }
   }, [mobileLinks])
 
@@ -234,7 +239,12 @@ export default function Section() {
       <div className='mobile'>
         <div className='mobile__left'>
           <Link href='/'>
-            <a><img alt='EQ Works company logo' src='/images/components/fallback/logo-eq.svg' /></a>
+            <a>
+              <img
+                alt='EQ Works company logo'
+                src='/images/components/fallback/logo-eq.svg'
+              />
+            </a>
           </Link>
         </div>
         <div className='mobile__right'>
@@ -297,7 +307,12 @@ export default function Section() {
         <div className='desktop__left'>
           <div className='desktop__logo'>
             <Link href='/'>
-              <a><img alt='EQ Works company logo' src='/images/components/fallback/logo-eq.svg' /></a>
+              <a>
+                <img
+                  alt='EQ Works company logo'
+                  src='/images/components/fallback/logo-eq.svg'
+                />
+              </a>
             </Link>
           </div>
           <div className='desktop__links'>
