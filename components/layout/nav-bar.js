@@ -14,7 +14,7 @@ const NavStyled = styled.nav`
     box-sizing: border-box;
     display: none;
     justify-content: space-between;
-    padding: 0 ${({ theme }) => theme.spacing[2]}px;
+    padding: 0;
     @media ${({ theme }) => theme.breakpoint.sm} {
       display: flex;
     }
@@ -46,7 +46,7 @@ const NavStyled = styled.nav`
           color: ${({ theme }) => theme.color.white};
           display: block;
           font-weight: ${({ theme }) => theme.font.light};
-          padding: ${({ theme }) => theme.spacing[1]}px ${({ theme }) => theme.spacing[3]}px;
+          padding: ${({ theme }) => theme.spacing[1]}px ${({ theme }) => theme.spacing[2]}px;
           text-decoration: none;
         }
         ul li a:hover {
@@ -83,13 +83,35 @@ const NavStyled = styled.nav`
           align-items: center;
           display: flex;
           justify-content: center;
-          margin: 0 ${({ theme }) => theme.spacing[2]}px 0 0;
+          margin: 0 ${({ theme }) => theme.spacing[2]}px;
           padding: ${({ theme }) => theme.spacing[2]}px 0;
         }
         img {
           height: 40px;
           text-align: left;
         }
+      }
+    }
+    .desktop__right {
+      box-sizing: border-box;
+      display: flex;
+      height: ${({ theme }) => theme.height.navBarMD};
+      a {
+        align-items: center;
+        color: ${({ theme }) => theme.color.white};
+        display: flex;
+        text-decoration: none;
+      }
+      a:first-child {
+        font-size: 0.9em;
+        font-weight: ${({ theme }) => theme.font.light};
+        padding: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+      }
+      a:last-child {
+        background-color: ${({ theme }) => theme.color.greyBorder};
+        color: ${({ theme }) => theme.color.black};
+        font-weight: ${({ theme }) => theme.font.semiBold};
+        padding: 0 ${({ theme }) => theme.spacing[2]}px;
       }
     }
   }
@@ -302,6 +324,14 @@ export default function Section() {
               </li>
             </ul>
           </div>
+        </div>
+        <div className='desktop__right'>
+          <Link href='/covid-19'>
+            <a>COVID-19</a>
+          </Link>
+          <Link href='/contact'>
+            <a>GET IN TOUCH »</a>
+          </Link>
         </div>
       </div>
     </NavStyled>

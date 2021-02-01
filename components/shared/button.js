@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const ButtonStyled = styled.button`
   background-color: ${(props) =>
     props.secondary
-      ? ({ theme }) => theme.color.grey
+      ? ({ theme }) => theme.color.greyBorder
       : ({ theme }) => theme.color.blue};
   color: ${(props) =>
     props.secondary
@@ -18,9 +18,9 @@ const ButtonStyled = styled.button`
   transition: all 0.25s ease-out;
   &:hover {
     background-color: ${(props) =>
-      props.secondary
-        ? ({ theme }) => theme.color.greyTextFooter
-        : ({ theme }) => theme.color.blueDark};
+    props.secondary
+      ? ({ theme }) => theme.color.greyTextFooter
+      : ({ theme }) => theme.color.blueDark};
     color: ${({ theme }) => theme.color.white};
     a {
       color: ${({ theme }) => theme.color.white};
@@ -28,9 +28,9 @@ const ButtonStyled = styled.button`
   }
   a {
     color: ${(props) =>
-      props.secondary
-        ? ({ theme }) => theme.color.black
-        : ({ theme }) => theme.color.white};
+    props.secondary
+      ? ({ theme }) => theme.color.black
+      : ({ theme }) => theme.color.white};
     text-decoration: none;
   }
 `
