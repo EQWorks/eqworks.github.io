@@ -1,462 +1,364 @@
-import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
+import * as React from 'react'
 import styled from 'styled-components'
 
-import ImgWebP from '../shared/img-webp'
-
-const StyleNav = styled.nav`
-  align-items: center;
-  box-sizing: border-box;
-  flex-direction: row;
+const NavStyled = styled.nav`
+  background-color: ${({ theme }) => theme.color.blue};
+  color: ${({ theme }) => theme.color.white};
   left: 0;
   position: sticky;
   top: 0;
-  width: 100%;
   z-index: ${({ theme }) => theme.zIndex.navBar};
-  .navbar {
-    background-color: ${({ theme }) => theme.color.white};
-    display: flex;
-    height: ${({ theme }) => theme.height.navBar};
+  .desktop {
+    align-items: center;
+    box-sizing: border-box;
+    display: none;
     justify-content: space-between;
-    padding: 0 18px;
+    padding: 0;
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      display: flex;
+    }
+    .desktop__left {
+      align-items: stretch;
+      display: flex;
+      justify-content: flex-start;
+      .desktop__links {
+        align-items: center;
+        box-sizing: border-box;
+        display: flex;
+        ul {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          height: 100%;
+          list-style: none;
+          padding: 0;
+        }
+        ul li {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          height: 100%;
+          position: relative;
+          text-align: left;
+        }
+        ul li a,
+        ul li p {
+          color: ${({ theme }) => theme.color.white};
+          display: block;
+          font-weight: ${({ theme }) => theme.font.light};
+          padding: ${({ theme }) => theme.spacing[1]}px
+            ${({ theme }) => theme.spacing[2]}px;
+          text-decoration: none;
+          @media ${({ theme }) => theme.breakpoint.md} {
+            padding: ${({ theme }) => theme.spacing[1]}px
+              ${({ theme }) => theme.spacing[3]}px;
+          }
+        }
+        ul li a:hover {
+          color: ${({ theme }) => theme.color.white};
+        }
+        ul li ul.dropdown {
+          background-color: ${({ theme }) => theme.color.white};
+          display: none;
+          left: 0;
+          min-width: 100%;
+          position: absolute;
+          top: 100%;
+          z-index: ${({ theme }) => theme.zIndex.navBar};
+        }
+        ul li ul.dropdown li {
+          height: auto;
+          margin: 0;
+          padding: 0;
+        }
+        ul li ul.dropdown li a {
+          color: ${({ theme }) => theme.color.black};
+          background-color: ${({ theme }) => theme.color.white};
+          font-weight: ${({ theme }) => theme.font.semiBold};
+          padding: ${({ theme }) => theme.spacing[2]}px
+            ${({ theme }) => theme.spacing[3]}px;
+        }
+        ul li:hover ul.dropdown {
+          display: block;
+        }
+        ul li ul.dropdown li {
+          display: block;
+        }
+      }
+      .desktop__logo {
+        a {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          margin: 0 ${({ theme }) => theme.spacing[2]}px;
+          padding: ${({ theme }) => theme.spacing[2]}px 0;
+        }
+        img {
+          height: 40px;
+          text-align: left;
+        }
+      }
+    }
+    .desktop__right {
+      box-sizing: border-box;
+      display: flex;
+      height: ${({ theme }) => theme.height.navBarMD};
+      a {
+        align-items: center;
+        color: ${({ theme }) => theme.color.white};
+        display: flex;
+      }
+      a:first-child {
+        font-size: 0.9em;
+        font-weight: ${({ theme }) => theme.font.light};
+        padding: 0 ${({ theme }) => theme.spacing[3]}px 0 0;
+        @media ${({ theme }) => theme.breakpoint.md} {
+          padding: 0 ${({ theme }) => theme.spacing[4]}px 0 0;
+        }
+        @media ${({ theme }) => theme.breakpoint.lg} {
+          padding: 0 ${({ theme }) => theme.spacing[5]}px 0 0;
+        }
+      }
+      a:last-child {
+        background-color: ${({ theme }) => theme.color.greyBorder};
+        color: ${({ theme }) => theme.color.black};
+        font-weight: ${({ theme }) => theme.font.semiBold};
+        padding: 0 ${({ theme }) => theme.spacing[2]}px;
+        text-decoration: none;
+      }
+    }
+  }
+  .mobile {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: ${({ theme }) => theme.spacing[1]}px;
     @media ${({ theme }) => theme.breakpoint.sm} {
       display: none;
     }
-    .navbar__left {
+    .mobile__left {
       align-items: center;
       display: flex;
-      height: 100%;
-      justify-content: center;
-      a {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        img {
-          height: 25px;
-          width: auto;
-        }
-      }
-    }
-    .navbar__right {
-      align-items: center;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      div {
-        background-color: ${({ theme }) => theme.color.greyMedium};
-        height: 2px;
-        margin: 3px 0;
-        width: 25px;
-      }
-      @media ${({ theme }) => theme.breakpoint.sm} {
-        display: none;
-      }
-    }
-  }
-  .navbar--md {
-    background-color: ${(props) =>
-      props.isTop && !props.noHero ? 'none' : '#FFFFFF'};
-    box-sizing: border-box;
-    display: none;
-    padding: ${(props) => (props.isTop ? '18px' : '0px 18px')};
-    position: absolute;
-    transition: background-color 0.5s ease-out;
-    width: 100%;
-    .navbar--md__left {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
       justify-content: flex-start;
-      width: 15%;
       a {
         align-items: center;
         display: flex;
         justify-content: center;
         img {
-          height: ${(props) => (props.isTop ? '50px' : '35px')};
-          width: auto;
+          height: 40px;
+          text-align: left;
         }
       }
     }
-    .navbar--md__right {
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      width: 85%;
-      ul {
+    .mobile__right {
+      height: 100%;
+      button {
         align-items: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        list-style-type: none;
-        padding: 0;
-        li {
-          a,
-          p {
-            color: ${(props) =>
-              props.noHero || !props.isTop ? '#000000' : '#FFFFFF'};
-            cursor: pointer;
-            display: inline-block;
-            font-family: ${({ theme }) => theme.font.name}, sans-serif;
-            font-weight: ${({ theme }) => theme.font.semiBold};
-            padding: 0 15px;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: color 0.5s ease-out;
-            @media ${({ theme }) => theme.breakpoint.sm} {
-              font-size: 0.74em;
-            }
-            @media ${({ theme }) => theme.breakpoint.md} {
-              font-size: 0.8em;
-            }
-          }
-          &:last-child {
-            a {
-              padding: 0 0 0 15px;
-            }
-          }
-        }
-      }
-    }
-    .navbar--md__right__sub-links {
-      color: ${({ theme }) => theme.color.white};
-      padding: 20px 0 0 0;
-      position: absolute;
-      width: 225px;
-      ul {
-        align-items: flex-start;
-        background-color: ${({ theme }) => theme.color.black};
+        background: none;
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        li {
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          a {
-            box-sizing: border-box;
-            color: ${({ theme }) => theme.color.white};
-            display: inline-block;
-            padding: 20px;
-            width: 100%;
+        div {
+          background-color: ${({ theme }) => theme.color.white};
+          height: 3px;
+          margin: 3px 0;
+          width: 30px;
+        }
+      }
+    }
+  }
+  .mobile__links {
+    background-color: ${({ theme }) => theme.color.white};
+    box-sizing: border-box;
+    color: ${({ theme }) => theme.color.black};
+    height: calc(100vh - ${({ theme }) => theme.height.navBar});
+    overflow-y: scroll;
+    padding: ${({ theme }) => theme.spacing[2]}px
+      ${({ theme }) => theme.spacing[2]}px;
+    position: absolute;
+    width: 100%;
+    z-index: ${({ theme }) => theme.zIndex.navBar};
+    ul {
+      margin: 0 auto;
+      max-width: 500px;
+      list-style-type: none;
+      padding: 0;
+      li {
+        border-bottom: 1px solid ${({ theme }) => theme.color.greyBorder};
+        box-sizing: border-box;
+        padding: ${({ theme }) => theme.spacing[2]}px 0;
+        &:first-child {
+          padding: 0 0 ${({ theme }) => theme.spacing[2]}px 0;
+        }
+        &:last-child {
+          border-bottom: none;
+          padding: ${({ theme }) => theme.spacing[2]}px 0 0 0;
+        }
+        a {
+          color: ${({ theme }) => theme.color.black};
+          display: block;
+          font-size: 1.5em;
+          text-decoration: none;
+        }
+        details {
+          summary {
+            cursor: pointer;
+            font-size: 1.5em;
           }
-          &:last-child {
-            a {
-              padding: 20px;
+          ul {
+            font-size: 0.75em;
+            margin: 0 0 0 ${({ theme }) => theme.spacing[3]}px;
+            li {
+              &:first-child {
+                padding: ${({ theme }) => theme.spacing[2]}px 0;
+              }
             }
           }
         }
       }
     }
-    @media ${({ theme }) => theme.breakpoint.sm} {
-      display: flex;
-      justify-content: space-between;
-    }
   }
 `
 
-const StyleNavLinks = styled.div`
-  align-items: flex-start;
-  background-color: ${({ theme }) => theme.color.white};
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  left: 0;
-  min-height: 1000px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  .navbar__links__inner {
-    width: 66%;
-    .navbar__links__inner__list {
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        a,
-        p {
-          color: ${({ theme }) => theme.color.greyMedium};
-          cursor: pointer;
-          display: inline-block;
-          font-family: ${({ theme }) => theme.font.name}, sans-serif;
-          font-weight: ${({ theme }) => theme.font.semiBold};
-          font-size: 1.75em;
-          padding: 20px 0;
-          text-decoration: none;
-          transition: color 0.2s ease-out;
-          &:hover {
-            color: ${({ theme }) => theme.color.navBarLinksListHover};
-          }
-        }
-        li {
-          border-bottom: 1px solid ${({ theme }) => theme.color.greyBorder};
-        }
-      }
-      .navbar__links__inner__list--sub {
-        li {
-          a,
-          p:not(:first-child) {
-            font-family: ${({ theme }) => theme.font.name}, sans-serif;
-            font-weight: ${({ theme }) => theme.font.regular};
-            font-size: 1.5em;
-          }
-        }
-      }
+export default function Section() {
+  const [mobileLinks, setMobileLinks] = React.useState(false)
+
+  React.useEffect(() => {
+    if (mobileLinks) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
     }
-    .navbar__links__inner__close {
-      img {
-        cursor: pointer;
-        height: 18px;
-        margin: 50px 0;
-        width: auto;
-      }
-    }
-  }
-`
-
-export default function NavBar({ noHero }) {
-  const [isTop, setIsTop] = useState(true)
-  const [showNavBarLinks, toggleNavBarLinks] = useState(false)
-  const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
-    false
-  )
-  const [
-    showNavBarMdProductsSubLinks,
-    toggleNavBarMdProductsSubLinks
-  ] = useState(false)
-
-  useEffect(() => {
-    document.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        setIsTop(false)
-      } else {
-        setIsTop(true)
-      }
-    })
-  })
-
-  const handleSubLinkClick = () => {
-    toggleNavBarLinks(!showNavBarLinks)
-    toggleNavBarProductsSubLinks(!showNavBarProductsSubLinks)
-  }
+  }, [mobileLinks])
 
   return (
-    <StyleNav noHero={noHero} isTop={isTop}>
-      <div className='navbar'>
-        <div className='navbar__left'>
+    <NavStyled>
+      <div className='mobile'>
+        <div className='mobile__left'>
           <Link href='/'>
             <a>
-              <ImgWebP
-                alt='eq works logo'
-                fallback='/images/components/fallback/logo-eq-works-square-blue.png'
-                src='/images/components/logo-eq-works-square-blue.webp'
+              <img
+                alt='EQ Works company logo'
+                src='/images/components/fallback/logo-eq.svg'
               />
             </a>
           </Link>
         </div>
-        <div
-          className='navbar__right'
-          onClick={() => toggleNavBarLinks(!showNavBarLinks)}
-        >
-          <div />
-          <div />
-          <div />
+        <div className='mobile__right'>
+          <button onClick={() => setMobileLinks(!mobileLinks)}>
+            <div />
+            <div />
+            <div />
+          </button>
         </div>
-        {showNavBarLinks && (
-          <StyleNavLinks>
-            <div className='navbar__links__inner'>
-              <div className='navbar__links__inner__close'>
-                <ImgWebP
-                  alt='close button'
-                  fallback='/images/components/fallback/icon-x-grey.png'
-                  onClick={() => toggleNavBarLinks(!showNavBarLinks)}
-                  src='/images/components/icon-x-grey.webp'
-                />
-              </div>
-              <div className='navbar__links__inner__list'>
-                <ul>
-                  <li>
-                    <Link href='/'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
-                        Home
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <p
-                      onClick={() =>
-                        toggleNavBarProductsSubLinks(
-                          !showNavBarProductsSubLinks
-                        )
-                      }
-                    >
-                      Products →
-                    </p>
-                    {showNavBarProductsSubLinks && (
-                      <StyleNavLinks>
-                        <div className='navbar__links__inner'>
-                          <div className='navbar__links__inner__close'>
-                            <ImgWebP
-                              alt='close button'
-                              fallback='/images/components/fallback/icon-x-grey.png'
-                              onClick={() =>
-                                toggleNavBarLinks(!showNavBarLinks)
-                              }
-                              src='/images/components/icon-x-grey.webp'
-                            />
-                          </div>
-                          <div className='navbar__links__inner__list'>
-                            <ul className='navbar__links__inner__list--sub'>
-                              <li>
-                                <p
-                                  onClick={() =>
-                                    toggleNavBarProductsSubLinks(
-                                      !showNavBarProductsSubLinks
-                                    )
-                                  }
-                                >
-                                  ← Products
-                                </p>
-                              </li>
-                              <li>
-                                <Link href='/atom'>
-                                  <a onClick={handleSubLinkClick}>Atom</a>
-                                </Link>
-                              </li>
-                              <li>
-                                <Link href='/locus'>
-                                  <a onClick={handleSubLinkClick}>Locus</a>
-                                </Link>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </StyleNavLinks>
-                    )}
-                  </li>
-                  <li>
-                    <Link href='/marketers'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
-                        Marketers
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/investors'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
-                        Investors
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/careers'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
-                        Careers
-                      </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href='/contact'>
-                      <a onClick={() => toggleNavBarLinks(!showNavBarLinks)}>
-                        Contact
-                      </a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </StyleNavLinks>
-        )}
       </div>
-      <div className='navbar--md'>
-        <div className='navbar--md__left'>
-          <Link href='/'>
-            <a>
-              <ImgWebP
-                alt='eq works logo'
-                fallback={
-                  isTop && !noHero
-                    ? '/images/components/fallback/logo-eq-works-white.png'
-                    : '/images/components/fallback/logo-eq-works-blue.png'
-                }
-                src={
-                  isTop && !noHero
-                    ? '/images/components/logo-eq-works-white.webp'
-                    : '/images/components/logo-eq-works-blue.webp'
-                }
-              />
-            </a>
-          </Link>
-        </div>
-        <div className='navbar--md__right'>
+      {mobileLinks && (
+        <div className='mobile__links'>
           <ul>
             <li>
               <Link href='/'>
-                <a>Home</a>
+                <a onClick={() => setMobileLinks(!mobileLinks)}>Home</a>
               </Link>
             </li>
             <li>
-              <Link href='/covid-19'>
-                <a>Covid-19</a>
-              </Link>
-            </li>
-            <li
-              onMouseEnter={() =>
-                toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)
-              }
-              onMouseLeave={() =>
-                toggleNavBarMdProductsSubLinks(!showNavBarMdProductsSubLinks)
-              }
-              tabIndex='0'
-            >
-              <p>Products</p>
-              {showNavBarMdProductsSubLinks && (
-                <div className='navbar--md__right__sub-links'>
-                  <ul>
-                    <li>
-                      <Link href='/atom'>
-                        <a>Atom</a>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href='/locus'>
-                        <a>Locus</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
+              <details>
+                <summary>Products</summary>
+                <ul>
+                  <li>
+                    <Link href='/locus'>
+                      <a onClick={() => setMobileLinks(!mobileLinks)}>Locus</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/atom'>
+                      <a onClick={() => setMobileLinks(!mobileLinks)}>Atom</a>
+                    </Link>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>
               <Link href='/marketers'>
-                <a>Marketers</a>
+                <a onClick={() => setMobileLinks(!mobileLinks)}>Marketers</a>
               </Link>
             </li>
             <li>
               <Link href='/investors'>
-                <a>Investors</a>
+                <a onClick={() => setMobileLinks(!mobileLinks)}>Investors</a>
               </Link>
             </li>
             <li>
               <Link href='/careers'>
-                <a>Careers</a>
+                <a onClick={() => setMobileLinks(!mobileLinks)}>Careers</a>
               </Link>
             </li>
             <li>
               <Link href='/contact'>
-                <a>Contact</a>
+                <a onClick={() => setMobileLinks(!mobileLinks)}>Contact</a>
               </Link>
             </li>
           </ul>
         </div>
+      )}
+      <div className='desktop'>
+        <div className='desktop__left'>
+          <div className='desktop__logo'>
+            <Link href='/'>
+              <a>
+                <img
+                  alt='EQ Works company logo'
+                  src='/images/components/fallback/logo-eq.svg'
+                />
+              </a>
+            </Link>
+          </div>
+          <div className='desktop__links'>
+            <ul>
+              <li>
+                <p>Products &#9662;</p>
+                <ul className='dropdown'>
+                  <li>
+                    <Link href='/locus'>
+                      <a>Locus</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href='/atom'>
+                      <a>Atom</a>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link href='/marketers'>
+                  <a>Marketers</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/investors'>
+                  <a>Investors</a>
+                </Link>
+              </li>
+              <li>
+                <Link href='/careers'>
+                  <a>Careers</a>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className='desktop__right'>
+          <Link href='/covid-19'>
+            <a>COVID-19</a>
+          </Link>
+          <Link href='/contact'>
+            <a>GET IN TOUCH »</a>
+          </Link>
+        </div>
       </div>
-    </StyleNav>
+    </NavStyled>
   )
 }

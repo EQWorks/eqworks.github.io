@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const ButtonStyled = styled.button`
   background-color: ${(props) =>
     props.secondary
-      ? ({ theme }) => theme.color.grey
+      ? ({ theme }) => theme.color.greyBorder
       : ({ theme }) => theme.color.blue};
   color: ${(props) =>
     props.secondary
