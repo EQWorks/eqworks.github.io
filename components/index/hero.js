@@ -10,11 +10,14 @@ const SectionStyled = styled.section`
   box-sizing: border-box;
   height: calc(100vh - ${({ theme }) => theme.height.navBar});
   justify-content: center;
-  margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
+  margin: 0 auto;
   padding: 0 ${({ theme }) => theme.spacing[2]}px;
   text-align: center;
   @media ${({ theme }) => theme.breakpoint.sm} {
-    height: 100vh;
+    height: calc(100vh - ${({ theme }) => theme.height.navBarMD});
+  }
+  @media ${({ theme }) => theme.breakpoint.md} {
+    margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
   }
   .content {
     align-items: center;
