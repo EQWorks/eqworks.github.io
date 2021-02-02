@@ -78,11 +78,12 @@ export default function Tabs() {
             className={tabValue === 0 ? 'active' : null}
             onClick={() => setTabValue(0)}
           >
-            <p className='font-weight-bold title'>Locus DMP</p>
+            <p className='font-weight-bold title'>Business Decision Makers</p>
             {tabValue === 0 && (
               <p className='content'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas lobortis molestie velit, id venenatis dui condimentum.
+                CRM enrichment for loyalty & customer acquisition, store
+                performance benchmarking, assortment planning, return on
+                marketing&nbsp;spend.
               </p>
             )}
           </li>
@@ -90,12 +91,13 @@ export default function Tabs() {
             className={tabValue === 1 ? 'active' : null}
             onClick={() => setTabValue(1)}
           >
-            <p className='font-weight-bold title'>Atom DSP</p>
+            <p className='font-weight-bold title'>
+              Marketing & Advertising Decision Makers
+            </p>
             {tabValue === 1 && (
               <p className='content'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas lobortis molestie velit, id venenatis dui condimentum
-                ut. Quisque fringilla ex eu ante posuere.
+                SaaS data and media buying tools, performance optimization,
+                insights, and Creative&nbsp;Studio.
               </p>
             )}
           </li>
@@ -103,11 +105,12 @@ export default function Tabs() {
             className={tabValue === 2 ? 'active' : null}
             onClick={() => setTabValue(2)}
           >
-            <p className='font-weight-bold title'>Cognitive</p>
+            <p className='font-weight-bold title'>Media Owners</p>
             {tabValue === 2 && (
               <p className='content'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas lobortis molestie velit.
+                Platform-as-a-Service to scale first party audiences and show
+                return advertising spend through changes in real world
+                consumer&nbsp;behavior.
               </p>
             )}
           </li>
@@ -115,12 +118,15 @@ export default function Tabs() {
             className={tabValue === 3 ? 'active' : null}
             onClick={() => setTabValue(3)}
           >
-            <p className='font-weight-bold title'>Creative Studio</p>
+            <p className='font-weight-bold title'>
+              Data Scientists & Developers
+            </p>
             {tabValue === 3 && (
               <p className='content'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas lobortis molestie velit, id venenatis dui condimentum
-                ut. Quisque fringilla
+                Juypter notebook capabilities to enable data manipulation
+                without limitation, API access for privacy-compliant
+                localization in your own environment, and machine-learning-model
+                training&nbsp;gym.
               </p>
             )}
           </li>

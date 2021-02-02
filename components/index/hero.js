@@ -32,6 +32,12 @@ const SectionStyled = styled.section`
     p {
       max-width: ${({ theme }) => theme.width.article};
     }
+    .description {
+      display: none;
+      @media ${({ theme }) => theme.breakpoint.xs} {
+        display: block;
+      }
+    }
     .divider {
       background-color: ${({ theme }) => theme.color.white};
       height: 5px;
@@ -41,13 +47,10 @@ const SectionStyled = styled.section`
     .footer {
       align-items: center;
       bottom: 0;
-      display: none;
+      display: flex;
       margin: 0 auto ${({ theme }) => theme.spacing[4]}px auto;
       position: absolute;
       text-align: center;
-      @media ${({ theme }) => theme.breakpointVertical.xs} {
-        display: flex;
-      }
       a {
         align-items: center;
         color: ${({ theme }) => theme.color.white};
@@ -68,6 +71,7 @@ const SectionStyled = styled.section`
       }
     }
     .subtitle-1 {
+      font-size: 1.25em;
       margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
     }
   }
@@ -112,7 +116,7 @@ export default function Hero() {
       </div>
 
       <div className='content'>
-        <h1>Bring Data to Life with EQ&nbsp;Works</h1>
+        <h1>Turning Data into Business Performance.</h1>
 
         <div className='divider' />
 
@@ -124,10 +128,10 @@ export default function Hero() {
           customer&nbsp;behaviour.
         </p>
 
-        <p>
-          Using unique data sets, advanced analytics, machine learning, and
-          artificial intelligence, integrated into our proprietary DMP & DSP, EQ
-          is trusted by some of the world’s largest&nbsp;brands.
+        <p className='description'>
+          Unique geospatial data sets, advanced AI & machine learning tools, and
+          a proprietary data management and activation platform, empowers any
+          business to win in the data-economy.
         </p>
 
         <div className='footer'>

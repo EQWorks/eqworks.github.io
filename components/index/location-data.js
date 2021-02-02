@@ -161,7 +161,7 @@ export default function LocationData() {
     },
     {
       title: '100K+',
-      message: 'App Access through Syndication partnership'
+      message: 'App Access through Syndication Partnership'
     },
     {
       title: '2.4B+',
@@ -193,8 +193,8 @@ export default function LocationData() {
       <div className='container'>
         <div className='content'>
           <h2>
-            EQ Provides a Wealth of Geo-Spatial Location Data in
-            our&nbsp;Algorithms
+            EQ's algorithms reveals the consumer insights hidden between
+            geospatial data&nbsp;sets
           </h2>
 
           <img
