@@ -21,6 +21,14 @@ const SectionStyled = styled.section`
         ${({ theme }) => theme.spacing[2]}px
         ${({ theme }) => theme.spacing[4]}px
         ${({ theme }) => theme.spacing[2]}px;
+      img {
+        margin: 0 auto ${({ theme }) => theme.spacing[1]}px auto;
+      }
+      .title {
+        color: ${({ theme }) => theme.color.blue};
+        font-weight: ${({ theme }) => theme.font.bold};
+        margin: 0 auto ${({ theme }) => theme.spacing[1]}px auto;
+      }
     }
   }
 `
@@ -35,16 +43,21 @@ export default function EQAdvantage() {
             alt='Brain icon'
             src='/images/index/fallback/eq-advantage-1.png'
           />
-          <p>Purely Canadian tech stack with our DSP Atom & DMP&nbsp;Locus</p>
+          <p className='title'>Scale</p>
+          <p>
+            More than a petabyte of geospatial data collected, organized,
+            and&nbsp;stored
+          </p>
         </div>
         <div className='item'>
           <img
             alt='Avatar icon'
             src='/images/index/fallback/eq-advantage-2.png'
           />
+          <p className='title'>ROI</p>
           <p>
-            Mastercard partnership gives ability to create custom segments with
-            actionable&nbsp;insights
+            Ability to connect online events to real-world behavior, such as a
+            store-visit
           </p>
         </div>
         <div className='item'>
@@ -52,14 +65,22 @@ export default function EQAdvantage() {
             alt='Computer with charts icon'
             src='/images/index/fallback/eq-advantage-3.png'
           />
-          <p>Inherently Insights-Driven Data Machine&nbsp;Learning</p>
+          <p className='title'>Time Travel</p>
+          <p>
+            Ability to understand historical consumer behavior to find an engage
+            them&nbsp;today
+          </p>
         </div>
         <div className='item'>
           <img
             alt='Trophy icon'
             src='/images/index/fallback/eq-advantage-4.png'
           />
-          <p>Award winning in-house Creative Studio</p>
+          <p className='title'>Tools</p>
+          <p>
+            Award-winning Creative Studio, with omni-channel ideation and design
+            support.
+          </p>
         </div>
       </div>
     </SectionStyled>
