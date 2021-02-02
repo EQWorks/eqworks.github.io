@@ -45,8 +45,10 @@ const StyleFooter = styled.footer`
     padding: ${({ theme }) => theme.spacing[2]}px;
     .contact {
       margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
+      text-align: center;
       width: 100%;
       @media ${({ theme }) => theme.breakpoint.sm} {
+        text-align: left;
         width: 25%;
       }
       ul {
@@ -77,7 +79,10 @@ const StyleFooter = styled.footer`
           div {
             align-items: center;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
+            @media ${({ theme }) => theme.breakpoint.sm} {
+              justify-content: flex-start;
+            }
             a {
               margin: 0 ${({ theme }) => theme.spacing[1]}px 0 0;
               svg {
@@ -86,6 +91,12 @@ const StyleFooter = styled.footer`
               }
             }
           }
+        }
+      }
+      .line-break {
+        display: inline;
+        @media ${({ theme }) => theme.breakpoint.sm} {
+          display: none;
         }
       }
       .logo {
@@ -184,8 +195,10 @@ export default function Footer({ noFooter }) {
             </li>
             <li>
               <p>
-                © 2020 EQ Inc.
-                <br />
+                © 2020 EQ Inc.{' '}
+                <span className='line-break'>
+                  <br />
+                </span>
                 All Rights Reserved.
               </p>
             </li>
