@@ -215,12 +215,13 @@ export default function BetterUnderstand() {
             <div className='divider' />
             <p className='paragraph-1'>
               Location data tells more about a consumer than where they live or
-              where they've been, it informs what they are likely to need, likely
-              to be in market to buy, and preferences they are likely to&nbsp;have.
+              where they've been, it informs what they are likely to need,
+              likely to be in market to buy, and preferences they are likely
+              to&nbsp;have.
             </p>
             <p className='font-weight-bold'>
-              90% of the world's data was generated in
-              the last 2 years, driven by proliferation of location&nbsp;information.
+              90% of the world's data was generated in the last 2 years, driven
+              by proliferation of location&nbsp;information.
             </p>
           </div>
         </div>
@@ -235,13 +236,12 @@ export default function BetterUnderstand() {
             </h2>
             <div className='divider' />
             <p className='paragraph-1'>
-              AI and Machine Learning unlock the power of location data
-              to predict the decisions consumers are likely to make&nbsp;next.
+              AI and Machine Learning unlock the power of location data to
+              predict the decisions consumers are likely to make&nbsp;next.
             </p>
             <p className='font-weight-bold'>
-              Many of world's most respected consumer
-              brands have mastered the art of turning
-              data into&nbsp;prediction.
+              Many of world's most respected consumer brands have mastered the
+              art of turning data into&nbsp;prediction.
             </p>
           </div>
           <div className='right'>

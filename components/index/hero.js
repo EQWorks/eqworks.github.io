@@ -129,8 +129,9 @@ export default function Hero() {
         </p>
 
         <p className='description'>
-          Unique geospatial data sets, advanced AI & machine learning tools, and a proprietary data
-          management and activation platform, empowers any business to win in the data-economy.
+          Unique geospatial data sets, advanced AI & machine learning tools, and
+          a proprietary data management and activation platform, empowers any
+          business to win in the data-economy.
         </p>
 
         <div className='footer'>
