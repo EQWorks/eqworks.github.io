@@ -94,7 +94,7 @@ export default function Creative() {
         )}
         {width >= theme.breakpointValue.md && (
           <h2>
-            Award-Winning
+            <span className='color-blue'>Award-Winning</span>
             <br />
             Omni-Channel Creative
           </h2>
