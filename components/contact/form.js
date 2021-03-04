@@ -177,30 +177,29 @@ export default function Form() {
     }
 
     if (syncErrors.length === 0) {
-      console.log('SEND EMAIL')
-      // axios({
-      //   url: 'https://formspree.io/f/mqkyorzl',
-      //   method: 'post',
-      //   headers: {
-      //     'Accept': 'application/json'
-      //   },
-      //   data: {
-      //     first_name: formData['first-name'],
-      //     last_name: formData['last-name'],
-      //     company: formData['company'],
-      //     job_title: formData['job-title'],
-      //     email: formData['email'],
-      //     phone: formData['phone'],
-      //     message: formData['message'],
-      //     consent: formData['consent']
-      //   }
-      // }).then((response) => {
-      //   if (response.status === 200) {
-      //     statusSet('SUCCESS')
-      //   } else {
-      //     statusSet('ERROR')
-      //   }
-      // })
+      axios({
+        url: 'https://formspree.io/f/mqkyorzl',
+        method: 'post',
+        headers: {
+          'Accept': 'application/json'
+        },
+        data: {
+          first_name: formData['first-name'],
+          last_name: formData['last-name'],
+          company: formData['company'],
+          job_title: formData['job-title'],
+          email: formData['email'],
+          phone: formData['phone'],
+          message: formData['message'],
+          consent: formData['consent']
+        }
+      }).then((response) => {
+        if (response.status === 200) {
+          statusSet('SUCCESS')
+        } else {
+          statusSet('ERROR')
+        }
+      })
     }
   }
 

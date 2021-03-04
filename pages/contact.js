@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic'
 
 const Hero = dynamic(() => import('../components/shared/hero'))
 const Form = dynamic(() => import('../components/contact/form'))
-const InfoForm = dynamic(() => import('../components/contact/info-form'))
+const ContactInfo = dynamic(() => import('../components/contact/contact-info'))
 const Map = dynamic(() => import('../components/contact/map'))
 
 export default function Contact() {
@@ -14,6 +14,7 @@ export default function Contact() {
         title={`LET'S CONNECT!`}
       />
       <Form />
+      <ContactInfo />
       <Map />
     </>
   )
