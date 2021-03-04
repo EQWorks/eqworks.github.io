@@ -22,10 +22,10 @@ const SectionStyled = styled.section`
         ${({ theme }) => theme.spacing[4]}px
         ${({ theme }) => theme.spacing[2]}px;
       img {
-        margin: 0 auto ${({ theme }) => theme.spacing[1]}px auto;
+        margin: 0 auto;
+        max-width: 111px;
       }
       .title {
-        color: ${({ theme }) => theme.color.blue};
         font-weight: ${({ theme }) => theme.font.bold};
         margin: 0 auto ${({ theme }) => theme.spacing[1]}px auto;
       }
