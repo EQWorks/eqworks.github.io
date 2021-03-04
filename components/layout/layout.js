@@ -14,6 +14,7 @@ const StyleContent = styled.div`
 `
 
 const NO_FOOTER_ROUTES = ['/atom', '/locus']
+const NO_FOOTER_CTA_ROUTES = ['/contact']
 
 export default function Layout(props) {
   const router = useRouter()
@@ -35,7 +36,10 @@ export default function Layout(props) {
         <NavBar />
         {props.children}
       </StyleContent>
-      <Footer noFooter={NO_FOOTER_ROUTES.includes(router.pathname)} />
+      <Footer
+        noFooter={NO_FOOTER_ROUTES.includes(router.pathname)}
+        noFooterCTA={NO_FOOTER_CTA_ROUTES.includes(router.pathname)}
+      />
     </>
   )
 }

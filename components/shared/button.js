@@ -35,10 +35,10 @@ const ButtonStyled = styled.button`
   }
 `
 
-export default function Button({ href, secondary, text }) {
+export default function Button({ href, secondary, text, ...props }) {
   if (href) {
     return (
-      <ButtonStyled secondary={secondary}>
+      <ButtonStyled {...props} secondary={secondary}>
         <Link href={href}>
           <a className='font-weight-bold'>{text} »</a>
         </Link>
@@ -46,5 +46,9 @@ export default function Button({ href, secondary, text }) {
     )
   }
 
-  return <ButtonStyled secondary={secondary}>{text} »</ButtonStyled>
+  return (
+    <ButtonStyled {...props} secondary={secondary}>
+      {text} »
+    </ButtonStyled>
+  )
 }
