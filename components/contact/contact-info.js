@@ -11,7 +11,8 @@ const SectionStyled = styled.section`
     justify-content: center;
     margin: 0 auto;
     max-width: ${({ theme }) => theme.width.page};
-    padding: ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
+    padding: ${({ theme }) => theme.spacing[6]}px
+      ${({ theme }) => theme.spacing[2]}px;
     .divider {
       background-color: ${({ theme }) => theme.color.greyLight};
       box-sizing: border-box;
@@ -21,11 +22,13 @@ const SectionStyled = styled.section`
       width: 100%;
       @media ${({ theme }) => theme.breakpoint.md} {
         height: 125px;
-        margin: 0 ${({ theme }) => theme.spacing[3]}px 0 ${({ theme }) => theme.spacing[2]}px;
+        margin: 0 ${({ theme }) => theme.spacing[3]}px 0
+          ${({ theme }) => theme.spacing[2]}px;
         width: 3px;
       }
       @media ${({ theme }) => theme.breakpoint.lg} {
-        margin: 0 ${({ theme }) => theme.spacing[7]}px 0 ${({ theme }) => theme.spacing[4]}px;
+        margin: 0 ${({ theme }) => theme.spacing[7]}px 0
+          ${({ theme }) => theme.spacing[4]}px;
       }
     }
     .item {

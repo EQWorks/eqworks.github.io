@@ -27,7 +27,9 @@ const SectionStyled = styled.section`
 `
 
 export default function Hero({ fullHeight, imgSrc, noOverlay, title }) {
-  const overlayValue = (noOverlay) ? 'rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)' : 'rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)'
+  const overlayValue = noOverlay
+    ? 'rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)'
+    : 'rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)'
 
   return (
     <SectionStyled

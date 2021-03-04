@@ -1,5 +1,5 @@
 import Checkbox from '@material-ui/core/Checkbox'
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormGroup from '@material-ui/core/FormGroup'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import TextField from '@material-ui/core/TextField'
@@ -13,7 +13,7 @@ const SectionStyled = styled.section`
   max-width: ${({ theme }) => theme.width.article};
   padding: 0 ${({ theme }) => theme.spacing[2]}px;
   text-align: center;
-  input[type=submit] {
+  input[type='submit'] {
     background-color: ${({ theme }) => theme.color.blue};
     border: none;
     color: ${({ theme }) => theme.color.white};
@@ -38,7 +38,9 @@ const SectionStyled = styled.section`
     width: 100%;
     @media ${({ theme }) => theme.breakpoint.sm} {
       margin: 0 auto;
-      padding: 0 ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
+      padding: 0 ${({ theme }) => theme.spacing[2]}px
+        ${({ theme }) => theme.spacing[6]}px
+        ${({ theme }) => theme.spacing[2]}px;
     }
     label {
       color: ${({ theme }) => theme.color.black};
@@ -56,7 +58,9 @@ const SectionStyled = styled.section`
       padding: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
       width: 100%;
       @media ${({ theme }) => theme.breakpoint.sm} {
-        padding: 0 ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
+        padding: 0 ${({ theme }) => theme.spacing[2]}px
+          ${({ theme }) => theme.spacing[6]}px
+          ${({ theme }) => theme.spacing[2]}px;
         width: 50%;
       }
       label {
@@ -87,24 +91,24 @@ export default function Form() {
   const [formError, formErrorSet] = React.useState({})
 
   const handleChange = (event) => {
-    formErrorSet(prevData => ({
+    formErrorSet((prevData) => ({
       ...prevData,
-      'consent': !event.target.checked,
+      consent: !event.target.checked
     }))
 
     setChecked(event.target.checked)
   }
 
   const updateInput = (event, field) => {
-    FormDataSet(prevData => ({
+    FormDataSet((prevData) => ({
       ...prevData,
-      [field]: event.target.value,
+      [field]: event.target.value
     }))
 
-    const fieldError = (event.target.value.length > 0) ? false : true
-    formErrorSet(prevData => ({
+    const fieldError = event.target.value.length > 0 ? false : true
+    formErrorSet((prevData) => ({
       ...prevData,
-      [field]: fieldError,
+      [field]: fieldError
     }))
   }
 
@@ -113,65 +117,69 @@ export default function Form() {
 
     const syncErrors = []
     if (!formData['first-name'] || formData['first-name'].length < 1) {
-      formErrorSet(prevData => ({
+      formErrorSet((prevData) => ({
         ...prevData,
-        'first-name': true,
+        'first-name': true
       }))
       syncErrors.push('first-name')
     }
 
     if (!formData['last-name'] || formData['last-name'].length < 1) {
-      formErrorSet(prevData => ({
+      formErrorSet((prevData) => ({
         ...prevData,
-        'last-name': true,
+        'last-name': true
       }))
       syncErrors.push('last-name')
     }
 
     if (!formData['company'] || formData['company'].length < 1) {
-      formErrorSet(prevData => ({
+      formErrorSet((prevData) => ({
         ...prevData,
-        'company': true,
+        company: true
       }))
       syncErrors.push('company')
     }
 
     if (!formData['job-title'] || formData['job-title'].length < 1) {
-      formErrorSet(prevData => ({
+      formErrorSet((prevData) => ({
         ...prevData,
-        'job-title': true,
+        'job-title': true
       }))
       syncErrors.push('job-title')
     }
 
-    if (!formData['email'] || formData['email'].length < 1 || !validateEmail(formData['email'])) {
-      formErrorSet(prevData => ({
+    if (
+      !formData['email'] ||
+      formData['email'].length < 1 ||
+      !validateEmail(formData['email'])
+    ) {
+      formErrorSet((prevData) => ({
         ...prevData,
-        'email': true,
+        email: true
       }))
       syncErrors.push('email')
     }
 
     if (!formData['phone'] || formData['phone'].length < 1) {
-      formErrorSet(prevData => ({
+      formErrorSet((prevData) => ({
         ...prevData,
-        'phone': true,
+        phone: true
       }))
       syncErrors.push('phone')
     }
 
     if (!formData['message'] || formData['message'].length < 1) {
-      formErrorSet(prevData => ({
+      formErrorSet((prevData) => ({
         ...prevData,
-        'message': true,
+        message: true
       }))
       syncErrors.push('message')
     }
 
     if (!checked) {
-      formErrorSet(prevData => ({
+      formErrorSet((prevData) => ({
         ...prevData,
-        'consent': true,
+        consent: true
       }))
       syncErrors.push('consent')
     }
@@ -181,7 +189,7 @@ export default function Form() {
         url: 'https://formspree.io/f/mqkyorzl',
         method: 'post',
         headers: {
-          'Accept': 'application/json'
+          Accept: 'application/json'
         },
         data: {
           first_name: formData['first-name'],
@@ -204,8 +212,8 @@ export default function Form() {
   }
 
   function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(String(email).toLowerCase())
   }
 
   return (
@@ -297,7 +305,9 @@ export default function Form() {
           }
           label='I consent to my submitted data being collected and stored.'
         />
-        <FormHelperText className='check-error-text' error>{(formError['consent']) ? 'Required field.' : <span>&nbsp;</span>}</FormHelperText>
+        <FormHelperText className='check-error-text' error>
+          {formError['consent'] ? 'Required field.' : <span>&nbsp;</span>}
+        </FormHelperText>
 
         <input onClick={submitForm} type='submit' value='send »' />
       </form>
@@ -305,9 +315,7 @@ export default function Form() {
       {status === 'SUCCESS' && (
         <p>Thank you for your message. It has been sent.</p>
       )}
-      {status === 'ERROR' && (
-        <p>Ooops! There was an error. Please try again</p>
-      )}
+      {status === 'ERROR' && <p>Ooops! There was an error. Please try again</p>}
     </SectionStyled>
   )
 }

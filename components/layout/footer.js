@@ -169,9 +169,7 @@ export default function Footer({ noFooter, noFooterCTA }) {
           <Button href='/contact' secondary text='Connect Here' />
         </div>
       )}
-      {noFooterCTA && (
-        <div className='no-cta-spacing' />
-      )}
+      {noFooterCTA && <div className='no-cta-spacing' />}
       <div className='content'>
         <div className='contact'>
           <p className='logo'>EQ WORKS</p>
