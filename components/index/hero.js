@@ -32,18 +32,6 @@ const SectionStyled = styled.section`
     p {
       max-width: ${({ theme }) => theme.width.article};
     }
-    .description {
-      display: none;
-      @media ${({ theme }) => theme.breakpoint.xs} {
-        display: block;
-      }
-    }
-    .divider {
-      background-color: ${({ theme }) => theme.color.white};
-      height: 5px;
-      margin: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
-      width: 100px;
-    }
     .footer {
       align-items: center;
       bottom: 0;
@@ -118,20 +106,12 @@ export default function Hero() {
       <div className='content'>
         <h1>Turning Data into Business Performance.</h1>
 
-        <div className='divider' />
-
         <p className='subtitle-1'>
           EQ enables businesses to{' '}
           <span className='font-weight-bold'>Understand</span>,{' '}
           <span className='font-weight-bold'>Predict</span>, and{' '}
           <span className='font-weight-bold'>Influence</span>{' '}
           customer&nbsp;behaviour.
-        </p>
-
-        <p className='description'>
-          Unique geospatial data sets, advanced AI & machine learning tools, and
-          a proprietary data management and activation platform, empowers any
-          business to win in the data-economy.
         </p>
 
         <div className='footer'>
