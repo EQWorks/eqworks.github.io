@@ -3,10 +3,9 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup'
 import FormHelperText from '@material-ui/core/FormHelperText'
 import TextField from '@material-ui/core/TextField'
+import axios from 'axios'
 import * as React from 'react'
 import styled from 'styled-components'
-
-import Button from '../shared/button'
 
 const SectionStyled = styled.section`
   color: ${({ theme }) => theme.color.black};
@@ -17,7 +16,7 @@ const SectionStyled = styled.section`
 
 export default function Form() {
   const [checked, setChecked] = React.useState(false)
-  const [status, setStatus] = React.useState('')
+  const [status, statusSet] = React.useState('')
   const [formData, FormDataSet] = React.useState({})
   const [formError, formErrorSet] = React.useState({})
 
@@ -79,7 +78,7 @@ export default function Form() {
       syncErrors.push('job-title')
     }
 
-    if (!formData['email'] || formData['email'].length < 1) {
+    if (!formData['email'] || formData['email'].length < 1 || !validateEmail(formData['email'])) {
       formErrorSet(prevData => ({
         ...prevData,
         'email': true,
@@ -112,32 +111,41 @@ export default function Form() {
     }
 
     if (syncErrors.length === 0) {
-      console.log(formData)
+      console.log('SEND EMAIL')
+      // axios({
+      //   url: 'https://formspree.io/f/mqkyorzl',
+      //   method: 'post',
+      //   headers: {
+      //     'Accept': 'application/json'
+      //   },
+      //   data: {
+      //     first_name: formData['first-name'],
+      //     last_name: formData['last-name'],
+      //     company: formData['company'],
+      //     job_title: formData['job-title'],
+      //     email: formData['email'],
+      //     phone: formData['phone'],
+      //     message: formData['message'],
+      //     consent: formData['consent']
+      //   }
+      // }).then((response) => {
+      //   if (response.status === 200) {
+      //     statusSet('SUCCESS')
+      //   } else {
+      //     statusSet('ERROR')
+      //   }
+      // })
     }
+  }
 
-    // const form = event.target
-    // const data = new FormData(form)
-    // const xhr = new XMLHttpRequest()
-    // xhr.open(form.method, form.action)
-    // xhr.setRequestHeader('Accept', 'application/json')
-    // xhr.onreadystatechange = () => {
-    //   if (xhr.readyState !== XMLHttpRequest.DONE) return
-    //   if (xhr.status === 200) {
-    //     form.reset()
-    //     setStatus('SUCCESS')
-    //   } else {
-    //     setStatus('ERROR')
-    //   }
-    // }
-    // xhr.send(data)
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
   }
 
   return (
     <SectionStyled>
-      <form
-        // action='https://formspree.io/mqkyorzl'
-        autoComplete='off'
-      >
+      <form autoComplete='off'>
         <FormGroup row>
           <TextField
             error={formError['first-name']}
@@ -227,6 +235,13 @@ export default function Form() {
 
         <input onClick={submitForm} type='submit' value='send' />
       </form>
+
+      {status === 'SUCCESS' && (
+        <p>Thank you for your message. It has been sent.</p>
+      )}
+      {status === 'ERROR' && (
+        <p>Ooops! There was an error. Please try again</p>
+      )}
     </SectionStyled>
   )
 }
