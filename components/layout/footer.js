@@ -157,8 +157,8 @@ export default function Footer({ noFooter }) {
   return (
     <StyleFooter>
       <div className='cta'>
-        <h2>Together - LET'S CREATE IMPRESIONS.</h2>
-        <Button href='/contact' secondary text="Let's connect" />
+        <h2>LET'S GROW TOGETHER.</h2>
+        <Button href='/contact' secondary text='Connect Here' />
       </div>
       <div className='content'>
         <div className='contact'>
