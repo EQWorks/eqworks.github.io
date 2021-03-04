@@ -147,19 +147,31 @@ const StyleFooter = styled.footer`
       margin: 0;
     }
   }
+  .no-cta-spacing {
+    background-color: ${({ theme }) => theme.color.blue};
+    height: ${({ theme }) => theme.spacing[6]}px;
+    width: 100%;
+  }
 `
 
-export default function Footer({ noFooter }) {
+export default function Footer({ noFooter, noFooterCTA }) {
+  console.log(noFooterCTA)
+
   if (noFooter) {
     return null
   }
 
   return (
     <StyleFooter>
-      <div className='cta'>
-        <h2>LET'S GROW TOGETHER.</h2>
-        <Button href='/contact' secondary text='Connect Here' />
-      </div>
+      {!noFooterCTA && (
+        <div className='cta'>
+          <h2>LET'S GROW TOGETHER.</h2>
+          <Button href='/contact' secondary text='Connect Here' />
+        </div>
+      )}
+      {noFooterCTA && (
+        <div className='no-cta-spacing' />
+      )}
       <div className='content'>
         <div className='contact'>
           <p className='logo'>EQ WORKS</p>
