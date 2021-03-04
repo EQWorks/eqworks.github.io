@@ -8,8 +8,9 @@ export default function Contact() {
   return (
     <>
       <Hero
-        imgSrc='/images/contact/fallback/hero.jpg'
-        title={`Let's connect!`}
+        imgSrc='/images/contact/fallback/hero-3.png'
+        noOverlay
+        title={`LET'S CONNECT!`}
       />
       <InfoForm />
       <Map />

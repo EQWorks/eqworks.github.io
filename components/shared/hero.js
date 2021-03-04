@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const SectionStyled = styled.section`
   align-items: center;
   background-color: ${({ theme }) => theme.color.black};
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background-image: linear-gradient(${(props) => props.overlayValue}),
     url(${(props) => props.imgSrc});
   background-position: center center;
   background-repeat: no-repeat;
@@ -26,9 +26,15 @@ const SectionStyled = styled.section`
   }
 `
 
-export default function Hero({ fullHeight, imgSrc, title }) {
+export default function Hero({ fullHeight, imgSrc, noOverlay, title }) {
+  const overlayValue = (noOverlay) ? 'rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)' : 'rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)'
+
   return (
-    <SectionStyled fullHeight={fullHeight} imgSrc={imgSrc}>
+    <SectionStyled
+      fullHeight={fullHeight}
+      overlayValue={overlayValue}
+      imgSrc={imgSrc}
+    >
       {title && <h1>{title}</h1>}
     </SectionStyled>
   )
