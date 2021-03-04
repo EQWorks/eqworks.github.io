@@ -9,7 +9,7 @@ const SectionStyled = styled.section`
     width: 100vw;
   }
   .map {
-    height: 500px;
+    height: 300px;
     .mapboxgl-ctrl-logo {
       display: none;
     }
