@@ -70,7 +70,8 @@ const SectionStyled = styled.section`
             text-align: left;
             width: 100%;
             .li-content {
-              padding: ${({ theme }) => theme.spacing[1]}px 0 ${({ theme }) => theme.spacing[6]}px 0;
+              padding: ${({ theme }) => theme.spacing[1]}px 0
+                ${({ theme }) => theme.spacing[6]}px 0;
             }
             .title {
               font-size: 1em;
@@ -114,13 +115,18 @@ export default function LocationData() {
       <div className='container'>
         <div className='content'>
           <div className='tabs'>
-            <h2>How Can EQ Help Me Grow? <span className='font-weight-bold'>I'm A:</span></h2>
+            <h2>
+              How Can EQ Help Me Grow?{' '}
+              <span className='font-weight-bold'>I'm A:</span>
+            </h2>
             <ul>
               <li
                 className={tabValue === 0 ? 'active' : null}
                 onClick={() => setTabValue(0)}
               >
-                <p className='font-weight-bold title'>Business Decision Makers</p>
+                <p className='font-weight-bold title'>
+                  Business Decision Makers
+                </p>
                 {tabValue === 0 && (
                   <p className='li-content'>
                     CRM enrichment for loyalty & customer acquisition, store
@@ -135,7 +141,7 @@ export default function LocationData() {
               >
                 <p className='font-weight-bold title'>
                   Marketing & Advertising Decision Makers
-            </p>
+                </p>
                 {tabValue === 1 && (
                   <p className='li-content'>
                     SaaS data and media buying tools, performance optimization,
@@ -150,8 +156,8 @@ export default function LocationData() {
                 <p className='font-weight-bold title'>Media Owners</p>
                 {tabValue === 2 && (
                   <p className='li-content'>
-                    Platform-as-a-Service to scale first party audiences and show
-                    return advertising spend through changes in real world
+                    Platform-as-a-Service to scale first party audiences and
+                    show return advertising spend through changes in real world
                     consumer&nbsp;behavior.
                   </p>
                 )}
@@ -162,13 +168,13 @@ export default function LocationData() {
               >
                 <p className='font-weight-bold title'>
                   Data Scientists & Developers
-            </p>
+                </p>
                 {tabValue === 3 && (
                   <p className='li-content'>
                     Juypter notebook capabilities to enable data manipulation
                     without limitation, API access for privacy-compliant
-                    localization in your own environment, and machine-learning-model
-                    training&nbsp;gym.
+                    localization in your own environment, and
+                    machine-learning-model training&nbsp;gym.
                   </p>
                 )}
               </li>
@@ -179,22 +185,22 @@ export default function LocationData() {
             <h2>How Can EQ Help Me Grow?</h2>
             <img
               alt='Business person next to an abstract calendar.'
-              className={(tabValue === 0) ? 'show' : null}
+              className={tabValue === 0 ? 'show' : null}
               src='/images/index/fallback/blue-tabs-0.png'
             />
             <img
               alt='Person interacting with abstract mobile phone data.'
-              className={(tabValue === 1) ? 'show' : null}
+              className={tabValue === 1 ? 'show' : null}
               src='/images/index/fallback/blue-tabs-1.png'
             />
             <img
               alt='Person interacting with an abstract play button.'
-              className={(tabValue === 2) ? 'show' : null}
+              className={tabValue === 2 ? 'show' : null}
               src='/images/index/fallback/blue-tabs-2.png'
             />
             <img
               alt='Scientist working with flasks.'
-              className={(tabValue === 3) ? 'show' : null}
+              className={tabValue === 3 ? 'show' : null}
               src='/images/index/fallback/blue-tabs-3.png'
             />
           </div>
