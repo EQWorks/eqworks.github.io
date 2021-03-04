@@ -65,6 +65,10 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
   }
 
+  .border {
+    border: 1px solid red;
+  }
+
   .color-blue {
     color: ${({ theme }) => theme.color.blue};
   }

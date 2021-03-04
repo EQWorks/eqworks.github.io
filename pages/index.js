@@ -1,9 +1,7 @@
 import dynamic from 'next/dynamic'
 
 const Hero = dynamic(() => import('../components/index/hero'))
-const BetterUnderstand = dynamic(() =>
-  import('../components/index/better-understand')
-)
+const AITools = dynamic(() => import('../components/index/ai-tools'))
 const Divider = dynamic(() => import('../components/shared/divider'))
 const Tabs = dynamic(() => import('../components/index/tabs'))
 const LocationData = dynamic(() => import('../components/index/location-data'))
@@ -15,8 +13,7 @@ export default function Index() {
   return (
     <>
       <Hero />
-      <BetterUnderstand />
-      <Divider />
+      <AITools />
       <Tabs />
       <LocationData />
       <EQAdvantage />
