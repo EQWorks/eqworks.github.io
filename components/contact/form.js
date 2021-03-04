@@ -13,21 +13,24 @@ const SectionStyled = styled.section`
   max-width: ${({ theme }) => theme.width.article};
   padding: 0 ${({ theme }) => theme.spacing[2]}px;
   text-align: center;
-  .MuiFormGroup-root {
-    .MuiTextField-root {
-      box-sizing: border-box;
-      padding: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
-      width: 100%;
-      @media ${({ theme }) => theme.breakpoint.sm} {
-        padding: 0 ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
-        width: 50%;
-      }
-      label {
-        @media ${({ theme }) => theme.breakpoint.sm} {
-          padding: 0 0 0 21px;
-        }
-      }
+  input[type=submit] {
+    background-color: ${({ theme }) => theme.color.blue};
+    border: none;
+    color: ${({ theme }) => theme.color.white};
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: ${({ theme }) => theme.spacing[2]}px
+      ${({ theme }) => theme.spacing[7]}px;
+    text-transform: uppercase;
+    transition: all 0.25s ease-out;
+    &:hover {
+      background-color: ${({ theme }) => theme.color.blueDark};
+      color: ${({ theme }) => theme.color.white};
     }
+  }
+  .check-error-text {
+    margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
+    text-align: center;
   }
   .message-field {
     box-sizing: border-box;
@@ -38,8 +41,32 @@ const SectionStyled = styled.section`
       padding: 0 ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
     }
     label {
+      color: ${({ theme }) => theme.color.black};
+      font-weight: ${({ theme }) => theme.font.bold};
+      font-size: 0.8em;
+      text-transform: uppercase;
       @media ${({ theme }) => theme.breakpoint.sm} {
         padding: 0 0 0 21px;
+      }
+    }
+  }
+  .MuiFormGroup-root {
+    .MuiTextField-root {
+      box-sizing: border-box;
+      padding: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
+      width: 100%;
+      @media ${({ theme }) => theme.breakpoint.sm} {
+        padding: 0 ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
+        width: 50%;
+      }
+      label {
+        color: ${({ theme }) => theme.color.black};
+        font-weight: ${({ theme }) => theme.font.bold};
+        font-size: 0.8em;
+        text-transform: uppercase;
+        @media ${({ theme }) => theme.breakpoint.sm} {
+          padding: 0 0 0 21px;
+        }
       }
     }
   }
@@ -50,10 +77,6 @@ const SectionStyled = styled.section`
       font-style: italic;
       color: ${({ theme }) => theme.color.greyMedium};
     }
-  }
-  .check-error-text {
-    margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
-    text-align: center;
   }
 `
 
@@ -277,7 +300,7 @@ export default function Form() {
         />
         <FormHelperText className='check-error-text' error>{(formError['consent']) ? 'Required field.' : <span>&nbsp;</span>}</FormHelperText>
 
-        <input onClick={submitForm} type='submit' value='send' />
+        <input onClick={submitForm} type='submit' value='send »' />
       </form>
 
       {status === 'SUCCESS' && (
