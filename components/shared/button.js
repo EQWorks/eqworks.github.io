@@ -40,7 +40,7 @@ export default function Button({ href, secondary, text }) {
     return (
       <ButtonStyled secondary={secondary}>
         <Link href={href}>
-          <a>{text} »</a>
+          <a className='font-weight-bold'>{text} »</a>
         </Link>
       </ButtonStyled>
     )

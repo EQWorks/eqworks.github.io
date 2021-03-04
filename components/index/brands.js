@@ -2,33 +2,59 @@ import Slider from 'react-slick'
 import styled from 'styled-components'
 
 const SectionStyled = styled.section`
-  background-color: ${({ theme }) => theme.color.greyBackground};
-  padding: ${({ theme }) => theme.spacing[12]}px 0;
-  h2 {
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0 auto ${({ theme }) => theme.spacing[5]}px auto;
-    text-align: center;
-    @media ${({ theme }) => theme.breakpoint.sm} {
-      font-size: 1.15em;
-    }
-    @media ${({ theme }) => theme.breakpoint.md} {
-      font-size: 1.25em;
+  background-color: ${({ theme }) => theme.color.blue};
+  margin: 0 auto;
+  padding: 0;
+  .container {
+    background-color: ${({ theme }) => theme.color.greyBackground};
+    box-sizing: border-box;
+    .content {
+      box-sizing: border-box;
+      margin: 0 auto;
+      max-width: ${({ theme }) => theme.width.page};
+      padding: ${({ theme }) => theme.spacing[8]}px
+        ${({ theme }) => theme.spacing[2]}px;
+      text-align: center;
+      h2 {
+        font-size: 1em;
+        font-weight: bold;
+        margin: 0 auto ${({ theme }) => theme.spacing[5]}px auto;
+        text-align: center;
+        @media ${({ theme }) => theme.breakpoint.sm} {
+          font-size: 1.15em;
+        }
+        @media ${({ theme }) => theme.breakpoint.md} {
+          font-size: 1.25em;
+        }
+      }
+      .carousel {
+        margin: 0 auto;
+        max-width: ${({ theme }) => theme.width.page};
+        padding: 0 ${({ theme }) => theme.spacing[2]}px;
+        .item {
+          align-items: center;
+          box-sizing: border-box;
+          display: flex;
+          justify-content: center;
+          padding: 0 ${({ theme }) => theme.spacing[4]}px;
+        }
+        img {
+          width: 100%;
+        }
+      }
     }
   }
-  .carousel {
-    margin: 0 auto;
-    max-width: ${({ theme }) => theme.width.page};
-    padding: 0 ${({ theme }) => theme.spacing[2]}px;
-    .item {
-      align-items: center;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      padding: 0 ${({ theme }) => theme.spacing[4]}px;
+  .shape {
+    box-sizing: border-box;
+    display: none;
+    height: calc(100vw * 0.066);
+    min-height: 25px;
+    width: 100%;
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      display: block;
     }
-    img {
-      width: 100%;
+    svg {
+      fill: ${({ theme }) => theme.color.greyBackground};
     }
   }
 `
@@ -80,18 +106,33 @@ export default function OurClients({ header }) {
 
   return (
     <SectionStyled>
-      <h2>Trusted by some of the world's largest&nbsp;brands</h2>
-      <div className='carousel'>
-        <Slider {...sliderSettings}>
-          {sliderItemAlt.map((altText, index) => (
-            <div className='item' key={altText}>
-              <img
-                alt={`${altText} logo`}
-                src={`/images/index/fallback/brands-${index + 1}.png`}
-              />
-            </div>
-          ))}
-        </Slider>
+      <div className='container'>
+        <div className='content'>
+          <h2>Trusted by some of the world's largest&nbsp;brands</h2>
+          <div className='carousel'>
+            <Slider {...sliderSettings}>
+              {sliderItemAlt.map((altText, index) => (
+                <div className='item' key={altText}>
+                  <img
+                    alt={`${altText} logo`}
+                    src={`/images/index/fallback/brands-${index + 1}.png`}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </div>
+
+      <div className='shape'>
+        <svg
+          height='100%'
+          preserveAspectRatio='none'
+          width='100%'
+          viewBox='0 0 100 100'
+        >
+          <polygon points='0 0, 100 0, 50, 100' />
+        </svg>
       </div>
     </SectionStyled>
   )
