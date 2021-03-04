@@ -18,9 +18,9 @@ const ButtonStyled = styled.button`
   transition: all 0.25s ease-out;
   &:hover {
     background-color: ${(props) =>
-      props.secondary
-        ? ({ theme }) => theme.color.greyTextFooter
-        : ({ theme }) => theme.color.blueDark};
+    props.secondary
+      ? ({ theme }) => theme.color.greyTextFooter
+      : ({ theme }) => theme.color.blueDark};
     color: ${({ theme }) => theme.color.white};
     a {
       color: ${({ theme }) => theme.color.white};
@@ -28,17 +28,17 @@ const ButtonStyled = styled.button`
   }
   a {
     color: ${(props) =>
-      props.secondary
-        ? ({ theme }) => theme.color.black
-        : ({ theme }) => theme.color.white};
+    props.secondary
+      ? ({ theme }) => theme.color.black
+      : ({ theme }) => theme.color.white};
     text-decoration: none;
   }
 `
 
-export default function Button({ href, secondary, text }) {
+export default function Button({ href, secondary, text, ...props }) {
   if (href) {
     return (
-      <ButtonStyled secondary={secondary}>
+      <ButtonStyled {...props} secondary={secondary}>
         <Link href={href}>
           <a className='font-weight-bold'>{text} »</a>
         </Link>
@@ -46,5 +46,5 @@ export default function Button({ href, secondary, text }) {
     )
   }
 
-  return <ButtonStyled secondary={secondary}>{text} »</ButtonStyled>
+  return <ButtonStyled {...props} secondary={secondary}>{text} »</ButtonStyled>
 }
