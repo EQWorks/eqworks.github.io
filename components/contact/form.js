@@ -9,9 +9,52 @@ import styled from 'styled-components'
 
 const SectionStyled = styled.section`
   color: ${({ theme }) => theme.color.black};
-  margin: 0 auto ${({ theme }) => theme.spacing[12]}px auto;
-  max-width: ${({ theme }) => theme.width.page};
+  margin: ${({ theme }) => theme.spacing[12]}px auto;
+  max-width: ${({ theme }) => theme.width.article};
   padding: 0 ${({ theme }) => theme.spacing[2]}px;
+  text-align: center;
+  .MuiFormGroup-root {
+    .MuiTextField-root {
+      box-sizing: border-box;
+      padding: 0 0 ${({ theme }) => theme.spacing[4]}px 0;
+      width: 100%;
+      @media ${({ theme }) => theme.breakpoint.sm} {
+        padding: 0 ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
+        width: 50%;
+      }
+      label {
+        @media ${({ theme }) => theme.breakpoint.sm} {
+          padding: 0 0 0 21px;
+        }
+      }
+    }
+  }
+  .message-field {
+    box-sizing: border-box;
+    margin: 0 auto ${({ theme }) => theme.spacing[4]}px auto;
+    width: 100%;
+    @media ${({ theme }) => theme.breakpoint.sm} {
+      margin: 0 auto;
+      padding: 0 ${({ theme }) => theme.spacing[2]}px ${({ theme }) => theme.spacing[6]}px ${({ theme }) => theme.spacing[2]}px;
+    }
+    label {
+      @media ${({ theme }) => theme.breakpoint.sm} {
+        padding: 0 0 0 21px;
+      }
+    }
+  }
+  .MuiFormControlLabel-root {
+    display: block;
+    box-sizing: border-box;
+    .MuiFormControlLabel-label {
+      font-style: italic;
+      color: ${({ theme }) => theme.color.greyMedium};
+    }
+  }
+  .check-error-text {
+    margin: 0 auto ${({ theme }) => theme.spacing[2]}px auto;
+    text-align: center;
+  }
 `
 
 export default function Form() {
@@ -149,6 +192,7 @@ export default function Form() {
         <FormGroup row>
           <TextField
             error={formError['first-name']}
+            fullWidth
             // helperText={(formError['first-name'] ? 'Required field.' : null)}
             label='First Name'
             name='first-name'
@@ -157,6 +201,7 @@ export default function Form() {
           />
           <TextField
             error={formError['last-name']}
+            fullWidth
             // helperText={(formError['last-name'] ? 'Required field.' : null)}
             label='last Name'
             name='last-name'
@@ -206,8 +251,9 @@ export default function Form() {
         </FormGroup>
 
         <TextField
+          className='message-field'
           error={formError['message']}
-          fullWidth
+          // fullWidth
           // helperText={(formError['message'] ? 'Required field.' : null)}
           label='Your Message'
           multiline
@@ -227,11 +273,9 @@ export default function Form() {
               value='consent'
             />
           }
-          label='Secondary'
+          label='I consent to my submitted data being collected and stored.'
         />
-        {formError['consent'] && (
-          <FormHelperText error>Required field.</FormHelperText>
-        )}
+        <FormHelperText className='check-error-text' error>{(formError['consent']) ? 'Required field.' : <span>&nbsp;</span>}</FormHelperText>
 
         <input onClick={submitForm} type='submit' value='send' />
       </form>
