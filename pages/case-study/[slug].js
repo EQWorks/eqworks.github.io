@@ -10,12 +10,12 @@ const PageStyled = styled.section`
   .hero {
     align-items: center;
     background-color: ${({ theme }) => theme.color.greyDark};
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
       url(${(props) => props.imgSrc});
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: ${({ theme }) => theme.color.white};
+    color: ${({ theme }) => theme.color.black};
     display: flex;
     min-height: 500px;
     @media ${({ theme }) => theme.breakpoint.sm} {
@@ -24,7 +24,7 @@ const PageStyled = styled.section`
     .hero--content {
       box-sizing: border-box;
       margin: 0 auto;
-      max-width: ${({ theme }) => theme.width.article};
+      max-width: ${({ theme }) => theme.width.page};
       padding: ${({ theme }) => theme.spacing[2]}px;
       text-align: center;
       width: 100%;
@@ -37,7 +37,7 @@ const PageStyled = styled.section`
         text-transform: uppercase;
         @media ${({ theme }) => theme.breakpoint.sm} {
           margin: 0;
-          max-width: 800px;
+          max-width: 600px;
         }
       }
       p {
@@ -48,7 +48,7 @@ const PageStyled = styled.section`
         }
       }
       .hero--content--divider {
-        background-color: ${({ theme }) => theme.color.white};
+        background-color: ${({ theme }) => theme.color.black};
         height: 5px;
         margin: ${({ theme }) => theme.spacing[2]}px auto;
         width: 100px;
@@ -73,6 +73,7 @@ const PageStyled = styled.section`
         ${({ theme }) => theme.spacing[2]}px;
       p {
         box-sizing: border-box;
+        font-size: 1.15em;
         max-width: 400px;
         padding: ${({ theme }) => theme.spacing[3]}px 0;
         text-align: center;
