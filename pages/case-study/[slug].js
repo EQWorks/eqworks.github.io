@@ -93,14 +93,24 @@ const PageStyled = styled.section`
       }
     }
   }
+  .content {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: ${({ theme }) => theme.width.page};
+    padding: ${({ theme }) => theme.spacing[8]}px ${({ theme }) => theme.spacing[2]}px;
+    width: 100%;
+    h2 {
+      font-size: 1.5em;
+      font-weight: ${({ theme }) => theme.font.bold};
+      margin: 0 0 ${({ theme }) => theme.spacing[1]}px 0;
+    }
+  }
 `
 
 export default function PressRelease({ caseStudy }) {
   if (!caseStudy) {
     return <ErrorPage statusCode={404} />
   }
-
-  console.log(caseStudy)
 
   return (
     <PageStyled imgSrc={caseStudy.featuredImage.fields.file.url}>
@@ -124,10 +134,9 @@ export default function PressRelease({ caseStudy }) {
           {caseStudy.highlights.map((highlight, index) => {
             return <p key={index}>{highlight}</p>
           })}
-          <p>Strategy resulted in a staggering 8,620% increase in applications YoY.</p>
         </div>
       </div>
-      <div>
+      <div className='content'>
         <EntryContent content={caseStudy.content} />
       </div>
     </PageStyled>
