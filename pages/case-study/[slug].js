@@ -69,7 +69,8 @@ const PageStyled = styled.section`
       justify-content: center;
       margin: 0 auto;
       max-width: ${({ theme }) => theme.width.page};
-      padding: ${({ theme }) => theme.spacing[3]}px ${({ theme }) => theme.spacing[2]}px;
+      padding: ${({ theme }) => theme.spacing[3]}px
+        ${({ theme }) => theme.spacing[2]}px;
       p {
         box-sizing: border-box;
         max-width: 400px;
@@ -97,7 +98,8 @@ const PageStyled = styled.section`
     box-sizing: border-box;
     margin: 0 auto;
     max-width: ${({ theme }) => theme.width.article};
-    padding: ${({ theme }) => theme.spacing[8]}px ${({ theme }) => theme.spacing[2]}px;
+    padding: ${({ theme }) => theme.spacing[8]}px
+      ${({ theme }) => theme.spacing[2]}px;
     width: 100%;
     h2 {
       font-size: 1.5em;
