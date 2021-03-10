@@ -24,7 +24,7 @@ const PageStyled = styled.section`
     .hero--content {
       box-sizing: border-box;
       margin: 0 auto;
-      max-width: ${({ theme }) => theme.width.page};
+      max-width: ${({ theme }) => theme.width.article};
       padding: ${({ theme }) => theme.spacing[2]}px;
       text-align: center;
       width: 100%;
@@ -96,7 +96,7 @@ const PageStyled = styled.section`
   .content {
     box-sizing: border-box;
     margin: 0 auto;
-    max-width: ${({ theme }) => theme.width.page};
+    max-width: ${({ theme }) => theme.width.article};
     padding: ${({ theme }) => theme.spacing[8]}px ${({ theme }) => theme.spacing[2]}px;
     width: 100%;
     h2 {
