@@ -9,7 +9,7 @@ import EntryContent from '../../components/shared/entry-content'
 const PageStyled = styled.section`
   .hero {
     align-items: center;
-    background-color: ${({ theme }) => theme.color.blue};
+    background-color: ${({ theme }) => theme.color.greyDark};
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url(${(props) => props.imgSrc});
     background-position: center center;
@@ -58,6 +58,41 @@ const PageStyled = styled.section`
       }
     }
   }
+  .highlights {
+    background-color: ${({ theme }) => theme.color.blue};
+    color: ${({ theme }) => theme.color.white};
+    .highlights--content {
+      align-items: flex-start;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0 auto;
+      max-width: ${({ theme }) => theme.width.page};
+      padding: ${({ theme }) => theme.spacing[3]}px ${({ theme }) => theme.spacing[2]}px;
+      p {
+        box-sizing: border-box;
+        max-width: 400px;
+        padding: ${({ theme }) => theme.spacing[3]}px 0;
+        text-align: center;
+        width: 100%;
+        @media ${({ theme }) => theme.breakpoint.xs} {
+          width: 80%;
+        }
+        @media ${({ theme }) => theme.breakpoint.sm} {
+          width: 60%;
+        }
+        @media ${({ theme }) => theme.breakpoint.md} {
+          max-width: 1000px;
+          padding: ${({ theme }) => theme.spacing[3]}px;
+          width: 40%;
+        }
+        @media ${({ theme }) => theme.breakpoint.lg} {
+          width: 33%;
+        }
+      }
+    }
+  }
 `
 
 export default function PressRelease({ caseStudy }) {
@@ -85,7 +120,12 @@ export default function PressRelease({ caseStudy }) {
         </div>
       </div>
       <div className='highlights'>
-        <p>hero</p>
+        <div className='highlights--content'>
+          {caseStudy.highlights.map((highlight, index) => {
+            return <p key={index}>{highlight}</p>
+          })}
+          <p>Strategy resulted in a staggering 8,620% increase in applications YoY.</p>
+        </div>
       </div>
       <div>
         <EntryContent content={caseStudy.content} />
