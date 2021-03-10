@@ -155,8 +155,6 @@ const StyleFooter = styled.footer`
 `
 
 export default function Footer({ noFooter, noFooterCTA }) {
-  console.log(noFooterCTA)
-
   if (noFooter) {
     return null
   }
