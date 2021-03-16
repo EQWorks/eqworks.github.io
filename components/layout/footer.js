@@ -239,12 +239,12 @@ export default function Footer({ noFooter, noFooterCTA }) {
           <ul>
             <li>
               <Link href='/locus'>
-                <a>Locus DSP</a>
+                <a>Locus DMP</a>
               </Link>
             </li>
             <li>
               <Link href='/atom'>
-                <a>Atom DMP</a>
+                <a>Atom DSP</a>
               </Link>
             </li>
           </ul>
