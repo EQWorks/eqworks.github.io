@@ -99,7 +99,9 @@ export default function PressReleases({ pressReleases }) {
           <ChevronLeft aria-label='left arrow' role='img' />
         </button>
         <button
-          disabled={page === Math.floor(pressReleases.length / ENTRIES_PER_PAGE)}
+          disabled={
+            page === Math.floor(pressReleases.length / ENTRIES_PER_PAGE)
+          }
           onClick={nextPage}
         >
           <ChevronRight aria-label='right arrow' role='img' />

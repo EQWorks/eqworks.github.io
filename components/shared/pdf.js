@@ -119,8 +119,9 @@ export default function PDF({ id, url }) {
 
   const updateHeight = () => {
     const pdfHeight = document.getElementById(`pdf-${id}`).clientHeight
-    const controlsHeight = document.getElementById(`controls-${id}`)
-      .clientHeight
+    const controlsHeight = document.getElementById(
+      `controls-${id}`
+    ).clientHeight
     setPdfHeight(pdfHeight + controlsHeight)
   }
 

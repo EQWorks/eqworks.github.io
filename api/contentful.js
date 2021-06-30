@@ -14,7 +14,7 @@ export async function getEntries(
   category = false,
   order = false,
   limit = false,
-  skip = false,
+  skip = false
 ) {
   const query = { content_type }
 
