@@ -57,6 +57,7 @@ const Announcement = () => {
           background: 'none'
         },
         content: {
+          position: 'initial',
           inset: '0px',
           textAlign: 'center',
           padding: 0,
