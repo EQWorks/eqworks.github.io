@@ -57,7 +57,7 @@ export default function PressReleases({ pressReleases }) {
     }
   }
 
-  if (!pressReleases) {
+  if (!pressReleases.length) {
     return (
       <>
         <Hero
@@ -99,11 +99,7 @@ export default function PressReleases({ pressReleases }) {
           <ChevronLeft aria-label='left arrow' role='img' />
         </button>
         <button
-          disabled={
-            page === Math.floor(pressReleases.length / ENTRIES_PER_PAGE)
-              ? true
-              : false
-          }
+          disabled={page === Math.floor(pressReleases.length / ENTRIES_PER_PAGE)}
           onClick={nextPage}
         >
           <ChevronRight aria-label='right arrow' role='img' />
@@ -118,9 +114,5 @@ export async function getStaticProps() {
   const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l', true)
 
   // Pass post data to the page via props
-  if (pressReleases.items.length !== 0) {
-    return { props: { pressReleases: pressReleases.items } }
-  } else {
-    return { props: { pressReleases: false } }
-  }
+  return { props: { pressReleases: pressReleases.items || [] } }
 }
