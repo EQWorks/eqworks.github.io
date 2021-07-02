@@ -103,7 +103,7 @@ const Announcement = () => {
           </FlexItem>
           <FlexItem>
             <ImgWebP
-              alt='EQ Works Logo'
+              alt='Paymi Logo'
               src='/images/icons/paymi-icon.png'
               width='70px'
             />
@@ -137,14 +137,14 @@ const Announcement = () => {
               to drive incremental sales and better understand shopper behavior.
             </P>
           </FlexItem>
-            <FlexItem vertical>
-              <ReadMore href='/press-release/eq-is-excited-to-announce-the-acquisition-of-paymi'>
-                READ MORE »
+          <FlexItem vertical>
+            <ReadMore href='/press-release/eq-is-excited-to-announce-the-acquisition-of-paymi'>
+              READ MORE »
               </ReadMore>
-            </FlexItem>
-            
+          </FlexItem>
+
         </FlexContainer>
-        
+
       </Main>
     </ReactModal>
   )
