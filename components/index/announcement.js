@@ -5,7 +5,6 @@ import ReactModal from 'react-modal'
 import styled from 'styled-components'
 import ImgWebP from '../shared/img-webp'
 
-
 const Header = styled.header`
   background-color: #3232f5;
   padding: 0.5em;
@@ -14,9 +13,9 @@ const Header = styled.header`
 `
 
 const Close = styled.button`
-  position:absolute;
-  top:15px;
-  right:15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
   border: none;
   color: white;
   background: none;
@@ -40,7 +39,7 @@ const H1 = styled.h1`
 
 const P = styled.p`
   margin: 1.5em;
-  font-size:18px;
+  font-size: 18px;
   line-height: 33px;
   font-family: 'Hind', sans-serif;
 `
@@ -59,11 +58,11 @@ const FlexContainer = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-direction: ${props => props.vertical ? "column" : ""};
+  flex-direction: ${(props) => (props.vertical ? 'column' : '')};
 `
 const FlexItem = styled.div`
-  width: ${props => props.vertical ? "80%" : ""};
-  padding: ${props => props.vertical ? "0.3125em" : "0 0.3125em"};
+  width: ${(props) => (props.vertical ? '80%' : '')};
+  padding: ${(props) => (props.vertical ? '0.3125em' : '0 0.3125em')};
 `
 
 const Announcement = () => {
@@ -85,7 +84,7 @@ const Announcement = () => {
           border: 'none',
           borderRadius: 0,
           fontSize: '13px'
-        },
+        }
       }}
       ariaHideApp={false}
     >
@@ -108,7 +107,6 @@ const Announcement = () => {
               width='70px'
             />
           </FlexItem>
-
         </FlexContainer>
 
         <Close
@@ -127,8 +125,9 @@ const Announcement = () => {
           <FlexItem vertical>
             <P>
               Paymi’s proprietary zero party purchase data will be incorporated
-              into EQ’s LOCUS platform to strengthen its capabilities and provide
-              retailers and brands with deeper, richer actionable insights.
+              into EQ’s LOCUS platform to strengthen its capabilities and
+              provide retailers and brands with deeper, richer actionable
+              insights.
             </P>
             <P>
               Paymi is a cloud-based marketing platform that uses card linking
@@ -140,11 +139,9 @@ const Announcement = () => {
           <FlexItem vertical>
             <ReadMore href='/press-release/eq-is-excited-to-announce-the-acquisition-of-paymi'>
               READ MORE »
-              </ReadMore>
+            </ReadMore>
           </FlexItem>
-
         </FlexContainer>
-
       </Main>
     </ReactModal>
   )
