@@ -2,105 +2,72 @@
 
 EQ Works company website.
 
-- **Production URL:** https://eqworks.com
-- **Staging URL:** https://eqworks-staging.netlify.app/
-- **Accounts Holder:** creativestudio@eqworks.com
-
----
+- Production: <https://www.eqworks.com>
+- Staging deployment preview: <https://eqworks-staging.netlify.app/>
+- Accounts Holder: creativestudio@eqworks.com
 
 ## Blog
 
-There is a "blog" aspect to this website. This is where we post **Press Releases**, **Case Studies**, **Insights**, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful, and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
+There is a "blog" aspect to this website, where we post **Press Releases**, **Case Studies**, **Insights**, and more. To do that, we are using the Headless CMS platform [Contentful](https://www.contentful.com/). We create the content on Contentful and then leverage Contentful's [Content Delivery API](https://www.contentful.com/developers/docs/references/content-delivery-api/) to request and render that content. Byebye WordPress 👋
 
-Whenever new content on Contentful is either published or unpublished, this will send out a webhook to this repository (see the [deploy-to-production workflow file](https://github.com/EQWorks/eqworks.github.io/blob/master/.github/workflows/deploy-to-production.yml)) that will trigger a rebuild of the website. This allows for the website to remain static while maintaining access the latest content from Contentful. The GitHub account authenticating the GitHub webhook is the CreativeStudioEQ account.
+Whenever new content on Contentful is either published or unpublished, this will send out a webhook to this repository (see the [deploy-to-production workflow file](.github/workflows/deploy-to-production.yml)) that will trigger a rebuild of the website. This allows for the website to remain static while maintaining access to the latest content from Contentful. The GitHub account authenticating the GitHub webhook is the CreativeStudioEQ account.
 
-For contributing content, please visit this [Google Drive folder containing guides and walkthroughs](https://drive.google.com/drive/folders/1IVVPuNTpHZMi1OjolZkVtkQiJ1bQPKgw?usp=sharing).
-
----
+You can visit this [Google Drive folder](https://drive.google.com/drive/folders/1IVVPuNTpHZMi1OjolZkVtkQiJ1bQPKgw?usp=sharing) to learn about how to add content through Contentful.
 
 ## Forms
 
 This website uses [Formspree](https://formspree.io/) to handle form submissions.
 
----
-
 ## Maps
 
-This website uses [Mapbox](https://www.mapbox.com/) to embed interact maps.
-
----
+This website uses [Mapbox](https://www.mapbox.com/) to embed interactive maps.
 
 ## Development
 
-This website is built using the [Next.js](https://nextjs.org/) framework.
+This website uses the [Next.js](https://nextjs.org/) framework.
 
 ### Local development
 
-1. Ensure your environment has [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/) installed.
+1. Ensure your environment has [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) (use the version recommended by `.nvmrc`, ideally through [nvm](https://github.com/nvm-sh/nvm)), and [npm](https://www.npmjs.com/) installed.
 2. Clone repository, run `git clone https://github.com/EQWorks/eqworks.github.io.git`.
 3. Install dependencies, run `npm i`.
 4. Start the website in development mode, run `npm run dev`.
-5. View website at http://localhost:3000.
+5. View the website at http://localhost:3000.
 
 ### Development workflow
 
-1. Update the `origin/master` reference, run `git fetch --prune && git pull`.
-2. Checkout to the `staging` branch, run `git checkout staging`.
-3. Checkout to a `feature-branch` (this is where you can make your changes), run `git checkout -b [feature-branch]`.
-4. Once your `feature-branch` is ready to be added to the website, request a PR to merge your `feature-branch` into the `staging` branch.
-5. Once your `feature-branch` is accepted and merged into the `staging` branch, head over to our [staging preview URL](https://eqworks-staging.netlify.app/) to test your feature, and ensure everything is working.
-6. Once the [staging preview URL](https://eqworks-staging.netlify.app/) has been tested and everything is working, you can then request a PR to merge the `staging` branch into the `master` branch.
-7. Once the staging branch is accepted and merged into the master branch, head over to our [production URL](https://eqworks.com) to test, and ensure everything is working. **Important:** We do not delete the `staging` branch after merging with `master`. This way our [staging preview URL](https://eqworks-staging.netlify.app/) is preserved, and we can add new features to the `staging` after merging, enabling us to easily repeat the cycle.
-8. Rinse and repeat!
-
-### Git branch diagram
-
-```
-PRESENT
-| |
-| | <- staging (retained for future feature branches to be created)
-| |
-|\|<- staging (merged into master but not deleted after)
-| |
-| |\<- feature-branch  (merged into staging and deleted after)
-| | |
-| | |<- feature-branch (your feature branch where you work on your code)
-| |/
-| |
-| |<- staging (this represents the staging website, where we all branch our features off of)
-|/
-|<- master (this represents the live website)
-PAST
-```
-
----
+1. Update the `origin/main` reference, run `git fetch --prune && git pull`.
+2. Checkout to a `<feature-branch>` (this is where you can make your changes), run `git checkout -b <feature-branch>`.
+3. Once your `<feature-branch>` is ready to be added to the website:
+   - Open a pull request (PR) to merge your `<feature-branch>` into the `main` branch
+   - At the same time, push the same change to the `staging` branch by running `git push origin <feature-branch>:staging -f`. This will trigger a deployment preview build on Netlify, you can monitor the status in the PR's Actions tab and on Netlify.
+4. Once the [staging deployment preview](https://eqworks-staging.netlify.app/) has been tested and everything is working, the PR can be merged into the `main` branch. This will trigger a production build, you can monitor the status in the repo's Actions tab.
+5. Verify the [production site](https://www.eqworks.com) is working.
+6. Rinse and repeat!
 
 ## Staging
 
 We are hosting the staging website using [Netlify](https://www.netlify.com/), a static website hosting platform. The staging website is used for internal preview and testing of the website before deploying the changes to production.
 
-When `feature-branches` are merged into the `staging` branch, this triggers Netlify to build and export the website to the [staging preview URL](https://eqworks-staging.netlify.app/).
-
----
-
 ## Production
 
-We are hosting the live website using [GitHub Pages](https://pages.github.com/). When the `staging` branch is merged into the `master` branch, this triggers a workflow that builds and exports the website to the `gh-pages` branch. This branch is used for production, and it is where the [live website](https://eqworks.com) is published.
+We are hosting the live website using [GitHub Pages](https://pages.github.com/). When the `main` branch updates, it triggers a workflow that builds and exports the website to the `gh-pages` branch. This branch is used for production, and it is where the [production website](https://www.eqworks.com) is published.
 
 To host this website anywhere, you can do the following:
 
-1. Follow the first 3 steps in the **Development** section.
+1. Follow the first 3 steps in the [local development](#local-development) section.
 2. Create an optimized production build, run `npm run build`.
-3. Start the website in production mode, run `npm run start`.
-4. View website at http://localhost:3000.
+
+You can verify the production build too:
+
+1. Start the website in production mode, run `npm run start`.
+2. View the website at http://localhost:3000.
 
 You can also check out the [Next.js documentation on deployment](https://nextjs.org/docs/deployment) for additional info.
 
----
-
 ## Guidelines
 
-In order to achieve a high level of quality and maintain consistency throughout, we adhere to the guidelines laid out in this section.
+To achieve a high level of quality and maintain consistency throughout, we adhere to the guidelines laid out in this section.
 
 ### Accessibility
 
@@ -108,7 +75,7 @@ We are committed to comply with [WCAG 2.1 level AA](https://www.w3.org/TR/WCAG21
 
 ### Code Formatting
 
-All code must formatted to the [Prettier](https://prettier.io/) configuration file.
+All code must format to the [Prettier](https://prettier.io/) configuration file.
 
 - Check code format, run `npm run syntax-check`.
 - Format code to Prettier configuration, run `npm run syntax-format`.
@@ -173,8 +140,6 @@ const sectionStyled = styled.section`
   }
 `
 ```
-
----
 
 ## Contact
 
