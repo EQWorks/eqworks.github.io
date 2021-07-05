@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import Link from 'next/link'
-import ReactModal from 'react-modal'
 import styled from 'styled-components'
 import ImgWebP from '../shared/img-webp'
+import 'react-responsive-modal/styles.css'
+import { Modal } from 'react-responsive-modal'
 
 const Header = styled.header`
   background-color: #3232f5;
@@ -27,7 +27,8 @@ const Close = styled.button`
 `
 
 const Main = styled.main`
-  padding: 2em;
+  padding: 2em 0;
+  text-align: center;
 `
 
 const H1 = styled.h1`
@@ -66,27 +67,19 @@ const FlexItem = styled.div`
 `
 
 const Announcement = () => {
-  const [isOpen, setOpen] = useState(true)
+  const [open, setOpen] = useState(true)
   return (
-    <ReactModal
-      isOpen={isOpen}
-      style={{
-        overlay: {
-          zIndex: 2147483647,
-          inset: '20%',
-          background: 'none'
-        },
-        content: {
-          position: 'initial',
-          inset: '0px',
-          textAlign: 'center',
+    <Modal
+      open={open}
+      onClose={() => setOpen(false)}
+      center
+      styles={{
+        modal: {
           padding: 0,
-          border: 'none',
-          borderRadius: 0,
-          fontSize: '13px'
-        }
+          maxWidth: '75%'
+        },
+        closeButton: { color: 'white' }
       }}
-      ariaHideApp={false}
     >
       <Header>
         <FlexContainer>
@@ -108,14 +101,6 @@ const Announcement = () => {
             />
           </FlexItem>
         </FlexContainer>
-
-        <Close
-          onClick={() => {
-            setOpen(false)
-          }}
-        >
-          &times;
-        </Close>
       </Header>
       <Main>
         <FlexContainer vertical>
@@ -137,13 +122,13 @@ const Announcement = () => {
             </P>
           </FlexItem>
           <FlexItem vertical>
-            <ReadMore href='/press-release/eq-is-excited-to-announce-the-acquisition-of-paymi'>
+            <ReadMore href='/press-release/eq-inc-announces-acquisition-of-paymi'>
               READ MORE »
             </ReadMore>
           </FlexItem>
         </FlexContainer>
       </Main>
-    </ReactModal>
+    </Modal>
   )
 }
 
