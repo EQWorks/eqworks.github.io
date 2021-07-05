@@ -224,13 +224,10 @@ const StyleNavLinks = styled.div`
 export default function NavBar({ noHero }) {
   const [isTop, setIsTop] = useState(true)
   const [showNavBarLinks, toggleNavBarLinks] = useState(false)
-  const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] = useState(
-    false
-  )
-  const [
-    showNavBarMdProductsSubLinks,
-    toggleNavBarMdProductsSubLinks
-  ] = useState(false)
+  const [showNavBarProductsSubLinks, toggleNavBarProductsSubLinks] =
+    useState(false)
+  const [showNavBarMdProductsSubLinks, toggleNavBarMdProductsSubLinks] =
+    useState(false)
 
   useEffect(() => {
     document.addEventListener('scroll', () => {

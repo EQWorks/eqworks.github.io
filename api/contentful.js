@@ -10,15 +10,13 @@ const getClient = () => {
 }
 
 export async function getEntries(
-  contentType,
+  content_type,
   category = false,
   order = false,
-  numberOfPosts = false,
+  limit = false,
   skip = false
 ) {
-  const query = {
-    content_type: contentType
-  }
+  const query = { content_type }
 
   if (category) {
     query['fields.categories.sys.id[in]'] = category
@@ -28,8 +26,8 @@ export async function getEntries(
     query.order = '-fields.date'
   }
 
-  if (numberOfPosts && !isNaN(numberOfPosts)) {
-    query.limit = numberOfPosts
+  if (limit && !isNaN(limit)) {
+    query.limit = limit
   }
 
   if (skip) {

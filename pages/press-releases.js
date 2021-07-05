@@ -57,7 +57,7 @@ export default function PressReleases({ pressReleases }) {
     }
   }
 
-  if (!pressReleases) {
+  if (!pressReleases.length) {
     return (
       <>
         <Hero
@@ -101,8 +101,6 @@ export default function PressReleases({ pressReleases }) {
         <button
           disabled={
             page === Math.floor(pressReleases.length / ENTRIES_PER_PAGE)
-              ? true
-              : false
           }
           onClick={nextPage}
         >
@@ -118,9 +116,5 @@ export async function getStaticProps() {
   const pressReleases = await getEntries('post', '4cuZTcGorM9T6djiI3JQ8l', true)
 
   // Pass post data to the page via props
-  if (pressReleases.items.length !== 0) {
-    return { props: { pressReleases: pressReleases.items } }
-  } else {
-    return { props: { pressReleases: false } }
-  }
+  return { props: { pressReleases: pressReleases.items || [] } }
 }

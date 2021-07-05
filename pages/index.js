@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 
+const Announcement = dynamic(() => import('../components/index/announcement'))
 const Hero = dynamic(() => import('../components/index/hero'))
 const Video = dynamic(() => import('../components/index/video'))
 const WhyClientsUseUs = dynamic(() =>
@@ -20,6 +21,7 @@ const OurClientsNoSSR = dynamic(import('../components/shared/our-clients'), {
 export default function Index() {
   return (
     <>
+      <Announcement />
       <Hero />
       <Video />
       <WhyClientsUseUs />
