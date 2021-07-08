@@ -20,8 +20,8 @@
     "dev": "next",
     "export": "next export",
     "start": "next start",
-    "syntax-check": "prettier --check .",
-    "syntax-format": "prettier --write ."
+    "lint": "prettier --check .",
+    "lint:format": "prettier --write ."
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.1",
