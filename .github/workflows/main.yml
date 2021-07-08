@@ -1,13 +1,13 @@
-name: Main checks
+name: Main
 
 on:
   pull_request:
-    branches: [main, staging, master]
+    branches: main
   push:
-    branches: [main, staging, master]
+    branches: main
 
 jobs:
-  check-prettier-syntax:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,4 +23,4 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
 
       - run: npm i --include=dev
-      - run: npm run syntax-check
+      - run: npm run lint

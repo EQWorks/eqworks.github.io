@@ -1,13 +1,13 @@
-name: Deploy To Production
+name: Staging deployment - GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: main
   repository_dispatch:
     types: contentful-webhook
 
 jobs:
-  deploy-to-production:
+  deploy-staging:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,22 +22,16 @@ jobs:
           path: ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
 
-      - name: Install packages
-        run: npm ci # installs packages with a clean slate (ci refers to continuous integration)
+      - run: npm i
 
-      - name: Build app
-        run: npm run build # creates an optimized production build of the app.
+      - run: npm run build
         env:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           FULLPAGE_JS_LICENSE_KEY: ${{ secrets.FULLPAGE_JS_LICENSE_KEY }}
           MAPBOX_ACCESS_TOKEN: ${{ secrets.MAPBOX_ACCESS_TOKEN }}
 
-      - name: Export app
-        run: npm run export # exports the app to static HTML (to the 'out' directory).
-
-      - name: Create www.eqworks.com CNAME file
-        run: echo "www.eqworks.com" > ./out/CNAME # creates a 'CNAME' file inside the 'out' directory with the content 'www.eqworks.com', for DNS configuration.
+      - run: npm run export # exports the app to static HTML (to the 'out' directory).
 
       - name: Create .nojekyll file
         run: touch ./out/.nojekyll # creates a '.nojekyll' file inside the 'out' directory, this stops GitHub Pages from applying the Jekyll theme to the '_next' folder.

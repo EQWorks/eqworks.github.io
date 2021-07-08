@@ -3,7 +3,7 @@
 EQ Works company website.
 
 - Production: <https://www.eqworks.com>
-- Staging deployment preview: <https://eqworks-staging.netlify.app/>
+- Staging deployment preview: <https://eqworks.github.io/>
 - Accounts Holder: creativestudio@eqworks.com
 
 ## Blog
@@ -13,14 +13,6 @@ There is a "blog" aspect to this website, where we post **Press Releases**, **Ca
 Whenever new content on Contentful is either published or unpublished, this will send out a webhook to this repository (see the [deploy-to-production workflow file](.github/workflows/deploy-to-production.yml)) that will trigger a rebuild of the website. This allows for the website to remain static while maintaining access to the latest content from Contentful. The GitHub account authenticating the GitHub webhook is the CreativeStudioEQ account.
 
 You can visit this [Google Drive folder](https://drive.google.com/drive/folders/1IVVPuNTpHZMi1OjolZkVtkQiJ1bQPKgw?usp=sharing) to learn about how to add content through Contentful.
-
-## Forms
-
-This website uses [Formspree](https://formspree.io/) to handle form submissions.
-
-## Maps
-
-This website uses [Mapbox](https://www.mapbox.com/) to embed interactive maps.
 
 ## Development
 
@@ -38,32 +30,11 @@ This website uses the [Next.js](https://nextjs.org/) framework.
 
 1. Update the `origin/main` reference, run `git fetch --prune && git pull`.
 2. Checkout to a `<feature-branch>` (this is where you can make your changes), run `git checkout -b <feature-branch>`.
-3. Once your `<feature-branch>` is ready to be added to the website:
-   - Open a pull request (PR) to merge your `<feature-branch>` into the `main` branch
-   - At the same time, push the same change to the `staging` branch by running `git push origin <feature-branch>:staging -f`. This will trigger a deployment preview build on Netlify, you can monitor the status in the PR's Actions tab and on Netlify.
-4. Once the [staging deployment preview](https://eqworks-staging.netlify.app/) has been tested and everything is working, the PR can be merged into the `main` branch. This will trigger a production build, you can monitor the status in the repo's Actions tab.
-5. Verify the [production site](https://www.eqworks.com) is working.
-6. Rinse and repeat!
-
-## Staging
-
-We are hosting the staging website using [Netlify](https://www.netlify.com/), a static website hosting platform. The staging website is used for internal preview and testing of the website before deploying the changes to production.
-
-## Production
-
-We are hosting the live website using [GitHub Pages](https://pages.github.com/). When the `main` branch updates, it triggers a workflow that builds and exports the website to the `gh-pages` branch. This branch is used for production, and it is where the [production website](https://www.eqworks.com) is published.
-
-To host this website anywhere, you can do the following:
-
-1. Follow the first 3 steps in the [local development](#local-development) section.
-2. Create an optimized production build, run `npm run build`.
-
-You can verify the production build too:
-
-1. Start the website in production mode, run `npm run start`.
-2. View the website at http://localhost:3000.
-
-You can also check out the [Next.js documentation on deployment](https://nextjs.org/docs/deployment) for additional info.
+3. Once your `<feature-branch>` is ready to be added to the website, open a pull request (PR) to merge your `<feature-branch>` into the `main` branch.
+4. Upon review (ideally by other team members) and merge, it will trigger a staging build, you can monitor the status in the repo's Actions tab.
+5. Verify the [staging deployment](https://eqworks.github.io) is working.
+6. [Make a release](https://github.com/EQWorks/eqworks.github.io/releases) by filling in `Tag version` with the convetion of `vX.Y.Z` where `X.Y.Z` may follow the [semantic versioning] practice. This will trigger a production build (through Netlify), and generate a release notes based on commit messages automatically.
+7. Rinse and repeat!
 
 ## Guidelines
 
@@ -77,8 +48,8 @@ We are committed to comply with [WCAG 2.1 level AA](https://www.w3.org/TR/WCAG21
 
 All code must format to the [Prettier](https://prettier.io/) configuration file.
 
-- Check code format, run `npm run syntax-check`.
-- Format code to Prettier configuration, run `npm run syntax-format`.
+- Check code format, run `npm run lint`.
+- Format code to Prettier configuration, run `npm run lint:format`.
 
 ### Components
 
@@ -141,8 +112,13 @@ const sectionStyled = styled.section`
 `
 ```
 
+## Services
+
+- [Contentful](https://www.contentful.com/)
+- [Formspree](https://formspree.io/)
+- [Mapbox](https://www.mapbox.com/)
+- [Netlify](https://www.netlify.com/)
+
 ## Contact
 
-All services and platforms used for this project ([Contentful](https://www.contentful.com/), [Formspree](https://formspree.io/), [GitHub](https://github.com/CreativeStudioEQ), [Mapbox](https://www.mapbox.com/), and [Netlify](https://www.netlify.com/)) are managed by the Creative Studio.
-
-Have any questions, concerns, or suggestions? Why not send the Creative Studio an email ([creativestudio@eqworks.com](mailto:creativestudio@eqworks.com)) 😊
+For questions or others, start a thread in the `#infrastructure` channel on Slack to get help or a discussion going.
