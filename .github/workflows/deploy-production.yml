@@ -5,6 +5,8 @@ on:
     tags:
       - 'v*' # proceeds eg: v3.0
       - '!v*-*' # skips eg: v3.2.99-beta1, v3.5.0-test, etc.
+  repository_dispatch:
+    types: contentful-webhook
 
 jobs:
   deploy:
