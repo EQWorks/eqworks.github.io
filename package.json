@@ -1,52 +1,76 @@
 {
-  "name": "eqworks.github.io",
-  "version": "1.0.0",
-  "description": "EQ Works company website.",
-  "author": "EQ Works",
-  "license": "MIT",
-  "main": "index.js",
+  "name": "gatsby-starter-blog",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/EQWorks/eqworks.github.io.git"
-  },
+  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": {
-    "email": "creativestudio@eqworks.com",
-    "url": "https://github.com/EQWorks/eqworks.github.io/issues"
-  },
-  "homepage": "https://www.eqworks.com",
-  "scripts": {
-    "build": "next build",
-    "dev": "next",
-    "export": "next export",
-    "start": "next start",
-    "lint": "prettier --check .",
-    "lint:format": "prettier --write ."
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^14.1.1",
-    "@contentful/rich-text-types": "^14.1.1",
-    "@fullpage/react-fullpage": "^0.1.17",
-    "@styled-icons/boxicons-logos": "^10.18.0",
-    "@styled-icons/fa-solid": "^10.18.0",
-    "@styled-icons/feather": "^10.15.1",
-    "contentful": "^7.14.6",
-    "date-fns": "^2.15.0",
-    "mapbox-gl": "^1.12.0",
-    "next": "^9.5.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-is": "^17.0.2",
-    "react-pdf": "^4.2.0",
-    "react-responsive-modal": "^6.1.0",
-    "react-slick": "^0.27.10",
-    "styled-components": "^5.1.1"
+    "@formspree/react": "^2.2.4",
+    "@turf/bbox": "^6.5.0",
+    "@turf/helpers": "^6.5.0",
+    "axios": "^0.22.0",
+    "classnames": "^2.3.1",
+    "gatsby": "^3.13.1",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-feed": "^3.13.0",
+    "gatsby-plugin-google-analytics": "^3.13.0",
+    "gatsby-plugin-image": "^1.14.0",
+    "gatsby-plugin-manifest": "^3.13.0",
+    "gatsby-plugin-offline": "^4.13.0",
+    "gatsby-plugin-react-helmet": "^4.13.0",
+    "gatsby-plugin-react-svg": "^3.0.1",
+    "gatsby-plugin-recaptcha": "^1.0.5",
+    "gatsby-plugin-sass": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.0",
+    "gatsby-remark-copy-linked-files": "^4.10.0",
+    "gatsby-remark-images": "^5.10.0",
+    "gatsby-remark-prismjs": "^5.10.0",
+    "gatsby-remark-responsive-iframe": "^4.10.0",
+    "gatsby-remark-smartypants": "^4.10.0",
+    "gatsby-remark-video-poster": "0.0.1-alpha.1",
+    "gatsby-source-contentful": "^5.14.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-remark": "^4.11.0",
+    "gatsby-transformer-sharp": "^3.14.0",
+    "mapbox-gl": "^1.13.0",
+    "node-fetch": "^2.6.5",
+    "prismjs": "^1.25.0",
+    "react": "^17.0.1",
+    "react-device-detect": "^2.0.1",
+    "react-dom": "^17.0.1",
+    "react-grid-system": "^7.3.1",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.2.0",
+    "react-recaptcha": "^2.3.10",
+    "react-responsive": "^9.0.0-beta.4",
+    "react-swipeable": "^6.2.0",
+    "sass": "^1.41.1",
+    "typeface-merriweather": "0.0.72",
+    "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.11.1",
-    "prettier": "^2.0.5"
+    "prettier": "^2.3.2"
   },
-  "engines": {
-    "node": "14.x"
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "main": "n/a",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "lint": "prettier --check .",
+    "lint:format": "prettier --write ."
   }
 }

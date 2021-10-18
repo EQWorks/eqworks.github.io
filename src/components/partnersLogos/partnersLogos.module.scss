@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+
+.sectionMain {
+  @include darkStyle;
+  padding: 7rem 0;
+  h3 {
+    margin-bottom: 2rem;
+  }
+  @media screen and (max-width: 650px) {
+    padding: 4rem 0;
+  }
+
+  &.dark,
+  &.coloredLogos {
+    position: relative;
+    margin-bottom: -22rem;
+    padding: 17vw 0 20rem 0;
+    z-index: -1;
+    // margin-top: 7.5vw;
+    margin-top: 3.5vw;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      // height: 10rem;
+      // height: 12rem;
+      background-image: url('./whiteTriangle.svg');
+      // background-size: contain;
+      background-repeat: no-repeat;
+      top: -0.25rem;
+      left: 0;
+
+      background-size: 100%;
+    }
+
+    @media screen and (max-width: 850px) {
+      padding: 5rem 0 22rem 0;
+      margin-top: 7.5vw;
+    }
+  }
+
+  &.dark {
+    background-color: $brandPrimaryShade;
+  }
+
+  &.coloredLogos {
+    background-color: $ltGrey;
+    color: black;
+    * {
+      color: black;
+    }
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    > *:not(:last-child) {
+      margin-right: 3rem;
+    }
+
+    @media screen and (max-width: 950px) {
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+      > *:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

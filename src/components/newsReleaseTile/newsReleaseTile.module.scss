@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // align-items: center;
+  height: 100%;
+  @media screen and (max-width: 975px) {
+    margin-bottom: 2rem;
+    justify-content: flex-start;
+  }
+}
+.date {
+  @include smFont;
+  color: $grey;
+  > * {
+    width: 8rem;
+  }
+}
+
+.excerpt {
+  flex-grow: 2;
+  @media screen and (max-width: 975px) {
+    flex-grow: 0;
+  }
+}
+
+.header {
+  @include bodyFont;
+  color: black;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+
+.link {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $brandPrimary;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.readingTime {
+  display: flex;
+  align-items: center;
+  &::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13.175' height='13.175' viewBox='0 0 13.175 13.175'%3E%3Cg id='Icon_feather-clock' data-name='Icon feather-clock' transform='translate(-2.375 -2.375)'%3E%3Cpath id='Path_8032' data-name='Path 8032' d='M14.925,8.962A5.962,5.962,0,1,1,8.962,3a5.962,5.962,0,0,1,5.962,5.962Z' transform='translate(0 0)' fill='none' stroke='%23999' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25'/%3E%3Cpath id='Path_8033' data-name='Path 8033' d='M18,9v3.577l2.385,1.192' transform='translate(-9.038 -3.615)' fill='none' stroke='%23999' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.25'/%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+}
