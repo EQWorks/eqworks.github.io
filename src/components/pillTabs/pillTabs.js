@@ -12,13 +12,19 @@ const PillTabs = ({ tabArr, children }) => {
             <li
               className={activeTab === i ? componentStyles.active : undefined}
             >
-              <button onClick={() => setActiveTab(i)}>{tab}</button>
+              <button
+                aria-controls={`${i}-tab`}
+                aria-label={`View tab ${i + 1}`}
+                onClick={() => setActiveTab(i)}
+              >
+                {tab}
+              </button>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className={componentStyles.tabContent}>
+      <div aria-live='polite' className={componentStyles.tabContent}>
         {children.map((content, i) => (
           <>{activeTab === i && <div className=''>{content}</div>}</>
         ))}

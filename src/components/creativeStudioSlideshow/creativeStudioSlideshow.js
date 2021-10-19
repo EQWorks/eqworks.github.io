@@ -32,7 +32,11 @@ const CSslideshow = ({ slideshowArr, children }) => {
         </ul>
       </div>
 
-      <div className={componentStyles.slideshowCont} {...swipeHandlers}>
+      <div
+        aria-live='polite'
+        className={componentStyles.slideshowCont}
+        {...swipeHandlers}
+      >
         {children.map((content, i) => (
           <div className={componentStyles.slide}>
             {activeSlide === i && <div>{content}</div>}
@@ -40,6 +44,7 @@ const CSslideshow = ({ slideshowArr, children }) => {
         ))}
 
         <button
+          aria-label='View previous slide'
           className={componentStyles.prevBtn}
           onClick={() => handleNavClick(-1)}
         >
@@ -47,6 +52,7 @@ const CSslideshow = ({ slideshowArr, children }) => {
         </button>
 
         <button
+          aria-label='View next slide'
           className={componentStyles.nextBtn}
           onClick={() => handleNavClick(1)}
         >

@@ -88,7 +88,6 @@ const Nav = () => {
                 <span></span>
               </button>
 
-              {/* <Visible lg xl xxl> */}
               <ul
                 className={
                   drawerOpen
@@ -340,16 +339,16 @@ const Nav = () => {
                   </div>
                 </li>
               </ul>
-              {/* </Visible> */}
             </div>
           </Col>
 
           <Col md={3} className={componentStyles.contactBtn}>
             <Button
-              variation='light outline'
               linkPath='/company/contact-us/'
-              text='Get In Touch'
+              role='presentation'
               small
+              text='Get In Touch'
+              variation='light outline'
             />
           </Col>
         </Row>

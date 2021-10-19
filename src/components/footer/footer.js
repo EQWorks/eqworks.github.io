@@ -267,10 +267,10 @@ const Footer = ({
               <Col>
                 <div className='flexContainer justifyCenter'>
                   <Button
-                    style={{ width: `100%` }}
-                    variation='light outline'
                     linkPath={linkPath ? linkPath : '/company/contact-us/'}
+                    style={{ width: `100%` }}
                     text={linkText ? linkText : 'Connect Here'}
+                    variation='light outline'
                   />
                 </div>
               </Col>
@@ -288,40 +288,40 @@ const Footer = ({
                 <ul className={componentStyles.logoLinks}>
                   <li>
                     <a
-                      href='https://twitter.com/eqworkscorp?lang=en'
                       aria-label='EQ Works Twitter page'
-                      target='_blank'
+                      href='https://twitter.com/eqworkscorp?lang=en'
                       rel='noreferrer'
+                      target='_blank'
                     >
                       <Twitter />
                     </a>
                   </li>
                   <li>
                     <a
-                      href='https://www.linkedin.com/company/eq-works/mycompany/'
                       aria-label='EQ Works LinkedIn page'
-                      target='_blank'
+                      href='https://www.linkedin.com/company/eq-works/mycompany/'
                       rel='noreferrer'
+                      target='_blank'
                     >
                       <LinkedIn />
                     </a>
                   </li>
                   <li>
                     <a
-                      href='https://github.com/EQWorks'
                       aria-label='EQ Works Github page'
-                      target='_blank'
+                      href='https://github.com/EQWorks'
                       rel='noreferrer'
+                      target='_blank'
                     >
                       <Github style={{ marginTop: `.1rem` }} />
                     </a>
                   </li>
                   <li>
                     <a
-                      href='https://www.facebook.com/eqworkscorp'
                       aria-label='EQ Works Facebook page'
-                      target='_blank'
+                      href='https://www.facebook.com/eqworkscorp'
                       rel='noreferrer'
+                      target='_blank'
                     >
                       <Facebook />
                     </a>

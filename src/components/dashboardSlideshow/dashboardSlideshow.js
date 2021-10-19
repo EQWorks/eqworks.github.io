@@ -21,7 +21,7 @@ const DashboardSlideShow = ({ children }) => {
   return (
     <>
       <div className={componentStyles.slideshowCont} {...swipeHandlers}>
-        <div className={componentStyles.slides}>
+        <div aria-live='polite' className={componentStyles.slides}>
           {children.map((content, i) => (
             <>
               {activeSlide === i && (
@@ -39,6 +39,7 @@ const DashboardSlideShow = ({ children }) => {
         </div>
 
         <button
+          aria-label='View previous slide'
           className={componentStyles.prevBtn}
           onClick={() => handleNavClick(-1)}
         >
@@ -46,6 +47,7 @@ const DashboardSlideShow = ({ children }) => {
         </button>
 
         <button
+          aria-label='View next slide'
           className={componentStyles.nextBtn}
           onClick={() => handleNavClick(1)}
         >
@@ -58,7 +60,7 @@ const DashboardSlideShow = ({ children }) => {
           {children.map((content, i) => (
             <li>
               <button
-                aria-label=''
+                aria-label={`View slide ${i + 1}`}
                 onClick={() => setActiveSlide(i)}
                 className={
                   activeSlide === i ? componentStyles.active : undefined

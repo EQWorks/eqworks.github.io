@@ -12,13 +12,18 @@ const SquareTabs = ({ tabArr, children }) => {
             <li
               className={activeTab === i ? componentStyles.active : undefined}
             >
-              <button onClick={() => setActiveTab(i)}>{tab}</button>
+              <button
+                aria-controls={`${tab.replace(' ', '-')}-tab`}
+                onClick={() => setActiveTab(i)}
+              >
+                {tab}
+              </button>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className={componentStyles.tabContentContainer}>
+      <div aria-live='polite' className={componentStyles.tabContentContainer}>
         {children.map((content, i) => (
           <>
             {activeTab === i && (

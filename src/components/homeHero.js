@@ -15,7 +15,7 @@ const HomeHero = () => {
       <div className='heroText'>
         <h1>
           Turning data into <br />
-          business performance.
+          performance.
         </h1>
         <p>
           EQ enables businesses to <strong>Understand</strong>, <br />

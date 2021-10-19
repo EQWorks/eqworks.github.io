@@ -108,35 +108,35 @@ const SlideShow = ({ data }) => {
                   <ul className={componentStyles.slideshowNav}>
                     <li>
                       <button
-                        aria-label='News releases 1-3'
-                        onClick={() => setSection(1)}
+                        aria-label='View news releases 1-3'
                         className={
                           activeSection === 1
                             ? componentStyles.active
                             : undefined
                         }
+                        onClick={() => setSection(1)}
                       ></button>
                     </li>
                     <li>
                       <button
-                        aria-label='News releases 4-6'
-                        onClick={() => setSection(2)}
+                        aria-label='View news releases 4-6'
                         className={
                           activeSection === 2
                             ? componentStyles.active
                             : undefined
                         }
+                        onClick={() => setSection(2)}
                       ></button>
                     </li>
                     <li>
                       <button
                         aria-label='News releases 7-9'
-                        onClick={() => setSection(3)}
                         className={
                           activeSection === 3
                             ? componentStyles.active
                             : undefined
                         }
+                        onClick={() => setSection(3)}
                       ></button>
                     </li>
                   </ul>
@@ -148,7 +148,11 @@ const SlideShow = ({ data }) => {
           <Row className='pageRowSm'>
             <Col>
               <div className='flexContainer justifyCenter noMargins'>
-                <Button linkPath='/company/news-releases/' text='View All' />
+                <Button
+                  aria-label='View all news releases'
+                  linkPath='/company/news-releases/'
+                  text='View All'
+                />
               </div>
             </Col>
           </Row>

@@ -73,7 +73,6 @@ To convert any image type (`.png`, `.jpg`, etc.) to the `.webp` format, you can 
 - Update all images of same extension in a directory, run `find ./ -type f -name '*.png' -exec sh -c 'cwebp -q 75 $1 -o "${1%.png}.webp"' _ {} \;`.
   - Change `.png` in both instances to any other image format (e.g. `.jpg`).
 
-
 ## Services
 
 - [Contentful](https://www.contentful.com/)

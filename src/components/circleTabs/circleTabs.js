@@ -15,7 +15,6 @@ const CircleTabs = () => {
   const [activeTab, setActiveTab] = useState(null)
 
   const executeScroll = () => {
-    console.log('scrolling')
     tabsRef.current.scrollIntoView()
   }
 
@@ -51,7 +50,10 @@ const CircleTabs = () => {
                     : componentStyles.tab
                 }
               >
-                <button onClick={() => clickHandler(1)}>
+                <button
+                  aria-label='View Data Scientist and Analysts information'
+                  onClick={() => clickHandler(1)}
+                >
                   <Points />
                 </button>
                 <h3>Data Scientists &amp; Analysts</h3>
@@ -68,7 +70,10 @@ const CircleTabs = () => {
                     : componentStyles.tab
                 }
               >
-                <button onClick={() => clickHandler(2)}>
+                <button
+                  aria-label='View Business leaders information'
+                  onClick={() => clickHandler(2)}
+                >
                   <Breifcase />
                 </button>
                 <h3>Business Leaders</h3>
@@ -85,7 +90,10 @@ const CircleTabs = () => {
                     : componentStyles.tab
                 }
               >
-                <button onClick={() => clickHandler(3)}>
+                <button
+                  aria-label='View Marketers information'
+                  onClick={() => clickHandler(3)}
+                >
                   <Megaphone />
                 </button>
                 <h3>Marketers</h3>
@@ -99,7 +107,7 @@ const CircleTabs = () => {
         </Row>
       </Container>
 
-      <div className={componentStyles.tabContentContainer}>
+      <div aria-live='polite' className={componentStyles.tabContentContainer}>
         {activeTab === 1 && (
           <div className={componentStyles.tabContent}>
             <DataContent />

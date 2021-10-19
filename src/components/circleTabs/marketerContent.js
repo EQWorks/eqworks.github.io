@@ -42,17 +42,18 @@ const MarketerContent = () => {
                 effectiveness all in a privacy first manner.
               </p>
               <Link
-                to='/platforms/atom/'
+                aria-label="Learn more about Atom - household graph"
                 className='uppercase bold primaryColor'
+                to='/platforms/atom/'
               >
                 Learn More &#187;
               </Link>
             </Col>
             <Col sm={12} md={6} className='imageCol'>
               <StaticImage
-                src='../../images/mockups/AtomiMacMockups.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/AtomiMacMockups.png'
               />
             </Col>
           </Row>
@@ -60,9 +61,9 @@ const MarketerContent = () => {
           <Row align='center' className='pageRow mobileFlexReverse'>
             <Col sm={12} md={6} className='imageCol'>
               <StaticImage
-                src='../../images/mockups/DashboardsMockup.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/DashboardsMockup.png'
               />
             </Col>
             <Col sm={12} md={6}>
@@ -78,8 +79,9 @@ const MarketerContent = () => {
                 and IDFA’s get phased out of the advertising ecosystem.
               </p>
               <Link
-                to='/platforms/atom/'
+                aria-label="Learn more about Atom - geospatial cohorts"
                 className='uppercase bold primaryColor'
+                to='/platforms/atom/' 
               >
                 Learn More &#187;
               </Link>
@@ -101,16 +103,17 @@ const MarketerContent = () => {
               <div className='linkRow noWrap start'>
                 <div>
                   <Link
-                    to='/platforms/atom/'
+                    aria-label="learn more about AtomNext"
                     className='uppercase bold primaryColor'
+                    to='/platforms/atom/'
                   >
                     Learn More &#187;
                   </Link>
                 </div>
                 <div>
                   <Link
-                    to='/learn/case-studies/geo-spatial-cohorts/'
                     className='uppercase bold primaryColor'
+                    to='/learn/case-studies/geo-spatial-cohorts/'
                   >
                     Case Study &#187;
                   </Link>
@@ -119,9 +122,9 @@ const MarketerContent = () => {
             </Col>
             <Col sm={12} md={6} className='imageCol'>
               <StaticImage
-                src='../../images/mockups/Atom Diagram-01.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/Atom Diagram-01.png'
               />
             </Col>
           </Row>
@@ -131,9 +134,9 @@ const MarketerContent = () => {
               <div className='imageRow'>
                 <div>
                   <StaticImage
-                    src='../../images/manWithPhone.png'
                     alt=''
                     layout='fullWidth'
+                    src='../../images/manWithPhone.png'
                   />
                 </div>
                 <div>

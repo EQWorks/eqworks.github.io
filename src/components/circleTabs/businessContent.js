@@ -47,9 +47,10 @@ const BusinessContent = ({ dataClick, marketerClick }) => {
               <div className='linkRow'>
                 <div>
                   <button
+                    aria-label='View Data Scientist and Analysts information'
                     className='uppercase primaryColor centered flexContainer alignCenter'
-                    style={{ border: `0`, backgroundColor: `transparent` }}
                     onClick={dataClick}
+                    style={{ border: `0`, backgroundColor: `transparent` }}
                   >
                     <u className='bold'>
                       Insights &amp; Analytics All In One Place &#187;
@@ -59,9 +60,10 @@ const BusinessContent = ({ dataClick, marketerClick }) => {
 
                 <div>
                   <button
+                    aria-label='View Marketers information'
                     className='uppercase primaryColor centered flexContainer alignCenter'
-                    style={{ border: `0`, backgroundColor: `transparent` }}
                     onClick={marketerClick}
+                    style={{ border: `0`, backgroundColor: `transparent` }}
                   >
                     <u className='bold'>Data Enrichment via Marketing &#187;</u>
                   </button>
@@ -75,9 +77,9 @@ const BusinessContent = ({ dataClick, marketerClick }) => {
               <div className='imageRow' style={{ width: `100%` }}>
                 <div>
                   <StaticImage
-                    src='../../images/womanWithPhoneCard.png'
                     alt=''
                     layout='fullWidth'
+                    src='../../images/womanWithPhoneCard.png'
                   />
                 </div>
 

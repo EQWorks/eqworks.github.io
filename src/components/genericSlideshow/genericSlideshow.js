@@ -19,7 +19,7 @@ const GenericSlideShow = ({ children }) => {
 
   return (
     <>
-      <div {...swipeHandlers}>
+      <div aria-live='polite' {...swipeHandlers}>
         {children.map((content, i) => (
           <div className={componentStyles.slideSection}>
             {activeSection === i && <div>{content}</div>}
@@ -38,7 +38,7 @@ const GenericSlideShow = ({ children }) => {
           {children.map((content, i) => (
             <li>
               <button
-                aria-label=''
+                aria-label={`View slide ${i + 1}`}
                 onClick={() => setSection(i)}
                 className={
                   activeSection === i ? componentStyles.active : undefined

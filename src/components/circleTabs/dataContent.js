@@ -35,9 +35,9 @@ const DataContent = () => {
           <Col md={6}>
             <div className={componentStyles.tile}>
               <StaticImage
-                src='../../images/mockups/NotebookScreengrab.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/NotebookScreengrab.png' 
               />
               <div className={componentStyles.text}>
                 <h3>LOCUS Notebook</h3>
@@ -46,7 +46,7 @@ const DataContent = () => {
                   to explore, analyze and visualize first-party data alongside
                   EQ’s movement datasets and the extended EQ data marketplace.
                 </p>
-                <Link to='/platforms/environments/locus-notebook/'>
+                <Link aria-label="Learn more about LOCUS notebook" to='/platforms/environments/locus-notebook/'>
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>
@@ -58,9 +58,9 @@ const DataContent = () => {
           <Col md={6}>
             <div className={componentStyles.tile}>
               <StaticImage
-                src='../../images/mockups/QueryLabScreengrab.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/QueryLabScreengrab.png'
               />
               <div className={componentStyles.text}>
                 <h3>LOCUS QL</h3>
@@ -69,7 +69,7 @@ const DataContent = () => {
                   enables people of all skill levels to explore, analyze and
                   visualize customer first-party data.
                 </p>
-                <Link to='/platforms/environments/locus-ql/'>
+                <Link aria-label="Learn more about LOCUS QL" to='/platforms/environments/locus-ql/'>
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>
@@ -98,28 +98,31 @@ const DataContent = () => {
                   governance and transformation capabilities built-in.
                 </p>
                 <Link
-                  to='/platforms/locus/connection-hub/'
                   className='uppercase primaryColor bold'
+                  to='/platforms/locus/connection-hub/'
                 >
                   Explore Connection Hub &#187;
                 </Link>
                 <div className='imageCluster'>
                   <StaticImage
-                    src='../../images/MicrosoftAzureLogo.png'
                     alt='Microsoft Azure Logo'
+                    src='../../images/MicrosoftAzureLogo.png'
                   />
-                  <StaticImage src='../../images/AWSLogo.png' alt='AWS Logo' />
+                  <StaticImage 
+                    alt='AWS Logo' 
+                    src='../../images/AWSLogo.png'
+                  />
                   <StaticImage
-                    src='../../images/StripeLogo.png'
                     alt='Stripe Logo'
+                    src='../../images/StripeLogo.png' 
                   />
                   <StaticImage
-                    src='../../images/GoogleCloudLogo.png'
                     alt='Google Cloud Logo'
+                    src='../../images/GoogleCloudLogo.png'
                   />
                   <StaticImage
-                    src='../../images/ShopifyLogo.png'
                     alt='Shopify Logo'
+                    src='../../images/ShopifyLogo.png'
                   />
                   <p
                     className='flexContainer justifyCenter smFont fontSm greyColor'
@@ -138,17 +141,17 @@ const DataContent = () => {
                   with over twenty (20) built-in helper stages.
                 </p>
                 <Link
-                  to='/platforms/locus/dag-builder/'
                   className='uppercase primaryColor bold'
+                  to='/platforms/locus/dag-builder/'
                 >
                   Explore DAG Builder &#187;
                 </Link>
 
                 <div className='tabImg'>
                   <StaticImage
-                    src='../../images/mockups/DAGbuilderScreengrab.png'
                     alt=''
                     layout='fullWidth'
+                    src='../../images/mockups/DAGbuilderScreengrab.png'
                   />
                 </div>
               </div>
@@ -161,32 +164,32 @@ const DataContent = () => {
                   acquisition.
                 </p>
                 <Link
-                  to='/platforms/locus/marketplace/'
                   className='uppercase primaryColor bold'
+                  to='/platforms/locus/marketplace/'
                 >
                   Explore Marketplace &#187;
                 </Link>
                 <div className='imageCluster'>
                   <StaticImage
-                    src='../../images/Emerge-black.png'
                     alt='Emerge Logo'
+                    src='../../images/Emerge-black.png' 
                   />
                   <StaticImage
-                    src='../../images/paymi_logo_RGB.png'
                     alt='Paymi Logo'
+                    src='../../images/paymi_logo_RGB.png'
                   />
                   <StaticImage
-                    src='../../images/MastercardLogo.png'
                     alt='Mastercard Logo'
+                    src='../../images/MastercardLogo.png'
                   />
                   <StaticImage src='../../images/TMGLogo.png' alt='TMG Logo' />
                   <StaticImage
-                    src='../../images/OptaLogo.png'
                     alt='Opta Logo'
+                    src='../../images/OptaLogo.png'
                   />
                   <StaticImage
-                    src='../../images/StatsCanadaLogo.png'
                     alt='Stats Can Logo'
+                    src='../../images/StatsCanadaLogo.png'
                   />
                   <p
                     className='flexContainer justifyCenter smFont fontSm greyColor'
@@ -205,16 +208,16 @@ const DataContent = () => {
                   insights, all in one place.
                 </p>
                 <Link
-                  to='/platforms/locus/dashboards/'
                   className='uppercase primaryColor bold'
+                  to='/platforms/locus/dashboards/'
                 >
                   Explore Dashboards &#187;
                 </Link>
                 <div className='tabImg'>
                   <StaticImage
-                    src='../../images/mockups/Dashboards (ISOChrone).png'
                     alt=''
                     layout='fullWidth'
+                    src='../../images/mockups/Dashboards (ISOChrone).png'
                   />
                 </div>
               </div>
@@ -235,7 +238,7 @@ const DataContent = () => {
                 Customer <br />
                 Analytics
               </h3>
-              <Link to='/solutions/customer-analytics/'>
+              <Link aria-label="Learn more about customer analytics" to='/solutions/customer-analytics/'>
                 <strong>Learn More &#187;</strong>
               </Link>
             </div>
@@ -251,7 +254,7 @@ const DataContent = () => {
                 <br />
                 Market Analysis
               </h3>
-              <Link to='/solutions/competitive-analysis/'>
+              <Link aria-label="Learn more about competitive analysis and market analysis" to='/solutions/competitive-analysis/'>
                 <strong>Learn More &#187;</strong>
               </Link>
             </div>
@@ -266,7 +269,7 @@ const DataContent = () => {
                 Customer <br />
                 Acquisition
               </h3>
-              <Link to='/solutions/customer-acquisition/'>
+              <Link aria-label="Learn more about customer acquisition" to='/solutions/customer-acquisition/'>
                 <strong>Learn More &#187;</strong>
               </Link>
             </div>

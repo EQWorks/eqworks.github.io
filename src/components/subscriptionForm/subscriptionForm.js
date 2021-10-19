@@ -37,13 +37,18 @@ const SubscriptionForm = () => {
       </section>
 
       <form onSubmit={formSubmit} className={componentStyles.form}>
+        <label className={componentStyles.hiddenLabel} htmlFor='email'>
+          Email
+        </label>
         <input
+          aria-label='Email'
+          id='email'
+          name='_replyto'
+          onChange={(e) => setValue({ ...values, email: e.target.value })}
+          placeholder='Enter your email here'
           required
           type='email'
-          name='_replyto'
-          placeholder='Enter your email here'
           value={values.email}
-          onChange={(e) => setValue({ ...values, email: e.target.value })}
         />
 
         <button type='submit' disabled={values.email === '' || !values.email}>
