@@ -1015,7 +1015,7 @@ iframe {
       bottom: -2.75rem;
     }
     @media screen and (max-width: 600px) {
-      bottom: -1.5rem;
+      bottom: -1.25rem;
     }
   }
 }
@@ -1197,6 +1197,10 @@ iframe {
 .postContent,
 .caseStudyContent {
   margin-top: 5vw;
+  *{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
   a {
     text-decoration: underline;
   }
