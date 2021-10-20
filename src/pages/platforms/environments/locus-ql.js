@@ -40,11 +40,11 @@ const PLocusQLPage = ({ data, location }) => {
               LOCUS Query Lab (QL) is a no-code SQL-driven data engine that
               enables people of all skill levels to explore, analyze and
               visualize customer first-party data alongside EQ’s own proprietary
-              human movement datasets and the extended EQ data marketplac
+              human movement datasets and the extended EQ data marketplace.
             </p>
             <p>
               QL creates a SQL-like interface to query any type of geospatial
-              data. With a new geospatial query engine built from the group up
+              data. With a new geospatial query engine built from the ground up
               for geospatial workloads. Whether it is understanding the
               household income distribution of last month’s ecommerce orders, or
               segmenting your leads by their propensity to buy – QL can unlock
