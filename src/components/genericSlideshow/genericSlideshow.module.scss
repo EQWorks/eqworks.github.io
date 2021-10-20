@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.slideSection,
+.slideSection * {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slideshowNavContainer {
+  @media screen and (max-width: 785px) {
+    display: none;
+  }
+}
+
+.slideshowNav {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  align-items: center;
+
+  button {
+    border: 0;
+    outline: 0;
+    // @include darkStyle;
+    // @include darkStyleHover;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin: 0.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $medGrey;
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+      background-color: $brandPrimary;
+    }
+  }
+}

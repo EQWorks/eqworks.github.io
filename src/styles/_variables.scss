@@ -1,0 +1,161 @@
+$brandPrimary: #3232f5;
+$brandPrimaryShade: #1f0795;
+$brandPrimaryClear: rgba(50, 50, 245, 0);
+$grey: #747474;
+$medGrey: #d6d6d6;
+$ltGrey: #f2f2f2;
+
+$gold: #ffcb29;
+
+$accent1: #18c8d0;
+$accent2: #f49310;
+$accent3: #cb346b;
+
+// BORDER STYLES
+$primaryBorder: 0.125rem solid $brandPrimary;
+$whiteBorder: 0.125rem solid white;
+$blackBorder: 0.125rem solid black;
+$greyBorder: 1px solid $medGrey;
+
+// FONT MIXINS
+@mixin bodyFont {
+  font: 1rem/1.625 'Open Sans', Arial, sans-serif;
+  color: $grey;
+}
+@mixin smFont {
+  font: 0.8125rem/2 'Open Sans', Arial, sans-serif;
+}
+@mixin xsmFont {
+  font: 0.77rem/2 'Open Sans', Arial, sans-serif;
+}
+
+@mixin hdrFont1 {
+  font: 2.6875rem/1.25 'Open Sans', Arial, sans-serif;
+  // text-transform: uppercase;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+@mixin hdrFont2 {
+  font: 2.25rem/1.25 'Open Sans', Arial, sans-serif;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin: 1.25rem 0;
+  text-transform: capitalize;
+}
+
+@mixin hdrFont3 {
+  font: 1.125rem/1.25 'Open Sans', Arial, sans-serif;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin: 1rem 0;
+  text-transform: capitalize;
+}
+
+@mixin buttonFont {
+  font: 0.8125rem/1.25 'Open Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+// COLOUR MIXINS
+@mixin darkStyle {
+  background-color: $brandPrimary;
+  color: white;
+  * {
+    color: white;
+  }
+}
+@mixin darkStyleHover {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: black;
+  }
+}
+
+@mixin greyStyle {
+  background-color: $ltGrey;
+}
+
+@mixin greyGradient {
+  background-image: linear-gradient($ltGrey, white);
+}
+@mixin blueGradient {
+  background-image: linear-gradient(#3232f5 0%, #3232f5 50%, #1a138f);
+}
+
+@mixin accent1style {
+  background-color: $accent1;
+  color: white;
+  * {
+    color: white;
+  }
+}
+
+@mixin accent2style {
+  background-color: $accent2;
+  color: white;
+  * {
+    color: white;
+  }
+}
+
+@mixin accent3style {
+  background-color: $accent3;
+  color: white;
+  * {
+    color: white;
+  }
+}
+
+@mixin whiteHover {
+  transition: all 0.3s ease-in-out;
+  * {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $brandPrimary;
+    color: white;
+    border-color: $brandPrimary;
+    * {
+      color: white;
+    }
+  }
+}
+
+@mixin listNone {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+// ANIMATIONS
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

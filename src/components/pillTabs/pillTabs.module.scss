@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.tabContainer ul {
+  display: flex;
+  align-items: center;
+  @include listNone;
+
+  li button {
+    display: block;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    text-transform: none;
+    border: 0;
+    outline: 0;
+
+    @media screen and (max-width: 850px) {
+      padding: 0.5rem 1rem;
+    }
+  }
+  li {
+    &.active {
+      button {
+        @include darkStyle;
+      }
+    }
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}
+
+.tabContent {
+  @media screen and (max-width: 850px) {
+    min-height: 14rem;
+  }
+}

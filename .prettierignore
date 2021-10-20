@@ -1,7 +1,9 @@
 # directories
-.next
 node_modules
-out
 
 # files
 *.DS_Store
+.cache
+package.json
+package-lock.json
+public
