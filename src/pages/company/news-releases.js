@@ -52,7 +52,6 @@ const NewsReleasesPage = ({ data, location }) => {
             <Col lg={4} md={6} sm={12} key={i} style={{ marginBottom: `6rem` }}>
               <NewsReleaseTile
                 date={newsRelease.createdAt}
-                readingTime='2'
                 header={newsRelease.title}
                 snippet={newsRelease.excerpt.childrenMarkdownRemark[0].excerpt}
                 linkPath={`/company/news-releases/${newsRelease.slug}`}
