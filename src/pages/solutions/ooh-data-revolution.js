@@ -50,7 +50,7 @@ const SRealEstatePage = ({ data, location }) => {
         </Row>
 
         <Row align='stretch' className='pageRow'>
-          <Col className='paddedCol' md={4} sm={12} >
+          <Col className='paddedCol' md={4} sm={12}>
             <div
               className='flexContainer column justifyBetween alignCenter'
               style={{ minHeight: `100%` }}
@@ -64,7 +64,6 @@ const SRealEstatePage = ({ data, location }) => {
                 <strong
                   className='darkColor'
                   style={{ display: `block`, marginBottom: `.5rem` }}
-                  
                 >
                   AOI Report
                 </strong>
@@ -75,7 +74,7 @@ const SRealEstatePage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about dashboards"
+                aria-label='Learn more about dashboards'
                 className='uppercase primaryColor bold'
                 to='/platforms/locus/dashboards/'
               >
@@ -108,7 +107,7 @@ const SRealEstatePage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about Atom"
+                aria-label='Learn more about Atom'
                 className='uppercase primaryColor bold'
                 to='/platforms/atom/'
               >
@@ -141,7 +140,7 @@ const SRealEstatePage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about DAG Builder"
+                aria-label='Learn more about DAG Builder'
                 className='uppercase primaryColor bold'
                 to='/platforms/locus/dag-builder/'
               >
@@ -196,7 +195,9 @@ const SRealEstatePage = ({ data, location }) => {
         </Container>
 
         <section className='linkBanner pageRow'>
-          <Link aria-label="Book a demo" to='/about/book-a-demo/'>Learn More &#187;</Link>
+          <Link aria-label='Book a demo' to='/about/book-a-demo/'>
+            Learn More &#187;
+          </Link>
         </section>
       </section>
 

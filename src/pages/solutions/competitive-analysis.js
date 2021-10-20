@@ -70,7 +70,7 @@ const SCompetitiveAnalysisPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about dashbaords - visitation reports"
+                aria-label='Learn more about dashbaords - visitation reports'
                 className='uppercase primaryColor bold'
                 to='/platforms/locus/dashboards/'
               >
@@ -103,7 +103,7 @@ const SCompetitiveAnalysisPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about dashboards - cross visit map"
+                aria-label='Learn more about dashboards - cross visit map'
                 className='uppercase primaryColor bold'
                 to='/platforms/locus/dashboards/'
               >
@@ -136,7 +136,7 @@ const SCompetitiveAnalysisPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about LOCUS notebook"
+                aria-label='Learn more about LOCUS notebook'
                 className='uppercase primaryColor bold'
                 to='/platforms/environments/locus-notebook/'
               >
@@ -191,10 +191,7 @@ const SCompetitiveAnalysisPage = ({ data, location }) => {
       </section>
 
       <section className='linkBanner pageRow'>
-        <Link 
-          aria-label="Book a demo"
-          to='/comapny/book-a-demo/'
-        >
+        <Link aria-label='Book a demo' to='/comapny/book-a-demo/'>
           Let us show you how &#187;
         </Link>
       </section>

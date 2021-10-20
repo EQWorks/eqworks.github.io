@@ -13,13 +13,7 @@ import Github from '../../svgs/github.svg'
 import Facebook from '../../svgs/facebookWhite.svg'
 import * as componentStyles from './footer.module.scss'
 
-const Footer = ({
-  linkHdr,
-  linkPath,
-  linkText,
-  showPartners,
-  colorLogos
-}) => {
+const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
   const isScreenSm = useMediaQuery({ maxWidth: 850 })
 
   return (

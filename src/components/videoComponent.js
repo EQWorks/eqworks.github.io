@@ -20,13 +20,13 @@ const VideoElement = ({ videoSrc, posterSrc }) => {
     >
       {/* eslint-disable-next-line */}
       <video
-        ref={vidRef}
         controls
-        poster={posterSrc}
+        ref={vidRef}
         onEnded={() => {
           setIsShown(true)
           setVideoState(false)
         }}
+        poster={posterSrc}
       >
         <source src={videoSrc} type='video/mp4' />
         Your browser does not support the video tag.

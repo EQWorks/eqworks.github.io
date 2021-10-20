@@ -78,9 +78,10 @@ const PLocusPage = ({ data, location }) => {
                       EQ’s own proprietary human movement datasets and the
                       extended EQ data marketplace.
                     </p>
-                    <Link 
-                      aria-label="Learn more about LOCUS QL"
-                      to='/platforms/environments/locus-ql/'>
+                    <Link
+                      aria-label='Learn more about LOCUS QL'
+                      to='/platforms/environments/locus-ql/'
+                    >
                       <strong className='uppercase primaryColor'>
                         Learn More &#187;
                       </strong>
@@ -107,9 +108,10 @@ const PLocusPage = ({ data, location }) => {
                       human movement datasets and the extended EQ data
                       marketplace.
                     </p>
-                    <Link 
-                      aria-label="Learn more about LOCUS Notebook"
-                      to='/platforms/environments/locus-notebook/'>
+                    <Link
+                      aria-label='Learn more about LOCUS Notebook'
+                      to='/platforms/environments/locus-notebook/'
+                    >
                       <strong className='uppercase primaryColor'>
                         Learn More &#187;
                       </strong>
@@ -143,9 +145,10 @@ const PLocusPage = ({ data, location }) => {
                 transformation capabilities built-in to allow for further
                 integration with tools such as LOCUS Notebook and LOCUS QL.
               </p>
-              <Link 
-                aria-label="Learn more about connection hub"
-                to='/platforms/locus/connection-hub/'>
+              <Link
+                aria-label='Learn more about connection hub'
+                to='/platforms/locus/connection-hub/'
+              >
                 <strong className='uppercase primaryColor'>
                   Learn More &#187;
                 </strong>
@@ -188,9 +191,10 @@ const PLocusPage = ({ data, location }) => {
                   engineered to crunch (and munch) your geospatial workflows
                   with over twenty (20) built-in helper stages.
                 </p>
-                <Link 
-                  aria-label="Learn more about DAG Builder"
-                  to='/platforms/locus/dag-builder/'>
+                <Link
+                  aria-label='Learn more about DAG Builder'
+                  to='/platforms/locus/dag-builder/'
+                >
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>
@@ -216,9 +220,10 @@ const PLocusPage = ({ data, location }) => {
                 got thousands of datasets ready to go within the LOCUS
                 Marketplace.
               </p>
-              <Link 
-                aria-label="Learn more about marketplace"
-                to='/platforms/locus/marketplace/'>
+              <Link
+                aria-label='Learn more about marketplace'
+                to='/platforms/locus/marketplace/'
+              >
                 <strong className='uppercase primaryColor'>
                   Learn More &#187;
                 </strong>
@@ -264,9 +269,10 @@ const PLocusPage = ({ data, location }) => {
                   schemes, templates and reports on-demand - all without
                   requiring deep technical expertise. Book your demo today.
                 </p>
-                <Link 
-                  aria-label="Learn more about dashboards"
-                  to='/platforms/locus/dashboards/'>
+                <Link
+                  aria-label='Learn more about dashboards'
+                  to='/platforms/locus/dashboards/'
+                >
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>

@@ -72,10 +72,7 @@ const Seo = ({ description, lang, meta, title }) => {
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
     >
-      <script
-        async
-        defer
-      ></script>
+      <script async defer></script>
     </Helmet>
   )
 }

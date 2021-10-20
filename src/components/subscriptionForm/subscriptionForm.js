@@ -19,7 +19,6 @@ const SubscriptionForm = () => {
   }
 
   const formSubmit = (e) => {
-    // console.log('submitting...')
     handleSubmit(e)
   }
 

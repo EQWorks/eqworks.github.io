@@ -71,10 +71,11 @@ const Home = ({ data, location }) => {
               <br /> and analytics platform.
             </p>
             <div className='flexContainer mobileColumn alignStart'>
-              <Button 
-                aria-label="Learn more about LOCUS"
-                linkPath='/platforms/locus/' 
-                text='Learn more' />
+              <Button
+                aria-label='Learn more about LOCUS'
+                linkPath='/platforms/locus/'
+                text='Learn more'
+              />
               <Button
                 linkPath='/company/book-a-demo/'
                 text='Book a demo'
@@ -116,10 +117,11 @@ const Home = ({ data, location }) => {
               <br /> tools – all rolled into one.
             </p>
             <div className='flexContainer mobileColumn alignStart'>
-              <Button 
-                aria-label="Learn more about Atom"
-                linkPath='/platforms/atom/' 
-                text='Learn more' />
+              <Button
+                aria-label='Learn more about Atom'
+                linkPath='/platforms/atom/'
+                text='Learn more'
+              />
               <Button
                 linkPath='/company/book-a-demo/'
                 text='Book a demo'
@@ -129,7 +131,7 @@ const Home = ({ data, location }) => {
           </Col>
 
           <Col lg={6} className='imageCol'>
-            <StaticImage alt='' src='../images/mockups/atomComputer.png'  />
+            <StaticImage alt='' src='../images/mockups/atomComputer.png' />
           </Col>
         </Row>
 

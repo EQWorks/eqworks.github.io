@@ -15,7 +15,7 @@ const PMarketplacePage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
-    <Layout colorLogos footerLogos location={location} title={siteTitle} >
+    <Layout colorLogos footerLogos location={location} title={siteTitle}>
       <Seo title='Platforms | DAG Builder' />
 
       <header className='blockheader data'>

@@ -36,7 +36,6 @@ export const pageQuery = graphql`
 
 const CaseStudiesPage = ({ data, location }) => {
   const siteTitle = data.siteData.siteMetadata.title || `Title`
-  // console.log(data.caseStudies.nodes)
 
   return (
     <Layout location={location} title={siteTitle}>

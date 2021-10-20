@@ -66,7 +66,7 @@ const SlideShow = ({ data }) => {
             {activeSection === 2 && (
               <Row className={componentStyles.slideSection}>
                 {data.newsReleases.nodes.slice(3, 6).map((newsRelease, i) => (
-                  <Col key={i} lg={4} md={12} sm={12} >
+                  <Col key={i} lg={4} md={12} sm={12}>
                     <NewsReleaseTile
                       date={newsRelease.createdAt}
                       header={newsRelease.title}
@@ -83,7 +83,7 @@ const SlideShow = ({ data }) => {
             {activeSection === 3 && (
               <Row className={componentStyles.slideSection}>
                 {data.newsReleases.nodes.slice(6).map((newsRelease, i) => (
-                  <Col key={i} lg={4} md={12} sm={12} >
+                  <Col key={i} lg={4} md={12} sm={12}>
                     <NewsReleaseTile
                       date={newsRelease.createdAt}
                       header={newsRelease.title}

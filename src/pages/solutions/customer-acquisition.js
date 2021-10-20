@@ -73,7 +73,7 @@ const SCustomerAcquisitionPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about LOCUS notebook"
+                aria-label='Learn more about LOCUS notebook'
                 className='uppercase primaryColor bold'
                 to='/platforms/environments/locus-notebook/'
               >
@@ -106,7 +106,7 @@ const SCustomerAcquisitionPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about LOCUS QL"
+                aria-label='Learn more about LOCUS QL'
                 className='uppercase primaryColor bold'
                 to='/platforms/environments/locus-ql/'
               >
@@ -139,7 +139,7 @@ const SCustomerAcquisitionPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                aria-label="Learn more about dashboards - maps"
+                aria-label='Learn more about dashboards - maps'
                 className='uppercase primaryColor bold'
                 to='/platforms/locus/dashboards/'
               >
@@ -196,7 +196,9 @@ const SCustomerAcquisitionPage = ({ data, location }) => {
       </section>
 
       <section className='linkBanner pageRow'>
-        <Link aria-label="Book a demo" to='/company/book-a-demo/'>Let us show you how &#187;</Link>
+        <Link aria-label='Book a demo' to='/company/book-a-demo/'>
+          Let us show you how &#187;
+        </Link>
       </section>
 
       <Container className='container'>

@@ -37,7 +37,7 @@ const DataContent = () => {
               <StaticImage
                 alt=''
                 layout='fullWidth'
-                src='../../images/mockups/NotebookScreengrab.png' 
+                src='../../images/mockups/NotebookScreengrab.png'
               />
               <div className={componentStyles.text}>
                 <h3>LOCUS Notebook</h3>
@@ -46,7 +46,10 @@ const DataContent = () => {
                   to explore, analyze and visualize first-party data alongside
                   EQ’s movement datasets and the extended EQ data marketplace.
                 </p>
-                <Link aria-label="Learn more about LOCUS notebook" to='/platforms/environments/locus-notebook/'>
+                <Link
+                  aria-label='Learn more about LOCUS notebook'
+                  to='/platforms/environments/locus-notebook/'
+                >
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>
@@ -69,7 +72,10 @@ const DataContent = () => {
                   enables people of all skill levels to explore, analyze and
                   visualize customer first-party data.
                 </p>
-                <Link aria-label="Learn more about LOCUS QL" to='/platforms/environments/locus-ql/'>
+                <Link
+                  aria-label='Learn more about LOCUS QL'
+                  to='/platforms/environments/locus-ql/'
+                >
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>
@@ -108,13 +114,10 @@ const DataContent = () => {
                     alt='Microsoft Azure Logo'
                     src='../../images/MicrosoftAzureLogo.png'
                   />
-                  <StaticImage 
-                    alt='AWS Logo' 
-                    src='../../images/AWSLogo.png'
-                  />
+                  <StaticImage alt='AWS Logo' src='../../images/AWSLogo.png' />
                   <StaticImage
                     alt='Stripe Logo'
-                    src='../../images/StripeLogo.png' 
+                    src='../../images/StripeLogo.png'
                   />
                   <StaticImage
                     alt='Google Cloud Logo'
@@ -172,7 +175,7 @@ const DataContent = () => {
                 <div className='imageCluster'>
                   <StaticImage
                     alt='Emerge Logo'
-                    src='../../images/Emerge-black.png' 
+                    src='../../images/Emerge-black.png'
                   />
                   <StaticImage
                     alt='Paymi Logo'
@@ -238,7 +241,10 @@ const DataContent = () => {
                 Customer <br />
                 Analytics
               </h3>
-              <Link aria-label="Learn more about customer analytics" to='/solutions/customer-analytics/'>
+              <Link
+                aria-label='Learn more about customer analytics'
+                to='/solutions/customer-analytics/'
+              >
                 <strong>Learn More &#187;</strong>
               </Link>
             </div>
@@ -254,7 +260,10 @@ const DataContent = () => {
                 <br />
                 Market Analysis
               </h3>
-              <Link aria-label="Learn more about competitive analysis and market analysis" to='/solutions/competitive-analysis/'>
+              <Link
+                aria-label='Learn more about competitive analysis and market analysis'
+                to='/solutions/competitive-analysis/'
+              >
                 <strong>Learn More &#187;</strong>
               </Link>
             </div>
@@ -269,7 +278,10 @@ const DataContent = () => {
                 Customer <br />
                 Acquisition
               </h3>
-              <Link aria-label="Learn more about customer acquisition" to='/solutions/customer-acquisition/'>
+              <Link
+                aria-label='Learn more about customer acquisition'
+                to='/solutions/customer-acquisition/'
+              >
                 <strong>Learn More &#187;</strong>
               </Link>
             </div>

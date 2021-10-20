@@ -24,31 +24,31 @@ const LogoLoop = () => {
         <div className={componentStyles.overlay}></div>
 
         <div className={componentStyles.logos}>
-          <Walmart alt="Walmart logo"/>
-          <Prime alt="Amazon Prime logo"/>
-          <Sobeys alt="Sobeys logo"/>
-          <HRosen alt="Harry Rosen logo"/>
-          <Audi alt="Audi logo"/>
-          <Gm alt="GM logo"/>
-          <Subway alt="Subway logo"/>
-          <Subaru alt="Subaru logo"/>
-          <Lcbo alt="LCBO logo"/>
-          <Rogers alt="Rogers logo"/>
-          <Bell alt="Bell logo"/>
+          <Walmart alt='Walmart logo' />
+          <Prime alt='Amazon Prime logo' />
+          <Sobeys alt='Sobeys logo' />
+          <HRosen alt='Harry Rosen logo' />
+          <Audi alt='Audi logo' />
+          <Gm alt='GM logo' />
+          <Subway alt='Subway logo' />
+          <Subaru alt='Subaru logo' />
+          <Lcbo alt='LCBO logo' />
+          <Rogers alt='Rogers logo' />
+          <Bell alt='Bell logo' />
         </div>
 
         <div className={componentStyles.logos}>
-          <Walmart alt=""/>
-          <Prime alt=""/>
-          <Sobeys alt=""/>
-          <HRosen alt=""/>
-          <Audi alt=""/>
-          <Gm alt=""/>
-          <Subway alt=""/>
-          <Subaru alt=""/>
-          <Lcbo alt=""/>
-          <Rogers alt=""/>
-          <Bell alt=""/>
+          <Walmart alt='' />
+          <Prime alt='' />
+          <Sobeys alt='' />
+          <HRosen alt='' />
+          <Audi alt='' />
+          <Gm alt='' />
+          <Subway alt='' />
+          <Subaru alt='' />
+          <Lcbo alt='' />
+          <Rogers alt='' />
+          <Bell alt='' />
         </div>
       </div>
     </>

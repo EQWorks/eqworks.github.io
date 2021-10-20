@@ -42,7 +42,7 @@ const MarketerContent = () => {
                 effectiveness all in a privacy first manner.
               </p>
               <Link
-                aria-label="Learn more about Atom - household graph"
+                aria-label='Learn more about Atom - household graph'
                 className='uppercase bold primaryColor'
                 to='/platforms/atom/'
               >
@@ -79,9 +79,9 @@ const MarketerContent = () => {
                 and IDFA’s get phased out of the advertising ecosystem.
               </p>
               <Link
-                aria-label="Learn more about Atom - geospatial cohorts"
+                aria-label='Learn more about Atom - geospatial cohorts'
                 className='uppercase bold primaryColor'
-                to='/platforms/atom/' 
+                to='/platforms/atom/'
               >
                 Learn More &#187;
               </Link>
@@ -103,7 +103,7 @@ const MarketerContent = () => {
               <div className='linkRow noWrap start'>
                 <div>
                   <Link
-                    aria-label="learn more about AtomNext"
+                    aria-label='learn more about AtomNext'
                     className='uppercase bold primaryColor'
                     to='/platforms/atom/'
                   >

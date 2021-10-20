@@ -69,7 +69,7 @@ const InvestorsPage = ({ data, location }) => {
             <Col>
               <VideoElement posterSrc='/homeVideoPoster.png' videoSrc={EQvid} />
             </Col>
-          </Row> 
+          </Row>
           <Row className='pageRow marginAll'>
             <Col>
               <h2>
@@ -138,10 +138,11 @@ const InvestorsPage = ({ data, location }) => {
               <br /> and analytics platform.
             </p>
             <div className='flexContainer mobileColumn alignStart'>
-              <Button 
-                aria-label="Learn more about LOCUS"
-                linkPath='/platforms/locus/' 
-                text='Learn more' />
+              <Button
+                aria-label='Learn more about LOCUS'
+                linkPath='/platforms/locus/'
+                text='Learn more'
+              />
               <Button
                 linkPath='/company/book-a-demo/'
                 text='Book a demo'
@@ -175,7 +176,7 @@ const InvestorsPage = ({ data, location }) => {
             </p>
             <div className='flexContainer mobileColumn alignStart'>
               <Button linkPath='/platforms/atom/' text='Learn more' />
-              <Button                
+              <Button
                 linkPath='/company/book-a-demo/'
                 text='Book a demo'
                 variation='outline'
@@ -183,7 +184,7 @@ const InvestorsPage = ({ data, location }) => {
             </div>
           </Col>
           <Col lg={6} className='imageCol'>
-            <StaticImage alt='' src='../../images/mockups/atomComputer.png'  />
+            <StaticImage alt='' src='../../images/mockups/atomComputer.png' />
           </Col>
         </Row>
 

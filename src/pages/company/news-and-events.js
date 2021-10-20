@@ -120,7 +120,7 @@ const NewsPage = ({ data, location }) => {
                     style={{ marginTop: `1rem` }}
                   >
                     <Button
-                      aria-label="View Small Cap Growth Virtual Investor Conference page"
+                      aria-label='View Small Cap Growth Virtual Investor Conference page'
                       external
                       linkPath='https://www.virtualinvestorconferences.com/?DisplayItem=E621528&utm_source=EQ&utm_medium=direct+link&utm_campaign=010721SmallCapVIC&utm_id=010721SmallCapVIC'
                       text='Learn More'
@@ -130,7 +130,7 @@ const NewsPage = ({ data, location }) => {
               </div>
 
               <div className='eventRow'>
-                <img alt='' src='/eventImg2.png'/>
+                <img alt='' src='/eventImg2.png' />
 
                 <div>
                   <div className='dateInfo'>
@@ -155,7 +155,7 @@ const NewsPage = ({ data, location }) => {
                     style={{ marginTop: `1rem` }}
                   >
                     <Button
-                      aria-label="View Canaccord Genuity 41st Annual Growth Conference (Virtual) page"
+                      aria-label='View Canaccord Genuity 41st Annual Growth Conference (Virtual) page'
                       external
                       linkPath='https://www.canaccordgenuity.com/capital-markets/about-us/events/archive/'
                       text='Learn More'
@@ -191,15 +191,15 @@ const NewsPage = ({ data, location }) => {
                     style={{ marginTop: `1rem` }}
                   >
                     <Button
-                      aria-label="View AtomNext Geospatial DSP Webinar page"
+                      aria-label='View AtomNext Geospatial DSP Webinar page'
                       external
                       linkPath='https://www.bigmarker.com/conferences/94dacc6e8211/'
                       text='Watch Now'
                     />
 
                     <Button
-                      aria-label="Download AtomNext Geospatial DSP Webinar PDF"
-                      external        
+                      aria-label='Download AtomNext Geospatial DSP Webinar PDF'
+                      external
                       linkPath='/EQ - GeoSpatial Webinar Takeaway - May 2021.pdf'
                       text='Download PDF'
                       variation='outline'

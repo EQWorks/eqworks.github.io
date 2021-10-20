@@ -33,27 +33,22 @@ const PartnersLogos = ({ dark, colorLogos }) => {
                   <StaticImage
                     alt='Emerge logo'
                     src='../../images/Emerge-white.png'
-                    
                   />
                   <StaticImage
                     alt='Paymi logo'
                     src='../../images/paymi-white.png'
-                    
                   />
                   <StaticImage
                     alt='Mastercard logo'
                     src='../../images/mastercard-white.png'
-                    
                   />
                   <StaticImage
                     alt='TMG Analytics logo'
                     src='../../images/TMG-white.png'
-                    
                   />
                   <StaticImage
                     alt='Opta logo'
                     src='../../images/Opta-white.png'
-                    
                   />
                 </>
               ) : (
@@ -61,27 +56,22 @@ const PartnersLogos = ({ dark, colorLogos }) => {
                   <StaticImage
                     alt='Emerge logo'
                     src='../../images/Emerge-black.png'
-                    
                   />
                   <StaticImage
                     alt='Paymi logo'
                     src='../../images/paymi_logo_RGB.png'
-                    
                   />
                   <StaticImage
                     alt='Mastercard logo'
                     src='../../images/MastercardLogo.png'
-                    
                   />
                   <StaticImage
                     alt='TMG Analytics logo'
                     src='../../images/TMGLogo.png'
-                    
                   />
                   <StaticImage
                     alt='Opta logo'
                     src='../../images/OptaLogo.png'
-                    
                   />
                 </>
               )}
