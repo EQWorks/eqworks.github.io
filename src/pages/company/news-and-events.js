@@ -26,11 +26,10 @@ const NewsPage = ({ data, location }) => {
       </header>
 
       <Container className='container pageRow'>
-        <Row className=''>
+        <Row>
           <Col lg={12}>
             <h2>News Releases</h2>
           </Col>
-
           <Col lg={12}>
             <SlideShow />
           </Col>
@@ -78,9 +77,6 @@ const NewsPage = ({ data, location }) => {
           <Row className=''>
             <Col lg={12}>
               <h2>Events</h2>
-              {/* <p className="centered">
-                            At EQ and in the Community
-                        </p> */}
             </Col>
           </Row>
 
@@ -98,7 +94,7 @@ const NewsPage = ({ data, location }) => {
               <h3>Recent Past Events</h3>
 
               <div className='eventRow'>
-                <img src='/eventImg3.png' alt='' />
+                <img alt='' src='/eventImg3.png' />
 
                 <div>
                   <div className='dateInfo'>
@@ -120,20 +116,21 @@ const NewsPage = ({ data, location }) => {
                   </p>
 
                   <div
-                    style={{ marginTop: `1rem` }}
                     className='buttonContainer flexContainer mobileColumn'
+                    style={{ marginTop: `1rem` }}
                   >
                     <Button
+                      aria-label="View Small Cap Growth Virtual Investor Conference page"
+                      external
                       linkPath='https://www.virtualinvestorconferences.com/?DisplayItem=E621528&utm_source=EQ&utm_medium=direct+link&utm_campaign=010721SmallCapVIC&utm_id=010721SmallCapVIC'
                       text='Learn More'
-                      external
                     />
                   </div>
                 </div>
               </div>
 
               <div className='eventRow'>
-                <img src='/eventImg2.png' alt='' />
+                <img alt='' src='/eventImg2.png'/>
 
                 <div>
                   <div className='dateInfo'>
@@ -154,20 +151,21 @@ const NewsPage = ({ data, location }) => {
                   </p>
 
                   <div
-                    style={{ marginTop: `1rem` }}
                     className='buttonContainer flexContainer mobileColumn'
+                    style={{ marginTop: `1rem` }}
                   >
                     <Button
+                      aria-label="View Canaccord Genuity 41st Annual Growth Conference (Virtual) page"
+                      external
                       linkPath='https://www.canaccordgenuity.com/capital-markets/about-us/events/archive/'
                       text='Learn More'
-                      external
                     />
                   </div>
                 </div>
               </div>
 
               <div className='eventRow'>
-                <img src='/eventImg.png' alt='' />
+                <img alt='' src='/eventImg.png' />
 
                 <div>
                   <div className='dateInfo'>
@@ -189,20 +187,22 @@ const NewsPage = ({ data, location }) => {
                   </p>
 
                   <div
-                    style={{ marginTop: `1rem` }}
                     className='buttonContainer flexContainer mobileColumn'
+                    style={{ marginTop: `1rem` }}
                   >
                     <Button
+                      aria-label="View AtomNext Geospatial DSP Webinar page"
+                      external
                       linkPath='https://www.bigmarker.com/conferences/94dacc6e8211/'
                       text='Watch Now'
-                      external
                     />
 
                     <Button
-                      variation='outline'
+                      aria-label="Download AtomNext Geospatial DSP Webinar PDF"
+                      external        
                       linkPath='/EQ - GeoSpatial Webinar Takeaway - May 2021.pdf'
                       text='Download PDF'
-                      external
+                      variation='outline'
                     />
                   </div>
                 </div>

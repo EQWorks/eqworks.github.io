@@ -6,7 +6,7 @@ const ContactHdr = ({ header, children }) => {
   return (
     <header className='blockheader interface contact'>
       {!isMobile && (
-        <video autoPlay={true} muted loop className='vidOverlay'>
+        <video autoPlay={true} className='vidOverlay' loop muted>
           <source src={BgVid} type='video/mp4' />
           Your browser does not support the video tag.
         </video>

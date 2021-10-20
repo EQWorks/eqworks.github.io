@@ -14,7 +14,6 @@ import Facebook from '../../svgs/facebookWhite.svg'
 import * as componentStyles from './footer.module.scss'
 
 const Footer = ({
-  location,
   linkHdr,
   linkPath,
   linkText,
@@ -35,8 +34,8 @@ const Footer = ({
             <Col>
               {isScreenSm ? (
                 <Link
-                  to='/'
                   style={{ border: `0`, display: `block`, marginTop: `3rem` }}
+                  to='/'
                 >
                   <Logo
                     style={{
@@ -51,9 +50,9 @@ const Footer = ({
                 <div className={componentStyles.connect}>
                   <h2>{linkHdr ? linkHdr : `Let’s Grow Together`}</h2>
                   <Button
-                    variation='light outline'
                     linkPath={linkPath ? linkPath : '/company/contact-us/'}
                     text={linkText ? linkText : 'Connect Here'}
+                    variation='light outline'
                   />
                 </div>
               )}
@@ -96,7 +95,7 @@ const Footer = ({
           <Container className='container'>
             <Row>
               <Col md={2}>
-                <Link to='/' style={{ border: `0` }}>
+                <Link style={{ border: `0` }} to='/'>
                   <Logo
                     style={{
                       width: `3rem`,

@@ -82,7 +82,7 @@ const ContactPage = ({ data, location }) => {
       </section>
 
       <Container className='container pageRow'>
-        <Row className=''>
+        <Row>
           <Col>
             <SubscriptionForm />
           </Col>

@@ -35,8 +35,6 @@ const Seo = ({ description, lang, meta, title }) => {
       htmlAttributes={{
         lang
       }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
@@ -71,13 +69,13 @@ const Seo = ({ description, lang, meta, title }) => {
           content: metaDescription
         }
       ].concat(meta)}
+      title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
     >
       <script
-        src={`https://www.google.com/recaptcha/api.js`}
         async
         defer
       ></script>
-      {/* <script src={`https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit`} async defer></script>  */}
     </Helmet>
   )
 }

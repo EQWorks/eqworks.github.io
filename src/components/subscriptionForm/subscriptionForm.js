@@ -51,7 +51,7 @@ const SubscriptionForm = () => {
           value={values.email}
         />
 
-        <button type='submit' disabled={values.email === '' || !values.email}>
+        <button disabled={values.email === '' || !values.email} type='submit'>
           {isScreenSm ? <FaArrowRight /> : 'Subscribe Now'}
         </button>
       </form>

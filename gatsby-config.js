@@ -59,12 +59,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-recaptcha`,
 
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `'UA-176486966-1`,
+      },
+    },
 
     // {
     //   resolve: `gatsby-plugin-feed`,

@@ -40,9 +40,9 @@ const Home = ({ data, location }) => {
               <div className='flexContainer justifyCenter mobileColumn'>
                 <Button linkPath='/company/book-a-demo/' text='Book a demo' />
                 <Button
-                  variation='outline'
                   linkPath='/company/contact-us/'
                   text='Connect with us'
+                  variation='outline'
                 />
               </div>
             </Col>
@@ -50,7 +50,7 @@ const Home = ({ data, location }) => {
 
           <Row className='pageRow'>
             <Col>
-              <VideoElement videoSrc={EQvid} posterSrc='/homeVideoPoster.png' />
+              <VideoElement posterSrc='/homeVideoPoster.png' videoSrc={EQvid} />
             </Col>
           </Row>
         </Container>
@@ -71,29 +71,30 @@ const Home = ({ data, location }) => {
               <br /> and analytics platform.
             </p>
             <div className='flexContainer mobileColumn alignStart'>
-              <Button linkPath='/platforms/locus/' text='Learn more' />
+              <Button 
+                aria-label="Learn more about LOCUS"
+                linkPath='/platforms/locus/' 
+                text='Learn more' />
               <Button
-                variation='outline'
                 linkPath='/company/book-a-demo/'
                 text='Book a demo'
+                variation='outline'
               />
             </div>
           </Col>
 
           <Col lg={6} className='imageCol'>
-            <StaticImage src='../images/mockups/locusComputer.png' alt='' />
+            <StaticImage alt='' src='../images/mockups/locusComputer.png' />
           </Col>
         </Row>
       </Container>
 
-      {/* NEWS & EVENTS */}
       <section className='sectionGreyRoundedTop pageRow'>
         <Container className='container'>
           <Row className=''>
             <Col lg={12}>
               <h2>News Releases</h2>
             </Col>
-
             <Col lg={12}>
               <Slideshow />
             </Col>
@@ -115,17 +116,20 @@ const Home = ({ data, location }) => {
               <br /> tools – all rolled into one.
             </p>
             <div className='flexContainer mobileColumn alignStart'>
-              <Button linkPath='/platforms/atom/' text='Learn more' />
+              <Button 
+                aria-label="Learn more about Atom"
+                linkPath='/platforms/atom/' 
+                text='Learn more' />
               <Button
-                variation='outline'
                 linkPath='/company/book-a-demo/'
                 text='Book a demo'
+                variation='outline'
               />
             </div>
           </Col>
 
           <Col lg={6} className='imageCol'>
-            <StaticImage src='../images/mockups/atomComputer.png' alt='' />
+            <StaticImage alt='' src='../images/mockups/atomComputer.png'  />
           </Col>
         </Row>
 

@@ -13,10 +13,10 @@ const Map = () => {
 
   useEffect(() => {
     const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
       accessToken: process.env.GATSBY_MAPBOX_API,
-      style: 'mapbox://styles/mapbox/light-v10',
       center: [-79.389641, 43.670891],
+      container: mapContainerRef.current,
+      style: 'mapbox://styles/mapbox/light-v10',
       zoom: 15
     })
     map.addControl(new mapboxgl.NavigationControl(), 'top-right')

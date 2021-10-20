@@ -43,21 +43,21 @@ const SCustomerAnalyticsPage = ({ data, location }) => {
           </Col>
         </Row>
 
-        <Row className='pageRow' align='stretch'>
-          <Col md={4} sm={12} className='paddedCol'>
+        <Row align='stretch' className='pageRow' >
+          <Col className='paddedCol' md={4} sm={12}>
             <div
               className='flexContainer column justifyBetween alignCenter'
               style={{ minHeight: `100%` }}
             >
               <StaticImage
-                src='../../images/mockups/notebookComp.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/notebookComp.png'
               />
               <p className='centered' style={{ flexGrow: `1` }}>
                 <strong
-                  style={{ display: `block`, marginBottom: `.5rem` }}
                   className='darkColor'
+                  style={{ display: `block`, marginBottom: `.5rem` }}
                 >
                   LOCUS Notebook
                 </strong>
@@ -68,8 +68,9 @@ const SCustomerAnalyticsPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                to='/platforms/environments/locus-notebook/'
+                aria-label="Learn more about LOCUS Notebook"
                 className='uppercase primaryColor bold'
+                to='/platforms/environments/locus-notebook/'
               >
                 Learn More &#187;
               </Link>
@@ -82,14 +83,14 @@ const SCustomerAnalyticsPage = ({ data, location }) => {
               style={{ minHeight: `100%` }}
             >
               <StaticImage
-                src='../../images/mockups/QueryLabComp.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/QueryLabComp.png'
               />
               <p className='centered' style={{ flexGrow: `1` }}>
                 <strong
-                  style={{ display: `block`, marginBottom: `.5rem` }}
                   className='darkColor'
+                  style={{ display: `block`, marginBottom: `.5rem` }}
                 >
                   LOCUS QL
                 </strong>
@@ -100,8 +101,9 @@ const SCustomerAnalyticsPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                to='/platforms/environments/locus-ql/'
+                aria-label="Learn more about LOCUS QL"
                 className='uppercase primaryColor bold'
+                to='/platforms/environments/locus-ql/'
               >
                 Learn More &#187;
               </Link>
@@ -114,9 +116,9 @@ const SCustomerAnalyticsPage = ({ data, location }) => {
               style={{ minHeight: `100%` }}
             >
               <StaticImage
-                src='../../images/mockups/AOIMapMockup.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/AOIMapMockup.png'
               />
               <p className='centered' style={{ flexGrow: `1` }}>
                 <strong
@@ -132,8 +134,9 @@ const SCustomerAnalyticsPage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                to='/platforms/locus/dashboards/'
+                aria-label="Learn more about dashboards - maps"
                 className='uppercase primaryColor bold'
+                to='/platforms/locus/dashboards/'
               >
                 Learn More &#187;
               </Link>
@@ -186,7 +189,7 @@ const SCustomerAnalyticsPage = ({ data, location }) => {
       </section>
 
       <section className='linkBanner pageRow'>
-        <Link to='/company/book-a-demo/'>Let us show you how &#187;</Link>
+        <Link aria-label="Book a demo" to='/company/book-a-demo/'>Let us show you how &#187;</Link>
       </section>
 
       <Container className='container'>

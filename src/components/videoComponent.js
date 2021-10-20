@@ -36,8 +36,8 @@ const VideoElement = ({ videoSrc, posterSrc }) => {
 
       {!vidPlaying && (
         <button
+          aria-label='Play/pause video'
           onClick={() => clickHandler(this)}
-          aria-label='Play/pause video element'
         >
           <FaPlay />
         </button>

@@ -35,13 +35,13 @@ const TextInput = ({
         }
         id={id}
         name={name ? name : id}
-        type={inputType ? inputType : 'text'}
         onFocus={() => setPopulated(true)}
         onBlur={(e) => {
           if (e.target.value && e.target.value !== '') setPopulated(true)
           else setPopulated(false)
         }}
         onChange={changeHandler ? changeHandler : ''}
+        type={inputType ? inputType : 'text'}
         value={value ? value : ''}
         valid={invalid ? 'false' : 'true'}
       />

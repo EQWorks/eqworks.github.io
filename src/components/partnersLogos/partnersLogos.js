@@ -31,47 +31,57 @@ const PartnersLogos = ({ dark, colorLogos }) => {
               {!colorLogos ? (
                 <>
                   <StaticImage
-                    src='../../images/Emerge-white.png'
                     alt='Emerge logo'
+                    src='../../images/Emerge-white.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/paymi-white.png'
                     alt='Paymi logo'
+                    src='../../images/paymi-white.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/mastercard-white.png'
                     alt='Mastercard logo'
+                    src='../../images/mastercard-white.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/TMG-white.png'
                     alt='TMG Analytics logo'
+                    src='../../images/TMG-white.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/Opta-white.png'
                     alt='Opta logo'
+                    src='../../images/Opta-white.png'
+                    
                   />
                 </>
               ) : (
                 <>
                   <StaticImage
-                    src='../../images/Emerge-black.png'
                     alt='Emerge logo'
+                    src='../../images/Emerge-black.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/paymi_logo_RGB.png'
                     alt='Paymi logo'
+                    src='../../images/paymi_logo_RGB.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/MastercardLogo.png'
                     alt='Mastercard logo'
+                    src='../../images/MastercardLogo.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/TMGLogo.png'
                     alt='TMG Analytics logo'
+                    src='../../images/TMGLogo.png'
+                    
                   />
                   <StaticImage
-                    src='../../images/OptaLogo.png'
                     alt='Opta logo'
+                    src='../../images/OptaLogo.png'
+                    
                   />
                 </>
               )}

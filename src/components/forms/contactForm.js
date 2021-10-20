@@ -27,19 +27,7 @@ const ContactForm = () => {
     setFormValid(isFormValid)
   }, [values])
 
-  // const [state, handleSubmit] = useForm("xyylvbnb");
-  // if (state.succeeded) {
-  //     return <SuccessMsg />;
-  // }
-
-  // const formSubmit = (e) =>{
-  //     // console.log('submitting...')
-  //     handleSubmit(e);
-  // }
   const handleOnSubmit = (e) => {
-    console.log('submitting form:')
-    console.log(values)
-
     e.preventDefault()
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }))
     axios({
@@ -75,24 +63,24 @@ const ContactForm = () => {
             <Row className=''>
               <Col md={6} sm={12}>
                 <TextInput
-                  id='firstName'
-                  labelText='First Name'
-                  value={values.firstName}
-                  required
                   changeHandler={(e) =>
                     setValue({ ...values, firstName: e.target.value })
                   }
+                  id='firstName'
+                  labelText='First Name'
+                  required
+                  value={values.firstName}
                 />
               </Col>
               <Col>
                 <TextInput
-                  id='lastName'
-                  labelText='Last Name'
-                  value={values.lastName}
-                  required
                   changeHandler={(e) =>
                     setValue({ ...values, lastName: e.target.value })
                   }
+                  id='lastName'
+                  labelText='Last Name'
+                  required
+                  value={values.lastName}
                 />
               </Col>
             </Row>
@@ -100,22 +88,22 @@ const ContactForm = () => {
             <Row className=''>
               <Col md={6} sm={12}>
                 <TextInput
-                  id='company'
-                  labelText='Company'
-                  value={values.company}
                   changeHandler={(e) =>
                     setValue({ ...values, company: e.target.value })
                   }
+                  id='company'
+                  labelText='Company'
+                  value={values.company}
                 />
               </Col>
               <Col>
                 <TextInput
-                  id='jobTitle'
-                  labelText='Job Title'
-                  value={values.jobTitle}
                   changeHandler={(e) =>
                     setValue({ ...values, jobTitle: e.target.value })
                   }
+                  id='jobTitle'
+                  labelText='Job Title'
+                  value={values.jobTitle}
                 />
               </Col>
             </Row>
@@ -123,26 +111,26 @@ const ContactForm = () => {
             <Row className=''>
               <Col md={6} sm={12}>
                 <TextInput
-                  id='email'
-                  inputType='email'
-                  name='_replyto'
-                  labelText='Email'
-                  value={values.email}
                   changeHandler={(e) =>
                     setValue({ ...values, email: e.target.value })
                   }
+                  id='email'
+                  inputType='email'
+                  labelText='Email'
+                  name='_replyto'
                   required
+                  value={values.email}
                 />
               </Col>
               <Col>
                 <TextInput
-                  id='phone'
-                  labelText='Phone'
-                  value={values.phone}
                   changeHandler={(e) =>
                     setValue({ ...values, phone: e.target.value })
                   }
+                  id='phone'
+                  labelText='Phone'
                   required
+                  value={values.phone}
                 />
               </Col>
             </Row>
@@ -150,14 +138,14 @@ const ContactForm = () => {
             <Row className=''>
               <Col>
                 <TextInput
-                  id='message'
-                  name='message'
-                  type='textarea'
-                  labelText='Your Message'
-                  value={values.message}
                   changeHandler={(e) =>
                     setValue({ ...values, message: e.target.value })
                   }
+                  id='message'
+                  labelText='Your Message'
+                  name='message'
+                  type='textarea'
+                  value={values.message}
                 />
               </Col>
             </Row>
@@ -167,13 +155,13 @@ const ContactForm = () => {
                 <div className='flexContainer column justifyCenter'>
                   <div>
                     <input
-                      type='checkbox'
-                      id='accept'
-                      name='accept'
-                      value='yes'
                       onChange={(e) =>
                         setValue({ ...values, accept: e.target.checked })
                       }
+                      id='accept'
+                      name='accept'
+                      type='checkbox'
+                      value='yes'
                     />
                     <label htmlFor='accept'>
                       I consent to EQ Works contacting me{' '}
@@ -188,8 +176,8 @@ const ContactForm = () => {
               <Col>
                 <div className='flexContainer column justifyCenter'>
                   <button
-                    type='submit'
                     disabled={status.submitting || !formValid}
+                    type='submit'
                   >
                     Send &#187;
                   </button>
@@ -198,12 +186,6 @@ const ContactForm = () => {
             </Row>
           </>
         )}
-
-        {/* <Row>
-                    <Col>
-                        <p>{status.info.msg}</p>
-                    </Col>
-                </Row> */}
       </Container>
     </form>
   )

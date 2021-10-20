@@ -31,16 +31,15 @@ const CareersForm = () => {
   }
 
   const formSubmit = (e) => {
-    // console.log('submitting...')
     handleSubmit(e)
   }
 
   return (
     <form
-      onSubmit={formSubmit}
+      className='pageRow'
       encType='multipart/form-data'
       method='POST'
-      className='pageRow'
+      onSubmit={formSubmit}
     >
       <Container className='container'>
         <Row className='pageRowSm'>
@@ -59,24 +58,24 @@ const CareersForm = () => {
         <Row className=''>
           <Col md={6} sm={12}>
             <TextInput
-              id='firstName'
-              labelText='First Name'
-              value={values.firstName}
-              required
               changeHandler={(e) =>
                 setValue({ ...values, firstName: e.target.value })
               }
+              id='firstName'
+              labelText='First Name'
+              required
+              value={values.firstName}
             />
           </Col>
           <Col>
             <TextInput
-              id='lastName'
-              labelText='Last Name'
-              value={values.lastName}
-              required
               changeHandler={(e) =>
                 setValue({ ...values, lastName: e.target.value })
               }
+              id='lastName'
+              labelText='Last Name'
+              required
+              value={values.lastName}
             />
           </Col>
         </Row>
@@ -84,25 +83,25 @@ const CareersForm = () => {
         <Row className=''>
           <Col md={6} sm={12}>
             <TextInput
-              id='email'
-              inputType='email'
-              name='_replyto'
-              labelText='Email'
-              value={values.email}
               changeHandler={(e) =>
                 setValue({ ...values, email: e.target.value })
               }
+              id='email'
+              inputType='email'
+              labelText='Email'
+              name='_replyto'
               required
+              value={values.email}
             />
           </Col>
           <Col>
             <TextInput
-              id='postion'
-              labelText='Postion'
-              value={values.postion}
               changeHandler={(e) =>
                 setValue({ ...values, postion: e.target.value })
               }
+              id='postion'
+              labelText='Postion'
+              value={values.postion}
             />
           </Col>
         </Row>
@@ -110,13 +109,13 @@ const CareersForm = () => {
         <Row className=''>
           <Col md={6} sm={12}>
             <TextInput
-              id='phone'
-              labelText='Phone'
-              value={values.phone}
               changeHandler={(e) =>
                 setValue({ ...values, phone: e.target.value })
               }
+              id='phone'
+              labelText='Phone'
               required
+              value={values.phone}
             />
           </Col>
           <Col style={{ marginBottom: `4rem` }}>
@@ -124,11 +123,11 @@ const CareersForm = () => {
               Upload Resume
             </label>
             <input
-              ref={fileRef}
-              type='file'
+              onChange={() => handleChange()}
               id='myfile'
               name='upload'
-              onChange={() => handleChange()}
+              ref={fileRef}
+              type='file'
             />
             <br />
             <span className='fileName'>{fileName}</span>
@@ -140,13 +139,13 @@ const CareersForm = () => {
             <div className='flexContainer column justifyCenter'>
               <div>
                 <input
-                  type='checkbox'
-                  id='accept'
-                  name='accept'
-                  value='yes'
                   onChange={(e) =>
                     setValue({ ...values, accept: e.target.checked })
                   }
+                  id='accept'
+                  name='accept'
+                  type='checkbox'
+                  value='yes'
                 />
                 <label htmlFor='accept'>
                   I consent to EQ Works contacting me{' '}
@@ -159,7 +158,7 @@ const CareersForm = () => {
         <Row className='pageRowSm'>
           <Col>
             <div className='flexContainer column justifyCenter'>
-              <button type='submit' disabled={state.submitting || !formValid}>
+              <button disabled={state.submitting || !formValid} type='submit'>
                 Send &#187;
               </button>
             </div>

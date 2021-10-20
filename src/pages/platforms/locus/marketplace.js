@@ -15,7 +15,7 @@ const PMarketplacePage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
-    <Layout location={location} title={siteTitle} footerLogos colorLogos>
+    <Layout colorLogos footerLogos location={location} title={siteTitle} >
       <Seo title='Platforms | DAG Builder' />
 
       <header className='blockheader data'>
@@ -41,7 +41,7 @@ const PMarketplacePage = ({ data, location }) => {
       </header>
 
       <Container className='container pageRow'>
-        <Row className='' align='center'>
+        <Row align='center'>
           <Col md={6} sm={12}>
             <h2 className='left'>Advantages</h2>
             <p>
@@ -63,12 +63,12 @@ const PMarketplacePage = ({ data, location }) => {
 
       <section className='linkBanner dark pageRow'>
         <Link to='/company/book-a-demo/'>
-          Book a demo to discover locus &#187;
+          Book a demo to discover LOCUS &#187;
         </Link>
       </section>
 
       <Container className='container pageRow'>
-        <Row className=''>
+        <Row>
           <Col>
             <StaticImage
               alt=''

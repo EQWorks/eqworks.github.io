@@ -39,10 +39,10 @@ const GenericSlideShow = ({ children }) => {
             <li>
               <button
                 aria-label={`View slide ${i + 1}`}
-                onClick={() => setSection(i)}
                 className={
                   activeSection === i ? componentStyles.active : undefined
                 }
+                onClick={() => setSection(i)}
               ></button>
             </li>
           ))}

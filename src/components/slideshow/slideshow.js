@@ -49,15 +49,14 @@ const SlideShow = ({ data }) => {
             {activeSection === 1 && (
               <Row className={componentStyles.slideSection}>
                 {data.newsReleases.nodes.slice(0, 3).map((newsRelease, i) => (
-                  <Col lg={4} md={12} sm={12} key={i}>
+                  <Col key={i} lg={4} md={12} sm={12}>
                     <NewsReleaseTile
                       date={newsRelease.createdAt}
-                      readingTime='2'
                       header={newsRelease.title}
+                      linkPath={`/company/news-releases/${newsRelease.slug}`}
                       snippet={
                         newsRelease.excerpt.childrenMarkdownRemark[0].excerpt
                       }
-                      linkPath={`/company/news-releases/${newsRelease.slug}`}
                     />
                   </Col>
                 ))}
@@ -67,15 +66,14 @@ const SlideShow = ({ data }) => {
             {activeSection === 2 && (
               <Row className={componentStyles.slideSection}>
                 {data.newsReleases.nodes.slice(3, 6).map((newsRelease, i) => (
-                  <Col lg={4} md={12} sm={12} key={i}>
+                  <Col key={i} lg={4} md={12} sm={12} >
                     <NewsReleaseTile
                       date={newsRelease.createdAt}
-                      readingTime='2'
                       header={newsRelease.title}
+                      linkPath={`/company/news-releases/${newsRelease.slug}`}
                       snippet={
                         newsRelease.excerpt.childrenMarkdownRemark[0].excerpt
                       }
-                      linkPath={`/company/news-releases/${newsRelease.slug}`}
                     />
                   </Col>
                 ))}
@@ -85,15 +83,14 @@ const SlideShow = ({ data }) => {
             {activeSection === 3 && (
               <Row className={componentStyles.slideSection}>
                 {data.newsReleases.nodes.slice(6).map((newsRelease, i) => (
-                  <Col lg={4} md={12} sm={12} key={i}>
+                  <Col key={i} lg={4} md={12} sm={12} >
                     <NewsReleaseTile
                       date={newsRelease.createdAt}
-                      readingTime='2'
                       header={newsRelease.title}
+                      linkPath={`/company/news-releases/${newsRelease.slug}`}
                       snippet={
                         newsRelease.excerpt.childrenMarkdownRemark[0].excerpt
                       }
-                      linkPath={`/company/news-releases/${newsRelease.slug}`}
                     />
                   </Col>
                 ))}

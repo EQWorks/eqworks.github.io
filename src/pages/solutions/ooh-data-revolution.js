@@ -49,21 +49,22 @@ const SRealEstatePage = ({ data, location }) => {
           </Col>
         </Row>
 
-        <Row className='pageRow' align='stretch'>
-          <Col md={4} sm={12} className='paddedCol'>
+        <Row align='stretch' className='pageRow'>
+          <Col className='paddedCol' md={4} sm={12} >
             <div
               className='flexContainer column justifyBetween alignCenter'
               style={{ minHeight: `100%` }}
             >
               <StaticImage
-                src='../../images/mockups/AOIMapMockup.png'
                 alt=''
+                src='../../images/mockups/AOIMapMockup.png'
                 layout='fullWidth'
               />
               <p className='centered' style={{ flexGrow: `1` }}>
                 <strong
-                  style={{ display: `block`, marginBottom: `.5rem` }}
                   className='darkColor'
+                  style={{ display: `block`, marginBottom: `.5rem` }}
+                  
                 >
                   AOI Report
                 </strong>
@@ -74,8 +75,9 @@ const SRealEstatePage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                to='/platforms/locus/dashboards/'
+                aria-label="Learn more about dashboards"
                 className='uppercase primaryColor bold'
+                to='/platforms/locus/dashboards/'
               >
                 Learn More &#187;
               </Link>
@@ -88,14 +90,14 @@ const SRealEstatePage = ({ data, location }) => {
               style={{ minHeight: `100%` }}
             >
               <StaticImage
-                src='../../images/mockups/AtomiMacMockups.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/AtomiMacMockups.png'
               />
               <p className='centered' style={{ flexGrow: `1` }}>
                 <strong
-                  style={{ display: `block`, marginBottom: `.5rem` }}
                   className='darkColor'
+                  style={{ display: `block`, marginBottom: `.5rem` }}
                 >
                   Atom
                 </strong>
@@ -106,8 +108,9 @@ const SRealEstatePage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                to='/platforms/atom/'
+                aria-label="Learn more about Atom"
                 className='uppercase primaryColor bold'
+                to='/platforms/atom/'
               >
                 Learn More &#187;
               </Link>
@@ -120,14 +123,14 @@ const SRealEstatePage = ({ data, location }) => {
               style={{ minHeight: `100%` }}
             >
               <StaticImage
-                src='../../images/mockups/IndexJobMockup.png'
                 alt=''
                 layout='fullWidth'
+                src='../../images/mockups/IndexJobMockup.png'
               />
               <p className='centered' style={{ flexGrow: `1` }}>
                 <strong
-                  style={{ display: `block`, marginBottom: `.5rem` }}
                   className='darkColor'
+                  style={{ display: `block`, marginBottom: `.5rem` }}
                 >
                   Index Job
                 </strong>
@@ -138,8 +141,9 @@ const SRealEstatePage = ({ data, location }) => {
                 </span>
               </p>
               <Link
-                to='/platforms/locus/dag-builder/'
+                aria-label="Learn more about DAG Builder"
                 className='uppercase primaryColor bold'
+                to='/platforms/locus/dag-builder/'
               >
                 Learn More &#187;
               </Link>
@@ -192,7 +196,7 @@ const SRealEstatePage = ({ data, location }) => {
         </Container>
 
         <section className='linkBanner pageRow'>
-          <Link to='/'>Learn More &#187;</Link>
+          <Link aria-label="Book a demo" to='/about/book-a-demo/'>Learn More &#187;</Link>
         </section>
       </section>
 

@@ -24,7 +24,6 @@ const PLocusPage = ({ data, location }) => {
               <div>
                 <LocusLogoWhite className='headerLogo' />
                 <h1 className='left noMargin' style={{ display: `inline` }}>
-                  {' '}
                   EQ’s Geospatial Analytics Platform
                 </h1>
               </div>
@@ -79,7 +78,9 @@ const PLocusPage = ({ data, location }) => {
                       EQ’s own proprietary human movement datasets and the
                       extended EQ data marketplace.
                     </p>
-                    <Link to='/platforms/environments/locus-ql/'>
+                    <Link 
+                      aria-label="Learn more about LOCUS QL"
+                      to='/platforms/environments/locus-ql/'>
                       <strong className='uppercase primaryColor'>
                         Learn More &#187;
                       </strong>
@@ -106,7 +107,9 @@ const PLocusPage = ({ data, location }) => {
                       human movement datasets and the extended EQ data
                       marketplace.
                     </p>
-                    <Link to='/platforms/environments/locus-notebook/'>
+                    <Link 
+                      aria-label="Learn more about LOCUS Notebook"
+                      to='/platforms/environments/locus-notebook/'>
                       <strong className='uppercase primaryColor'>
                         Learn More &#187;
                       </strong>
@@ -126,7 +129,7 @@ const PLocusPage = ({ data, location }) => {
       </section>
 
       <Container className='container'>
-        <Row className='pageRow lined' align='center' justify='between'>
+        <Row align='center' className='pageRow lined' justify='between'>
           <Col md={6} sm={12}>
             <div style={{ maxWidth: `28rem` }}>
               <h2 className='left'>
@@ -140,7 +143,9 @@ const PLocusPage = ({ data, location }) => {
                 transformation capabilities built-in to allow for further
                 integration with tools such as LOCUS Notebook and LOCUS QL.
               </p>
-              <Link to='/platforms/locus/connection-hub/'>
+              <Link 
+                aria-label="Learn more about connection hub"
+                to='/platforms/locus/connection-hub/'>
                 <strong className='uppercase primaryColor'>
                   Learn More &#187;
                 </strong>
@@ -151,22 +156,22 @@ const PLocusPage = ({ data, location }) => {
           <Col className='imageCol'>
             <StaticImage
               alt=''
-              src='../../images/mockups/ConectionHubMockup.png'
               layout='fullWidth'
+              src='../../images/mockups/ConectionHubMockup.png'
             />
           </Col>
         </Row>
 
         <Row
-          className='pageRow mobileFlexReverse lined'
           align='center'
+          className='pageRow mobileFlexReverse lined'
           justify='between'
         >
           <Col md={6} className='imageCol'>
             <StaticImage
               alt=''
-              src='../../images/mockups/DAGBuilderMockup.png'
               layout='fullWidth'
+              src='../../images/mockups/DAGBuilderMockup.png'
             />
           </Col>
 
@@ -183,7 +188,9 @@ const PLocusPage = ({ data, location }) => {
                   engineered to crunch (and munch) your geospatial workflows
                   with over twenty (20) built-in helper stages.
                 </p>
-                <Link to='/platforms/locus/dag-builder/'>
+                <Link 
+                  aria-label="Learn more about DAG Builder"
+                  to='/platforms/locus/dag-builder/'>
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>
@@ -193,7 +200,7 @@ const PLocusPage = ({ data, location }) => {
           </Col>
         </Row>
 
-        <Row className='pageRow lined' align='center' justify='between'>
+        <Row align='center' className='pageRow lined' justify='between'>
           <Col md={6}>
             <div style={{ maxWidth: `28rem` }}>
               <h2 className='left'>
@@ -209,7 +216,9 @@ const PLocusPage = ({ data, location }) => {
                 got thousands of datasets ready to go within the LOCUS
                 Marketplace.
               </p>
-              <Link to='/platforms/locus/marketplace/'>
+              <Link 
+                aria-label="Learn more about marketplace"
+                to='/platforms/locus/marketplace/'>
                 <strong className='uppercase primaryColor'>
                   Learn More &#187;
                 </strong>
@@ -217,25 +226,25 @@ const PLocusPage = ({ data, location }) => {
             </div>
           </Col>
 
-          <Col md={6} className='imageCol'>
+          <Col className='imageCol' md={6}>
             <StaticImage
               alt=''
-              src='../../images/mockups/MarketplaceMockup.png'
               layout='fullWidth'
+              src='../../images/mockups/MarketplaceMockup.png'
             />
           </Col>
         </Row>
 
         <Row
-          className='pageRow mobileFlexReverse lined'
           align='center'
+          className='pageRow mobileFlexReverse lined'
           justify='between'
         >
           <Col md={6} className='imageCol'>
             <StaticImage
               alt=''
-              src='../../images/mockups/Locus Dashboards Mockup.png'
               layout='fullWidth'
+              src='../../images/mockups/Locus Dashboards Mockup.png'
             />
           </Col>
 
@@ -255,7 +264,9 @@ const PLocusPage = ({ data, location }) => {
                   schemes, templates and reports on-demand - all without
                   requiring deep technical expertise. Book your demo today.
                 </p>
-                <Link to='/platforms/locus/dashboards/'>
+                <Link 
+                  aria-label="Learn more about dashboards"
+                  to='/platforms/locus/dashboards/'>
                   <strong className='uppercase primaryColor'>
                     Learn More &#187;
                   </strong>

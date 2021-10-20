@@ -7,11 +7,13 @@ const NewsReleaseTile = ({ date, readingTime, header, snippet, linkPath }) => {
     <div className={componentStyles.tile}>
       <div className={`${componentStyles.date} flexContainer`}>
         <span>{date}</span>
-        <span className={componentStyles.readingTime}>{readingTime} mins</span>
+        {readingTime &&
+          <span className={componentStyles.readingTime}>{readingTime} mins</span>
+        }
       </div>
       <h3 className={componentStyles.header}>{header}</h3>
       <div className={componentStyles.excerpt}>{snippet}</div>
-      <Link to={linkPath} className={componentStyles.link}>
+      <Link className={componentStyles.link} to={linkPath}>
         Read more &#187;
       </Link>
     </div>

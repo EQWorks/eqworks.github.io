@@ -14,15 +14,13 @@ const Layout = ({
   return (
     <ScreenClassProvider className='global-wrapper'>
       <Nav />
-
       <main>{children}</main>
-
       <Footer
-        showPartners={footerLogos}
+        colorLogos={colorLogos}
         linkHdr={footerHdr}
         linkPath={footerPath}
         linkText={footerTxt}
-        colorLogos={colorLogos}
+        showPartners={footerLogos}
       />
     </ScreenClassProvider>
   )

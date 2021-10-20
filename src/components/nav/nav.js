@@ -15,7 +15,6 @@ const Nav = () => {
   const [y, setY] = useState(isBrowser ? window.scrollY : 0)
   const [navVisible, setNavVisible] = useState(true)
   const [drawerOpen, setDrawerOpen] = useState(false)
-  // if(!isBrowser) document.body.style.overflow = 'unset';
 
   const clickHandler = (dropDown) => {
     if (dropDown === dropdownActive) setDropDown(null)
@@ -30,10 +29,8 @@ const Nav = () => {
       } else {
         const window = e.currentTarget
         if (y > window.scrollY || window.scrollY <= 100) {
-          // console.log("scrolling up");
           setNavVisible(true)
         } else if (y < window.scrollY) {
-          // console.log("scrolling down");
           setNavVisible(false)
           setDropDown(null)
         }
@@ -45,8 +42,6 @@ const Nav = () => {
 
   const handleDrawerToggle = () => {
     setDrawerOpen(!drawerOpen)
-    // if(drawerOpen) document.body.style.overflow = 'unset';
-    // else document.body.style.overflow = 'hidden';
   }
 
   useEffect(() => {
@@ -70,17 +65,17 @@ const Nav = () => {
         <Row align='center'>
           <Col>
             <div className={componentStyles.navContainer}>
-              <Link to='/' className={componentStyles.logoLink}>
+              <Link className={componentStyles.logoLink} to='/'>
                 <Logo />
               </Link>
 
               <button
-                id='topnav-menuBtn'
-                className={componentStyles.hamburger}
-                aria-haspopup='true'
-                aria-roledescription='Open the menu'
-                aria-label='Open the menu'
                 aria-expanded={drawerOpen}
+                aria-haspopup='true'
+                aria-label='Open the menu'
+                aria-roledescription='Open the menu'
+                className={componentStyles.hamburger}
+                id='topnav-menuBtn'
                 onClick={() => handleDrawerToggle()}
               >
                 <span></span>
@@ -100,10 +95,9 @@ const Nav = () => {
               >
                 <li role='none' className={componentStyles.dropdown}>
                   <button
-                    href='#'
                     aria-haspopup='true'
-                    onClick={() => clickHandler('solutions')}
                     aria-expanded={dropdownActive === 'solutions'}
+                    onClick={() => clickHandler('solutions')}
                   >
                     <span>Solutions</span>
                   </button>
@@ -173,10 +167,10 @@ const Nav = () => {
 
                 <li role='none' className={componentStyles.dropdown}>
                   <button
-                    href='#'
-                    aria-haspopup='true'
-                    onClick={() => clickHandler('platforms')}
                     aria-expanded={dropdownActive === 'platforms'}
+                    aria-haspopup='true'
+                    href='#'
+                    onClick={() => clickHandler('platforms')}
                   >
                     <span>Platforms</span>
                   </button>
@@ -257,8 +251,8 @@ const Nav = () => {
                         <li>
                           <a
                             href='https://www.paymi.com/'
-                            target='_blank'
                             rel='noreferrer'
+                            target='_blank'
                           >
                             <strong>Paymi</strong>
                           </a>
@@ -270,10 +264,9 @@ const Nav = () => {
 
                 <li role='none' className={componentStyles.dropdown}>
                   <button
-                    href='#'
+                    aria-expanded={dropdownActive === 'learn'}
                     aria-haspopup='true'
                     onClick={() => clickHandler('learn')}
-                    aria-expanded={dropdownActive === 'learn'}
                   >
                     <span>Learn</span>
                   </button>
@@ -300,10 +293,9 @@ const Nav = () => {
 
                 <li role='none' className={componentStyles.dropdown}>
                   <button
-                    href='#'
+                    aria-expanded={dropdownActive === 'company'}
                     aria-haspopup='true'
                     onClick={() => clickHandler('company')}
-                    aria-expanded={dropdownActive === 'company'}
                   >
                     <span>Company</span>
                   </button>
