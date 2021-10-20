@@ -230,7 +230,7 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         text: 'News & Events'
                       },
                       {
-                        path: '/company/careers/',
+                        path: '/company/contact-us/',
                         text: 'Contact Us'
                       }
                     ]}
