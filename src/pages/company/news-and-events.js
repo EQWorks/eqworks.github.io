@@ -122,7 +122,7 @@ const NewsPage = ({ data, location }) => {
                     <Button
                       aria-label='View Small Cap Growth Virtual Investor Conference page'
                       external
-                      linkPath='https://www.virtualinvestorconferences.com/?DisplayItem=E621528&utm_source=EQ&utm_medium=direct+link&utm_campaign=010721SmallCapVIC&utm_id=010721SmallCapVIC'
+                      linkPath='/SC_621528_4_12_1_0.mp4'
                       text='Learn More'
                     />
                   </div>
