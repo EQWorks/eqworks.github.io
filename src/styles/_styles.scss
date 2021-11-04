@@ -992,12 +992,15 @@ iframe {
   background-color: $medGrey;
   position: relative;
   align-items: flex-start;
-  // margin-bottom: 12rem;
-  margin-bottom: 20vw;
+  margin-bottom: 15vh;
   * {
     color: black;
     text-align: left;
   }
+  @media screen and (max-width: 950px) {
+    margin-bottom: 3.5rem;
+  }
+
   &::after {
     content: '';
     background-image: url('./greyRoundDownSolid.svg');
@@ -1007,7 +1010,6 @@ iframe {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    // transform: translateY(100%);
     background-size: 100%;
     background-position: center bottom;
     z-index: -1;
