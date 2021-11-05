@@ -57,7 +57,6 @@ const options = {
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
       return (
         <>
-          <h2>Embedded Asset</h2>
           <pre>
             <code>{JSON.stringify(node, null, 2)}</code>
           </pre>
@@ -85,7 +84,6 @@ const NewsRelease = ({ data }) => {
 
               <div className='flexContainer'>
                 <span>{data.contentfulPost.author.name}</span>
-
                 <span>{data.contentfulPost.createdAt}</span>
               </div>
             </Col>
