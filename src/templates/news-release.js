@@ -5,7 +5,6 @@ import { BLOCKS, MARKS } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 
 import Layout from '../components/layout'
-// import Img from "gatsby-image"
 import Seo from '../components/seo'
 
 export const query = graphql`
@@ -62,6 +61,12 @@ const options = {
           </pre>
         </>
       )
+    },
+
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      if (node.data.target.fixed.src) {
+        return <img alt='' src={node.data.target.fixed.src} />
+      }
     }
   }
 }
@@ -73,8 +78,8 @@ const NewsRelease = ({ data }) => {
     <Layout>
       <Seo title={data.contentfulPost.title} />
 
-      <header className='blockheader sectionGreyRoundedSolid'>
-        <Container>
+      <header className='sectionGreyRoundedSolid'>
+        <Container className='container'>
           <Row>
             <Col>
               <h1 className='left newsHdr'>
@@ -92,7 +97,7 @@ const NewsRelease = ({ data }) => {
       </header>
 
       <main className='postContent'>
-        <Container>
+        <Container className='container'>
           <Row>
             <Col>
               {content && renderRichText(data.contentfulPost.content, options)}
