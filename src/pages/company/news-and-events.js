@@ -66,24 +66,7 @@ const NewsPage = ({ data, location }) => {
             <h2>EQ In the News</h2>
           </Col>
         </Row>
-        {data.youTubeVids.edges.length > 0 && (
-          <Row>
-            {data.youTubeVids.edges.map((video, i) => (
-              <Col md={6} sm={12} key={i}>
-                <iframe
-                  src={video.node.url}
-                  title={video.node.title}
-                  frameBorder='0'
-                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                  allowfullscreen
-                ></iframe>
-              </Col>
-            ))}
-          </Row>
-        )}
-      </Container>
 
-      <Container className='container pageRow'>
         <Row justify='center' align='stretch'>
           <Col lg={5} sm={12}>
             <ExternalNewsTile
@@ -105,6 +88,24 @@ const NewsPage = ({ data, location }) => {
             />
           </Col>
         </Row>
+      </Container>
+
+      <Container className='container pageRow'>
+        {data.youTubeVids.edges.length > 0 && (
+          <Row>
+            {data.youTubeVids.edges.map((video, i) => (
+              <Col md={6} sm={12} key={i}>
+                <iframe
+                  src={video.node.url}
+                  title={video.node.title}
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowfullscreen
+                ></iframe>
+              </Col>
+            ))}
+          </Row>
+        )}
       </Container>
 
       <section className='sectionGreyRoundedTop'>
