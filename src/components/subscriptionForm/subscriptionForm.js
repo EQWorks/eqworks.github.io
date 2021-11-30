@@ -24,10 +24,7 @@ const SubscriptionForm = () => {
 
   return (
     <>
-      <section
-        className='sectionBlueBackground'
-        style={{ paddingBottom: `4rem` }}
-      >
+      <section className={componentStyles.container}>
         <h3>Sign Up For Our Newsletter</h3>
         <p className='centered fontSm'>
           Make sure you never miss any of our updates by getting the news

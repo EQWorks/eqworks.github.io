@@ -979,13 +979,11 @@ iframe {
   @include darkStyle;
 }
 .sectionGreyBackground {
-  // padding: 3rem 0;
   padding: 4vw 0;
   @include greyStyle;
 }
 .sectionGreyGradBackground {
   @include greyGradient;
-  // padding: 7.5rem 0;
   padding: 3.5vw 0;
 }
 .sectionGreyRoundedSolid {

@@ -37,6 +37,7 @@
     "gatsby-transformer-sharp": "^3.14.0",
     "mapbox-gl": "^1.13.0",
     "node-fetch": "^2.6.5",
+    "npm-force-resolutions": "0.0.10",
     "prismjs": "^1.25.0",
     "react": "^17.0.1",
     "react-device-detect": "^2.0.1",
@@ -71,6 +72,14 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "prettier --check .",
-    "lint:format": "prettier --write ."
+    "lint:format": "prettier --write .",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "immer": "9.0.6",
+    "trim": "0.0.3",
+    "set-value": "4.0.1",
+    "object-path": "0.11.8",
+    "ua-parser-js": "0.7.28"
   }
 }
