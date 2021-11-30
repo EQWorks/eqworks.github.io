@@ -8,9 +8,33 @@ import Seo from '../../components/seo'
 import SlideShow from '../../components/slideshow/slideshow'
 import Button from '../../components/button/button'
 import SubscriptionForm from '../../components/subscriptionForm/subscriptionForm'
+import ExternalNewsTile from '../../components/externalNewsTile/externalNewsTile'
+
+export const pageQuery = graphql`
+  {
+    siteData: site {
+      siteMetadata {
+        title
+      }
+    }
+
+    youTubeVids: allContentfulYouTubeVideo(
+      sort: { fields: createdAt, order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          title
+          url
+        }
+      }
+    }
+  }
+`
 
 const NewsPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.siteData.siteMetadata.title || `Title`
+
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title='News and Events' />
@@ -42,32 +66,43 @@ const NewsPage = ({ data, location }) => {
             <h2>EQ In the News</h2>
           </Col>
         </Row>
-        <Row>
-          <Col md={6} sm={12}>
-            <iframe
-              src='https://www.youtube.com/embed/Cp_DPsdAqmg'
-              title='YouTube video player'
-              frameborder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowfullscreen
-            ></iframe>
-          </Col>
-          <Col md={6} sm={12}>
-            <iframe
-              src='https://www.youtube.com/embed/ap1ucdHdip0'
-              title='YouTube video player'
-              frameborder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowfullscreen
-            ></iframe>
-          </Col>
-        </Row>
+        {data.youTubeVids.edges.length > 0 && (
+          <Row>
+            {data.youTubeVids.edges.map((video, i) => (
+              <Col md={6} sm={12} key={i}>
+                <iframe
+                  src={video.node.url}
+                  title={video.node.title}
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowfullscreen
+                ></iframe>
+              </Col>
+            ))}
+          </Row>
+        )}
       </Container>
 
       <Container className='container pageRow'>
-        <Row className=''>
-          <Col>
-            <SubscriptionForm />
+        <Row justify='center' align='stretch'>
+          <Col lg={5} sm={12}>
+            <ExternalNewsTile
+              image='/investOntarioArticleBanner.png'
+              date='November 9, 2021'
+              header='EQ Works is revolutionizing how companies understand their customers from its “home base” in Toronto'
+              body='Knowledge is power, but many companies have historically known very little about their customers—at least until data analytics companies like EQ Works came along.'
+              linkPath='https://www.investontario.ca/success-stories/eq-works-revolutionizing-how-companies-understand-their-customers-its-home-base-toronto?utm_source=linkedin&utm_medium=social&utm_campaign=weekly'
+            />
+          </Col>
+
+          <Col lg={5} sm={12}>
+            <ExternalNewsTile
+              image='/paymiArticleBanner.png'
+              date='October 28, 2021'
+              header='Paymi revamps its strategy to improve its youth appeal'
+              body='A new look, onboarding process and rewards messaging aim to help the cashback app simplify its relationship with users and brands.'
+              linkPath='https://strategyonline.ca/2021/10/28/paymi-revamps-its-strategy-to-improve-its-youth-appeal/'
+            />
           </Col>
         </Row>
       </Container>
@@ -210,19 +245,17 @@ const NewsPage = ({ data, location }) => {
             </Col>
           </Row>
         </Container>
+
+        <Container className='container pageRow'>
+          <Row className=''>
+            <Col>
+              <SubscriptionForm />
+            </Col>
+          </Row>
+        </Container>
       </section>
     </Layout>
   )
 }
 
 export default NewsPage
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-  }
-`
