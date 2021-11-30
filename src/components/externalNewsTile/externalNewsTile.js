@@ -14,7 +14,7 @@ const ExternalNewsTile = ({ date, header, body, image, linkPath }) => {
         <p className={componentStyles.excerpt}>{body}</p>
       </div>
 
-      <a className={componentStyles.link} href={linkPath}>
+      <a className={componentStyles.link} href={linkPath} target="_blank">
         Read more &#187;
       </a>
     </div>
