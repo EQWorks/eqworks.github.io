@@ -226,7 +226,7 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         text: 'Careers'
                       },
                       {
-                        path: '/',
+                        path: '/company/news-and-events/',
                         text: 'News & Events'
                       },
                       {
