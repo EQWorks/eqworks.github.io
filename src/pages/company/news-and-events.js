@@ -269,7 +269,7 @@ const NewsPage = ({ data, location }) => {
                       aria-label='View Canaccord Genuity 41st Annual Growth Conference (Virtual) page'
                       external
                       linkPath='https://www.canaccordgenuity.com/capital-markets/about-us/events/archive/'
-                      text='Learn More'
+                      text='Watch Now'
                     />
                   </div>
                 </div>
