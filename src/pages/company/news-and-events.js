@@ -134,11 +134,16 @@ const NewsPage = ({ data, location }) => {
 
                   <p className='bold'>
                     <span className='bold darkColor'>
-                      SNN Network Canada Virtual Event 2021 | Big Data &amp; Artificial Intelligence Panel
+                      SNN Network Canada Virtual Event 2021 | Big Data &amp;
+                      Artificial Intelligence Panel
                     </span>
                     <br />
                     <span className='fontSm'>
-                      SNN Network with lead sponsor, Small Cap Discoveries, are proud to present the "SNN Network Canada Virtual Event" on December 7-9, 2021. SNN Network and Small Cap Discoveries, the leading Canadian MicroCap newsletter, have teamed up to highlight our neighbors to the North: CANADA!
+                      SNN Network with lead sponsor, Small Cap Discoveries, are
+                      proud to present the "SNN Network Canada Virtual Event" on
+                      December 7-9, 2021. SNN Network and Small Cap Discoveries,
+                      the leading Canadian MicroCap newsletter, have teamed up
+                      to highlight our neighbors to the North: CANADA!
                     </span>
                   </p>
 
@@ -156,7 +161,6 @@ const NewsPage = ({ data, location }) => {
                 </div>
               </div>
 
-
               <div className='eventRow'>
                 <img alt='' src='/eventImg4.png' />
 
@@ -172,7 +176,11 @@ const NewsPage = ({ data, location }) => {
                     </span>
                     <br />
                     <span className='fontSm'>
-                      Hear from CEO Geoffrey Rotstein about the Company’s comprehensive data platforms, which utilize proprietary mapping applications, predictive algorithms, and data partnerships to build targeted and strategic marketing acquisition campaigns for its clients
+                      Hear from CEO Geoffrey Rotstein about the Company’s
+                      comprehensive data platforms, which utilize proprietary
+                      mapping applications, predictive algorithms, and data
+                      partnerships to build targeted and strategic marketing
+                      acquisition campaigns for its clients
                     </span>
                   </p>
 
@@ -189,7 +197,6 @@ const NewsPage = ({ data, location }) => {
                   </div>
                 </div>
               </div>
-
             </Col>
           </Row>
 
