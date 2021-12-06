@@ -234,7 +234,7 @@ const NewsPage = ({ data, location }) => {
                       aria-label='View Small Cap Growth Virtual Investor Conference page'
                       external
                       linkPath='/SC_621528_4_12_1_0.mp4'
-                      text='Learn More'
+                      text='Watch Now'
                     />
                   </div>
                 </div>
@@ -269,7 +269,7 @@ const NewsPage = ({ data, location }) => {
                       aria-label='View Canaccord Genuity 41st Annual Growth Conference (Virtual) page'
                       external
                       linkPath='https://www.canaccordgenuity.com/capital-markets/about-us/events/archive/'
-                      text='Watch Now'
+                      text='Learn More'
                     />
                   </div>
                 </div>
