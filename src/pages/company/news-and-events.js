@@ -119,9 +119,84 @@ const NewsPage = ({ data, location }) => {
           <Row className='pageRowSm'>
             <Col>
               <h3>Upcoming Events</h3>
-              <p className='centered'>
+              {/* <p className='centered'>
                 There are currently no upcoming events.
-              </p>
+              </p> */}
+
+              <div className='eventRow'>
+                <img alt='' src='/eventImg4.png' />
+
+                <div>
+                  <div className='dateInfo'>
+                    <div className='dateIndicator true'></div>
+                    <span>December 7, 2021 | 9:15 am EST</span>
+                  </div>
+
+                  <p className='bold'>
+                    <span className='bold darkColor'>
+                      SNN Network Canada Virtual Event 2021 | Big Data &amp;
+                      Artificial Intelligence Panel
+                    </span>
+                    <br />
+                    <span className='fontSm'>
+                      SNN Network with lead sponsor, Small Cap Discoveries, are
+                      proud to present the "SNN Network Canada Virtual Event" on
+                      December 7-9, 2021. SNN Network and Small Cap Discoveries,
+                      the leading Canadian MicroCap newsletter, have teamed up
+                      to highlight our neighbors to the North: CANADA!
+                    </span>
+                  </p>
+
+                  <div
+                    className='buttonContainer flexContainer mobileColumn'
+                    style={{ marginTop: `1rem` }}
+                  >
+                    <Button
+                      aria-label='View Small Cap Growth Virtual Investor Conference page'
+                      external
+                      linkPath='https://canada.snn.network/agenda?track_id=18292'
+                      text='Watch Now'
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className='eventRow'>
+                <img alt='' src='/eventImg4.png' />
+
+                <div>
+                  <div className='dateInfo'>
+                    <div className='dateIndicator true'></div>
+                    <span>December 9, 2021 | 10:00 am EST</span>
+                  </div>
+
+                  <p className='bold'>
+                    <span className='bold darkColor'>
+                      EQ Works Corporate Presentation
+                    </span>
+                    <br />
+                    <span className='fontSm'>
+                      Hear from CEO Geoffrey Rotstein about the Company’s
+                      comprehensive data platforms, which utilize proprietary
+                      mapping applications, predictive algorithms, and data
+                      partnerships to build targeted and strategic marketing
+                      acquisition campaigns for its clients
+                    </span>
+                  </p>
+
+                  <div
+                    className='buttonContainer flexContainer mobileColumn'
+                    style={{ marginTop: `1rem` }}
+                  >
+                    <Button
+                      aria-label='Sign up for EQ Works Corporate Presentation'
+                      external
+                      linkPath='https://www.webcaster4.com/Webcast/Page/2813/43864'
+                      text='Watch Now'
+                    />
+                  </div>
+                </div>
+              </div>
             </Col>
           </Row>
 
