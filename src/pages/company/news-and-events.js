@@ -92,7 +92,7 @@ const NewsPage = ({ data, location }) => {
 
       <Container className='container pageRow'>
         {data.youTubeVids.edges.length > 0 && (
-          <Row>
+          <Row justify='center'>
             {data.youTubeVids.edges.map((video, i) => (
               <Col md={6} sm={12} key={i}>
                 <iframe
@@ -119,16 +119,59 @@ const NewsPage = ({ data, location }) => {
           <Row className='pageRowSm'>
             <Col>
               <h3>Upcoming Events</h3>
-              {/* <p className='centered'>
+              <p className='centered'>
                 There are currently no upcoming events.
-              </p> */}
+              </p>
+            </Col>
+          </Row>
+
+          <Row className='pageRowSm'>
+            <Col>
+              <h3>Recent Past Events</h3>
 
               <div className='eventRow'>
                 <img alt='' src='/eventImg4.png' />
 
                 <div>
                   <div className='dateInfo'>
-                    <div className='dateIndicator true'></div>
+                    <div className='dateIndicator false'></div>
+                    <span>December 9, 2021 | 10:00 am EST</span>
+                  </div>
+
+                  <p className='bold'>
+                    <span className='bold darkColor'>
+                      EQ Works Corporate Presentation
+                    </span>
+                    <br />
+                    <span className='fontSm'>
+                      Hear from CEO Geoffrey Rotstein about the Company’s
+                      comprehensive data platforms, which utilize proprietary
+                      mapping applications, predictive algorithms, and data
+                      partnerships to build targeted and strategic marketing
+                      acquisition campaigns for its clients
+                    </span>
+                  </p>
+
+                  <div
+                    className='buttonContainer flexContainer mobileColumn'
+                    style={{ marginTop: `1rem` }}
+                  >
+                    <Button
+                      aria-label='Sign up for EQ Works Corporate Presentation'
+                      external
+                      linkPath='https://www.webcaster4.com/Webcast/Page/2813/43864'
+                      text='Watch Now'
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className='eventRow'>
+                <img alt='' src='/eventImg4.png' />
+
+                <div>
+                  <div className='dateInfo'>
+                    <div className='dateIndicator false'></div>
                     <span>December 7, 2021 | 9:15 am EST</span>
                   </div>
 
@@ -160,49 +203,6 @@ const NewsPage = ({ data, location }) => {
                   </div>
                 </div>
               </div>
-
-              <div className='eventRow'>
-                <img alt='' src='/eventImg4.png' />
-
-                <div>
-                  <div className='dateInfo'>
-                    <div className='dateIndicator true'></div>
-                    <span>December 9, 2021 | 10:00 am EST</span>
-                  </div>
-
-                  <p className='bold'>
-                    <span className='bold darkColor'>
-                      EQ Works Corporate Presentation
-                    </span>
-                    <br />
-                    <span className='fontSm'>
-                      Hear from CEO Geoffrey Rotstein about the Company’s
-                      comprehensive data platforms, which utilize proprietary
-                      mapping applications, predictive algorithms, and data
-                      partnerships to build targeted and strategic marketing
-                      acquisition campaigns for its clients
-                    </span>
-                  </p>
-
-                  <div
-                    className='buttonContainer flexContainer mobileColumn'
-                    style={{ marginTop: `1rem` }}
-                  >
-                    <Button
-                      aria-label='Sign up for EQ Works Corporate Presentation'
-                      external
-                      linkPath='https://www.webcaster4.com/Webcast/Page/2813/43864'
-                      text='Watch Now'
-                    />
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-
-          <Row className='pageRowSm'>
-            <Col>
-              <h3>Recent Past Events</h3>
 
               <div className='eventRow'>
                 <img alt='' src='/eventImg3.png' />
