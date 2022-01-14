@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.list {
+  list-style: none;
+}
+.listItem {
+  border: $greyBorder;
+  margin: 1.5rem;
+  padding: 1.5rem;
+
+  h3 {
+    font-size: 1.5rem;
+    text-align: left;
+    color: $brandPrimary;
+  }
+}
+.buttonCont {
+  margin-top: 1.5rem;
+}
