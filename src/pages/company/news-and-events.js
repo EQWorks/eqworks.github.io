@@ -1,5 +1,4 @@
-import * as React from 'react'
-
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import { Container, Row, Col } from 'react-grid-system'
 
@@ -34,6 +33,12 @@ export const pageQuery = graphql`
 
 const NewsPage = ({ data, location }) => {
   const siteTitle = data.siteData.siteMetadata.title || `Title`
+
+  const [viewMore, toggleViewMore] = useState(false)
+
+  const handleMoreClick = () => {
+    toggleViewMore(!viewMore)
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -92,19 +97,49 @@ const NewsPage = ({ data, location }) => {
 
       <Container className='container pageRow'>
         {data.youTubeVids.edges.length > 0 && (
-          <Row justify='center'>
-            {data.youTubeVids.edges.map((video, i) => (
-              <Col md={6} sm={12} key={i}>
-                <iframe
-                  src={video.node.url}
-                  title={video.node.title}
-                  frameBorder='0'
-                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                  allowfullscreen
-                ></iframe>
-              </Col>
-            ))}
-          </Row>
+          <>
+            <Row justify='center'>
+              {data.youTubeVids.edges.slice(0, 2).map((video, i) => (
+                <Col md={6} sm={12} key={i}>
+                  <iframe
+                    src={video.node.url}
+                    title={video.node.title}
+                    frameBorder='0'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                    allowfullscreen
+                  ></iframe>
+                </Col>
+              ))}
+            </Row>
+            {data.youTubeVids.edges.length > 2 && (
+              <Row style={{ margin: `3rem 0` }} justify='center'>
+                <Col md={3} sm={12}>
+                  <button
+                    aria-label='View more EQ in the News Items'
+                    className='buttonStyle uppercase primaryColor centered flexContainer alignCenter'
+                    onClick={() => handleMoreClick()}
+                  >
+                    {viewMore ? 'View Less' : 'View More'}
+                  </button>
+                </Col>
+              </Row>
+            )}
+            {data.youTubeVids.edges.length > 2 && viewMore && (
+              <Row justify='center'>
+                {data.youTubeVids.edges.slice(2).map((video, i) => (
+                  <Col md={6} sm={12} key={i}>
+                    <iframe
+                      src={video.node.url}
+                      title={video.node.title}
+                      frameBorder='0'
+                      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                      allowfullscreen
+                    ></iframe>
+                  </Col>
+                ))}
+              </Row>
+            )}
+          </>
         )}
       </Container>
 
