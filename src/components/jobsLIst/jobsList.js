@@ -16,11 +16,6 @@ const JobsList = ({ jobsArr }) => {
             <li className={componentStyles.listItem} key={job.shortcode}>
               <h3>{job.title}</h3>
               <div
-                // dangerouslySetInnerHTML={{
-                //   __html: `${job.description
-                //     .split('</p>')[0]
-                //     .replace('<br>', '')}`
-                // }}
                 dangerouslySetInnerHTML={{
                   __html: `${
                     job.description.indexOf('<strong>The Role</strong>') >= 0
