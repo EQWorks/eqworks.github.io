@@ -2,11 +2,13 @@
 
 .list {
   list-style: none;
+  padding-inline-start: 0;
 }
 .listItem {
   border: $greyBorder;
-  margin: 1.5rem;
+  margin: 1.5rem 0;
   padding: 1.5rem;
+  display: block;
 
   h3 {
     font-size: 1.5rem;
@@ -16,4 +18,7 @@
 }
 .buttonCont {
   margin-top: 1.5rem;
+  a {
+    width: auto;
+  }
 }
