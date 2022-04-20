@@ -154,15 +154,22 @@ const NewsPage = ({ data, location }) => {
           <Row className='pageRowSm'>
             <Col>
               <h3>Upcoming Events</h3>
-              {/* <p className='centered'>
+              <p className='centered'>
                 There are currently no upcoming events.
-              </p> */}
+              </p>
+            </Col>
+          </Row>
+
+          <Row className='pageRowSm'>
+            <Col>
+              <h3>Recent Past Events</h3>
+
               <div className='eventRow'>
                 <img alt='' src='/cgTechEventImg.png' />
 
                 <div>
                   <div className='dateInfo'>
-                    <div className='dateIndicator true'></div>
+                    <div className='dateIndicator false'></div>
                     <span>March 29, 2022 | 2:00 pm EST</span>
                   </div>
 
@@ -179,7 +186,7 @@ const NewsPage = ({ data, location }) => {
                     </span>
                   </p>
 
-                  <div
+                  {/* <div
                     className='buttonContainer flexContainer mobileColumn'
                     style={{ marginTop: `1rem` }}
                   >
@@ -190,15 +197,9 @@ const NewsPage = ({ data, location }) => {
                       linkPath='https://www.meetmax.com/sched/event_81533/investor_reg_new.html?attendee_role_id=INVESTOR'
                       text='Sign Up'
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
-            </Col>
-          </Row>
-
-          <Row className='pageRowSm'>
-            <Col>
-              <h3>Recent Past Events</h3>
 
               <div className='eventRow'>
                 <img alt='' src='/eventImg4.png' />
