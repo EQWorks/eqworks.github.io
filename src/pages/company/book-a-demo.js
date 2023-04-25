@@ -22,7 +22,7 @@ const BoookDemoPage = ({ data, location }) => {
       <Container className='container pageRow'>
         <Row className=''>
           <Col>
-            <h2>Learn from our Team of Experts</h2>
+            <h2>Learn from our Team of Expert</h2>
             <p className='centered'>
               Interested in seeing how our platforms can make a difference for
               your business? Reach out to book a demo and one of our talented
