@@ -49,38 +49,6 @@ const BoookDemoPage = ({ data, location }) => {
                   Vice President
                 </p>
               </div>
-
-              <div>
-                <div style={{ width: `7.5rem`, margin: `0 auto` }}>
-                  <StaticImage
-                    alt=''
-                    src='../../images/team/Manuel.png'
-                    layout='fullWidth'
-                  />
-                </div>
-                <h3 style={{ marginBottom: `0` }}>Manuel</h3>
-                <p style={{ marginTop: `.5rem` }} className='centered'>
-                  Technical Evangelist
-                  <br />
-                  Data Partnerships
-                </p>
-              </div>
-
-              <div>
-                <div style={{ width: `7.5rem`, margin: `0 auto` }}>
-                  <StaticImage
-                    alt=''
-                    src='../../images/team/Divya.png'
-                    layout='fullWidth'
-                  />
-                </div>
-                <h3 style={{ marginBottom: `0` }}>Divya</h3>
-                <p style={{ marginTop: `.5rem` }} className='centered'>
-                  Technical Evangelist
-                  <br />
-                  Data Analytics
-                </p>
-              </div>
             </div>
           </Col>
         </Row>
