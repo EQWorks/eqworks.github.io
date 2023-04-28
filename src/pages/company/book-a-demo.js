@@ -22,11 +22,11 @@ const BoookDemoPage = ({ data, location }) => {
       <Container className='container pageRow'>
         <Row className=''>
           <Col>
-            <h2>Learn from our Team of Experts</h2>
+            <h2>Learn directly from our Data Expert</h2>
             <p className='centered'>
               Interested in seeing how our platforms can make a difference for
-              your business? Reach out to book a demo and one of our talented
-              experts will show you how EQ can turn your data into performance.
+              your business? Reach out to book a demo and we’ll show you how EQ
+              can turn your data into informed performance.
             </p>
           </Col>
         </Row>
@@ -35,7 +35,7 @@ const BoookDemoPage = ({ data, location }) => {
           <Col>
             <div className='flexContainer justifyCenter alignCenter marginLg mobileColumn'>
               <div>
-                <div style={{ width: `7.5rem`, margin: `0 auto` }}>
+                <div style={{ width: `10rem`, margin: `0 auto` }}>
                   <StaticImage
                     alt=''
                     src='../../images/team/Mark.png'
@@ -47,38 +47,6 @@ const BoookDemoPage = ({ data, location }) => {
                   Data Platforms
                   <br />
                   Vice President
-                </p>
-              </div>
-
-              <div>
-                <div style={{ width: `7.5rem`, margin: `0 auto` }}>
-                  <StaticImage
-                    alt=''
-                    src='../../images/team/Manuel.png'
-                    layout='fullWidth'
-                  />
-                </div>
-                <h3 style={{ marginBottom: `0` }}>Manuel</h3>
-                <p style={{ marginTop: `.5rem` }} className='centered'>
-                  Technical Evangelist
-                  <br />
-                  Data Partnerships
-                </p>
-              </div>
-
-              <div>
-                <div style={{ width: `7.5rem`, margin: `0 auto` }}>
-                  <StaticImage
-                    alt=''
-                    src='../../images/team/Divya.png'
-                    layout='fullWidth'
-                  />
-                </div>
-                <h3 style={{ marginBottom: `0` }}>Divya</h3>
-                <p style={{ marginTop: `.5rem` }} className='centered'>
-                  Technical Evangelist
-                  <br />
-                  Data Analytics
                 </p>
               </div>
             </div>
