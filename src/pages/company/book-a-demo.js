@@ -24,9 +24,9 @@ const BoookDemoPage = ({ data, location }) => {
           <Col>
             <h2>Learn directly from our Data Expert</h2>
             <p className='centered'>
-              Interested in seeing how our platforms can make a difference 
-              for your business? Reach out to book a demo and we’ll show 
-              you how EQ can turn your data into informed performance.
+              Interested in seeing how our platforms can make a difference for
+              your business? Reach out to book a demo and we’ll show you how EQ
+              can turn your data into informed performance.
             </p>
           </Col>
         </Row>
