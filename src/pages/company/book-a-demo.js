@@ -35,7 +35,7 @@ const BoookDemoPage = ({ data, location }) => {
           <Col>
             <div className='flexContainer justifyCenter alignCenter marginLg mobileColumn'>
               <div>
-                <div style={{ width: `7.5rem`, margin: `0 auto` }}>
+                <div style={{ width: `10rem`, margin: `0 auto` }}>
                   <StaticImage
                     alt=''
                     src='../../images/team/Mark.png'
