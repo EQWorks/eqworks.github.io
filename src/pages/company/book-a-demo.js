@@ -22,11 +22,11 @@ const BoookDemoPage = ({ data, location }) => {
       <Container className='container pageRow'>
         <Row className=''>
           <Col>
-            <h2>Learn from our Team of Expert</h2>
+            <h2>Learn directly from our Data Expert</h2>
             <p className='centered'>
-              Interested in seeing how our platforms can make a difference for
-              your business? Reach out to book a demo and one of our talented
-              experts will show you how EQ can turn your data into performance.
+              Interested in seeing how our platforms can make a difference 
+              for your business? Reach out to book a demo and we’ll show 
+              you how EQ can turn your data into informed performance.
             </p>
           </Col>
         </Row>
