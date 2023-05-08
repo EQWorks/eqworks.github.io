@@ -2,7 +2,6 @@ import * as React from 'react'
 // import { StaticImage } from "gatsby-plugin-image"
 import * as componentStyles from './logoLoop.module.scss'
 
-import Walmart from '../../svgs/Logos/walmartLogo.svg'
 import Prime from '../../svgs/Logos/amazonPrime.svg'
 import Sobeys from '../../svgs/Logos/sobeysLogo.svg'
 import HRosen from '../../svgs/Logos/harryrosenLogo.svg'
@@ -23,7 +22,6 @@ const LogoLoop = () => {
         <div className={componentStyles.overlay}></div>
 
         <div className={componentStyles.logos}>
-          <Walmart alt='Walmart logo' />
           <Prime alt='Amazon Prime logo' />
           <Sobeys alt='Sobeys logo' />
           <HRosen alt='Harry Rosen logo' />
@@ -36,7 +34,6 @@ const LogoLoop = () => {
         </div>
 
         <div className={componentStyles.logos}>
-          <Walmart alt='' />
           <Prime alt='' />
           <Sobeys alt='' />
           <HRosen alt='' />
