@@ -77,6 +77,12 @@
   }
 }
 
+.googlePartnerLogo {
+  position: absolute;
+  right: 2rem; // You can adjust the value to align it with your design needs
+  bottom: 0.5rem; // Adjust this value as needed to move the logo up or down
+}
+
 .copyright {
   display: flex;
   align-items: center;

@@ -279,17 +279,18 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                   <Link to='/privacy-policy'>Privacy Policy</Link>
                 </span>
 
+                <div className={componentStyles.googlePartnerLogo}>
+                  <a
+                    aria-label='Google Partners badge'
+                    href='https://www.google.com/partners/agency?id=8776625749'
+                    rel='noreferrer'
+                    target='_blank'
+                  >
+                    <GooglePartner />
+                  </a>
+                </div>
+
                 <ul className={componentStyles.logoLinks}>
-                  <li>
-                    <a
-                      aria-label='Google Partners badge'
-                      href='https://www.google.com/partners/agency?id=8776625749'
-                      rel='noreferrer'
-                      target='_blank'
-                    >
-                      <GooglePartner />
-                    </a>
-                  </li>
                   <li>
                     <a
                       aria-label='EQ Works Twitter page'
