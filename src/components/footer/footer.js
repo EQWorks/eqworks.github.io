@@ -11,6 +11,7 @@ import Twitter from '../../svgs/twitter.svg'
 import LinkedIn from '../../svgs/linkedin.svg'
 import Github from '../../svgs/github.svg'
 import Facebook from '../../svgs/facebookWhite.svg'
+import GooglePartner from '../../svgs/googlepartner.svg'
 import * as componentStyles from './footer.module.scss'
 
 const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
@@ -279,6 +280,16 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                 </span>
 
                 <ul className={componentStyles.logoLinks}>
+                  <li>
+                    <a
+                      aria-label='Google Partners badge'
+                      href='https://www.google.com/partners/agency?id=8776625749'
+                      rel='noreferrer'
+                      target='_blank'
+                    >
+                      <GooglePartner />
+                    </a>
+                  </li>
                   <li>
                     <a
                       aria-label='EQ Works Twitter page'
