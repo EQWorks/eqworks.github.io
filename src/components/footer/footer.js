@@ -269,7 +269,9 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         <StaticImage
                           src='../../images/googlepartner.png'
                           alt='Google Partner Logo'
-                          layout='fixed'
+                          layout='constrained'
+                          width={100}
+                          height={100}
                         />
                       </a>
                     </div>
