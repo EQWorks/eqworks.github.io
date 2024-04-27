@@ -142,11 +142,9 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
-  
-  a:hover {
-    opacity: 1 !important;
-    svg {
-      filter: none !important;
-    }
-  }
+}
+
+.googlePartnerLogo a:hover svg {
+  opacity: 1 !important;
+  filter: none !important;
 }
