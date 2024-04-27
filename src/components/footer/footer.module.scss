@@ -138,13 +138,12 @@
   }
 }
 
-// .googlePartnerLogo {
-//   text-align: center;
-//   margin-bottom: 10px;
-// }
 .googlePartnerLogo {
-  // margin-left: auto;
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
+}
+
+.googlePartnerLogo a:hover {
+  opacity: 0.1; /* Reduces the opacity to 70% on hover */
 }
