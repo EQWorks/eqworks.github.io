@@ -273,13 +273,7 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
 
           <Row>
             <Col>
-              <div className={componentStyles.copyright}>
-                <span>
-                  © {new Date().getFullYear()} EQ Inc. All Rights Reserved. |{' '}
-                  <Link to='/privacy-policy'>Privacy Policy</Link>
-                </span>
-
-                <div className={componentStyles.googlePartnerLogo}>
+              <div className={componentStyles.googlePartnerLogo}>
                   <a
                     aria-label='Google Partners badge'
                     href='https://www.google.com/partners/agency?id=8776625749'
@@ -288,7 +282,13 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                   >
                     <GooglePartner />
                   </a>
-                </div>
+              </div>
+
+              <div className={componentStyles.copyright}>
+                <span>
+                  © {new Date().getFullYear()} EQ Inc. All Rights Reserved. |{' '}
+                  <Link to='/privacy-policy'>Privacy Policy</Link>
+                </span>
 
                 <ul className={componentStyles.logoLinks}>
                   <li>
