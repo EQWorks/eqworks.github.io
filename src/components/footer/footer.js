@@ -11,7 +11,7 @@ import Twitter from '../../svgs/twitter.svg'
 import LinkedIn from '../../svgs/linkedin.svg'
 import Github from '../../svgs/github.svg'
 import Facebook from '../../svgs/facebookWhite.svg'
-import GooglePartner from '../../svgs/googlepartner.svg'
+import GooglePartner from '../../images/googlepartner.png'
 import * as componentStyles from './footer.module.scss'
 
 const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
