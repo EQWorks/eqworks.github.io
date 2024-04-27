@@ -249,16 +249,6 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         Toronto, ON M5R 3K4
                       </li>
                     </ul>
-                    {/* <div className={componentStyles.googlePartnerLogo}>
-                      <a
-                        aria-label='Google Partners badge'
-                        href='https://www.google.com/partners/agency?id=8776625749'
-                        rel='noreferrer'
-                        target='_blank'
-                      >
-                        <GooglePartner />
-                      </a>
-                    </div> */}
                     <div className={componentStyles.googlePartnerLogo}>
                       <a
                         aria-label='Google Partners badge'
