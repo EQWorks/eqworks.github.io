@@ -142,8 +142,11 @@
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
-}
-
-.googlePartnerLogo a:hover {
-  opacity: 1; 
+  
+  a:hover {
+    opacity: 1 !important;
+    svg {
+      filter: none !important;
+    }
+  }
 }
