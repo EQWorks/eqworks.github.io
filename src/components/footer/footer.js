@@ -270,6 +270,7 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                           src='../../images/googlepartner.png'
                           alt='Google Partner Logo'
                           layout='constrained'
+                          quality={100}
                           width={100}
                           height={100}
                         />
