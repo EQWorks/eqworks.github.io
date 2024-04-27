@@ -48,7 +48,7 @@
 }
 .listHdr {
   font-weight: 600;
-  text-transform: lowercase;
+  text-transform: uppercase;
   font-size: 0.85rem;
 }
 .linkList {
@@ -138,13 +138,13 @@
   }
 }
 
-.googlePartnerLogo {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-}
+// .googlePartnerLogo {
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-bottom: 10px;
+// }
 
-.googlePartnerLogo a:hover svg {
-  opacity: 1 !important;
-  filter: none !important;
-}
+// .googlePartnerLogo a:hover svg {
+//   opacity: 1 !important;
+//   filter: none !important;
+// }
