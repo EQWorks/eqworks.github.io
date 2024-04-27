@@ -11,7 +11,8 @@ import Twitter from '../../svgs/twitter.svg'
 import LinkedIn from '../../svgs/linkedin.svg'
 import Github from '../../svgs/github.svg'
 import Facebook from '../../svgs/facebookWhite.svg'
-import GooglePartner from '../../images/googlepartner.png'
+// import GooglePartner from '../../images/googlepartner.png'
+import { StaticImage } from 'gatsby-plugin-image';
 import * as componentStyles from './footer.module.scss'
 
 const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
@@ -248,7 +249,7 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         Toronto, ON M5R 3K4
                       </li>
                     </ul>
-                    <div className={componentStyles.googlePartnerLogo}>
+                    {/* <div className={componentStyles.googlePartnerLogo}>
                       <a
                         aria-label='Google Partners badge'
                         href='https://www.google.com/partners/agency?id=8776625749'
@@ -256,6 +257,20 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         target='_blank'
                       >
                         <GooglePartner />
+                      </a>
+                    </div> */}
+                    <div className={componentStyles.googlePartnerLogo}>
+                      <a
+                        aria-label='Google Partners badge'
+                        href='https://www.google.com/partners/agency?id=8776625749'
+                        rel='noreferrer'
+                        target='_blank'
+                      >
+                        <StaticImage
+                          src='../../images/googlepartner.png'
+                          alt='Google Partner Logo'
+                          layout='fixed'
+                        />
                       </a>
                     </div>
                   </div>
