@@ -143,6 +143,8 @@
 //   margin-bottom: 10px;
 // }
 .googlePartnerLogo {
-  margin-left: auto;
+  // margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
   margin-bottom: 10px;
 }
