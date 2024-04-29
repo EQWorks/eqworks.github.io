@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { Container, Row, Col } from 'react-grid-system'
 import { useMediaQuery } from 'react-responsive'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Button from '../button/button'
 import FooterLinkList from './footerLinkList'
@@ -247,6 +248,23 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         Toronto, ON M5R 3K4
                       </li>
                     </ul>
+                    <div className={componentStyles.googlePartnerLogo}>
+                      <a
+                        aria-label='Google Partners badge'
+                        href='https://www.google.com/partners/agency?id=8776625749'
+                        rel='noreferrer'
+                        target='_blank'
+                      >
+                        <StaticImage
+                          src='../../images/googlepartner.png'
+                          alt='Google Partner Logo'
+                          layout='constrained'
+                          quality={100}
+                          width={100}
+                          height={100}
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </Col>
