@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import { Container, Row, Col } from 'react-grid-system'
 import { useMediaQuery } from 'react-responsive'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Button from '../button/button'
 import FooterLinkList from './footerLinkList'
@@ -11,8 +12,6 @@ import Twitter from '../../svgs/twitter.svg'
 import LinkedIn from '../../svgs/linkedin.svg'
 import Github from '../../svgs/github.svg'
 import Facebook from '../../svgs/facebookWhite.svg'
-// import GooglePartner from '../../images/googlepartner.png'
-import { StaticImage } from 'gatsby-plugin-image';
 import * as componentStyles from './footer.module.scss'
 
 const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
