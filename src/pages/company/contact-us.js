@@ -65,11 +65,9 @@ const ContactPage = ({ data, location }) => {
                     <strong className='darkColor'>Investor Relations</strong>
                     <br />
                     <span className='fontSm'>
-                      Peter Kanniah
                       <br />
-                      Peter.Kanniah@eqworks.com
+                      investor@eqworks.com
                       <br />
-                      416 260 4326
                     </span>
                   </p>
                 </div>
