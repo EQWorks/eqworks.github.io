@@ -65,9 +65,7 @@ const ContactPage = ({ data, location }) => {
                     <strong className='darkColor'>Investor Relations</strong>
                     <br />
                     <span className='fontSm'>
-                      <br />
                       investor@eqworks.com
-                      <br />
                     </span>
                   </p>
                 </div>
