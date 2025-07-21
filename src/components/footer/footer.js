@@ -115,7 +115,7 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                 to="/"
                 style={{
                   display: 'block',
-                  width: isScreenSm ? '6rem' : '10rem',
+                  width: isScreenSm ? '6rem' : '8rem',
                   margin: '0 auto 2rem',
                 }}
               >
