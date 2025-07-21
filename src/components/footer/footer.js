@@ -42,26 +42,26 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                 //     }}
                 //   />
                 // </Link>
-              <Link
-                to='/'
-                style={{
-                  display: 'block',
-                  maxWidth: '12rem', // allow it to grow on desktop
-                  margin: '0 auto',
-                }}
-              >
-                <img
-                  src={FooterEQLogo}
-                  alt='EQ Works Logo'
+                <Link
+                  to='/'
                   style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxHeight: '3.5rem', // ensures it never gets too tall
                     display: 'block',
-                    objectFit: 'contain',
+                    width: isScreenSm ? '8rem' : '14rem',
+                    margin: '3rem auto 0',
                   }}
-                />
-              </Link>
+                >
+                  <img
+                    src={FooterEQLogo}
+                    alt='EQ Works Logo'
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: isScreenSm ? '3rem' : '4rem',
+                      objectFit: 'contain',
+                      display: 'block',
+                    }}
+                  />
+                </Link>
               ) : (
                 <div className={componentStyles.connect}>
                   <h2>{linkHdr ? linkHdr : `Let’s Grow Together`}</h2>
