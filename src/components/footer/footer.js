@@ -8,7 +8,7 @@ import Button from '../button/button'
 import FooterLinkList from './footerLinkList'
 import PartnersLogos from '../partnersLogos/partnersLogos'
 import FooterEQLogo from '../../../static/logo.png' 
-import Logo from '../../svgs/logo.svg' 
+// import Logo from '../../svgs/logo.svg' 
 import Twitter from '../../svgs/twitter.svg'
 import LinkedIn from '../../svgs/linkedin.svg'
 import Github from '../../svgs/github.svg'
@@ -110,17 +110,27 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
         ) : (
           <Container className='container'>
             <Row>
-              <Col md={2}>
-                <Link style={{ border: `0` }} to='/'>
-                  <Logo
-                    style={{
-                      width: `3rem`,
-                      height: `3rem`,
-                      marginBottom: `2rem`
-                    }}
-                  />
-                </Link>
-              </Col>
+            <Col md={2}>
+              <Link
+                to="/"
+                style={{
+                  display: 'block',
+                  width: isScreenSm ? '6rem' : '10rem',
+                  margin: '0 auto 2rem',
+                }}
+              >
+                <img
+                  src={FooterEQLogo}
+                  alt="EQ Works Logo"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                />
+              </Link>
+            </Col>
 
               <Col>
                 <div className={componentStyles.linkListCont}>
