@@ -7,7 +7,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 import Button from '../button/button'
 import FooterLinkList from './footerLinkList'
 import PartnersLogos from '../partnersLogos/partnersLogos'
-import Logo from '../../../static/logo.png'
+import FooterEQLogo from '../../../static/logo.png' 
+import Logo from '../../svgs/logo.svg' 
 import Twitter from '../../svgs/twitter.svg'
 import LinkedIn from '../../svgs/linkedin.svg'
 import Github from '../../svgs/github.svg'
@@ -28,19 +29,31 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
           <Row>
             <Col>
               {isScreenSm ? (
-                <Link
-                  style={{ border: `0`, display: `block`, marginTop: `3rem` }}
-                  to='/'
-                >
-                  <Logo
-                    style={{
-                      width: `3rem`,
-                      height: `3rem`,
-                      display: `block`,
-                      margin: `0 auto`
-                    }}
-                  />
-                </Link>
+                // <Link
+                //   style={{ border: `0`, display: `block`, marginTop: `3rem` }}
+                //   to='/'
+                // >
+                //   <Logo
+                //     style={{
+                //       width: `3rem`,
+                //       height: `3rem`,
+                //       display: `block`,
+                //       margin: `0 auto`
+                //     }}
+                //   />
+                // </Link>
+                <Link style={{ border: `0`, display: `block`, marginTop: `3rem` }} to='/'>
+                <img
+                  src={FooterEQLogo}
+                  alt='EQ Works Logo'
+                  style={{
+                    width: `3rem`,
+                    height: `3rem`,
+                    display: `block`,
+                    margin: `0 auto`
+                  }}
+                />
+              </Link>
               ) : (
                 <div className={componentStyles.connect}>
                   <h2>{linkHdr ? linkHdr : `Let’s Grow Together`}</h2>
