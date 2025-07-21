@@ -42,18 +42,17 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                 //     }}
                 //   />
                 // </Link>
-                <Link style={{ border: `0`, display: `block`, marginTop: `3rem` }} to='/'>
-                <img
-                  src={FooterEQLogo}
-                  alt='EQ Works Logo'
-                  style={{
-                    width: `3rem`,
-                    height: `3rem`,
-                    display: `block`,
-                    margin: `0 auto`
-                  }}
-                />
-              </Link>
+                <Link to='/' style={{ display: 'block', width: '6rem', margin: '0 auto' }}>
+                  <img
+                    src={FooterEQLogo}
+                    alt='EQ Works Logo'
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      display: 'block'
+                    }}
+                  />
+                </Link>
               ) : (
                 <div className={componentStyles.connect}>
                   <h2>{linkHdr ? linkHdr : `Let’s Grow Together`}</h2>
