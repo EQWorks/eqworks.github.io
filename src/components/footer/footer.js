@@ -29,19 +29,6 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
           <Row>
             <Col>
               {isScreenSm ? (
-                // <Link
-                //   style={{ border: `0`, display: `block`, marginTop: `3rem` }}
-                //   to='/'
-                // >
-                //   <Logo
-                //     style={{
-                //       width: `3rem`,
-                //       height: `3rem`,
-                //       display: `block`,
-                //       margin: `0 auto`
-                //     }}
-                //   />
-                // </Link>
                 <Link
                   to='/'
                   style={{
