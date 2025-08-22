@@ -37,9 +37,9 @@ const ContactPage = ({ data, location }) => {
                     <strong className='darkColor'>Toronto Office</strong>
                     <br />
                     <span className='fontSm'>
-                      1235 Bay Street, Suite 401
+                      2 Bloor Street West, Suite 700
                       <br />
-                      Toronto, ON M5R 3K4
+                      Toronto, ON M4W 3E2
                     </span>
                   </p>
                 </div>

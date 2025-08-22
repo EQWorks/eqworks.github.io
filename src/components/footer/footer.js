@@ -261,9 +261,9 @@ const Footer = ({ linkHdr, linkPath, linkText, showPartners, colorLogos }) => {
                         <a href='mailto:info@eqworks.com'>info@eqworks.com</a>
                       </li>
                       <li>
-                        1235 Bay Street, Suite 401
+                        2 Bloor Street West, Suite 700
                         <br />
-                        Toronto, ON M5R 3K4
+                        Toronto, ON M4W 3E2
                       </li>
                     </ul>
                     <div className={componentStyles.googlePartnerLogo}>
