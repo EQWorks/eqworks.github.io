@@ -36,7 +36,7 @@
     "gatsby-transformer-remark": "^4.11.0",
     "gatsby-transformer-sharp": "^3.14.0",
     "mapbox-gl": "^1.13.0",
-    "node-fetch": "^2.6.5",
+    "node-fetch": "^2.6.7",
     "npm-force-resolutions": "0.0.10",
     "prismjs": "^1.25.0",
     "react": "^17.0.1",
